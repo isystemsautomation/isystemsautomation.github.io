@@ -1,0 +1,45 @@
+/* Site layout fixes — logo visibility and uniform photo sizing */
+
+/* Helix hides .sp-default-logo on Retina without a .sp-retina-logo twin */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-moz-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 1.5),
+  only screen and (min-device-pixel-ratio: 1.5) {
+  #sp-header .sp-default-logo {
+    display: inline-block !important;
+  }
+}
+
+#sp-header #sp-logo .logo img {
+  display: block;
+  max-height: 58px;
+  width: auto;
+}
+
+#sp-header #sp-logo .logo a {
+  display: table-cell;
+  vertical-align: middle;
+  height: 70px;
+}
+
+/* Project and card photos: ignore stale width/height from old stock assets */
+.sppb-addon-image-layout img.sppb-img-responsive,
+.sppb-addon-image img.sppb-img-responsive,
+.sppb-carousel-pro img.sppb-img-responsive {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* Standard card thumbnail ratio used across the site */
+.sppb-addon-image-layout img.sppb-img-responsive,
+.sppb-addon-image img.sppb-img-responsive {
+  aspect-ratio: 635 / 505;
+}
+
+/* Square feature blocks (news hero, industry tabs) */
+.sppb-addon-image-layout-image-fit img.sppb-img-responsive,
+.sppb-tab-img img.sppb-img-responsive {
+  aspect-ratio: 1 / 1;
+}
