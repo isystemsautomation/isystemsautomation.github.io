@@ -1,0 +1,37 @@
+.isa-ref-page{max-width:1100px;margin:0 auto}
+.isa-ref-page h2{font-size:1.75rem;margin:2.5rem 0 1rem}
+.isa-ref-page h2:first-child{margin-top:0}
+.isa-ref-page h3{font-size:1.25rem;margin:2rem 0 .75rem}
+.isa-ref-intro{margin-bottom:1.5rem;line-height:1.7}
+.isa-ref-figures{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:rgba(0,0,0,.12);border:1px solid rgba(0,0,0,.12);margin:1.5rem 0 2rem}
+.isa-ref-figures div{background:#fff;padding:14px 16px}
+.isa-ref-figures dt{font-weight:600;font-size:14px;margin:0 0 4px}
+.isa-ref-figures dd{font-size:13px;line-height:1.5;margin:0;color:#444}
+.isa-ref-caps{display:grid;grid-template-columns:1fr 1fr;gap:32px 48px;margin:1rem 0 2rem}
+.isa-ref-caps h4{font-size:15px;font-weight:600;margin:0 0 .5rem;text-transform:none}
+.isa-ref-caps ul{margin:0;padding-left:1.2rem;font-size:14px;line-height:1.65}
+.isa-ref-caps li{margin-bottom:.35rem}
+.isa-ref-table-wrap{overflow-x:auto;margin:1rem 0}
+.isa-ref-table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.55}
+.isa-ref-table th,.isa-ref-table td{padding:8px 12px;text-align:left;vertical-align:top;border-bottom:1px solid rgba(0,0,0,.1)}
+.isa-ref-table th{font-weight:600;white-space:nowrap;width:1%}
+.isa-ref-table td:first-child{white-space:nowrap;color:#333}
+.isa-ref-nda{font-size:13px;color:#555;margin:1rem 0 2rem;font-style:italic}
+.isa-ref-featured h2{margin-top:2.5rem}
+.isa-ref-card{display:flex;flex-wrap:wrap;gap:30px;align-items:flex-start;margin-bottom:50px;padding-bottom:50px;border-bottom:1px solid rgba(0,0,0,.08)}
+.isa-ref-card:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.isa-ref-card--img-right{flex-direction:row-reverse}
+.isa-ref-card__media{flex:1 1 280px;max-width:420px}
+.isa-ref-card__media img{width:100%;height:260px;object-fit:cover;display:block}
+.isa-ref-card__body{flex:2 1 320px}
+.isa-ref-card__body h3{margin-top:0;font-size:1.15rem}
+.isa-ref-platforms{font-size:14px;line-height:1.75;margin:1rem 0 2rem}
+.isa-ref-platforms p{margin:.5rem 0}
+.isa-ref-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:1.5rem}
+.isa-ref-gallery figure{margin:0}
+.isa-ref-gallery img{width:100%;height:200px;object-fit:cover;display:block}
+.isa-ref-gallery figcaption{font-size:13px;line-height:1.5;margin-top:8px;color:#444}
+@media(max-width:767px){
+  .isa-ref-caps{grid-template-columns:1fr}
+  .isa-ref-card--img-right{flex-direction:column}
+}
