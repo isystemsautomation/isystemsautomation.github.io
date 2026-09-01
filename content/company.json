@@ -1,0 +1,109 @@
+{
+  "slug": "company",
+  "source": "legacy/company.html",
+  "url": "/company.html",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Company",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Company"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": null,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "ISYSTEMS AUTOMATION is an engineering company founded in 2007, engaged in the development of control systems and optimization of technological processes in energy, chemistry, and oil refining. The main goals of implementing the company's systems are to increase the efficiency of existing production by increasing productivity, reducing costs, and decreasing energy consumption, as well as improving the reliability and safety of the operated equipment."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Our company conducts:</strong>"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "preliminary pre-project inspection;"
+            },
+            {
+              "html": "development of design and estimate and/or working documentation;"
+            },
+            {
+              "html": "installation or supervision of installation works;"
+            },
+            {
+              "html": "commissioning works."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>ISYSTEMS AUTOMATION performs the design, production, and commissioning of:</strong>"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "automatic control systems (electrical and hydraulic) of various complexity categories;"
+            },
+            {
+              "html": "emergency automation systems and incident recorders;"
+            },
+            {
+              "html": "dispatch systems;"
+            },
+            {
+              "html": "automated systems for technical and commercial resource accounting (electricity, water, air, steam, etc.)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "The company team brings together specialists in industrial automation, programmers, researchers, and test engineers, whose <strong>high qualification and experience</strong> ensure the successful implementation of modern technologies in the company's products, solutions, and services."
+        },
+        {
+          "type": "paragraph",
+          "html": "Our specialists have experience with such control systems as:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "ABB Industrial IT 800xA"
+            },
+            {
+              "html": "Emerson Ovation"
+            },
+            {
+              "html": "HIMA HIQuad"
+            },
+            {
+              "html": "SIEMENS PCS7"
+            },
+            {
+              "html": "SIEMENS TIA Portal"
+            },
+            {
+              "html": "Yokogawa Centum"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "The quality management system of ISYSTEMS AUTOMATION complies with <strong>ISO 9001</strong> requirements and has been certified since 2009."
+        }
+      ]
+    }
+  ],
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+}

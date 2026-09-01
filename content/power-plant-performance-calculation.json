@@ -1,0 +1,215 @@
+{
+  "slug": "power-plant-performance-calculation",
+  "source": "legacy/power-plant-performance-calculation.html",
+  "url": "/power-plant-performance-calculation.html",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Power Plant Performance Calculation",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Power Plant Performance Calculation"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Power Plant Management: From Traditional Systems to Advanced Performance Monitoring",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Power Plant Management: From Traditional Systems to Advanced Performance Monitoring"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/steam-turbine-generator-hall.jpg",
+          "alt": "Steam turbine and generator set in the machine hall",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Project Objectives"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Determine the cost of losses of generated electric energy and heat and deviations from the factory specifications."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Calculate the performance of each unit of equipment (Boiler, Turbine, Heat exchangers, etc.)"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Calculate the energy and material balance of water, steam, gas, electricity, etc."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Receive information from DCS ABB Industrial IT, DCS Emerson Ovation via OPC protocol, and from SCADA and commercial metering stations using Modbus protocol."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Transfer stored and calculated information to office applications and other engineering applications."
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Provide central long-term archival storage of industrial and calculated information."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Traditional DCS and SCADA Systems",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "Before the implementation of advanced calculation systems and central long-term archives, power plant personnel were limited in their capacity to manage equipment effectively. They relied on traditional Distributed Control Systems (DCS) like Emerson Ovation and ABB 800xA, as well as Supervisory Control and Data Acquisition (SCADA) systems for production control. However, these systems did not provide the capability to monitor the overall efficiency of the plant or individual equipment units comprehensively."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Traditional DCS and SCADA Systems"
+        },
+        {
+          "type": "paragraph",
+          "html": "Initially, power plants operated using traditional DCS and SCADA systems. These systems were pivotal for production control but had significant limitations. Emerson Ovation and ABB 800xA, for example, were excellent for controlling specific processes but fell short in giving a holistic view of the plant's performance. Plant personnel could manage the equipment but couldn't assess how efficiently the entire station or individual units were performing against designed values."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Introduction of Plant Performance Monitoring Systems"
+        },
+        {
+          "type": "paragraph",
+          "html": "The introduction of the Plant Performance Monitoring System by our company marked a significant transformation. This system provided plant personnel with the ability to continuously monitor the performance of main equipment and compare it against designed values. The real-time tracking of fuel costs for heat and electricity production, and the identification of performance deviations and losses, have substantially reduced operating costs."
+        },
+        {
+          "type": "paragraph",
+          "html": "Plant personnel can now take corrective actions to mitigate these losses and preemptively identify defects in individual units. The system calculates the performance of each unit, such as boilers, turbines, and heat exchangers, and also determines the cost of losses and deviations from factory specifications. Moreover, it calculates the energy and material balance of water, steam, gas, and electricity, enhancing overall plant efficiency."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Data Integration and Long-term Archival"
+        },
+        {
+          "type": "paragraph",
+          "html": "Our system is designed to integrate seamlessly with existing infrastructure. It receives information from DCS ABB Industrial IT and DCS Emerson Ovation via the OPC protocol and from SCADA and commercial metering stations using the Modbus protocol. This integration ensures that all relevant data is captured and utilized effectively. Additionally, the system provides central long-term archival storage of both industrial and calculated information, ensuring that data is preserved and accessible for future reference."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Comprehensive Performance Monitoring Solutions"
+        },
+        {
+          "type": "paragraph",
+          "html": "Our engineers, highly experienced in the energy industry, have developed a complete suite of performance monitoring solutions. The comprehensive work package includes on-site research to collect detailed information about the industrial facility. Based on this data, installation, configuration, and software development are performed using ASME and other industry standards. This tailored approach ensures that the system is optimized for each specific facility, providing maximum efficiency and reliability."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Conclusion"
+        },
+        {
+          "type": "paragraph",
+          "html": "The transition from traditional DCS and SCADA systems to advanced Plant Performance Monitoring Systems has revolutionized power plant management. By providing continuous, real-time performance monitoring and integrating seamlessly with existing systems, our solution has significantly improved operational efficiency and reduced costs. With the ability to preemptively identify defects and take corrective actions, power plant personnel are now better equipped to manage and maintain their facilities, ensuring sustained performance and reliability."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Combustion efficiency of a boiler :",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "/images/2024/08/11/combustion-efficiency.jpg",
+          "alt": "Boiler combustion efficiency monitoring",
+          "href": "https://www.joomshaper.com"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Combustion efficiency of a boiler :"
+        },
+        {
+          "type": "paragraph",
+          "html": "Operator interface of calculation the combustion efficiency of a boiler which is a vital aspect of burning performance, influenced by the quantities of unburnt fuel and excess oxygen levels in the exhaust. By carefully monitoring and adjusting these parameters, it is possible to achieve optimal combustion efficiency, leading to reduced fuel costs and lower emissions. Understanding the interplay between unburnt fuel and excess oxygen is essential for anyone involved in boiler operation and maintenance, ensuring that the system operates at its highest possible efficiency."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": null,
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "The calculation analyzes various parameters that affect the overall boiler efficiency, including combustion efficiency and thermal efficiency, as well as ON-OFF losses, radiation losses, convection losses, and blowdown losses. Both direct and indirect methods were used to calculate boiler efficiency and implement improvement strategies."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Steam Turbine Energy Balance and Heat Loss Calculation:",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "/images/2024/08/11/steam-turbine-energy-balance-and-heat-loss-calculation.jpg",
+          "alt": "Steam turbine energy balance and heat loss calculation",
+          "href": "https://www.joomshaper.com"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Steam Turbine Energy Balance and Heat Loss Calculation:"
+        },
+        {
+          "type": "paragraph",
+          "html": "Energy balance in steam turbines involves accounting for all energy inputs and outputs to ensure that the system operates efficiently. The energy in the form of high-pressure steam is converted into mechanical work, which then drives an electrical generator."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Heat Loss Calculation:",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "/images/2024/08/11/turbine-energy-balance-and-heat-loss-calculation.jpg",
+          "alt": "Turbine energy balance and heat loss calculation",
+          "href": "https://www.joomshaper.com"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Heat Loss Calculation:"
+        },
+        {
+          "type": "paragraph",
+          "html": "Heat loss is a critical factor that affects the efficiency of steam turbines. Heat loss occurs when energy escapes from the system in the form of heat, rather than being converted into useful work. Identifying and minimizing these losses is essential for improving turbine efficiency."
+        },
+        {
+          "type": "paragraph",
+          "html": "1. <strong>Radiation and Convection Losses</strong>: These occur from the surface of the turbine and associated piping."
+        },
+        {
+          "type": "paragraph",
+          "html": "2. <strong>Exhaust Losses</strong>: Energy is carried away by the exhaust steam that exits the turbine."
+        },
+        {
+          "type": "paragraph",
+          "html": "3. <strong>Mechanical Losses</strong>: Friction and other mechanical inefficiencies within the turbine can convert useful energy into heat, which is then lost."
+        }
+      ]
+    }
+  ],
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+}

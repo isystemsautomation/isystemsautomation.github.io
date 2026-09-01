@@ -1,0 +1,33 @@
+{% macro navList(items, currentUrl, mobile=false) %}
+<ul>
+  {% for item in items %}
+    {% set isCurrent = (item.url == currentUrl) %}
+    {% if item.children %}
+      {% if mobile %}
+        <li>
+          <details>
+            <summary>{{ item.label }}</summary>
+            <ul>
+              <li><a href="{{ item.url }}"{% if isCurrent %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+              {% for child in item.children %}
+                <li><a href="{{ child.url }}"{% if child.url == currentUrl %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
+              {% endfor %}
+            </ul>
+          </details>
+        </li>
+      {% else %}
+        <li>
+          <a href="{{ item.url }}"{% if isCurrent %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          <ul>
+            {% for child in item.children %}
+              <li><a href="{{ child.url }}"{% if child.url == currentUrl %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
+    {% else %}
+      <li><a href="{{ item.url }}"{% if isCurrent %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endmacro %}

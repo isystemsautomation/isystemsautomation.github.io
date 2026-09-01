@@ -1,0 +1,232 @@
+[
+  {
+    "file": "legacy/index.html",
+    "url": "/index.html",
+    "title": "ISYSTEMS AUTOMATION — Industrial Automation and Process Control",
+    "description": "ISYSTEMS AUTOMATION designs, builds and commissions industrial control systems for power generation, oil and gas, cement and coal. Engineering, MES, safety systems and maintenance since 2007.",
+    "canonical": null,
+    "ogTitle": "ISYSTEMS AUTOMATION — Industrial Automation and Process Control",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/"
+  },
+  {
+    "file": "legacy/404.html",
+    "url": "/404.html",
+    "title": "Page Not Found — ISYSTEMS AUTOMATION",
+    "description": "The requested page was not found on the ISYSTEMS AUTOMATION website.",
+    "canonical": null,
+    "ogTitle": "Page Not Found — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/company.html"
+  },
+  {
+    "file": "legacy/advanced-controllers-cfb-boiler.html",
+    "url": "/advanced-controllers-cfb-boiler.html",
+    "title": "Advanced Controllers for CFB Boilers — ISYSTEMS AUTOMATION",
+    "description": "Advanced load controllers for a 260 t/h circulating fluidized bed boiler on DCS Emerson Ovation: combustion optimization, emissions control and fuel quality compensation.",
+    "canonical": null,
+    "ogTitle": "Advanced Controllers for CFB Boilers — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/advanced-controllers-cfb-boiler.html"
+  },
+  {
+    "file": "legacy/company.html",
+    "url": "/company.html",
+    "title": "Company — ISYSTEMS AUTOMATION",
+    "description": "ISYSTEMS AUTOMATION, founded 2007 in Ploiesti, Romania: control systems and process optimization for energy, chemistry and oil refining. ISO 9001 certified since 2009.",
+    "canonical": null,
+    "ogTitle": "Company — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/company.html"
+  },
+  {
+    "file": "legacy/contact.html",
+    "url": "/contact.html",
+    "title": "Contact — ISYSTEMS AUTOMATION",
+    "description": "Contact ISYSTEMS AUTOMATION S.R.L., Str. Diligentei 20, Ploiesti, Romania. Phone +40 747 757 798, office@isystemsautomation.com.",
+    "canonical": null,
+    "ogTitle": "Contact — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/contact.html"
+  },
+  {
+    "file": "legacy/cookies.html",
+    "url": "/cookies.html",
+    "title": "Cookie Policy — ISYSTEMS AUTOMATION",
+    "description": "Which cookies isystemsautomation.com uses, why, and how to control them.",
+    "canonical": "https://www.isystemsautomation.com/cookies.html",
+    "ogTitle": "Cookie Policy — ISYSTEMS AUTOMATION",
+    "ogDescription": "Which cookies isystemsautomation.com uses, why, and how to control them.",
+    "ogUrl": "https://www.isystemsautomation.com/cookies.html"
+  },
+  {
+    "file": "legacy/industries.html",
+    "url": "/industries.html",
+    "title": "Industries — ISYSTEMS AUTOMATION",
+    "description": "Turnkey industrial automation for power generation, oil and gas, cement and coal, control centers and smart buildings, delivered by ISYSTEMS AUTOMATION.",
+    "canonical": null,
+    "ogTitle": "Industries — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/industries.html"
+  },
+  {
+    "file": "legacy/power-plant-performance-calculation.html",
+    "url": "/power-plant-performance-calculation.html",
+    "title": "Power Plant Performance Calculation — ISYSTEMS AUTOMATION",
+    "description": "Plant Performance Monitoring: real-time efficiency of boilers, turbines and heat exchangers against design values, with OPC and Modbus integration and long-term archiving.",
+    "canonical": null,
+    "ogTitle": "Power Plant Performance Calculation — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/power-plant-performance-calculation.html"
+  },
+  {
+    "file": "legacy/privacy.html",
+    "url": "/privacy.html",
+    "title": "Privacy Policy — ISYSTEMS AUTOMATION",
+    "description": "How ISYSTEMS AUTOMATION S.R.L. collects, uses and protects personal data under the GDPR, and how to exercise your rights.",
+    "canonical": "https://www.isystemsautomation.com/privacy.html",
+    "ogTitle": "Privacy Policy — ISYSTEMS AUTOMATION",
+    "ogDescription": "How ISYSTEMS AUTOMATION S.R.L. collects, uses and protects personal data under the GDPR, and how to exercise your rights.",
+    "ogUrl": "https://www.isystemsautomation.com/privacy.html"
+  },
+  {
+    "file": "legacy/references.html",
+    "url": "/references.html",
+    "title": "References and Projects — ISYSTEMS AUTOMATION",
+    "description": "Selected control system projects delivered by ISYSTEMS AUTOMATION since 2007: DCS and ESD/BMS on Emerson Ovation, ABB, Siemens, Yokogawa and HIMA platforms for power plants, refineries and industry.",
+    "canonical": "https://www.isystemsautomation.com/references.html",
+    "ogTitle": "References and Projects — ISYSTEMS AUTOMATION",
+    "ogDescription": "Selected control system projects delivered by ISYSTEMS AUTOMATION since 2007: DCS and ESD/BMS on Emerson Ovation, ABB, Siemens, Yokogawa and HIMA platforms for power plants, refineries and industry.",
+    "ogUrl": "https://www.isystemsautomation.com/references.html"
+  },
+  {
+    "file": "legacy/service.html",
+    "url": "/service.html",
+    "title": "Services — ISYSTEMS AUTOMATION",
+    "description": "Engineering and consulting, process control, electrical automation, MES, safety systems, control centers and maintenance — the full project cycle from ISYSTEMS AUTOMATION.",
+    "canonical": null,
+    "ogTitle": "Services — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/service.html"
+  },
+  {
+    "file": "legacy/virtual-power-plant.html",
+    "url": "/virtual-power-plant.html",
+    "title": "Virtual Power Plant — ISYSTEMS AUTOMATION",
+    "description": "Integration of four photovoltaic plants, a wind farm and a conventional gas/coal plant into a single virtual power plant balanced by the steam turbine.",
+    "canonical": null,
+    "ogTitle": "Virtual Power Plant — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/virtual-power-plant.html"
+  },
+  {
+    "file": "legacy/service/industrial-furniture-control-centers.html",
+    "url": "/service/industrial-furniture-control-centers.html",
+    "title": "Industrial Furniture and Control Centers — ISYSTEMS AUTOMATION",
+    "description": "Control center design covering acoustics, layout, lighting, microclimate, power supply and operator interface, built for 24/7 operation.",
+    "canonical": null,
+    "ogTitle": "Industrial Furniture and Control Centers — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/service/industrial-furniture-control-centers.html"
+  },
+  {
+    "file": "legacy/service/maintenance.html",
+    "url": "/service/maintenance.html",
+    "title": "Maintenance and Technical Support — ISYSTEMS AUTOMATION",
+    "description": "Preventive and condition-based maintenance, remote support and PID tuning for ABB 800xA, Emerson Ovation, HIMA, SIEMENS and Yokogawa systems.",
+    "canonical": null,
+    "ogTitle": "Maintenance and Technical Support — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/service/maintenance.html"
+  },
+  {
+    "file": "legacy/service/manufacturing-execution-system.html",
+    "url": "/service/manufacturing-execution-system.html",
+    "title": "MES (Manufacturing Execution System) — ISYSTEMS AUTOMATION",
+    "description": "MES from ISYSTEMS AUTOMATION: real-time production visibility, equipment monitoring, cost and profit reporting, forecasting and maintenance planning.",
+    "canonical": null,
+    "ogTitle": "MES (Manufacturing Execution System) — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/service/manufacturing-execution-system.html"
+  },
+  {
+    "file": "legacy/service/process-automation.html",
+    "url": "/service/process-automation.html",
+    "title": "Process Automation — ISYSTEMS AUTOMATION",
+    "description": "Turnkey industrial automation from design to commissioning: consulting, custom design, as-built documentation, operator training and ongoing maintenance.",
+    "canonical": null,
+    "ogTitle": "Process Automation — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/service/process-automation.html"
+  },
+  {
+    "file": "legacy/service/process-optimization-advanced-process-control.html",
+    "url": "/service/process-optimization-advanced-process-control.html",
+    "title": "Process Optimization and Advanced Process Control — ISYSTEMS AUTOMATION",
+    "description": "Advanced Process Control from ISYSTEMS AUTOMATION: higher capacity, lower energy and raw material use, fewer unscheduled shutdowns.",
+    "canonical": null,
+    "ogTitle": "Process Optimization and Advanced Process Control — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/service/process-optimization-advanced-process-control.html"
+  },
+  {
+    "file": "legacy/service/safety-systems-burner-management-systems.html",
+    "url": "/service/safety-systems-burner-management-systems.html",
+    "title": "Safety Systems, BMS and SIL 2 / SIL 3 to IEC 61511 — ISYSTEMS AUTOMATION",
+    "description": "Burner Management Systems and Safety Instrumented Systems certified to SIL 2 and SIL 3 under IEC 61511, on HIMA HIQuad, Foxboro Triconex and ABB AC800 logic solvers.",
+    "canonical": null,
+    "ogTitle": "Safety Systems, BMS and SIL 2 / SIL 3 to IEC 61511 — ISYSTEMS AUTOMATION",
+    "ogDescription": "Burner Management Systems and Safety Instrumented Systems certified to SIL 2 and SIL 3 under IEC 61511, on HIMA HIQuad, Foxboro Triconex and ABB AC800 logic solvers.",
+    "ogUrl": "https://www.isystemsautomation.com/service/safety-systems-burner-management-systems.html"
+  },
+  {
+    "file": "legacy/industries/cement-and-coal.html",
+    "url": "/industries/cement-and-coal.html",
+    "title": "Cement and Coal — ISYSTEMS AUTOMATION",
+    "description": "Automation for batch cement production and continuous coal processes: precise dosing, humidity and granulation control from ISYSTEMS AUTOMATION.",
+    "canonical": null,
+    "ogTitle": "Cement and Coal — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/industries/cement-and-coal.html"
+  },
+  {
+    "file": "legacy/industries/control-centers.html",
+    "url": "/industries/control-centers.html",
+    "title": "Control Centers — ISYSTEMS AUTOMATION",
+    "description": "Design, manufacture and supply of control centers and ergonomic operator furniture for LUKOIL, Dalkia Termo Prahova, NuclearElectrica and others.",
+    "canonical": null,
+    "ogTitle": "Control Centers — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/industries/control-centers.html"
+  },
+  {
+    "file": "legacy/industries/oil-and-gas.html",
+    "url": "/industries/oil-and-gas.html",
+    "title": "Oil and Gas — ISYSTEMS AUTOMATION",
+    "description": "Burner management, safety instrumented systems, MES displays and control room architecture for the oil and gas sector, from ISYSTEMS AUTOMATION.",
+    "canonical": null,
+    "ogTitle": "Oil and Gas — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/industries/oil-and-gas.html"
+  },
+  {
+    "file": "legacy/industries/power-generation.html",
+    "url": "/industries/power-generation.html",
+    "title": "Power Generation — ISYSTEMS AUTOMATION",
+    "description": "Automation for steam, gas and hydro turbines, HRSG, boilers and district heating, with IEC 60870-5-104 remote operation and measured turbine acceptance testing.",
+    "canonical": null,
+    "ogTitle": "Power Generation — ISYSTEMS AUTOMATION",
+    "ogDescription": "Automation for steam, gas and hydro turbines, HRSG, boilers and district heating, with IEC 60870-5-104 remote operation and measured turbine acceptance testing.",
+    "ogUrl": "https://www.isystemsautomation.com/industries/power-generation.html"
+  },
+  {
+    "file": "legacy/industries/smart-home-automation.html",
+    "url": "/industries/smart-home-automation.html",
+    "title": "Smart Home Automation — ISYSTEMS AUTOMATION",
+    "description": "HOMEMASTER by ISYSTEMS AUTOMATION: modular smart lighting, sockets, climate and security modules for homes and buildings.",
+    "canonical": null,
+    "ogTitle": "Smart Home Automation — ISYSTEMS AUTOMATION",
+    "ogDescription": null,
+    "ogUrl": "https://www.isystemsautomation.com/industries/smart-home-automation.html"
+  }
+]

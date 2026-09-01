@@ -6,6 +6,18 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPassthroughCopy("src/assets");
 
+  eleventyConfig.addCollection("pages", (collectionApi) =>
+    collectionApi
+      .getAll()
+      .filter(
+        (item) =>
+          item.inputPath.includes(`${require("path").sep}src${require("path").sep}`) &&
+          item.inputPath.endsWith(".njk") &&
+          !item.inputPath.endsWith("sitemap.njk") &&
+          !item.filePathStem.endsWith("smoke-test"),
+      ),
+  );
+
   return {
     dir: {
       input: "src",
@@ -13,5 +25,7 @@ module.exports = function (eleventyConfig) {
       includes: "_includes",
       data: "_data",
     },
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
   };
 };

@@ -1,0 +1,281 @@
+{
+  "slug": "references",
+  "source": "legacy/references.html",
+  "url": "/references.html",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "References",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "References"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "What we do on site",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "ISYSTEMS AUTOMATION has delivered control, protection and optimization systems since 2007. The list below covers projects carried out by the company. Where a client requires confidentiality, the site is described by type rather than by name."
+        },
+        {
+          "type": "raw_html",
+          "html": "<dl><div><dt>Since 2007</dt><dd>Company founded in Ploiești, Romania</dd></div><div><dt>ISO 9001</dt><dd>Certified since 2009</dd></div><div><dt>260 t/h at 100 bar</dt><dd>Largest CFB boiler under our control system</dd></div><div><dt>6 DCS platforms</dt><dd>Ovation, ABB 800xA, ABB Symphony, PCS7, TIA Portal, Centum VP</dd></div><div><dt>SIL 2 / SIL 3</dt><dd>Safety applications certified to IEC 61511</dd></div><div><dt>4 countries</dt><dd>Romania, Serbia, Kazakhstan, Russia</dd></div></dl>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What we do on site"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Engineering and design"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "DCS conceptual architecture, I/O databases, control logic and control narratives, HMI design and alarm schemes"
+            },
+            {
+              "html": "ESD and Burner Management System architecture, test and FAT procedures"
+            },
+            {
+              "html": "SIL 2 and SIL 3 certification support to IEC 61511"
+            },
+            {
+              "html": "I&amp;C design verification against local and international standards"
+            },
+            {
+              "html": "P&amp;ID, cable schedules, panel design, hook-up and as-built documentation"
+            },
+            {
+              "html": "Procurement of control and instrumentation equipment"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Commissioning and operation"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "Factory and site acceptance testing, loop checks, functional testing, loop tuning"
+            },
+            {
+              "html": "Autonomous plant operation with remote control over four redundant IEC 60870-5-104 channels"
+            },
+            {
+              "html": "Turbine acceptance testing: quality of primary and secondary frequency regulation, rate of load change, generator disconnection from the grid, emergency stops"
+            },
+            {
+              "html": "Boiler efficiency by direct and indirect method for gas and petroleum coke fired CFB boilers; steam turbine efficiency and losses; thermal and electrical energy balances"
+            },
+            {
+              "html": "Process data collection from control systems and commercial metering, long-term archiving and calculation"
+            },
+            {
+              "html": "DCS backup, lifecycle updates, and protection of control system assets against internal and external cyber threats"
+            },
+            {
+              "html": "Operator training on new control schemes"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Project list"
+        },
+        {
+          "type": "table",
+          "html": "<table class=\"isa-ref-table\">\n<thead><tr><th>Years</th><th>Project</th><th>Platform</th></tr></thead>\n<tbody>\n<tr><td>2022–present</td><td>Control system maintenance, refinery CHP plant, Ploiești, Romania — continuous safe operation of DCS, ESD, BMS and MES</td><td>Emerson Ovation, ABB Industrial IT 800xA, HIMA HIQuad, Honeywell PHD</td></tr>\n<tr><td>2020–2021</td><td>Hydroelectric power plant, Krasnaya Polyana, Russia — hydro turbine control</td><td>Siemens S7-300 / S7-1500 / S7-1200, TIA Portal</td></tr>\n<tr><td>2019–2021</td><td>Combined cycle power plant, Pančevo, Serbia — DCS and dual ESD</td><td>Emerson Ovation, ABB Symphony, Foxboro Triconex, ABB AC800</td></tr>\n<tr><td>2019</td><td>Hydroelectric power plant, Belorechensk, Russia — hydro turbine control</td><td>Yokogawa Centum VP</td></tr>\n<tr><td>2018</td><td>Photovoltaic plant — KKS/IEC coding for inverters, strings, 20 kV switchgear and transformers; single-line diagrams</td><td>—</td></tr>\n<tr><td>2016–2018</td><td>Refinery CHP plant, Ploiești — manufacturing execution system</td><td>Honeywell PHD</td></tr>\n<tr><td>2016</td><td>Refinery CHP plant, Ploiești — gas-fired steam boiler, modernization of DCS, ESD and BMS</td><td>Emerson Ovation, HIMA HIQuad</td></tr>\n<tr><td>2015</td><td>Azomureș chemical works, Târgu Mureș — technical proposal and schematics</td><td>—</td></tr>\n<tr><td>2015</td><td>Refinery CHP plant, Ploiești — steam turbine control</td><td>Emerson Ovation</td></tr>\n<tr><td>2015</td><td>Refinery CHP plant, Ploiești — automatic boiler start-up from hot state, boiler No. 3</td><td>—</td></tr>\n<tr><td>2014</td><td>TIAB — residential building automation</td><td>Legrand Celiane, Fibaro Z-Wave</td></tr>\n<tr><td>2013–2015</td><td>Refinery CHP plant, Ploiești — power plant coordinated control</td><td>Emerson Ovation, ABB Industrial IT</td></tr>\n<tr><td>2013</td><td>Refinery CHP plant, Ploiești — fifth electrostatic precipitator: design, P&amp;ID, cabling, panels, specifications</td><td>—</td></tr>\n<tr><td>2013</td><td>Refinery CHP plant, Ploiești — baghouse filter, AAF International — documentation and schematics</td><td>—</td></tr>\n<tr><td>2013</td><td>Refinery CHP plant, Ploiești — gas-fired steam boilers, load control loops: implementation and acceptance tests</td><td>Emerson Ovation, ABB Industrial IT</td></tr>\n<tr><td>2012–2013</td><td>Refinery CHP plant, Ploiești — circulating fluidized bed steam boiler, 260 t/h at 100 bar</td><td>Emerson Ovation, HIMA HIQuad ESD and BMS</td></tr>\n<tr><td>2012</td><td>Refinery CHP plant, Ploiești — boiler hall HVAC and smoke extraction for the 260 t/h CFB boiler, with ISPE, Siemens and Foster Wheeler</td><td>—</td></tr>\n<tr><td>2012</td><td>Dalkia CHP plant, Ploiești — turbine TA5: I&amp;C and DCS, P&amp;ID, panels, cable schedules, turbine interfaces, HMI</td><td>—</td></tr>\n<tr><td>2011</td><td>Dalkia CHP plant, Ploiești — steam turbine control</td><td>Siemens PCS7, S7-400 / S7-300</td></tr>\n<tr><td>2011</td><td>Refinery CHP plant, Ploiești — boiler No. 4, Foster Wheeler: full project including DCS, fuel oil burners, hook-up and signal databases</td><td>—</td></tr>\n<tr><td>2010</td><td>CHP plant, Teleajen — boiler No. 3 instrumentation and control: schematics, signal databases, ISA drawings, as-built documentation</td><td>—</td></tr>\n<tr><td>2010</td><td>Kazakhstan — plant automation</td><td>Allen-Bradley ControlLogix</td></tr>\n<tr><td>2009–2010</td><td>Refinery CHP plant, Ploiești — gas-fired steam boiler</td><td>Emerson Ovation, HIMA HIQuad SIS and BMS</td></tr>\n<tr><td>2008–2009</td><td>Gas distribution station, Atyrau, Kazakhstan</td><td>ABB SCADA</td></tr>\n<tr><td>2007–2008</td><td>Refinery CHP plant, Ploiești — steam turbine control</td><td>Emerson Ovation</td></tr>\n</tbody>\n</table>"
+        },
+        {
+          "type": "paragraph",
+          "html": "Client names available on request under NDA."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Featured projects"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/emissions-monitoring-display.jpg",
+          "alt": "Emissions monitoring display showing dust, NOx and SO2 readings",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Advanced load control, CFB boiler"
+        },
+        {
+          "type": "paragraph",
+          "html": "Energy boiler, 260 t/h steam at 100 bar, circulating fluidized bed, firing petroleum coke, coal, gas and fuel oil, on DCS Emerson Ovation."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Delivered:</strong> coordinated boiler–turbine load control; solid fuel allocation across feeders by heat value; steam temperature control by cascade regulators with a superheater model; primary and secondary air control; SO2 and NOx regulation through furnace temperature and lime dosing; automatic calculation of petroleum coke calorific value; and an oxygen cascade controller referenced to boiler mode and fuel."
+        },
+        {
+          "type": "paragraph",
+          "html": "<a href=\"/advanced-controllers-cfb-boiler.html\">Read more</a>"
+        },
+        {
+          "type": "image",
+          "src": "/images/2024/08/11/virtual-power-plant.jpg",
+          "alt": "Virtual power plant dispatch schematic",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Virtual power plant"
+        },
+        {
+          "type": "paragraph",
+          "html": "Four photovoltaic plants, one wind farm and one conventional gas/coal plant with boilers and steam turbines combined into a single dispatch unit: three remote PV control systems at 1 MW each, a local PV control system at 9 MW and a remote wind control system at 80 MW, all connected to the gas/coal plant control system, with output balanced by the steam turbine to a predetermined schedule."
+        },
+        {
+          "type": "paragraph",
+          "html": "<a href=\"/virtual-power-plant.html\">Read more</a>"
+        },
+        {
+          "type": "image",
+          "src": "/images/2024/08/11/combustion-efficiency.jpg",
+          "alt": "Combustion efficiency monitoring display",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Plant performance monitoring"
+        },
+        {
+          "type": "paragraph",
+          "html": "Real-time efficiency of boilers, turbines and heat exchangers against design values, with the cost of losses and deviations from factory specification calculated continuously, plus energy and material balances for water, steam, gas and electricity. Data from DCS ABB Industrial IT and DCS Emerson Ovation over OPC, and from SCADA and commercial metering over Modbus, with central long-term archiving. Calculations follow ASME and other industry standards."
+        },
+        {
+          "type": "paragraph",
+          "html": "<a href=\"/power-plant-performance-calculation.html\">Read more</a>"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/control-room-combined-cycle.jpg",
+          "alt": "Combined-cycle plant control room",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Control centers"
+        },
+        {
+          "type": "paragraph",
+          "html": "Design, manufacture and supply of control room equipment and operator furniture, covering acoustics, layout, lighting, microclimate, backup power and operator interface, specified for 24/7 operation."
+        },
+        {
+          "type": "paragraph",
+          "html": "<a href=\"/service/industrial-furniture-control-centers.html\">Read more</a>"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Systems we work with"
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>DCS</strong>   Emerson Ovation · ABB Industrial IT 800xA · ABB Symphony · Siemens PCS7 · Yokogawa Centum VP"
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>ESD / BMS</strong>   HIMA HIQuad · Foxboro Triconex · ABB AC800"
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>PLC</strong>   Siemens S7-1500 / S7-1200 / S7-400 / S7-300 · Allen-Bradley ControlLogix"
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>MES / Historian</strong>   Honeywell PHD · OSIsoft PI System"
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Other</strong>   Braun turbine overspeed protection · IEC 60870-5-104 telecontrol · EPLAN · AutoCAD"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Gallery"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/marshalling-cable-marking.jpg",
+          "alt": "Marshalling cabinet, every control cable individually tagged",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/yokogawa-centum-cabinet.jpg",
+          "alt": "Yokogawa Centum control cabinet, I/O modules and marshalling",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/redundant-network-cabinet.jpg",
+          "alt": "Control cabinet with redundant industrial Ethernet",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/atex-zone2-barriers.jpg",
+          "alt": "ATEX Zone 2 intrinsically safe isolating barriers",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/steam-turbine-generator-hall.jpg",
+          "alt": "Steam turbine and generator set, machine hall",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/steam-turbine-casing.jpg",
+          "alt": "Steam turbine casing with control valve actuator",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/turbine-installation.jpg",
+          "alt": "Steam turbine during installation",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/turbine-diaphragm.jpg",
+          "alt": "Steam turbine diaphragm during overhaul",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/generator-rotor-removal.jpg",
+          "alt": "Generator rotor removal using lifting fixtures",
+          "href": null
+        }
+      ]
+    }
+  ],
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+}

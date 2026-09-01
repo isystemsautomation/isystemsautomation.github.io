@@ -1,0 +1,259 @@
+{
+  "slug": "industries-power-generation",
+  "source": "legacy/industries/power-generation.html",
+  "url": "/industries/power-generation.html",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Power Engineering",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Power Engineering"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Power Engineering: Fundamental Electrical Engineering Excellence",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "/images/projects/steam-turbine-generator-hall.jpg",
+          "alt": "Steam turbine and generator set in the machine hall",
+          "href": "https://www.joomshaper.com"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Power Engineering: Fundamental Electrical Engineering Excellence"
+        },
+        {
+          "type": "paragraph",
+          "html": "Since our establishment, our company has been at the forefront of automating the production processes of electricity and heat. Our specialists possess in-depth knowledge and extensive experience in these critical areas, ensuring top-notch expertise and innovation in power engineering."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Areas of Expertise of Our Specialists:",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Areas of Expertise of Our Specialists:"
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Condensed Steam Turbine:</strong> Expertly designed for efficient energy conversion from steam."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Back Pressure Steam Turbine:</strong> Specialized in optimizing energy recovery in industrial processes."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Gas Turbines:</strong> Advanced solutions for high-efficiency power generation."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Hydro Turbine:</strong> Cutting-edge technology for sustainable hydroelectric power."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Heat Recovery Steam Generator:</strong> Maximizing energy efficiency by recovering waste heat."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Steam Boilers with Gas Combustion Process:</strong> Precision-engineered for cleaner, more efficient combustion."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Steam Boilers with Liquid Fuel Burning Process:</strong> Optimized for diverse fuel types and efficient operation."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Steam Boilers with Mixed Burning Process:</strong> Innovative fluidized bed technology for versatile fuel usage (gas/solid fuel/semi-liquid fuel)."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>AAF Bags for Cleaning Ash:</strong> Effective ash removal systems for steam boilers burning solid fuel."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>City Heating System - District Heating:</strong> Comprehensive solutions for efficient and reliable urban heating."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Eolian Powerplant:</strong> Harnessing wind energy for sustainable power generation."
+        },
+        {
+          "type": "paragraph",
+          "html": "Our commitment to excellence in power engineering and fundamental electrical engineering is unwavering. We continue to push the boundaries of innovation, ensuring that our clients receive the highest quality solutions for their power generation needs."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Remote and autonomous plant operation"
+        },
+        {
+          "type": "paragraph",
+          "html": "Power plants under our control systems run unattended and are dispatched remotely over IEC 60870-5-104 telecontrol, carried on four redundant communication channels so that the loss of any single path does not interrupt control or data transfer. Scope covers the telecontrol gateway, signal mapping, redundancy switchover logic and testing of channel failover under load."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Turbine acceptance testing"
+        },
+        {
+          "type": "paragraph",
+          "html": "Turbine control systems are commissioned and handed over against measured acceptance criteria, not against a checklist. Tests performed:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "Quality of primary frequency regulation"
+            },
+            {
+              "html": "Quality of secondary frequency regulation"
+            },
+            {
+              "html": "Rate of change of load"
+            },
+            {
+              "html": "Disconnection of the generator from the grid, with the unit held on house load"
+            },
+            {
+              "html": "Emergency stop and overspeed protection, including Braun turbine overspeed systems"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "Results are recorded and used for the certification of the turbine."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "What We Do",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "What We Do"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "<a aria-controls=\"sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c170\" aria-selected=\"true\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c170\" id=\"sppb-content-9538d84d-f33f-4ab0-b622-0c104c025c170\" role=\"tab\"> Power Generation </a>"
+            },
+            {
+              "html": "<a aria-controls=\"sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c171\" aria-selected=\"false\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c171\" id=\"sppb-content-9538d84d-f33f-4ab0-b622-0c104c025c171\" role=\"tab\"> Oil and Gas </a>"
+            },
+            {
+              "html": "<a aria-controls=\"sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c172\" aria-selected=\"false\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c172\" id=\"sppb-content-9538d84d-f33f-4ab0-b622-0c104c025c172\" role=\"tab\"> Cement and Coal </a>"
+            },
+            {
+              "html": "<a aria-controls=\"sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c173\" aria-selected=\"false\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c173\" id=\"sppb-content-9538d84d-f33f-4ab0-b622-0c104c025c173\" role=\"tab\"> Control Centers </a>"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/steam-turbine-generator-hall.jpg",
+          "alt": "Steam turbine and generator set in the machine hall",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Power Engineering: Fundamental Electrical Engineering Excellence"
+        },
+        {
+          "type": "paragraph",
+          "html": "Since our establishment, our company has been at the forefront of automating the production processes of electricity and heat. Our specialists possess in-depth knowledge and extensive experience in these critical areas, ensuring top-notch expertise and innovation in power engineering."
+        },
+        {
+          "type": "link",
+          "href": "/industries/power-generation.html",
+          "text": "Learn More"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/atex-zone2-barriers.jpg",
+          "alt": "ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Understanding the Dynamics of the Oil and Gas Industry"
+        },
+        {
+          "type": "paragraph",
+          "html": "At the core of this industry lies the need for advanced technologies and solutions to optimize production and achieve maximum potential. We offer state-of-the-art solutions tailored to meet these needs. Innovative designs that facilitate seamless control and monitoring of operations, enhancing productivity and safety."
+        },
+        {
+          "type": "link",
+          "href": "/industries/oil-and-gas.html",
+          "text": "Learn More"
+        },
+        {
+          "type": "image",
+          "src": "/images/2024/08/10/cement_and_coal.jpg",
+          "alt": "Cement and coal plant automation",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Embracing Automation in the Cement and Coal Industries"
+        },
+        {
+          "type": "paragraph",
+          "html": "Cement production processes are typically discontinuous and operate in batches, while coal industry processes are continuous and run at maximum production capacity."
+        },
+        {
+          "type": "paragraph",
+          "html": "The implementation of automation solutions addresses these critical needs by ensuring that processes are meticulously controlled and monitored."
+        },
+        {
+          "type": "link",
+          "href": "/industries/cement-and-coal.html",
+          "text": "Learn More"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/control-room-combined-cycle.jpg",
+          "alt": "Combined-cycle plant control room with operator consoles and overview display",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Innovative Solutions Unveiled in Industrial Control Centers Design"
+        },
+        {
+          "type": "paragraph",
+          "html": "Control centers are designed with the latest technological advancements, ensuring that they meet the highest standards of safety and reliability. The furniture, meticulously crafted, complements these designs by providing ergonomic solutions that cater to the unique needs of control room operators."
+        },
+        {
+          "type": "paragraph",
+          "html": "Our designs are not only about enhancing the operational efficiency but also about improving the overall well-being of the operators who spend long hours in these environments."
+        },
+        {
+          "type": "link",
+          "href": "/industries/control-centers.html",
+          "text": "Learn More"
+        }
+      ]
+    }
+  ],
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+}

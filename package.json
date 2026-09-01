@@ -2,10 +2,12 @@
   "name": "isystemsautomation-site",
   "private": true,
   "scripts": {
-    "build": "eleventy",
-    "serve": "eleventy --serve"
+    "build": "node tools/generate-pages.mjs && eleventy",
+    "verify": "node tools/verify-content.mjs",
+    "serve": "npm run build && eleventy --serve"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "cheerio": "^1.2.0"
   }
 }

@@ -1,0 +1,138 @@
+{
+  "slug": "404",
+  "source": "legacy/404.html",
+  "url": "/404.html",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "404",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "404"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Page not found"
+        },
+        {
+          "type": "paragraph",
+          "html": "The page you requested does not exist. <a href=\"/\">Return to the home page</a>."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/images/isystems-automation-logo.png",
+      "alt": "ISYSTEMS AUTOMATION",
+      "href": "/"
+    },
+    {
+      "type": "section",
+      "title": null,
+      "blocks": [
+        {
+          "type": "link",
+          "href": "/industries.html",
+          "text": "INDUSTRIES"
+        },
+        {
+          "type": "link",
+          "href": "/industries/power-generation.html",
+          "text": "Power Generation"
+        },
+        {
+          "type": "link",
+          "href": "/industries/oil-and-gas.html",
+          "text": "Oil and Gas"
+        },
+        {
+          "type": "link",
+          "href": "/industries/cement-and-coal.html",
+          "text": "Cement and Coal"
+        },
+        {
+          "type": "link",
+          "href": "/industries/control-centers.html",
+          "text": "Control Centers"
+        },
+        {
+          "type": "link",
+          "href": "/service.html",
+          "text": "SERVICE"
+        },
+        {
+          "type": "link",
+          "href": "/service/process-automation.html",
+          "text": "Process Automation"
+        },
+        {
+          "type": "link",
+          "href": "/service/process-optimization-advanced-process-control.html",
+          "text": "Advanced process control"
+        },
+        {
+          "type": "link",
+          "href": "/service/manufacturing-execution-system.html",
+          "text": "MES (Manufacturing Execution System)"
+        },
+        {
+          "type": "link",
+          "href": "/service/safety-systems-burner-management-systems.html",
+          "text": "Safety Systems"
+        },
+        {
+          "type": "link",
+          "href": "/service/industrial-furniture-control-centers.html",
+          "text": "Industrial furniture"
+        },
+        {
+          "type": "link",
+          "href": "/service/maintenance.html",
+          "text": "Maintenance"
+        },
+        {
+          "type": "link",
+          "href": "/",
+          "text": "COMPANY"
+        },
+        {
+          "type": "link",
+          "href": "/contact.html",
+          "text": "CONTACT"
+        }
+      ]
+    },
+    {
+      "type": "raw_html",
+      "html": "<div class=\"isa-footer-copy\">\n    © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved.\n  </div>"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        {
+          "html": "<a href=\"/\">HOME</a>"
+        },
+        {
+          "html": "<a href=\"/industries.html\">INDUSTRIES</a><span aria-controls=\"collapse-menu-101\" aria-expanded=\"false\" class=\"offcanvas-menu-toggler collapsed\" data-bs-target=\"#collapse-menu-101\" data-bs-toggle=\"collapse\"><i class=\"fa fa-plus\"></i><i class=\"fa fa-minus\"></i></span><ul class=\"collapse\" id=\"collapse-menu-101\"><li class=\"item-126\"><a href=\"/industries/power-generation.html\">Power Generation</a></li><li class=\"item-127\"><a href=\"/industries/oil-and-gas.html\">Oil and Gas</a></li><li class=\"item-128\"><a href=\"/industries/cement-and-coal.html\">Cement and Coal</a></li><li class=\"item-129\"><a href=\"/industries/control-centers.html\">Control Centers</a></li><li class=\"item-130\"><a href=\"/industries/smart-home-automation.html\">Smart Home Automation</a></li></ul>"
+        },
+        {
+          "html": "<a href=\"/service.html\">SERVICE</a><span aria-controls=\"collapse-menu-115\" aria-expanded=\"false\" class=\"offcanvas-menu-toggler collapsed\" data-bs-target=\"#collapse-menu-115\" data-bs-toggle=\"collapse\"><i class=\"fa fa-plus\"></i><i class=\"fa fa-minus\"></i></span><ul class=\"collapse\" id=\"collapse-menu-115\"><li class=\"item-120\"><a href=\"/service/process-automation.html\">Process Automation</a></li><li class=\"item-121\"><a href=\"/service/process-optimization-advanced-process-control.html\">Process optimization / Advanced process control</a></li><li class=\"item-122\"><a href=\"/service/manufacturing-execution-system.html\">MES (Manufacturing Execution System)</a></li><li class=\"item-123\"><a href=\"/service/safety-systems-burner-management-systems.html\">Safety Systems and Burner Management Systems</a></li><li class=\"item-124\"><a href=\"/service/industrial-furniture-control-centers.html\">Industrial furniture / Control centers</a></li><li class=\"item-125\"><a href=\"/service/maintenance.html\">Maintenance</a></li></ul>"
+        },
+        {
+          "html": "<a href=\"/references.html\">REFERENCES</a>"
+        },
+        {
+          "html": "<a href=\"/company.html\">COMPANY</a>"
+        },
+        {
+          "html": "<a href=\"/contact.html\">CONTACT</a>"
+        }
+      ]
+    }
+  ],
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+}

@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}</title>
   {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+  {% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
+  {% if ogTitle %}<meta property="og:title" content="{{ ogTitle }}">{% endif %}
+  {% if ogDescription %}<meta property="og:description" content="{{ ogDescription }}">{% endif %}
+  {% if ogUrl %}<meta property="og:url" content="{{ ogUrl }}">{% endif %}
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="stylesheet" href="/assets/css/isa.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  {% include "partials/header.njk" %}
   <main id="main">
     {{ content | safe }}
   </main>
+  {% include "partials/footer.njk" %}
 </body>
 </html>

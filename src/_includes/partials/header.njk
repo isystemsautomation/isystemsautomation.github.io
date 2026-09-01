@@ -1,0 +1,23 @@
+{% from "partials/nav.njk" import navList %}
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="/index.html">
+      <img src="/assets/img/isystems-automation-logo.png" alt="ISYSTEMS AUTOMATION" width="180" height="40">
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      {{ navList(nav, pageUrl or url, false) }}
+    </nav>
+
+    <details class="nav-toggle">
+      <summary aria-label="Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+      </summary>
+      <nav class="nav-panel" aria-label="Main">
+        {{ navList(nav, pageUrl or url, true) }}
+      </nav>
+    </details>
+  </div>
+</header>

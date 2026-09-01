@@ -1,0 +1,254 @@
+{
+  "slug": "service-maintenance",
+  "source": "legacy/service/maintenance.html",
+  "url": "/service/maintenance.html",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Maintenance",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Maintenance"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Importance of Regular and Preventive Maintenance for CONTROL SYSTEMS",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "/images/2024/08/10/maintenance.jpg",
+          "alt": "Industrial automation maintenance and technical support",
+          "href": "https://www.joomshaper.com"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Importance of Regular and Preventive Maintenance for CONTROL SYSTEMS"
+        },
+        {
+          "type": "paragraph",
+          "html": "Ensuring the seamless operation of your production line is critical, and one of the most significant threats to this is issues within your CONTROL SYSTEM. Maintenance is essential for mitigating these risks, whether it be regular, preventive, or unscheduled. A well-planned and scheduled maintenance strategy can save your company from production slowdowns or even complete stoppages due to CONTROL SYSTEM failures."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "ISYSTEMS AUTOMATION has experience servicing systems such as:",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "Keep your process on track with ISYSTEMS AUTOMATION Maintenance and Technical Support Services. Our extensive on-site and remote capabilities are available to help maintain the smooth operation of your systems."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">Improve process performance while reducing costs</p>"
+            },
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">Minimize safety and environmental risks</p>"
+            },
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">Extend the lifetime of your investments</p>"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "At ISYSTEMS AUTOMATION, our maintenance services are carefully designed to increase the efficiency and optimize the reliability and longevity of your automation systems with minimal effort. We prioritize targeted, condition-based actions to help you achieve peak performance.&nbsp;"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "ISYSTEMS AUTOMATION has experience servicing systems such as:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">ABB Industrial IT 800xA&nbsp;</p>"
+            },
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">Emerson Ovation&nbsp;</p>"
+            },
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">HIMA HIQuad&nbsp;</p>"
+            },
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">SIEMENS PCS7&nbsp;</p>"
+            },
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">SIEMENS TIA Portal&nbsp;</p>"
+            },
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">Yokogawa Centum</p>"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "&nbsp;The core of effective maintenance is a comprehensive audit of systems and devices. Using accurate and up-to-date condition data, we can pinpoint the actions needed, when and where they are required, thereby eliminating unnecessary maintenance tasks. This approach also forms the basis for predictive maintenance strategies, which play a critical role in reducing the risk of unexpected failures. With ISYSTEMS AUTOMATION, you can trust us to manage your automation maintenance needs completely, leveraging our experience as a leading automation supplier and our extensive global network of specialists. Our maintenance services can seamlessly complement your existing resources and capabilities, providing a comprehensive and proactive approach to system maintenance."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Maintenance and Technical Support services:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">Preventive Maintenance</p>"
+            },
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">Service Calls</p>"
+            },
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">On-Demand Support</p>"
+            },
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">Remote Support</p>"
+            },
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">Emergency Visit</p>"
+            },
+            {
+              "html": "<p style=\"margin-bottom: 0px;\">System and Device Assessment</p>"
+            },
+            {
+              "html": "Maintenance Scheduling and Implementation"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Performance calculation and reporting"
+        },
+        {
+          "type": "paragraph",
+          "html": "Alongside condition-based maintenance, we implement the calculations that show whether a plant is performing as designed:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "Boiler efficiency by direct and indirect method, for gas-fired and petroleum coke fired circulating fluidized bed boilers"
+            },
+            {
+              "html": "Steam turbine efficiency and losses"
+            },
+            {
+              "html": "Thermal balances and electrical energy balances"
+            },
+            {
+              "html": "Process data collection from control systems and commercial metering units, with long-term archiving"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "Control loop performance is monitored continuously, loops are retuned, and alternative control strategies are implemented where the existing one limits the unit."
+        },
+        {
+          "type": "paragraph",
+          "html": "In a typical&nbsp;plant setting, numerous controls and processes may not be functioning at their best, leading to inconsistent production, higher raw material usage, increased energy consumption, and reduced yields. Maintenance service from&nbsp;ISYSTEMS AUTOMATION offers PID tuning and process control systems tuning aimed at pinpointing the controls affecting performance and assisting you in achieving optimal production levels."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Our Services",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Our Services"
+        },
+        {
+          "type": "paragraph",
+          "html": "ISYSTEMS AUTOMATION is a leading name in Engineering &amp; Consulting, Protection Systems, and Process Control &amp; Electrical Automation. As of today, we can now follow the entire cycle for any project."
+        },
+        {
+          "type": "paragraph",
+          "html": "This expansion reflects our ongoing commitment to professionalism, responsibility, innovation, and flexibility. Our team of experts is dedicated to providing clients with the confidence to make informed decisions, ensuring the highest levels of efficiency, energy savings, and environmental stewardship."
+        },
+        {
+          "type": "image",
+          "src": "/images/2024/08/10/process_automation.jpg",
+          "alt": "Process automation control system",
+          "href": "/"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Process Automation"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/redundant-network-cabinet.jpg",
+          "alt": "Control cabinet with redundant industrial Ethernet switches",
+          "href": "/"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Process optimization / Advanced process control"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/yokogawa-centum-cabinet.jpg",
+          "alt": "Yokogawa Centum control cabinet with I/O modules and marshalling",
+          "href": "/"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "MES (Manufacturing Execution System)"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/atex-zone2-barriers.jpg",
+          "alt": "ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet",
+          "href": "/"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Safety Systems and Burner Management Systems"
+        },
+        {
+          "type": "image",
+          "src": "/images/2024/08/10/industrial_furniture_control_centers.jpg",
+          "alt": "Ergonomic control center operator furniture",
+          "href": "/"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Industrial furniture / Control centers"
+        },
+        {
+          "type": "image",
+          "src": "/images/2024/08/10/maintenance.jpg",
+          "alt": "Industrial automation maintenance and technical support",
+          "href": "/"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Maintenance"
+        }
+      ]
+    }
+  ],
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+}

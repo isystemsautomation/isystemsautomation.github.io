@@ -1,0 +1,244 @@
+{
+  "slug": "service-safety-systems-burner-management-systems",
+  "source": "legacy/service/safety-systems-burner-management-systems.html",
+  "url": "/service/safety-systems-burner-management-systems.html",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Safety Systems and Burner Management Systems",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Safety Systems and Burner Management Systems"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Burner Management System (BMS): Ensuring Safety and Efficiency in Combustion Processes",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "/images/projects/atex-zone2-barriers.jpg",
+          "alt": "ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet",
+          "href": "https://www.joomshaper.com"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Burner Management System (BMS): Ensuring Safety and Efficiency in Combustion Processes"
+        },
+        {
+          "type": "paragraph",
+          "html": "As a step towards increased safety in industrial operations, we introduce the Burner Management System (BMS). Carefully designed to ensure safe start-up, operation and shutdown of process burners, the BMS acts as a guardian to protect combustion equipment."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Safety Instrumented System (SIS): Protecting Plants from Potentially Dangerous States",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "The Burner Management System is an integral safety mechanism that mitigates the risks associated with industrial combustion processes. Through a combination of advanced technology and robust design, BMS prevents explosions and other hazardous accidents, securing both personnel and equipment."
+        },
+        {
+          "type": "paragraph",
+          "html": "By integrating security protocols, BMS not only protects valuable equipment but also helps create a safer working environment."
+        },
+        {
+          "type": "paragraph",
+          "html": "Key features of the BMS include:"
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Automated Safety Controls</strong>: The system automatically manages the ignition and shutdown of burners, ensuring consistent and safe operations."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Real-time Monitoring</strong>: Continuous surveillance of combustion parameters allows for immediate detection and correction of any anomalies."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Fail-safe Mechanisms</strong>: In the event of a malfunction, the BMS activates emergency shutdown procedures to prevent accidents."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>User-friendly Interface</strong>: An intuitive control panel provides operators with easy access to system status and controls."
+        },
+        {
+          "type": "paragraph",
+          "html": "With the launch of the Burner Management System, industries can now operate with heightened confidence, knowing that their combustion processes are under constant and vigilant protection. This innovation not only enhances operational safety but also contributes to overall process efficiency by minimizing downtime and maintenance costs."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Safety Instrumented System (SIS): Protecting Plants from Potentially Dangerous States"
+        },
+        {
+          "type": "paragraph",
+          "html": "As an important step towards strengthening industrial safety, we use the Industrial Safety Instrumented System (SIS) in our projects. This automatic protection system is designed to shut down the plant if it enters a potentially dangerous state, ensuring the utmost safety for personnel, equipment, and the environment."
+        },
+        {
+          "type": "paragraph",
+          "html": "The Safety Instrumented System is a critical safety mechanism that addresses the inherent risks in industrial operations. By swiftly identifying, assessing, analyzing, and controlling risks, SIS mitigates the potential for hazardous incidents and enhances overall plant safety."
+        },
+        {
+          "type": "paragraph",
+          "html": "With the integration of SIS,  we are not only protecting our assets but also ensuring a safer workplace for employees."
+        },
+        {
+          "type": "paragraph",
+          "html": "Key features of the SIS include:"
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Comprehensive Hazard Identification</strong>: The system is equipped to identify a wide range of hazards, from fires and gas leaks to equipment failures."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Risk Assessment and Analysis</strong>: Advanced algorithms assess and analyze the identified risks in real-time, ensuring prompt and accurate decision-making."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Automated Risk Control</strong>: In the event of an abnormal condition, the SIS activates emergency shutdown procedures, preventing accidents and mitigating potential hazards."
+        },
+        {
+          "type": "paragraph",
+          "html": "- <strong>Robust Network of Sensors and Actuators</strong>: The system incorporates a network of sensors, actuators, and control mechanisms to detect and respond to abnormal conditions rapidly."
+        },
+        {
+          "type": "paragraph",
+          "html": "With the launch of the Safety Instrumented System, industries can now operate with increased confidence, knowing that their operations are under continuous and vigilant protection. This innovation not only enhances operational safety but also contributes to overall process efficiency by reducing downtime and maintenance costs."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Functional safety to IEC 61511",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Functional safety to IEC 61511"
+        },
+        {
+          "type": "paragraph",
+          "html": "Safety functions are specified, implemented and verified under the functional safety lifecycle of IEC 61511. ISYSTEMS AUTOMATION has taken part in the certification of SIL 2 and SIL 3 applications, covering:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "Safety requirement specifications and cause-and-effect matrices"
+            },
+            {
+              "html": "ESD and BMS conceptual architecture, including sensor, logic solver and final element subsystems"
+            },
+            {
+              "html": "Test procedures, Factory Acceptance Tests and site loop testing against the safety requirement specification"
+            },
+            {
+              "html": "Proof test intervals and documentation for the operating phase"
+            },
+            {
+              "html": "Verification of I&amp;C design documentation against local and international standards"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "Safety logic solvers delivered on HIMA HIQuad, Foxboro Triconex and ABB AC800, with burner management on HIMA HIQuad."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Our Services",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Our Services"
+        },
+        {
+          "type": "paragraph",
+          "html": "ISYSTEMS AUTOMATION is a leading name in Engineering &amp; Consulting, Protection Systems, and Process Control &amp; Electrical Automation. As of today, we can now follow the entire cycle for any project."
+        },
+        {
+          "type": "paragraph",
+          "html": "This expansion reflects our ongoing commitment to professionalism, responsibility, innovation, and flexibility. Our team of experts is dedicated to providing clients with the confidence to make informed decisions, ensuring the highest levels of efficiency, energy savings, and environmental stewardship."
+        },
+        {
+          "type": "image",
+          "src": "/images/2024/08/10/process_automation.jpg",
+          "alt": "Process automation control system",
+          "href": "/"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Process Automation"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/redundant-network-cabinet.jpg",
+          "alt": "Control cabinet with redundant industrial Ethernet switches",
+          "href": "/"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Process optimization / Advanced process control"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/yokogawa-centum-cabinet.jpg",
+          "alt": "Yokogawa Centum control cabinet with I/O modules and marshalling",
+          "href": "/"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "MES (Manufacturing Execution System)"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/atex-zone2-barriers.jpg",
+          "alt": "ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet",
+          "href": "/"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Safety Systems and Burner Management Systems"
+        },
+        {
+          "type": "image",
+          "src": "/images/2024/08/10/industrial_furniture_control_centers.jpg",
+          "alt": "Ergonomic control center operator furniture",
+          "href": "/"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Industrial furniture / Control centers"
+        },
+        {
+          "type": "image",
+          "src": "/images/2024/08/10/maintenance.jpg",
+          "alt": "Industrial automation maintenance and technical support",
+          "href": "/"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Maintenance"
+        }
+      ]
+    }
+  ],
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+}

@@ -1,0 +1,70 @@
+{
+  "slug": "cookies",
+  "source": "legacy/cookies.html",
+  "url": "/cookies.html",
+  "blocks": [
+    {
+      "type": "section",
+      "title": "Cookie Policy",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Cookie Policy"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "What we use",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "What we use"
+        },
+        {
+          "type": "paragraph",
+          "html": "This site sets no analytics, profiling or advertising cookies. It is a static site; nothing on it needs to remember you between visits."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Cookies you may still receive"
+        },
+        {
+          "type": "paragraph",
+          "html": "Cloudflare may set a strictly necessary cookie (cf_clearance / __cf_bm) for security and bot mitigation. These are exempt from consent under Art. 5(3) of the ePrivacy Directive as strictly necessary for a service you requested."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Third-party content"
+        },
+        {
+          "type": "paragraph",
+          "html": "Pages load web fonts from Google Fonts (fonts.googleapis.com / fonts.gstatic.com). This sends your IP address to Google but sets no cookies."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Your control"
+        },
+        {
+          "type": "paragraph",
+          "html": "Any browser lets you block or delete cookies; blocking strictly necessary ones may prevent the site from loading."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Last updated"
+        },
+        {
+          "type": "paragraph",
+          "html": "31 August 2026"
+        }
+      ]
+    }
+  ],
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+}
