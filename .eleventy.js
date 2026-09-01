@@ -14,7 +14,8 @@ module.exports = function (eleventyConfig) {
           item.inputPath.includes(`${require("path").sep}src${require("path").sep}`) &&
           item.inputPath.endsWith(".njk") &&
           !item.inputPath.endsWith("sitemap.njk") &&
-          !item.filePathStem.endsWith("smoke-test"),
+          !item.filePathStem.endsWith("smoke-test") &&
+          !item.data.eleventyExcludeFromCollections,
       ),
   );
 

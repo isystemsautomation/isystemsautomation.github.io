@@ -127,11 +127,7 @@
         },
         {
           "type": "paragraph",
-          "html": "<strong>Delivered:</strong> coordinated boiler–turbine load control; solid fuel allocation across feeders by heat value; steam temperature control by cascade regulators with a superheater model; primary and secondary air control; SO2 and NOx regulation through furnace temperature and lime dosing; automatic calculation of petroleum coke calorific value; and an oxygen cascade controller referenced to boiler mode and fuel."
-        },
-        {
-          "type": "paragraph",
-          "html": "<a href=\"/advanced-controllers-cfb-boiler.html\">Read more</a>"
+          "html": "<a href=\"/projects/advanced-controllers-cfb-boiler.html\">Read more</a>"
         },
         {
           "type": "image",
@@ -146,11 +142,11 @@
         },
         {
           "type": "paragraph",
-          "html": "Four photovoltaic plants, one wind farm and one conventional gas/coal plant with boilers and steam turbines combined into a single dispatch unit: three remote PV control systems at 1 MW each, a local PV control system at 9 MW and a remote wind control system at 80 MW, all connected to the gas/coal plant control system, with output balanced by the steam turbine to a predetermined schedule."
+          "html": "Four photovoltaic plants, one wind farm and one conventional gas/coal plant combined into a single dispatch unit balanced by the steam turbine."
         },
         {
           "type": "paragraph",
-          "html": "<a href=\"/virtual-power-plant.html\">Read more</a>"
+          "html": "<a href=\"/projects/virtual-power-plant.html\">Read more</a>"
         },
         {
           "type": "image",
@@ -165,11 +161,11 @@
         },
         {
           "type": "paragraph",
-          "html": "Real-time efficiency of boilers, turbines and heat exchangers against design values, with the cost of losses and deviations from factory specification calculated continuously, plus energy and material balances for water, steam, gas and electricity. Data from DCS ABB Industrial IT and DCS Emerson Ovation over OPC, and from SCADA and commercial metering over Modbus, with central long-term archiving. Calculations follow ASME and other industry standards."
+          "html": "Real-time efficiency of boilers, turbines and heat exchangers against design values, with loss costs and deviations calculated continuously from DCS and metering data."
         },
         {
           "type": "paragraph",
-          "html": "<a href=\"/power-plant-performance-calculation.html\">Read more</a>"
+          "html": "<a href=\"/projects/power-plant-performance-calculation.html\">Read more</a>"
         },
         {
           "type": "image",

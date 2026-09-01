@@ -11,7 +11,16 @@ const INVENTORY_PATH = path.join(ROOT, 'content', '_inventory.json');
 const CONTENT_DIR = path.join(ROOT, 'content');
 const SRC_DIR = path.join(ROOT, 'src');
 
+const PROJECT_SLUGS = new Set([
+  'advanced-controllers-cfb-boiler',
+  'power-plant-performance-calculation',
+  'virtual-power-plant',
+]);
+
 function slugToSrcPath(slug) {
+  if (PROJECT_SLUGS.has(slug)) {
+    return path.join(SRC_DIR, 'projects', `${slug}.njk`);
+  }
   if (slug.startsWith('service-')) {
     return path.join(SRC_DIR, 'service', `${slug.slice('service-'.length)}.njk`);
   }

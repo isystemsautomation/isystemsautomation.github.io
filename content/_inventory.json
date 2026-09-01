@@ -21,13 +21,13 @@
   },
   {
     "file": "legacy/advanced-controllers-cfb-boiler.html",
-    "url": "/advanced-controllers-cfb-boiler.html",
+    "url": "/projects/advanced-controllers-cfb-boiler.html",
     "title": "Advanced Controllers for CFB Boilers — ISYSTEMS AUTOMATION",
     "description": "Advanced load controllers for a 260 t/h circulating fluidized bed boiler on DCS Emerson Ovation: combustion optimization, emissions control and fuel quality compensation.",
     "canonical": null,
     "ogTitle": "Advanced Controllers for CFB Boilers — ISYSTEMS AUTOMATION",
     "ogDescription": null,
-    "ogUrl": "https://www.isystemsautomation.com/advanced-controllers-cfb-boiler.html"
+    "ogUrl": "https://www.isystemsautomation.com/projects/advanced-controllers-cfb-boiler.html"
   },
   {
     "file": "legacy/company.html",
@@ -71,13 +71,13 @@
   },
   {
     "file": "legacy/power-plant-performance-calculation.html",
-    "url": "/power-plant-performance-calculation.html",
+    "url": "/projects/power-plant-performance-calculation.html",
     "title": "Power Plant Performance Calculation — ISYSTEMS AUTOMATION",
     "description": "Plant Performance Monitoring: real-time efficiency of boilers, turbines and heat exchangers against design values, with OPC and Modbus integration and long-term archiving.",
     "canonical": null,
     "ogTitle": "Power Plant Performance Calculation — ISYSTEMS AUTOMATION",
     "ogDescription": null,
-    "ogUrl": "https://www.isystemsautomation.com/power-plant-performance-calculation.html"
+    "ogUrl": "https://www.isystemsautomation.com/projects/power-plant-performance-calculation.html"
   },
   {
     "file": "legacy/privacy.html",
@@ -111,13 +111,13 @@
   },
   {
     "file": "legacy/virtual-power-plant.html",
-    "url": "/virtual-power-plant.html",
+    "url": "/projects/virtual-power-plant.html",
     "title": "Virtual Power Plant — ISYSTEMS AUTOMATION",
     "description": "Integration of four photovoltaic plants, a wind farm and a conventional gas/coal plant into a single virtual power plant balanced by the steam turbine.",
     "canonical": null,
     "ogTitle": "Virtual Power Plant — ISYSTEMS AUTOMATION",
     "ogDescription": null,
-    "ogUrl": "https://www.isystemsautomation.com/virtual-power-plant.html"
+    "ogUrl": "https://www.isystemsautomation.com/projects/virtual-power-plant.html"
   },
   {
     "file": "legacy/service/industrial-furniture-control-centers.html",
