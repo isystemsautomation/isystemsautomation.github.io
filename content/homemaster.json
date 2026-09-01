@@ -1,7 +1,7 @@
 {
   "slug": "homemaster",
   "source": "legacy/homemaster.html",
-  "url": "/homemaster.html",
+  "url": "/homemaster/",
   "blocks": [
     {
       "type": "section",

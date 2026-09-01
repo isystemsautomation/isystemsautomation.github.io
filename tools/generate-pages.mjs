@@ -18,6 +18,9 @@ const PROJECT_SLUGS = new Set([
 ]);
 
 function slugToSrcPath(slug) {
+  if (slug === 'homemaster') {
+    return path.join(SRC_DIR, 'homemaster', 'index.njk');
+  }
   if (PROJECT_SLUGS.has(slug)) {
     return path.join(SRC_DIR, 'projects', `${slug}.njk`);
   }
@@ -28,6 +31,16 @@ function slugToSrcPath(slug) {
     return path.join(SRC_DIR, 'industries', `${slug.slice('industries-'.length)}.njk`);
   }
   return path.join(SRC_DIR, `${slug}.njk`);
+}
+
+function pagePermalink(slug, url) {
+  if (slug === 'homemaster') return '/homemaster/';
+  return url;
+}
+
+function pageUrl(slug, url) {
+  if (slug === 'homemaster') return '/homemaster/';
+  return url;
 }
 
 function inventoryFileToSlug(file) {
@@ -83,7 +96,11 @@ for (const entry of inventory) {
 
   const outPath = slugToSrcPath(slug);
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
-  fs.writeFileSync(outPath, `${buildFrontMatter(entry, contentData)}${bodyHtml}\n`, 'utf8');
+  fs.writeFileSync(outPath, `${buildFrontMatter(entry, contentData, slug)}${bodyHtml}\n`, 'utf8');
+  if (slug === 'homemaster') {
+    const legacyPath = path.join(SRC_DIR, 'homemaster.njk');
+    if (fs.existsSync(legacyPath)) fs.unlinkSync(legacyPath);
+  }
   generated.push(path.relative(ROOT, outPath));
   console.log(`Generated ${path.relative(ROOT, outPath)}`);
 }
