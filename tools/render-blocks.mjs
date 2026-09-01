@@ -725,7 +725,7 @@ function renderDifferentiators(items) {
         `<h3>${escapeHtml(title)}</h3><p>${escapeHtml(text)}</p><p><a href="${escapeHtml(href)}">${escapeHtml(linkLabel)}</a></p>`,
     )
     .join('\n');
-  return `${sectionTitleHeading('What we do that others do not')}<p>Six DCS platforms and SIL 3 capability are the baseline. What sets us apart is the process engineering behind the control system.</p>${blocks}`;
+  return `${sectionTitleHeading('What we do that others do not')}<p>Six DCS platforms and experience on SIL 2 and SIL 3 applications are the baseline. What sets us apart is the process engineering behind the control system.</p>${blocks}`;
 }
 
 function renderIndexHome({ title, home, blocks }) {
@@ -763,7 +763,7 @@ function renderIndexHome({ title, home, blocks }) {
   html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose">${sectionTitleHeading('Selected projects')}${projectCards}</div></section>`;
   tint = !tint;
 
-  html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose"><p>See the full project list under <a href="/references.html">References</a>. SIL 2 and SIL 3 on HIMA HIQuad, Foxboro Triconex and ABB AC800; DCS on Emerson Ovation; remote dispatch over IEC 60870-5-104. We also manufacture our own DIN-rail automation modules, taken through full EU conformity assessment — see <a href="/homemaster/">HomeMaster</a> and <a href="/compliance.html">Compliance and Testing</a>.</p></div></section>`;
+  html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose"><p>See the full project list under <a href="/references.html">References</a>. SIL 2 and SIL 3 on HIMA HIQuad, Foxboro Triconex and ABB AC800; DCS on Emerson Ovation; remote dispatch over IEC 60870-5-104. We also manufacture our own DIN-rail automation modules, taken through the applicable EU conformity assessment procedures — see <a href="/homemaster/">HomeMaster</a> and <a href="/compliance.html">Compliance and Testing</a>.</p></div></section>`;
 
   return html;
 }

@@ -36,7 +36,7 @@
         },
         {
           "type": "paragraph",
-          "html": "Ensuring continuous operation of a production line depends on the control system staying available. One of the most significant threats is a failure inside the control system. A planned maintenance strategy reduces production slowdowns and complete stoppages from DCS, ESD or historian faults."
+          "html": "Ensuring continuous operation of a plant depends on the control system staying available. One of the most significant threats is a failure inside the control system. A planned maintenance strategy reduces production slowdowns and complete stoppages from DCS, ESD or historian faults."
         },
         {
           "type": "paragraph",

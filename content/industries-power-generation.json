@@ -46,11 +46,11 @@
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Condensed Steam Turbine:</strong> Extraction and condensing turbines — governor, load control and acceptance testing."
+          "html": "- <strong>Condensing steam turbine:</strong> Extraction and condensing turbines — governor, load control and acceptance testing."
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Back Pressure Steam Turbine:</strong> Back-pressure sets exporting steam to an industrial site."
+          "html": "- <strong>Back-pressure steam turbine:</strong> Back-pressure sets exporting steam to an industrial site."
         },
         {
           "type": "paragraph",
@@ -58,7 +58,7 @@
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Hydro Turbine:</strong> Turbine and governor control for hydroelectric generation."
+          "html": "- <strong>Hydro turbine control:</strong> Turbine and governor control for hydroelectric generation."
         },
         {
           "type": "paragraph",
@@ -82,11 +82,16 @@
         },
         {
           "type": "paragraph",
-          "html": "- <strong>City Heating System - District Heating:</strong> District heating network control and metering."
+          "html": "- <strong>District heating:</strong> District heating network control and metering."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Renewable generation and dispatch"
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Wind farms:</strong> Wind farm SCADA and dispatch integration."
+          "html": "Wind farm SCADA and dispatch integration."
         },
         {
           "type": "heading",
@@ -274,7 +279,7 @@
         {
           "type": "heading",
           "level": 3,
-          "text": "Understanding the Dynamics of the Oil and Gas Industry"
+          "text": "Oil and gas"
         },
         {
           "type": "paragraph",

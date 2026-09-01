@@ -24,7 +24,7 @@
         },
         {
           "type": "raw_html",
-          "html": "<dl><div><dt>Since 2007</dt><dd>Company founded in Ploiești, Romania</dd></div><div><dt>ISO 9001</dt><dd>Certified since 2009</dd></div><div><dt>260 t/h at 100 bar</dt><dd>Largest CFB boiler under our control system</dd></div><div><dt>6 DCS platforms</dt><dd>Ovation, ABB 800xA, ABB Symphony, PCS7, TIA Portal, Centum VP</dd></div><div><dt>SIL 2 / SIL 3</dt><dd>Safety applications certified to IEC 61511</dd></div><div><dt>4 countries</dt><dd>Romania, Serbia, Kazakhstan, Russia</dd></div></dl>"
+          "html": "<dl><div><dt>Since 2007</dt><dd>Company founded in Ploiești, Romania</dd></div><div><dt>ISO 9001</dt><dd>Certified since 2009</dd></div><div><dt>260 t/h at 100 bar</dt><dd>Largest CFB boiler under our control system</dd></div><div><dt>6 DCS platforms</dt><dd>Ovation, ABB 800xA, ABB Symphony, PCS7, TIA Portal, Centum VP</dd></div><div><dt>SIL 2 / SIL 3</dt><dd>Certification support for safety applications under IEC 61511</dd></div><div><dt>4 countries</dt><dd>Romania, Serbia, Kazakhstan, Russia</dd></div></dl>"
         },
         {
           "type": "raw_html",
@@ -46,7 +46,7 @@
               "html": "ESD and Burner Management System architecture, test and FAT procedures"
             },
             {
-              "html": "SIL 2 and SIL 3 certification support to IEC 61511"
+              "html": "SIL 2 / SIL 3 — certification support for safety applications under IEC 61511"
             },
             {
               "html": "I&amp;C design verification against local and international standards"

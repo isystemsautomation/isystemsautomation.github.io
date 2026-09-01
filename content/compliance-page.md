@@ -131,8 +131,10 @@ on.
 
 Regulation (EU) 2024/2847 obliges manufacturers of products with digital
 elements to report an actively exploited vulnerability within 24 hours of
-becoming aware of it, and to file a full notification within 72. The reporting
-obligations apply from 11 September 2026.
+becoming aware of it, and to file a full notification within 72. From
+11 September 2026, manufacturers of products with digital elements must
+report an actively exploited vulnerability within 24 hours of becoming
+aware of it and file a full notification within 72.
 
 The clock starts at awareness, not at confirmation, and the record of when
 awareness began is the first thing an authority asks for.

@@ -34,7 +34,7 @@
         },
         {
           "type": "paragraph",
-          "html": "RS-485 Modbus RTU between modules — stable on long cable runs and in electrically noisy panels."
+          "html": "RS-485 Modbus RTU between modules — designed for long cable runs and electrically noisy panels."
         },
         {
           "type": "heading",
@@ -184,7 +184,7 @@
         },
         {
           "type": "paragraph",
-          "html": "Eleven modules have been taken through EU conformity assessment for EMC, LVD, RED and RoHS, with Declarations of Conformity issued for each. The electrical-safety and EMC test capability built for that work is described under <a href=\"/compliance.html\">Compliance and Testing</a>."
+          "html": "Eleven modules have been taken through the applicable EU conformity assessment procedures — EMC for all products, LVD, RED and RoHS where applicable — with a Declaration of Conformity issued for each product. The electrical-safety and EMC test capability built for that work is described under <a href=\"/compliance.html\">Compliance and Testing</a>."
         }
       ]
     },
@@ -203,5 +203,5 @@
       ]
     }
   ],
-  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 18 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
 }

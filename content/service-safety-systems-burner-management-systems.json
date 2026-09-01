@@ -31,11 +31,11 @@
         },
         {
           "type": "paragraph",
-          "html": "A burner management system (BMS) supervises the safe start-up, operation and shutdown of fired equipment. It enforces the sequence: purge the furnace to a safe oxygen level, establish ignition permissives, light off through the burner, prove flame, and on loss of flame or unsafe condition trip fuel and air in a defined order."
+          "html": "A burner management system (BMS) supervises the safe start-up, operation and shutdown of fired equipment. It enforces the sequence: purge the furnace in accordance with the applicable burner management requirements, establish ignition permissives, light off through the burner, prove flame, and on loss of flame or unsafe condition trip fuel and air in a defined order."
         },
         {
           "type": "paragraph",
-          "html": "The BMS acts when permissives fail, when flame is not proved within the allowed time, or when a trip condition is reached — not as a continuous process controller. On a refinery CHP boiler we implemented automatic start-up from a hot state as a DCS sequence under HIMA HIQuad burner management: purge, light-off through the BMS, ramp to minimum stable load against drum thermal stress limits, and hand-over to load control, to SR EN 12952."
+          "html": "The BMS acts when permissives fail, when flame is not proved within the allowed time, or when a trip condition is reached — not as a continuous process controller. On a refinery CHP boiler we implemented automatic start-up from a hot state as a DCS sequence under HIMA HIQuad burner management: purge, light-off through the BMS, ramp to minimum stable load against drum thermal stress limits, and hand-over to load control, in accordance with SR EN 12952."
         }
       ]
     },
