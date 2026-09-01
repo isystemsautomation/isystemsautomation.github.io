@@ -1,5 +1,14 @@
 #!/usr/bin/env node
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import * as cheerio from 'cheerio';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const MANIFEST_PATH = path.join(ROOT, 'src/assets/img/_manifest.json');
+const IMAGE_MANIFEST = fs.existsSync(MANIFEST_PATH)
+  ? JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'))
+  : {};
 
 const JOOMSHAPER = /joomshaper\.com/i;
 const BUTTON_TEXTS = new Set(['View Details', 'Learn More']);
@@ -64,8 +73,15 @@ function renderLink(href, text) {
   return `<a href="${escapeHtml(href)}"${cls}>${escapeHtml(text)}</a>`;
 }
 
-function isSchematic(src) {
-  return /ovation|schematic|control-loop|diagram/i.test(src ?? '');
+function imageDims(src) {
+  const mapped = mapImagePath(src);
+  return IMAGE_MANIFEST[mapped] ?? { width: 800, height: 600 };
+}
+
+function isSchematic(block) {
+  if (block.schematic) return true;
+  const src = block.src ?? '';
+  return /ovation-control-loop|schematic|control-loop|diagram/i.test(src);
 }
 
 function renderImage(block, lazy = true) {
@@ -75,19 +91,26 @@ function renderImage(block, lazy = true) {
   }
 
   const src = mapImagePath(block.src);
+  const { width, height } = imageDims(src);
   const alt = escapeHtml(block.alt ?? '');
   const loading = lazy ? ' loading="lazy" decoding="async"' : ' fetchpriority="high" decoding="async"';
-  const figureClass = isSchematic(block.src) ? ' figure--schematic' : '';
-  const img = `<img src="${escapeHtml(src)}" alt="${alt}" width="800" height="600"${loading}>`;
+  const schematic = isSchematic(block);
+  const figureAttr = schematic ? ' class="figure--schematic"' : '';
+  const img = `<img src="${escapeHtml(src)}" alt="${alt}" width="${width}" height="${height}"${loading}>`;
 
-  const caption = block.alt
-    ? `<figcaption>${escapeHtml(block.alt)}</figcaption>`
-    : '';
-
-  if (href && !JOOMSHAPER.test(href)) {
-    return `<figure class="${figureClass.trim()}"><a href="${escapeHtml(mapImagePath(href) || href)}">${img}</a>${caption}</figure>`;
+  if (schematic) {
+    const fullHref = escapeHtml(mapImagePath(block.href) || src);
+    const label = block.alt ?? 'Schematic';
+    const caption = `<figcaption>${escapeHtml(label)} — <a href="${fullHref}">Open full size</a></figcaption>`;
+    return `<figure${figureAttr}><a href="${fullHref}">${img}</a>${caption}</figure>`;
   }
-  return `<figure class="${figureClass.trim()}">${img}${caption}</figure>`;
+
+  const caption = block.alt ? `<figcaption>${escapeHtml(block.alt)}</figcaption>` : '';
+
+  if (href) {
+    return `<figure${figureAttr}><a href="${escapeHtml(mapImagePath(href))}">${img}</a>${caption}</figure>`;
+  }
+  return `<figure${figureAttr}>${img}${caption}</figure>`;
 }
 
 function renderList(block) {

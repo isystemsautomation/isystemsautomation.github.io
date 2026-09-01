@@ -4,6 +4,7 @@
   "scripts": {
     "build": "node tools/generate-pages.mjs && eleventy",
     "verify": "node tools/verify-content.mjs",
+    "optimize-images": "node tools/optimize-images.mjs",
     "serve": "npm run build && eleventy --serve"
   },
   "devDependencies": {

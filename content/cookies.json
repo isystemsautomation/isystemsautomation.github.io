@@ -43,7 +43,7 @@
         },
         {
           "type": "paragraph",
-          "html": "Pages load web fonts from Google Fonts (fonts.googleapis.com / fonts.gstatic.com). This sends your IP address to Google but sets no cookies."
+          "html": "Web fonts are self-hosted in this repository (IBM Plex Sans). No request is made to Google Fonts or any other third-party font service."
         },
         {
           "type": "heading",

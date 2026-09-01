@@ -9,6 +9,7 @@ const ROOT = path.resolve(__dirname, '..');
 const LEGACY_DIR = path.join(ROOT, 'legacy');
 const SITE_DIR = path.join(ROOT, '_site');
 const INVENTORY_PATH = path.join(ROOT, 'content', '_inventory.json');
+const BASELINE_PATH = path.join(ROOT, 'content', '_word-baseline.json');
 
 const SIL_STRINGS = [
   'SIL 2 and SIL 3',
@@ -19,6 +20,18 @@ const SIL_STRINGS = [
   'Emerson Ovation',
   'IEC 60870-5-104',
 ];
+
+/** Words intentionally absent after self-hosting IBM Plex Sans (cookies.html, Aug 2026). */
+const COOKIES_MISSING_OK = new Set([
+  'pages',
+  'load',
+  '(fonts.googleapis.com',
+  'fonts.gstatic.com).',
+  'sends',
+  'ip',
+  'address',
+  'but',
+]);
 
 const norm = (s) =>
   s
@@ -78,15 +91,31 @@ function checkSilVisibility(html) {
   return failures;
 }
 
+function referenceWords(entry) {
+  if (fs.existsSync(BASELINE_PATH)) {
+    const baseline = JSON.parse(fs.readFileSync(BASELINE_PATH, 'utf8'));
+    if (baseline[entry.url]) {
+      return new Set(baseline[entry.url]);
+    }
+  }
+
+  const legacyPath = path.join(ROOT, entry.file);
+  if (fs.existsSync(legacyPath)) {
+    return extractWords(fs.readFileSync(legacyPath, 'utf8'));
+  }
+
+  return null;
+}
+
 const inventory = JSON.parse(fs.readFileSync(INVENTORY_PATH, 'utf8'));
 let failed = false;
 
 for (const entry of inventory) {
-  const legacyPath = path.join(ROOT, entry.file);
   const sitePath = path.join(SITE_DIR, entry.url.replace(/^\//, ''));
+  const refWords = referenceWords(entry);
 
-  if (!fs.existsSync(legacyPath)) {
-    console.error(entry.url, 'MISSING legacy file:', entry.file);
+  if (!refWords) {
+    console.error(entry.url, 'MISSING reference words (no legacy file or baseline entry)');
     failed = true;
     continue;
   }
@@ -96,12 +125,20 @@ for (const entry of inventory) {
     continue;
   }
 
-  const legacyWords = extractWords(fs.readFileSync(legacyPath, 'utf8'));
   const siteWords = extractWords(fs.readFileSync(sitePath, 'utf8'));
-  const missing = [...legacyWords].filter((w) => !siteWords.has(w));
+  let missing = [...refWords].filter((w) => !siteWords.has(w));
+
+  if (entry.url === '/cookies.html') {
+    missing = missing.filter((w) => !COOKIES_MISSING_OK.has(w));
+  }
 
   if (missing.length) {
-    console.error(entry.url, 'ПОТЕРЯН ТЕКСТ:', missing.slice(0, 40), missing.length > 40 ? `(+${missing.length - 40} more)` : '');
+    console.error(
+      entry.url,
+      'ПОТЕРЯН ТЕКСТ:',
+      missing.slice(0, 40),
+      missing.length > 40 ? `(+${missing.length - 40} more)` : '',
+    );
     failed = true;
   } else {
     console.log(`OK ${entry.url}`);

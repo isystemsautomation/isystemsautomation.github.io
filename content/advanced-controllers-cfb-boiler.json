@@ -162,9 +162,10 @@
       "blocks": [
         {
           "type": "image",
-          "src": "/images/2024/08/12/advanced-boiler-load-controllers.jpg",
-          "alt": "Advanced load controllers for CFB boiler",
-          "href": "https://www.joomshaper.com"
+          "src": "/images/projects/ovation-control-loop.jpg",
+          "alt": "Emerson Ovation control loop schematic for CFB boiler load controllers",
+          "href": "/images/projects/ovation-control-loop-full.jpg",
+          "schematic": true
         },
         {
           "type": "heading",
