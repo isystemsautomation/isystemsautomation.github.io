@@ -71,8 +71,8 @@
       "blocks": [
         {
           "type": "image",
-          "src": "/images/homemaster/miniplc-panel-installed.jpg",
-          "alt": "HomeMaster MiniPLC controller with display, Ethernet and antenna mounted in a distribution panel",
+          "src": "/images/homemaster/miniplc-product.jpg",
+          "alt": "HomeMaster MiniPLC DIN-rail controller with display, relays and RS-485",
           "href": null
         },
         {
@@ -86,8 +86,8 @@
         },
         {
           "type": "image",
-          "src": "/images/homemaster/microplc-retail-box.jpg",
-          "alt": "HomeMaster MicroPLC ESP32 DIN-rail controller retail box",
+          "src": "/images/homemaster/microplc-product.jpg",
+          "alt": "HomeMaster MicroPLC ESP32 DIN-rail controller",
           "href": null
         },
         {
@@ -122,8 +122,14 @@
         },
         {
           "type": "image",
-          "src": "/images/homemaster/otgw-retail-box.jpg",
-          "alt": "HomeMaster OpenTherm Gateway OTGW-R1 retail packaging",
+          "src": "/images/homemaster/dio-product.jpg",
+          "alt": "HomeMaster DIO-430-R1 relay and digital input module",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/homemaster/otgw-product.jpg",
+          "alt": "HomeMaster OTGW-R1 OpenTherm Gateway module",
           "href": null
         }
       ]

@@ -278,5 +278,25 @@
     "width": 1280,
     "height": 960,
     "bytes": 286136
+  },
+  "/assets/img/homemaster/miniplc-product.jpg": {
+    "width": 960,
+    "height": 720,
+    "bytes": 87919
+  },
+  "/assets/img/homemaster/microplc-product.jpg": {
+    "width": 960,
+    "height": 960,
+    "bytes": 70519
+  },
+  "/assets/img/homemaster/otgw-product.jpg": {
+    "width": 960,
+    "height": 960,
+    "bytes": 89268
+  },
+  "/assets/img/homemaster/dio-product.jpg": {
+    "width": 720,
+    "height": 960,
+    "bytes": 82272
   }
 }
