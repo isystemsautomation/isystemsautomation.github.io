@@ -13,7 +13,7 @@
       {
         "title": "Island mode, proven on a running plant",
         "text": "When a refinery loses the grid, its CHP plant has seconds to decide whether the refinery keeps running. We implemented that transition and proved it on a live plant in two trials, holding 13–14 MW in the island, agreed in advance with the transmission and distribution system operators. It is the most dangerous test in power plant commissioning and most contractors are never asked to run it.",
-        "href": "/island-mode.html",
+        "href": "/island-mode/",
         "linkLabel": "Island mode operation"
       },
       {

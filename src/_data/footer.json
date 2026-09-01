@@ -36,7 +36,7 @@
   {
     "label": "Expertise",
     "children": [
-      { "label": "Island Mode Operation", "url": "/island-mode.html" },
+      { "label": "Island Mode Operation", "url": "/island-mode/" },
       { "label": "Plant Performance", "url": "/plant-performance.html" },
       { "label": "Combined Cycle Power Plants", "url": "/combined-cycle-power-plants.html" },
       { "label": "Acceptance Testing", "url": "/acceptance-testing.html" },
