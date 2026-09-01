@@ -44,7 +44,7 @@
       {
         "href": "/service/process-optimization-advanced-process-control.html",
         "label": "Process optimization / Advanced process control",
-        "line": "Named DCS optimisers for load, fuel and emissions."
+        "line": "DCS optimisers for load, fuel and emissions, delivered as a set."
       },
       {
         "href": "/service/manufacturing-execution-system.html",
@@ -95,21 +95,21 @@
         "title": "Advanced Controllers for CFB Boilers",
         "image": "/images/2024/08/10/advanced_boiler_load_controllers.jpg",
         "alt": "Advanced load controllers for CFB boiler",
-        "sentences": ["Project write-up: CFB boiler load control."]
+        "sentences": ["260 t/h at 100 bar, firing petroleum coke, coal, gas and fuel oil, with the coke calorific value calculated automatically from the combustion result."]
       },
       {
         "href": "/projects/power-plant-performance-calculation.html",
         "title": "Power Plant Performance Calculation",
         "image": "/images/projects/steam-turbine-generator-hall.jpg",
         "alt": "Hydro turbine and generator set in the machine hall",
-        "sentences": ["Project write-up: CHP performance calculation."]
+        "sentences": ["Boiler, turbine and heat exchanger efficiency against design values, live in the control system, with the cost of each deviation attached."]
       },
       {
         "href": "/projects/virtual-power-plant.html",
         "title": "Virtual Power Plant",
         "image": "/images/2024/08/10/virtual-power-plant-vpp.jpg",
         "alt": "Virtual power plant combining renewable and conventional generation",
-        "sentences": ["Project write-up: virtual power plant dispatch."]
+        "sentences": ["A CHP plant, four photovoltaic plants and an 80 MW wind farm dispatched as one balancing group, with the steam turbine as the regulating machine."]
       }
     ]
   },

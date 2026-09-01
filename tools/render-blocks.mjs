@@ -710,7 +710,7 @@ function renderDifferentiators(items) {
         `<h3>${escapeHtml(title)}</h3><p>${escapeHtml(text)}</p><p><a href="${escapeHtml(href)}">${escapeHtml(linkLabel)}</a></p>`,
     )
     .join('\n');
-  return `${sectionTitleHeading('What we do that others do not')}<p>Six DCS platforms and SIL 3 certification are table stakes. These are not.</p>${blocks}`;
+  return `${sectionTitleHeading('What we do that others do not')}<p>Six DCS platforms and SIL 3 certification are the baseline. These are not.</p>${blocks}`;
 }
 
 function renderIndexHome({ title, home, blocks }) {
@@ -718,7 +718,10 @@ function renderIndexHome({ title, home, blocks }) {
   const heroImg = INDEX_CAROUSEL_HERO[0];
   const dims = imageDims(heroImg);
   const heroButtons = (home.heroButtons ?? [])
-    .map(({ href, label }) => `<a href="${escapeHtml(href)}" class="btn btn--primary">${escapeHtml(label)}</a>`)
+    .map(({ href, label }, index) => {
+      const variant = index === 0 ? 'btn--primary' : 'btn--secondary';
+      return `<a href="${escapeHtml(href)}" class="btn ${variant}">${escapeHtml(label)}</a>`;
+    })
     .join('');
   const heroActions = heroButtons ? `<p class="hero-actions">${heroButtons}</p>` : '';
   let html = `<section class="section section--flush hero"><img src="${escapeHtml(heroImg)}" alt="Combined-cycle plant control room with operator consoles and overview display" width="${dims.width}" height="${dims.height}" fetchpriority="high" decoding="async"><div class="container prose"><h1>${escapeHtml(heroHeading)}</h1><p>${escapeHtml(home.heroTagline)}</p>${heroActions}</div></section>`;

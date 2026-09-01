@@ -16,45 +16,45 @@
     },
     {
       "type": "section",
-      "title": "Power Engineering: Fundamental Electrical Engineering Excellence",
+      "title": "Power generation",
       "blocks": [
         {
           "type": "image",
           "src": "/images/projects/steam-turbine-generator-hall.jpg",
           "alt": "Hydro turbine and generator set in the machine hall",
-          "href": null
+          "href": "https://www.joomshaper.com"
         },
         {
           "type": "heading",
           "level": 3,
-          "text": "Power Engineering: Fundamental Electrical Engineering Excellence"
+          "text": "Power generation"
         },
         {
           "type": "paragraph",
-          "html": "Since our establishment, our company has been at the forefront of automating the production processes of electricity and heat. Our specialists possess in-depth knowledge and extensive experience in these critical areas, ensuring top-notch expertise and innovation in power engineering."
+          "html": "We automate electricity and heat production — steam and gas turbines, boilers, HRSG, hydro, district heating and renewable dispatch — from control system design through commissioning and acceptance testing. On our reference CHP plant that work covers three 120 t/h boilers, a 260 t/h CFB boiler at 100 bar, four turbines, and eleven years of continuous operation from 2007 to 2018, with maintenance again since 2022."
         }
       ]
     },
     {
       "type": "section",
-      "title": "Areas of Expertise of Our Specialists:",
+      "title": "Equipment we automate",
       "blocks": [
         {
           "type": "heading",
           "level": 3,
-          "text": "Areas of Expertise of Our Specialists:"
+          "text": "Equipment we automate"
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Condensed Steam Turbine:</strong> Expertly designed for efficient energy conversion from steam."
+          "html": "- <strong>Condensed Steam Turbine:</strong> Extraction and condensing turbines — governor, load control and acceptance testing."
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Back Pressure Steam Turbine:</strong> Specialized in optimizing energy recovery in industrial processes."
+          "html": "- <strong>Back Pressure Steam Turbine:</strong> Back-pressure sets exporting steam to an industrial site."
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Gas Turbines:</strong> Advanced solutions for high-efficiency power generation."
+          "html": "- <strong>Gas Turbines:</strong> Simple-cycle and combined-cycle gas turbine control."
         },
         {
           "type": "paragraph",
@@ -62,35 +62,31 @@
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Heat Recovery Steam Generator:</strong> Maximizing energy efficiency by recovering waste heat."
+          "html": "- <strong>Heat Recovery Steam Generator:</strong> HRSG level, pressure and attemperator control in combined-cycle plants."
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Steam Boilers with Gas Combustion Process:</strong> Precision-engineered for cleaner, more efficient combustion."
+          "html": "- <strong>Steam Boilers with Gas Combustion Process:</strong> Gas-fired boiler burner management and load control."
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Steam Boilers with Liquid Fuel Burning Process:</strong> Optimized for diverse fuel types and efficient operation."
+          "html": "- <strong>Steam Boilers with Liquid Fuel Burning Process:</strong> Liquid-fuel boiler control and fuel metering."
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Steam Boilers with Mixed Burning Process:</strong> Innovative fluidized bed technology for versatile fuel usage (gas/solid fuel/semi-liquid fuel)."
+          "html": "- <strong>Steam Boilers with Mixed Burning Process:</strong> CFB boilers firing gas, solid fuel and semi-liquid fuel — including automatic coke calorific value from the combustion result."
         },
         {
           "type": "paragraph",
-          "html": "- <strong>AAF Bags for Cleaning Ash:</strong> Effective ash removal systems for steam boilers burning solid fuel."
+          "html": "- <strong>AAF Bags for Cleaning Ash:</strong> Ash handling on solid-fuel boilers."
         },
         {
           "type": "paragraph",
-          "html": "- <strong>City Heating System - District Heating:</strong> Comprehensive solutions for efficient and reliable urban heating."
+          "html": "- <strong>City Heating System - District Heating:</strong> District heating network control and metering."
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Eolian Powerplant:</strong> Harnessing wind energy for sustainable power generation."
-        },
-        {
-          "type": "paragraph",
-          "html": "Our commitment to excellence in power engineering and fundamental electrical engineering is unwavering. We continue to push the boundaries of innovation, ensuring that our clients receive the highest quality solutions for their power generation needs."
+          "html": "- <strong>Eolian Powerplant:</strong> Wind farm SCADA and dispatch integration."
         },
         {
           "type": "heading",
@@ -258,11 +254,11 @@
         {
           "type": "heading",
           "level": 3,
-          "text": "Power Engineering: Fundamental Electrical Engineering Excellence"
+          "text": "Power generation"
         },
         {
           "type": "paragraph",
-          "html": "Since our establishment, our company has been at the forefront of automating the production processes of electricity and heat. Our specialists possess in-depth knowledge and extensive experience in these critical areas, ensuring top-notch expertise and innovation in power engineering."
+          "html": "We automate electricity and heat production — steam and gas turbines, boilers, HRSG, hydro, district heating and renewable dispatch — from control system design through commissioning and acceptance testing."
         },
         {
           "type": "link",
@@ -340,5 +336,5 @@
       ]
     }
   ],
-  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 18 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
 }

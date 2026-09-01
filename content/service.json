@@ -46,29 +46,11 @@
         {
           "type": "heading",
           "level": 3,
-          "text": "Industrial Automation:Comprehensive Solutions for Growth and Efficiency"
+          "text": "Turnkey automation projects"
         },
         {
           "type": "paragraph",
-          "html": "With nearly two decades of experience in industrial fields, we specialize in executing turnkey projects with a focus on:"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "html": "Technical coordination by an experienced team"
-            },
-            {
-              "html": "Use of highest quality materials"
-            },
-            {
-              "html": "Compliance with beneficiary requirements"
-            },
-            {
-              "html": "Adherence to reference norms and specific project needs"
-            }
-          ]
+          "html": "Engineering, procurement, installation supervision, commissioning and acceptance testing for DCS and ESD — technical coordination, materials to specification, and documentation to the beneficiary's requirements."
         },
         {
           "type": "link",
@@ -126,7 +108,7 @@
         {
           "type": "heading",
           "level": 3,
-          "text": "Manufacturing with MES:Real-Time Solutions for Optimal Efficiency"
+          "text": "Manufacturing execution systems"
         },
         {
           "type": "paragraph",
@@ -161,7 +143,7 @@
         },
         {
           "type": "paragraph",
-          "html": "With the launch of the Safety Instrumented System, industries can now operate with increased confidence, knowing that their operations are under continuous and vigilant protection. This innovation not only enhances operational safety but also contributes to overall process efficiency by reducing downtime and maintenance costs. Certified to SIL 2 and SIL 3 under IEC 61511."
+          "html": "Burner management and safety instrumented systems to SIL 2 and SIL 3 under IEC 61511 — specified, implemented and verified on HIMA HIQuad, Foxboro Triconex and ABB AC800."
         },
         {
           "type": "link",

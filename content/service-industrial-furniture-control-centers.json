@@ -55,7 +55,7 @@
           "type": "image",
           "src": "/images/2024/08/10/industrial_furniture_control_centers.jpg",
           "alt": "Ergonomic control center operator furniture",
-          "href": null
+          "href": "https://www.joomshaper.com"
         },
         {
           "type": "heading",
@@ -168,10 +168,6 @@
           "html": "ISYSTEMS AUTOMATION carries out engineering and consulting, protection systems, and process control and electrical automation. We can follow the entire project cycle from design through commissioning."
         },
         {
-          "type": "paragraph",
-          "html": "This expansion reflects our ongoing commitment to professionalism, responsibility, innovation, and flexibility. Our team of experts is dedicated to providing clients with the confidence to make informed decisions, ensuring the highest levels of efficiency, energy savings, and environmental stewardship."
-        },
-        {
           "type": "image",
           "src": "/images/2024/08/10/process_automation.jpg",
           "alt": "Process automation control system",
@@ -240,5 +236,5 @@
       ]
     }
   ],
-  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 18 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
 }

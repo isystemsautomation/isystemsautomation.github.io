@@ -229,9 +229,12 @@ small,.caption{ font-size:0.875rem; line-height:1.5; color:var(--ink-500); }
 }
 .btn--primary{ background:var(--brand-700); color:var(--paper); border-color:var(--brand-700); }
 .btn--primary:hover{ background:var(--brand-600); border-color:var(--brand-600); }
+.btn--secondary{ background:transparent; color:var(--paper); border-color:rgba(255,255,255,.85); }
+.btn--secondary:hover{ background:rgba(255,255,255,.12); border-color:var(--paper); }
 .btn--quiet{ background:transparent; color:var(--brand-700); border-color:var(--ink-300); }
 .btn--quiet:hover{ background:var(--ink-100); border-color:var(--brand-700); }
 a.btn--primary{ color:var(--paper); }
+a.btn--secondary{ color:var(--paper); }
 a.btn--quiet{ color:var(--brand-700); }
 
 /* --- Карточки --- */
