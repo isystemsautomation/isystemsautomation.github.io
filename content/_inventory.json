@@ -63,7 +63,7 @@
     "file": "legacy/industries.html",
     "url": "/industries.html",
     "title": "Industries — ISYSTEMS AUTOMATION",
-    "description": "Turnkey industrial automation for power generation, oil and gas, cement and coal, control centers and smart buildings, delivered by ISYSTEMS AUTOMATION.",
+    "description": "Turnkey industrial automation for power generation, oil and gas, cement and coal, and control centers, delivered by ISYSTEMS AUTOMATION.",
     "canonical": null,
     "ogTitle": "Industries — ISYSTEMS AUTOMATION",
     "ogDescription": null,
@@ -220,13 +220,13 @@
     "ogUrl": "https://www.isystemsautomation.com/industries/power-generation.html"
   },
   {
-    "file": "legacy/industries/smart-home-automation.html",
-    "url": "/industries/smart-home-automation.html",
-    "title": "Smart Home Automation — ISYSTEMS AUTOMATION",
+    "file": "legacy/homemaster.html",
+    "url": "/homemaster.html",
+    "title": "HomeMaster — ISYSTEMS AUTOMATION",
     "description": "HOMEMASTER by ISYSTEMS AUTOMATION: modular smart lighting, sockets, climate and security modules for homes and buildings.",
     "canonical": null,
-    "ogTitle": "Smart Home Automation — ISYSTEMS AUTOMATION",
+    "ogTitle": "HomeMaster — ISYSTEMS AUTOMATION",
     "ogDescription": null,
-    "ogUrl": "https://www.isystemsautomation.com/industries/smart-home-automation.html"
+    "ogUrl": "https://www.isystemsautomation.com/homemaster.html"
   }
 ]

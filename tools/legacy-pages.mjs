@@ -22,7 +22,7 @@ export const LEGACY_PAGES = [
   'industries/control-centers.html',
   'industries/oil-and-gas.html',
   'industries/power-generation.html',
-  'industries/smart-home-automation.html',
+  'homemaster.html',
 ];
 
 export function legacyPathToUrl(relativePath) {
