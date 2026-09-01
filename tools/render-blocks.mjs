@@ -398,7 +398,7 @@ function renderExpandedCards(cards, options = {}) {
     .map((card) => {
       const title = card.heading?.text ?? '';
       const bodyOnly = { ...card, heading: null };
-      return `${sectionTitleHeading(title)}${renderInlinePromoCard(bodyOnly, options, options.lazyImages !== false)}`;
+      return `<h3>${escapeHtml(formatHeadingText(title))}</h3>${renderInlinePromoCard(bodyOnly, options, options.lazyImages !== false)}`;
     })
     .join('\n');
 }
@@ -745,7 +745,7 @@ function renderIndexHome({ title, home, blocks }) {
   html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose">${sectionTitleHeading('Selected projects')}${projectCards}</div></section>`;
   tint = !tint;
 
-  html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose"><p>See the full project list under <a href="/references.html">References</a> and our in-house product conformity work under <a href="/compliance.html">Compliance and Testing</a>. SIL 2 and SIL 3 on HIMA HIQuad, Foxboro Triconex and ABB AC800; DCS on Emerson Ovation; remote dispatch over IEC 60870-5-104.</p></div></section>`;
+  html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose"><p>See the full project list under <a href="/references.html">References</a>. SIL 2 and SIL 3 on HIMA HIQuad, Foxboro Triconex and ABB AC800; DCS on Emerson Ovation; remote dispatch over IEC 60870-5-104. We also manufacture our own DIN-rail automation modules, taken through full EU conformity assessment — see <a href="/homemaster/">HomeMaster</a> and <a href="/compliance.html">Compliance and Testing</a>.</p></div></section>`;
 
   return html;
 }
