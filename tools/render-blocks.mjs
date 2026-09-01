@@ -115,7 +115,10 @@ export function stripInlineStyles(html) {
 }
 
 export function heroTitleFromPageTitle(title) {
-  return title.replace(/\s*[—–-]\s*ISYSTEMS AUTOMATION\s*$/i, '').trim();
+  return title
+    .replace(/^ISYSTEMS AUTOMATION\s*[—–-]\s*/i, '')
+    .replace(/\s*[—–-]\s*ISYSTEMS AUTOMATION\s*$/i, '')
+    .trim();
 }
 
 function escapeHtml(text) {
@@ -670,61 +673,66 @@ function renderIndexCarousels(slides) {
   return html;
 }
 
+function renderLinkIndex(items) {
+  const lis = items
+    .map(
+      ({ href, label, line }) =>
+        `<li><a href="${escapeHtml(href)}">${escapeHtml(label)}</a><span class="link-index__line">${escapeHtml(line)}</span></li>`,
+    )
+    .join('\n');
+  return `<ul class="link-index">${lis}</ul>`;
+}
+
+function renderIndexProjectCard(project) {
+  const imgPath = mapImagePath(project.image);
+  const dims = imageDims(imgPath);
+  const sentences = project.sentences.map((s) => `<p>${escapeHtml(s)}</p>`).join('\n');
+  const figure = `<figure class="figure--embed"><a href="${escapeHtml(project.href)}"><img src="${escapeHtml(imgPath)}" alt="${escapeHtml(project.alt)}" width="${dims.width}" height="${dims.height}" loading="lazy" decoding="async"></a><figcaption>${escapeHtml(project.alt)}</figcaption></figure>`;
+  return `<h3><a href="${escapeHtml(project.href)}">${escapeHtml(project.title)}</a></h3><div class="section-promo__layout section-promo__layout--card">${figure}<div class="section-promo__text">${sentences}</div></div>`;
+}
+
+function renderIndexHome({ title, home, blocks }) {
+  const heroTitle = heroTitleFromPageTitle(title);
+  const heroImg = INDEX_CAROUSEL_HERO[0];
+  const dims = imageDims(heroImg);
+  let html = `<section class="section section--flush hero"><img src="${escapeHtml(heroImg)}" alt="" width="${dims.width}" height="${dims.height}" fetchpriority="high" decoding="async"><div class="container prose"><h1>${escapeHtml(heroTitle)}</h1><p>${escapeHtml(home.heroTagline)}</p></div></section>`;
+
+  html += `<section class="section section--tint"><div class="container prose">${sectionTitleHeading('What we do')}${renderLinkIndex(home.services)}</div></section>`;
+  html += `<section class="section"><div class="container prose">${sectionTitleHeading('Industries')}${renderLinkIndex(home.industries)}</div></section>`;
+
+  let tint = true;
+  const seenTitleRef = { value: true };
+  for (const block of blocks) {
+    if (block.type === 'section') {
+      html += renderSection(block, tint, title, seenTitleRef, 'index');
+      tint = !tint;
+    }
+  }
+
+  const projectCards = home.projects.map((p) => renderIndexProjectCard(p)).join('\n');
+  html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose">${sectionTitleHeading('Selected projects')}${projectCards}</div></section>`;
+  tint = !tint;
+
+  html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose"><p>See the full project list under <a href="/references.html">References</a> and our in-house product conformity work under <a href="/compliance.html">Compliance and Testing</a>.</p></div></section>`;
+
+  return html;
+}
+
 function renderContactPage(blocks, pageTitle) {
   const title = heroTitleFromPageTitle(pageTitle);
   let html = renderHeroSection(title, '', null, 'page-hero');
 
-  const flat = [];
-  for (const block of blocks) {
-    if (block.type === 'section') {
-      flat.push(...block.blocks);
-    } else {
-      flat.push(block);
-    }
-  }
+  html += `<section class="section section--tint"><div class="container prose"><h2 class="section-title">ISYSTEMS AUTOMATION S.R.L.</h2>
+<p>Str. Diligenței 20<br>100575 Ploiești, Prahova, Romania<br>Reg. no. J29/919/2007 · VAT RO21537032</p>
+<h2 class="section-title">Get in touch</h2>
+<p>E-mail: <a href="mailto:office@isystemsautomation.com">office@isystemsautomation.com</a><br>Phone: <a href="tel:+40747757798">+40 747 757 798</a></p>
+<p>Enquiries are normally answered within one business day.</p>
+<p>Correspondence in English, Romanian and Russian.</p>
+<h2 class="section-title">Where we work</h2>
+<p>Engineering, commissioning and maintenance on site across Romania and on export projects. Bench testing and technical documentation are carried out at our own premises in Ploiești.</p>
+<p><a href="https://www.openstreetmap.org/search?query=Str.%20Diligentei%2020%2C%20Ploiesti%2C%20Romania">View address on OpenStreetMap</a></p>
+</div></section>`;
 
-  const companyLines = [];
-  const contactLines = [];
-  let inEmail = false;
-  let inPhone = false;
-
-  for (const block of flat) {
-    if (block.type === 'heading' && block.level === 2 && block.text === 'Contact') {
-      continue;
-    }
-    if (block.type === 'heading' && block.level === 6) {
-      if (block.text === 'E-mail') {
-        contactLines.push('<h3>E-mail</h3>');
-        inEmail = true;
-        inPhone = false;
-        continue;
-      }
-      if (block.text === 'Phone') {
-        contactLines.push('<h3>Phone</h3>');
-        inPhone = true;
-        inEmail = false;
-        continue;
-      }
-      inEmail = false;
-      inPhone = false;
-      if (/^\+?\d/.test(block.text)) {
-        contactLines.push(`<p><a href="tel:${block.text.replace(/\s/g, '')}">${escapeHtml(block.text)}</a></p>`);
-      } else {
-        companyLines.push(`<p>${escapeHtml(block.text)}</p>`);
-      }
-      continue;
-    }
-    if (block.type === 'paragraph' && inEmail) {
-      contactLines.push(renderParagraph(block.html));
-      inEmail = false;
-      continue;
-    }
-    if (block.type === 'paragraph') {
-      companyLines.push(renderParagraph(block.html));
-    }
-  }
-
-  html += `<section class="section"><div class="container prose"><h2 class="section-title">ISYSTEMS AUTOMATION S.R.L.</h2>${companyLines.join('\n')}<h2 class="section-title">Get in touch</h2>${contactLines.join('\n')}</div></section>`;
   return html;
 }
 
@@ -801,9 +809,13 @@ function renderSection(section, tint, pageTitle, seenTitleRef, slug = '') {
   return `<section class="${cls}"><div class="container prose">${prefix}${inner}</div></section>`;
 }
 
-export function renderPageContent({ slug, blocks, title }) {
+export function renderPageContent({ slug, blocks, title, home = null }) {
   if (slug === 'contact') {
     return renderContactPage(blocks, title);
+  }
+
+  if (slug === 'index' && home) {
+    return renderIndexHome({ title, home, blocks });
   }
 
   if (slug === 'index') {

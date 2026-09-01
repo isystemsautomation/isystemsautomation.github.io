@@ -428,6 +428,25 @@ figcaption{ margin-top:var(--s3); font-size:0.9rem; color:var(--ink-500); }
   color:var(--ink-700);
 }
 .related-strip__links a{ font-weight:600; }
+
+.link-index{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.link-index li{
+  margin:0 0 var(--s4);
+  padding:0;
+}
+.link-index li:last-child{ margin-bottom:0; }
+.link-index a{ font-weight:600; color:var(--brand-700); text-decoration:none; }
+.link-index a:hover{ text-decoration:underline; }
+.link-index__line{
+  display:block;
+  margin-top:var(--s1);
+  font-weight:400;
+  color:var(--ink-700);
+}
 .related-strip__sep{ color:var(--ink-500); font-weight:400; }
 
 .visually-hidden{
