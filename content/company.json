@@ -30,18 +30,10 @@
           "type": "list",
           "ordered": false,
           "items": [
-            {
-              "html": "preliminary pre-project inspection;"
-            },
-            {
-              "html": "development of design and estimate and/or working documentation;"
-            },
-            {
-              "html": "installation or supervision of installation works;"
-            },
-            {
-              "html": "commissioning works."
-            }
+            { "html": "preliminary pre-project inspection;" },
+            { "html": "development of design and estimate and/or working documentation;" },
+            { "html": "installation or supervision of installation works;" },
+            { "html": "commissioning works." }
           ]
         },
         {
@@ -52,18 +44,10 @@
           "type": "list",
           "ordered": false,
           "items": [
-            {
-              "html": "automatic control systems (electrical and hydraulic) of various complexity categories;"
-            },
-            {
-              "html": "emergency automation systems and incident recorders;"
-            },
-            {
-              "html": "dispatch systems;"
-            },
-            {
-              "html": "automated systems for technical and commercial resource accounting (electricity, water, air, steam, etc.)."
-            }
+            { "html": "automatic control systems (electrical and hydraulic) of various complexity categories;" },
+            { "html": "emergency automation systems and incident recorders;" },
+            { "html": "dispatch systems;" },
+            { "html": "automated systems for technical and commercial resource accounting (electricity, water, air, steam, etc.)." }
           ]
         },
         {
@@ -78,33 +62,51 @@
           "type": "list",
           "ordered": false,
           "items": [
-            {
-              "html": "ABB Industrial IT 800xA"
-            },
-            {
-              "html": "Emerson Ovation"
-            },
-            {
-              "html": "HIMA HIQuad"
-            },
-            {
-              "html": "SIEMENS PCS7"
-            },
-            {
-              "html": "SIEMENS TIA Portal"
-            },
-            {
-              "html": "Yokogawa Centum"
-            }
+            { "html": "ABB Industrial IT 800xA" },
+            { "html": "Emerson Ovation" },
+            { "html": "HIMA HIQuad" },
+            { "html": "SIEMENS PCS7" },
+            { "html": "SIEMENS TIA Portal" },
+            { "html": "Yokogawa Centum" }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Our own products",
+      "blocks": [
         {
           "type": "paragraph",
-          "html": "The quality management system of ISYSTEMS AUTOMATION complies with <strong>ISO 9001</strong> requirements and has been certified since 2009."
-        },
+          "html": "ISYSTEMS AUTOMATION manufactures a line of eleven DIN-rail automation modules under the HomeMaster brand, taken through EU conformity assessment for EMC, LVD, RED and RoHS, with Declarations of Conformity issued for every product. The test capability built for that work is described under <a href=\"/compliance.html\">Compliance and Testing</a> and on the <a href=\"/homemaster.html\">HomeMaster</a> product page."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Quality management",
+      "blocks": [
         {
           "type": "paragraph",
-          "html": "ISYSTEMS AUTOMATION manufactures its own line of eleven DIN-rail automation modules under the HomeMaster brand, taken through EU conformity assessment for EMC, LVD, RED and RoHS with Declarations of Conformity issued for every product. The test capability built for that work is described under <a href=\"/compliance.html\">Compliance and Testing</a>."
+          "html": "Quality management certified to ISO 9001 since 2009."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Projects in the field",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "/images/projects/control-room-combined-cycle.jpg",
+          "alt": "Combined-cycle plant control room with operator consoles and overview display",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/yokogawa-centum-cabinet.jpg",
+          "alt": "Yokogawa Centum control cabinet with I/O modules and marshalling",
+          "href": null
         }
       ]
     }
