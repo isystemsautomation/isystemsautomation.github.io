@@ -1,0 +1,97 @@
+{
+  "service-process-automation": {
+    "index": { "href": "/service.html", "label": "All services" },
+    "links": [
+      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimization" },
+      { "href": "/service/manufacturing-execution-system.html", "label": "MES" },
+      { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" },
+      { "href": "/service/maintenance.html", "label": "Maintenance" }
+    ]
+  },
+  "service-process-optimization-advanced-process-control": {
+    "index": { "href": "/service.html", "label": "All services" },
+    "links": [
+      { "href": "/service/process-automation.html", "label": "Process automation" },
+      { "href": "/service/manufacturing-execution-system.html", "label": "MES" },
+      { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" },
+      { "href": "/service/maintenance.html", "label": "Maintenance" }
+    ]
+  },
+  "service-manufacturing-execution-system": {
+    "index": { "href": "/service.html", "label": "All services" },
+    "links": [
+      { "href": "/service/process-automation.html", "label": "Process automation" },
+      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimization" },
+      { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" },
+      { "href": "/service/maintenance.html", "label": "Maintenance" }
+    ]
+  },
+  "service-safety-systems-burner-management-systems": {
+    "index": { "href": "/service.html", "label": "All services" },
+    "links": [
+      { "href": "/service/process-automation.html", "label": "Process automation" },
+      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimization" },
+      { "href": "/service/industrial-furniture-control-centers.html", "label": "Control centers" },
+      { "href": "/service/maintenance.html", "label": "Maintenance" }
+    ]
+  },
+  "service-industrial-furniture-control-centers": {
+    "index": { "href": "/service.html", "label": "All services" },
+    "links": [
+      { "href": "/service/process-automation.html", "label": "Process automation" },
+      { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" },
+      { "href": "/service/maintenance.html", "label": "Maintenance" },
+      { "href": "/industries/control-centers.html", "label": "Control centers (industries)" }
+    ]
+  },
+  "service-maintenance": {
+    "index": { "href": "/service.html", "label": "All services" },
+    "links": [
+      { "href": "/service/process-automation.html", "label": "Process automation" },
+      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimization" },
+      { "href": "/service/manufacturing-execution-system.html", "label": "MES" },
+      { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" }
+    ]
+  },
+  "industries-power-generation": {
+    "index": { "href": "/industries.html", "label": "All industries" },
+    "links": [
+      { "href": "/industries/oil-and-gas.html", "label": "Oil and gas" },
+      { "href": "/industries/cement-and-coal.html", "label": "Cement and coal" },
+      { "href": "/industries/control-centers.html", "label": "Control centers" }
+    ]
+  },
+  "industries-oil-and-gas": {
+    "index": { "href": "/industries.html", "label": "All industries" },
+    "links": [
+      { "href": "/industries/power-generation.html", "label": "Power generation" },
+      { "href": "/industries/cement-and-coal.html", "label": "Cement and coal" },
+      { "href": "/industries/control-centers.html", "label": "Control centers" }
+    ]
+  },
+  "industries-cement-and-coal": {
+    "index": { "href": "/industries.html", "label": "All industries" },
+    "links": [
+      { "href": "/industries/power-generation.html", "label": "Power generation" },
+      { "href": "/industries/oil-and-gas.html", "label": "Oil and gas" },
+      { "href": "/industries/control-centers.html", "label": "Control centers" }
+    ]
+  },
+  "industries-control-centers": {
+    "index": { "href": "/industries.html", "label": "All industries" },
+    "links": [
+      { "href": "/industries/power-generation.html", "label": "Power generation" },
+      { "href": "/industries/oil-and-gas.html", "label": "Oil and gas" },
+      { "href": "/industries/cement-and-coal.html", "label": "Cement and coal" },
+      { "href": "/service/industrial-furniture-control-centers.html", "label": "Control center furniture (service)" }
+    ]
+  },
+  "industries-smart-home-automation": {
+    "index": { "href": "/industries.html", "label": "All industries" },
+    "links": [
+      { "href": "/industries/power-generation.html", "label": "Power generation" },
+      { "href": "/industries/oil-and-gas.html", "label": "Oil and gas" },
+      { "href": "/industries/cement-and-coal.html", "label": "Cement and coal" }
+    ]
+  }
+}

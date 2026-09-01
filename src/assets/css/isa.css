@@ -414,6 +414,22 @@ figcaption{ margin-top:var(--s3); font-size:0.9rem; color:var(--ink-500); }
 }
 .notice-panel .section-title{ margin-top:0; }
 
+.related-strip{ padding-block:var(--s5); }
+.related-strip__title{
+  margin:0 0 var(--s3);
+  font-size:1.3125rem;
+  line-height:1.35;
+  color:var(--ink-900);
+}
+.related-strip__links{
+  margin:0;
+  font-size:1rem;
+  line-height:1.6;
+  color:var(--ink-700);
+}
+.related-strip__links a{ font-weight:600; }
+.related-strip__sep{ color:var(--ink-500); font-weight:400; }
+
 .visually-hidden{
   position:absolute; width:1px; height:1px; overflow:hidden;
   clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap;

@@ -130,6 +130,22 @@ function checkSilVisibility(html) {
 }
 
 function referenceWords(entry) {
+  const legacyPath = path.join(ROOT, entry.file);
+  if (!fs.existsSync(legacyPath)) {
+    if (fs.existsSync(BASELINE_PATH)) {
+      const baseline = JSON.parse(fs.readFileSync(BASELINE_PATH, 'utf8'));
+      if (baseline[entry.url]) {
+        return new Set(baseline[entry.url]);
+      }
+    }
+    return null;
+  }
+
+  let html = fs.readFileSync(legacyPath, 'utf8');
+  if (entry.url.startsWith('/service/') || entry.url.startsWith('/industries/')) {
+    html = stripSubpageBoilerplate(html);
+  }
+
   if (fs.existsSync(BASELINE_PATH)) {
     const baseline = JSON.parse(fs.readFileSync(BASELINE_PATH, 'utf8'));
     if (baseline[entry.url]) {
@@ -137,12 +153,24 @@ function referenceWords(entry) {
     }
   }
 
-  const legacyPath = path.join(ROOT, entry.file);
-  if (fs.existsSync(legacyPath)) {
-    return extractWords(fs.readFileSync(legacyPath, 'utf8'));
-  }
+  return extractWords(html);
+}
 
-  return null;
+function stripSubpageBoilerplate(html) {
+  const $ = cheerio.load(html, { decodeEntities: false });
+  const titles = ['Our Services', 'What We Do'];
+  $('h2, h3, .section-title, .sppb-addon-title').each((_, el) => {
+    const text = $(el).text().replace(/\s+/g, ' ').trim();
+    if (!titles.includes(text)) return;
+    const section = $(el).closest('section, .sppb-section, .row, div[class*="section"]');
+    if (section.length) {
+      section.remove();
+      return;
+    }
+    $(el).nextAll().remove();
+    $(el).remove();
+  });
+  return $.html();
 }
 
 async function startStaticServer() {
