@@ -134,10 +134,31 @@ function sectionTitleHeading(text) {
   return `<h2 class="section-title">${escapeHtml(formatHeadingText(text))}</h2>`;
 }
 
-function headingTag(level, text, sectionTitle = false) {
+const HEADING_FROZEN_SLUGS = new Set(['compliance', 'references']);
+
+function shouldNormalizeHeadings(slug) {
+  return slug && !HEADING_FROZEN_SLUGS.has(slug);
+}
+
+function headingTag(level, text, sectionTitle = false, options = {}) {
   if (sectionTitle || TOP_LEVEL_SECTION_HEADINGS.has(text)) {
     return sectionTitleHeading(text);
   }
+
+  const { slug = '', sectionContext = null } = options;
+  if (shouldNormalizeHeadings(slug)) {
+    if (level <= 2) {
+      return sectionTitleHeading(text);
+    }
+    const isPrimary = sectionContext && !sectionContext.hasPrimaryHeading;
+    if (level === 3 && isPrimary) {
+      sectionContext.hasPrimaryHeading = true;
+      return sectionTitleHeading(text);
+    }
+    const tag = level >= 4 ? 'h3' : 'h3';
+    return `<${tag}>${escapeHtml(formatHeadingText(text))}</${tag}>`;
+  }
+
   const tag = `h${Math.min(Math.max(level, 2), 4)}`;
   return `<${tag}>${escapeHtml(formatHeadingText(text))}</${tag}>`;
 }
@@ -280,7 +301,7 @@ function renderTable(html) {
 function renderBlock(block, options = {}) {
   switch (block.type) {
     case 'heading':
-      return headingTag(block.level, block.text, options.sectionTitle);
+      return headingTag(block.level, block.text, options.sectionTitle, options);
     case 'paragraph':
       return renderParagraph(block.html);
     case 'link':
@@ -370,6 +391,7 @@ function renderExpandedCards(cards, options = {}) {
 function renderBlocksWithGallery(blocks, options = {}) {
   const parts = [];
   let i = 0;
+  const sectionContext = options.sectionContext ?? null;
 
   while (i < blocks.length) {
     const block = blocks[i];
@@ -428,7 +450,7 @@ function renderBlocksWithGallery(blocks, options = {}) {
       }
       if (body.length > 0) {
         const figure = renderImage(imageBlock, options.lazyImages !== false, true);
-        const text = `${headingTag(subtitleHeading.level, subtitleHeading.text)}${body.map((b) => renderBlock(b, options)).join('\n')}`;
+        const text = `${headingTag(subtitleHeading.level, subtitleHeading.text, false, options)}${body.map((b) => renderBlock(b, options)).join('\n')}`;
         parts.push(sectionTitleHeading(titleHeading.text));
         parts.push(
           `<div class="section-promo__layout section-promo__layout--lead">${figure}<div class="section-promo__text">${text}</div></div>`,
@@ -459,7 +481,7 @@ function renderBlocksWithGallery(blocks, options = {}) {
       const hasText = body.some((b) => ['paragraph', 'list', 'link'].includes(b.type));
       if (hasText) {
         const figure = renderImage(block, options.lazyImages !== false, true);
-        const text = `${headingTag(heading.level, heading.text)}${body.map((b) => renderBlock(b, options)).join('\n')}`;
+        const text = `${headingTag(heading.level, heading.text, false, options)}${body.map((b) => renderBlock(b, options)).join('\n')}`;
         parts.push(
           `<div class="section-promo__layout section-promo__layout--lead">${figure}<div class="section-promo__text">${text}</div></div>`,
         );
@@ -536,7 +558,7 @@ function renderBlocksWithGallery(blocks, options = {}) {
           `<div class="grid grid--2 point-grid">\n${points
             .map(
               (p) =>
-                `<div>${headingTag(p.heading.level, p.heading.text)}${renderParagraph(p.paragraph.html)}</div>`,
+                `<div>${headingTag(p.heading.level, p.heading.text, false, options)}${renderParagraph(p.paragraph.html)}</div>`,
             )
             .join('\n')}\n</div>`,
         );
@@ -549,6 +571,7 @@ function renderBlocksWithGallery(blocks, options = {}) {
       renderBlock(block, {
         ...options,
         sectionTitle: block.type === 'heading' && block.level === 2,
+        sectionContext,
       }),
     );
     i += 1;
@@ -701,7 +724,7 @@ function renderContactPage(blocks, pageTitle) {
     }
   }
 
-  html += `<section class="section"><div class="container prose"><div class="contact-grid"><div>${companyLines.join('\n')}</div><div>${contactLines.join('\n')}</div></div></div></section>`;
+  html += `<section class="section"><div class="container prose"><h2 class="section-title">ISYSTEMS AUTOMATION S.R.L.</h2>${companyLines.join('\n')}<h2 class="section-title">Get in touch</h2>${contactLines.join('\n')}</div></section>`;
   return html;
 }
 
@@ -744,6 +767,7 @@ function renderRelatedStrip(slug, tint) {
 
 function renderSection(section, tint, pageTitle, seenTitleRef, slug = '') {
   const sectionTitle = section.title;
+  const sectionContext = shouldNormalizeHeadings(slug) ? { hasPrimaryHeading: false } : null;
   const inner = renderBlocksWithGallery(
     section.blocks.filter((block) => {
       if (shouldSkipHeading(block, pageTitle, seenTitleRef.value) && block.level <= 2) {
@@ -758,12 +782,23 @@ function renderSection(section, tint, pageTitle, seenTitleRef, slug = '') {
       lazyImages: true,
       sectionTitle: false,
       slug,
+      sectionContext,
     },
   );
 
   if (!inner.trim()) return '';
   const cls = tint ? 'section section--tint' : 'section';
-  return `<section class="${cls}"><div class="container prose">${inner}</div></section>`;
+  let prefix = '';
+  if (
+    shouldNormalizeHeadings(slug) &&
+    sectionTitle &&
+    sectionTitle !== heroTitleFromPageTitle(pageTitle) &&
+    sectionContext &&
+    !sectionContext.hasPrimaryHeading
+  ) {
+    prefix = sectionTitleHeading(sectionTitle);
+  }
+  return `<section class="${cls}"><div class="container prose">${prefix}${inner}</div></section>`;
 }
 
 export function renderPageContent({ slug, blocks, title }) {
