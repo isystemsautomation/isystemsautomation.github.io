@@ -1,0 +1,20 @@
+{% macro footerColumns(columns, currentUrl) %}
+<div class="site-footer__links grid grid--4">
+  {% for col in columns %}
+    <div>
+      {% if col.url %}
+        <h3><a href="{{ col.url }}"{% if col.url == currentUrl %} aria-current="page"{% endif %}>{{ col.label }}</a></h3>
+      {% else %}
+        <h3>{{ col.label }}</h3>
+      {% endif %}
+      {% if col.children | length %}
+        <ul>
+          {% for child in col.children %}
+            <li><a href="{{ child.url }}"{% if child.url == currentUrl %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+{% endmacro %}

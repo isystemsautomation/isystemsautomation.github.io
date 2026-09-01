@@ -1,3 +1,4 @@
+{% from "partials/footer-columns.njk" import footerColumns %}
 <footer class="site-footer">
   <div class="container">
     <div class="site-footer__logo">
@@ -6,37 +7,7 @@
       </a>
     </div>
 
-    <div class="site-footer__links grid grid--3">
-      <div>
-        <h3>INDUSTRIES</h3>
-        <ul>
-          <li><a href="/industries.html">INDUSTRIES</a></li>
-          <li><a href="/industries/power-generation.html">Power Generation</a></li>
-          <li><a href="/industries/oil-and-gas.html">Oil and Gas</a></li>
-          <li><a href="/industries/cement-and-coal.html">Cement and Coal</a></li>
-          <li><a href="/industries/control-centers.html">Control Centers</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>SERVICE</h3>
-        <ul>
-          <li><a href="/service.html">SERVICE</a></li>
-          <li><a href="/service/process-automation.html">Process Automation</a></li>
-          <li><a href="/service/process-optimization-advanced-process-control.html">Advanced process control</a></li>
-          <li><a href="/service/manufacturing-execution-system.html">MES (Manufacturing Execution System)</a></li>
-          <li><a href="/service/safety-systems-burner-management-systems.html">Safety Systems</a></li>
-          <li><a href="/service/industrial-furniture-control-centers.html">Industrial furniture</a></li>
-          <li><a href="/service/maintenance.html">Maintenance</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>COMPANY</h3>
-        <ul>
-          <li><a href="/company.html">COMPANY</a></li>
-          <li><a href="/contact.html">CONTACT</a></li>
-        </ul>
-      </div>
-    </div>
+    {{ footerColumns(footer, pageUrl or url) }}
 
     <div class="site-footer__legal legal">
       <div>

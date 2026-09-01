@@ -1,0 +1,52 @@
+[
+  {
+    "label": "Industries",
+    "url": "/industries.html",
+    "children": [
+      { "label": "Power Generation", "url": "/industries/power-generation.html" },
+      { "label": "Oil and Gas", "url": "/industries/oil-and-gas.html" },
+      { "label": "Cement and Coal", "url": "/industries/cement-and-coal.html" },
+      { "label": "Control Centers", "url": "/industries/control-centers.html" }
+    ]
+  },
+  {
+    "label": "Service",
+    "url": "/service.html",
+    "children": [
+      { "label": "Process Automation", "url": "/service/process-automation.html" },
+      {
+        "label": "Process optimization / Advanced process control",
+        "url": "/service/process-optimization-advanced-process-control.html"
+      },
+      {
+        "label": "MES (Manufacturing Execution System)",
+        "url": "/service/manufacturing-execution-system.html"
+      },
+      {
+        "label": "Safety Systems and Burner Management Systems",
+        "url": "/service/safety-systems-burner-management-systems.html"
+      },
+      {
+        "label": "Industrial furniture / Control centers",
+        "url": "/service/industrial-furniture-control-centers.html"
+      },
+      { "label": "Maintenance", "url": "/service/maintenance.html" }
+    ]
+  },
+  {
+    "label": "Expertise",
+    "children": [
+      { "label": "Compliance and Testing", "url": "/compliance.html" },
+      { "label": "References", "url": "/references.html" },
+      { "label": "Projects", "url": "/projects/index.html" },
+      { "label": "HomeMaster", "url": "/homemaster.html" }
+    ]
+  },
+  {
+    "label": "Company",
+    "url": "/company.html",
+    "children": [
+      { "label": "Contact", "url": "/contact.html" }
+    ]
+  }
+]

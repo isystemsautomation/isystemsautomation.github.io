@@ -113,9 +113,13 @@ small,.caption{ font-size:0.875rem; line-height:1.5; color:var(--ink-500); }
 .grid{ display:grid; gap:var(--s5); }
 .grid--2{ grid-template-columns:repeat(2,1fr); }
 .grid--3{ grid-template-columns:repeat(3,1fr); }
-@media (max-width:1023px){ .grid--3{ grid-template-columns:repeat(2,1fr); } }
+.grid--4{ grid-template-columns:repeat(4,1fr); }
+@media (max-width:1023px){
+  .grid--3{ grid-template-columns:repeat(2,1fr); }
+  .grid--4{ grid-template-columns:repeat(2,1fr); }
+}
 @media (max-width:767px){
-  .grid--2,.grid--3{ grid-template-columns:1fr; gap:var(--s4); }
+  .grid--2,.grid--3,.grid--4{ grid-template-columns:1fr; gap:var(--s4); }
 }
 
 /* --- Заголовок секции: один размер на весь сайт --- */
@@ -347,17 +351,23 @@ figcaption{ margin-top:var(--s3); font-size:0.9rem; color:var(--ink-500); }
 }
 .site-footer a{ color:var(--paper); text-decoration:none; }  /* 11.7:1 */
 .site-footer a:hover{ text-decoration:underline; text-decoration-color:var(--brand-400); }
+.site-footer a[aria-current="page"]{ text-decoration:underline; text-decoration-color:var(--brand-400); }
 .site-footer h2,.site-footer h3{ color:var(--paper); font-size:1.0625rem; margin:0 0 var(--s3); }
+.site-footer h3 a{ color:inherit; font-weight:600; }
 .site-footer ul{ list-style:none; margin:0; padding:0; display:grid; gap:var(--s2); }
 .site-footer .legal{ font-size:0.875rem; color:rgba(255,255,255,.72); }  /* 6.8:1 */
 .site-footer__logo{ text-align:center; margin-bottom:var(--s5); }
 .site-footer__logo img{ height:80px; width:auto; margin-inline:auto; }
-.site-footer__links{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s5); margin-bottom:var(--s6); }
+.site-footer__links{ margin-bottom:var(--s6); }
+.site-footer__links.grid--4{ gap:var(--s5); }
+@media (min-width:768px) and (max-width:1023px){
+  .site-footer__links.grid--4{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--s6) var(--s5); }
+}
 .site-footer__legal{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s5); }
 .site-footer__copy{ margin-top:var(--s5); font-size:0.875rem; color:rgba(255,255,255,.72); text-align:center; }
 @media (max-width:767px){
   .site-footer{ padding-block:40px; }
-  .site-footer__links, .site-footer__legal{ grid-template-columns:1fr; }
+  .site-footer__legal{ grid-template-columns:1fr; }
 }
 
 /* --- Contact page --- */
