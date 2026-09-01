@@ -72,6 +72,13 @@ function buildFrontMatter(meta, contentData) {
   if (meta.ogDescription) lines.push(`ogDescription: ${yamlString(meta.ogDescription)}`);
   if (meta.ogUrl) lines.push(`ogUrl: ${yamlString(meta.ogUrl)}`);
 
+  if (contentData.jsonLd) {
+    lines.push('jsonLd: |');
+    for (const line of JSON.stringify(contentData.jsonLd, null, 2).split('\n')) {
+      lines.push(`  ${line}`);
+    }
+  }
+
   lines.push('---', '');
   return lines.join('\n');
 }

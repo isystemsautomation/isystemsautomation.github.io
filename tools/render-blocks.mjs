@@ -213,7 +213,7 @@ function renderImage(block, lazy = true, compact = false) {
   const img = `<img src="${escapeHtml(src)}" alt="${alt}" width="${width}" height="${height}"${loading}>`;
 
   if (schematic) {
-    const fullHref = escapeHtml(mapImagePath(block.href) || src);
+    const fullHref = escapeHtml(href ? mapImagePath(href) : src);
     const label = block.alt ?? 'Schematic';
     const caption = `<figcaption>${escapeHtml(label)} — <a href="${fullHref}">Open full size</a></figcaption>`;
     return `<figure${figureAttr}><a href="${fullHref}">${img}</a>${caption}</figure>`;
@@ -754,8 +754,10 @@ function renderContactPage(blocks, pageTitle) {
   const title = heroTitleFromPageTitle(pageTitle);
   let html = renderHeroSection(title, '', null, 'page-hero');
 
-  html += `<section class="section section--tint"><div class="container prose"><h2 class="section-title">ISYSTEMS AUTOMATION S.R.L.</h2>
-<p>Str. Diligenței 20<br>100575 Ploiești, Prahova, Romania<br>Reg. no. J29/919/2007 · VAT RO21537032</p>
+  html += `<section class="section section--tint"><div class="container prose"><h2 class="section-title">Office and correspondence address</h2>
+<p><strong>ISYSTEMS AUTOMATION S.R.L.</strong><br>Str. Diligenței 18<br>100575 Ploiești, Prahova, Romania<br>Reg. no. J29/919/2007 · VAT RO21537032</p>
+<h2 class="section-title">Registered office</h2>
+<p><strong>ISYSTEMS AUTOMATION S.R.L.</strong><br>Str. Domnișori nr. 81, bl. 62, sc. A, et. 3, ap. 12<br>100284 Ploiești, Prahova, Romania<br>Reg. no. J29/919/2007 · VAT RO21537032</p>
 <h2 class="section-title">Get in touch</h2>
 <p>E-mail: <a href="mailto:office@isystemsautomation.com">office@isystemsautomation.com</a><br>Phone: <a href="tel:+40747757798">+40 747 757 798</a></p>
 <p>Enquiries are normally answered within one business day.</p>
