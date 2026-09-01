@@ -234,8 +234,7 @@ a.btn--quiet{ color:var(--brand-700); }
   background:var(--paper); border:1px solid var(--ink-300); border-radius:3px;
   overflow:hidden;
 }
-.card > img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
-.accordion .card > img{ max-height:180px; aspect-ratio:auto; }
+.card:not(.card--inline) > img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
 .card__body{ padding:var(--s5); display:flex; flex-direction:column; gap:var(--s3); flex:1; }
 .card__body > :last-child{ margin-top:auto; }        /* кнопки выравниваются по низу */
 .card h3{ margin:0; font-size:1.375rem; }
@@ -266,13 +265,23 @@ a.btn--quiet{ color:var(--brand-700); }
 
 /* --- Promo row (carousel leftovers on index) --- */
 .section-promo__layout{
-  display:grid; grid-template-columns:minmax(0,280px) 1fr);
+  display:grid; grid-template-columns:minmax(0,190px) 1fr);
   gap:var(--s4); align-items:start;
 }
-.section-promo__layout figure{ max-width:none; margin:0; }
+.section-promo__layout figure{ max-width:190px; margin:0; }
+.section-promo__layout figure img{
+  width:100%; aspect-ratio:4/3; object-fit:cover;
+}
 .section-promo__text > :last-child{ margin-bottom:0; }
+.section-promo__text h3:first-child{ margin-top:0; }
+.card--inline{
+  background:transparent; border:none; overflow:visible;
+}
+.card--inline .section-promo__layout--card{ padding:var(--s4); }
+.accordion .card--inline{ border:none; border-radius:0; }
 @media (max-width:767px){
   .section-promo__layout{ grid-template-columns:1fr; }
+  .section-promo__layout figure{ max-width:190px; }
 }
 
 .point-grid h3{ margin-top:0; }
@@ -296,7 +305,7 @@ a.btn--quiet{ color:var(--brand-700); }
 .accordion--promo details + details{ border-top:1px solid var(--ink-300); }
 .accordion--promo summary{ padding:var(--s3) 0; }
 .accordion--promo .section-promo__layout{
-  grid-template-columns:minmax(0,220px) 1fr;
+  grid-template-columns:minmax(0,190px) 1fr;
   padding-bottom:var(--s3);
 }
 .accordion--gallery .gallery{ margin-bottom:0; }

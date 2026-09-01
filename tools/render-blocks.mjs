@@ -25,6 +25,64 @@ const INDEX_CAROUSEL_FIGURES = [
   '/assets/img/2024/08/09/carousel3.jpg',
 ];
 
+function loadServiceBlurbs() {
+  const blurbs = new Map();
+  const servicePath = path.join(ROOT, 'content/service.json');
+  if (!fs.existsSync(servicePath)) return blurbs;
+
+  const data = JSON.parse(fs.readFileSync(servicePath, 'utf8'));
+  for (const section of data.blocks ?? []) {
+    if (section.type !== 'section') continue;
+
+    let linkHref = null;
+    let paragraph = null;
+    let seenImage = false;
+    let headingCount = 0;
+
+    for (const b of section.blocks ?? []) {
+      if (b.type === 'image') seenImage = true;
+      if (b.type === 'heading' && b.level === 3) headingCount += 1;
+      if (b.type === 'paragraph' && seenImage && headingCount >= 1 && !paragraph) {
+        paragraph = b.html;
+      }
+      if (b.type === 'link' && b.href?.startsWith('/service/')) {
+        linkHref = b.href;
+      }
+    }
+
+    if (linkHref && paragraph) {
+      blurbs.set(linkHref, { paragraph, link: linkHref });
+    }
+    const serviceTitle = section.blocks?.find(
+      (b) => b.type === 'heading' && b.level === 3,
+    )?.text;
+    if (serviceTitle && paragraph) {
+      const link = hrefFromServiceTitle(serviceTitle) ?? linkHref;
+      blurbs.set(`title:${serviceTitle}`, { paragraph, link });
+      if (link) blurbs.set(link, { paragraph, link });
+    }
+  }
+
+  return blurbs;
+}
+
+function hrefFromServiceTitle(title) {
+  const map = {
+    'Process Automation': '/service/process-automation.html',
+    'Process optimization / Advanced process control':
+      '/service/process-optimization-advanced-process-control.html',
+    'MES (Manufacturing Execution System)': '/service/manufacturing-execution-system.html',
+    'Safety Systems and Burner Management Systems':
+      '/service/safety-systems-burner-management-systems.html',
+    'Industrial furniture / Control centers':
+      '/service/industrial-furniture-control-centers.html',
+    Maintenance: '/service/maintenance.html',
+  };
+  return map[title] ?? null;
+}
+
+const SERVICE_BLURBS = loadServiceBlurbs();
+
 export function mapImagePath(src) {
   if (!src) return src;
   if (src.startsWith('/images/')) {
@@ -253,25 +311,70 @@ function renderBlock(block, options = {}) {
   }
 }
 
-function renderCard(card, lazy = true) {
-  const src = mapImagePath(card.image.src);
-  const { width, height } = imageDims(src);
-  let href = card.image.href;
+function enrichServiceCard(card) {
+  if (card.body.length > 0) return card;
+
+  let href = card.image?.href;
   if (href && JOOMSHAPER.test(href)) href = null;
-  const alt = escapeHtml(card.image.alt ?? '');
-  const loading = lazy ? ' loading="lazy" decoding="async"' : ' fetchpriority="high" decoding="async"';
-  const img = `<img src="${escapeHtml(src)}" alt="${alt}" width="${width}" height="${height}"${loading}>`;
-  const imgHtml = href
-    ? `<a href="${escapeHtml(mapImagePath(href))}">${img}</a>`
-    : img;
-  const title = card.heading
-    ? `<h3>${escapeHtml(formatHeadingText(card.heading.text))}</h3>`
+
+  let blurb = href?.startsWith('/service/') ? SERVICE_BLURBS.get(href) : null;
+  if (!blurb && card.heading?.text) {
+    blurb = SERVICE_BLURBS.get(`title:${card.heading.text}`);
+  }
+  if (!blurb) return card;
+
+  const link = href ?? blurb.link;
+  if (!link) return card;
+
+  return {
+    ...card,
+    body: [
+      { type: 'paragraph', html: blurb.paragraph },
+      { type: 'link', href: link, text: 'Learn More' },
+    ],
+  };
+}
+
+function countImageHeadingPairs(blocks, start) {
+  let count = 0;
+  let k = start;
+
+  while (
+    k < blocks.length &&
+    blocks[k].type === 'image' &&
+    k + 1 < blocks.length &&
+    blocks[k + 1].type === 'heading'
+  ) {
+    count += 1;
+    k += 2;
+    while (k < blocks.length && blocks[k].type !== 'image') {
+      if (blocks[k].type === 'heading' && blocks[k].level <= 2) break;
+      k += 1;
+    }
+  }
+
+  return count;
+}
+
+function renderInlinePromoCard(card, options = {}, lazy = true) {
+  const enriched = enrichServiceCard(card);
+  const figure = renderImage(enriched.image, lazy);
+  const title = enriched.heading
+    ? headingTag(enriched.heading.level ?? 3, enriched.heading.text)
     : '';
-  const body = card.body.map((b) => renderBlock(b, { lazyImages: lazy })).filter(Boolean).join('\n');
-  const srAlt = card.image.alt
-    ? `<p class="visually-hidden">${escapeHtml(card.image.alt)}</p>`
+  const body = enriched.body
+    .map((b) => renderBlock(b, { ...options, lazyImages: lazy }))
+    .filter(Boolean)
+    .join('\n');
+  const srAlt = enriched.image.alt
+    ? `<p class="visually-hidden">${escapeHtml(enriched.image.alt)}</p>`
     : '';
-  return `<article class="card">${imgHtml}${srAlt}<div class="card__body">${title}${body}</div></article>`;
+
+  return `<div class="section-promo__layout section-promo__layout--card">${figure}${srAlt}<div class="section-promo__text">${title}${body}</div></div>`;
+}
+
+function renderCard(card, lazy = true) {
+  return `<article class="card card--inline">${renderInlinePromoCard(card, {}, lazy)}</article>`;
 }
 
 function renderAccordionCards(cards, options = {}) {
@@ -280,7 +383,7 @@ function renderAccordionCards(cards, options = {}) {
       const open = idx === 0 ? ' open' : '';
       const title = card.heading?.text ?? '';
       const bodyOnly = { ...card, heading: null };
-      return `<details${open}><summary>${escapeHtml(formatHeadingText(title))}</summary>${renderCard(bodyOnly, options.lazyImages !== false)}</details>`;
+      return `<details${open}><summary>${escapeHtml(formatHeadingText(title))}</summary>${renderInlinePromoCard(bodyOnly, options, options.lazyImages !== false)}</details>`;
     })
     .join('\n')}\n</div>`;
 }
@@ -334,6 +437,68 @@ function renderBlocksWithGallery(blocks, options = {}) {
       if (featured.length >= 2) {
         parts.push(headingTag(block.level, block.text, true));
         parts.push(renderAccordionCards(featured, options));
+        i = j;
+        continue;
+      }
+    }
+
+    if (
+      block.type === 'heading' &&
+      block.level === 3 &&
+      i + 2 < blocks.length &&
+      blocks[i + 1].type === 'image' &&
+      blocks[i + 2].type === 'heading'
+    ) {
+      const titleHeading = block;
+      const imageBlock = blocks[i + 1];
+      const subtitleHeading = blocks[i + 2];
+      let j = i + 3;
+      const body = [];
+      while (j < blocks.length) {
+        const next = blocks[j];
+        if (next.type === 'image') break;
+        if (next.type === 'heading' && next.level === 3) break;
+        if (next.type === 'heading' && next.level <= 2) break;
+        body.push(next);
+        j += 1;
+      }
+      if (body.length > 0) {
+        const figure = renderImage(imageBlock, options.lazyImages !== false);
+        const text = `${headingTag(subtitleHeading.level, subtitleHeading.text)}${body.map((b) => renderBlock(b, options)).join('\n')}`;
+        parts.push(headingTag(titleHeading.level, titleHeading.text));
+        parts.push(
+          `<div class="section-promo__layout section-promo__layout--lead">${figure}<div class="section-promo__text">${text}</div></div>`,
+        );
+        i = j;
+        continue;
+      }
+    }
+
+    if (
+      block.type === 'image' &&
+      i + 1 < blocks.length &&
+      blocks[i + 1].type === 'heading' &&
+      blocks[i + 1].level >= 3 &&
+      countImageHeadingPairs(blocks, i) === 1
+    ) {
+      const heading = blocks[i + 1];
+      let j = i + 2;
+      const body = [];
+      while (j < blocks.length) {
+        const next = blocks[j];
+        if (next.type === 'image') break;
+        if (next.type === 'heading' && next.level <= 2) break;
+        if (next.type === 'heading' && next.level === 3 && body.length > 0) break;
+        body.push(next);
+        j += 1;
+      }
+      const hasText = body.some((b) => ['paragraph', 'list', 'link'].includes(b.type));
+      if (hasText) {
+        const figure = renderImage(block, options.lazyImages !== false);
+        const text = `${headingTag(heading.level, heading.text)}${body.map((b) => renderBlock(b, options)).join('\n')}`;
+        parts.push(
+          `<div class="section-promo__layout section-promo__layout--lead">${figure}<div class="section-promo__text">${text}</div></div>`,
+        );
         i = j;
         continue;
       }
