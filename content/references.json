@@ -123,8 +123,8 @@
           "ordered": false,
           "items": [
             { "html": "2022–present · Control system maintenance, refinery CHP plant, Ploiești · Emerson Ovation, ABB Industrial IT 800xA, HIMA HIQuad, Honeywell PHD" },
-            { "html": "2019–2021 · Combined cycle power plant, Pančevo, Serbia · owner's engineer: review of I&amp;C design documentation, signal databases, HMI and control algorithms; FAT and SAT; supervision of installation and commissioning · Emerson Ovation, ABB Symphony Plus, Foxboro Triconex, ABB AC800" },
-            { "html": "2019–2021 · HMI architecture for the same plant: two gas turbines and a steam turbine, fuel gas systems, SIL 3 integration, unit load control, and the DCS grounding scheme" },
+            { "html": "2019–2021 · <a href=\"/combined-cycle-power-plants.html\">Combined cycle power plant, Pančevo, Serbia</a> · investor's representative for the automatic process control system: verification of design for execution documentation, review of control algorithms and signal databases, mnemonic scheme approval, schedule monitoring, equipment inspection at the manufacturers, site entrance control, quality control of erection and commissioning, review of test and commissioning programmes, participation in the performance test, and training of operating personnel · two gas turbines and one steam turbine · Emerson Ovation, ABB Symphony Plus, Foxboro Triconex, ABB AC800 at SIL 3" },
+            { "html": "2019–2021 · HMI architecture for the same plant: unit overview, gas turbine 1 and 2 including fuel gas systems, steam systems, unit load control, SIL 3 status integration, and the DCS grounding scheme" },
             { "html": "2020–2021 · Hydroelectric power plant, Krasnaya Polyana, Russia · hydro turbine control · Siemens S7-300 / S7-1500 / S7-1200, TIA Portal" },
             { "html": "2019 · Hydroelectric power plant, Belorechensk, Russia · hydro turbine control · Yokogawa Centum VP" },
             { "html": "2018–2019 · Sludge dosing, CFB boiler · pump, variable speed drive, valves, sequences, historian and MES integration · Emerson Ovation 3.5.1 with HIMA" },

@@ -234,6 +234,37 @@
     },
     {
       "type": "section",
+      "title": "Combined Cycle Power Plants",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Combined Cycle Power Plants"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/steam-turbine-casing.jpg",
+          "alt": "Steam turbine casing with control valve actuator",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Combined Cycle Power Plants"
+        },
+        {
+          "type": "paragraph",
+          "html": "Owner's engineer for CCPP control systems: design review, algorithm and database verification, commissioning oversight and operator training."
+        },
+        {
+          "type": "link",
+          "href": "/combined-cycle-power-plants.html",
+          "text": "LEARN MORE"
+        }
+      ]
+    },
+    {
+      "type": "section",
       "title": "Factory and Site Acceptance Testing",
       "blocks": [
         {

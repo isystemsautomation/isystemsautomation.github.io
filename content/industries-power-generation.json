@@ -244,6 +244,16 @@
     },
     {
       "type": "section",
+      "title": "Combined cycle power plants",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "Two gas turbines, a heat recovery steam generator and a steam turbine controlled as one unit, with SIL 3 safety systems. We have acted as the investor's representative on a CCPP automatic control system from design review through commissioning and operator training — see <a href=\"/combined-cycle-power-plants.html\">Combined Cycle Power Plants</a>."
+        }
+      ]
+    },
+    {
+      "type": "section",
       "title": "What We Do",
       "blocks": [
         {

@@ -36,6 +36,7 @@
   {
     "label": "Expertise",
     "children": [
+      { "label": "Combined Cycle Power Plants", "url": "/combined-cycle-power-plants.html" },
       { "label": "Acceptance Testing", "url": "/acceptance-testing.html" },
       { "label": "Compliance and Testing", "url": "/compliance.html" },
       { "label": "Cyber Security", "url": "/cybersecurity.html" },
