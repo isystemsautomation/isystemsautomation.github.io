@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /examen/
 
 Sitemap: https://www.isystemsautomation.com/sitemap.xml
