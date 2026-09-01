@@ -142,38 +142,8 @@
       "title": "Island mode operation and load rejection",
       "blocks": [
         {
-          "type": "image",
-          "src": "/images/projects/ovation-turbine-trend-redacted.jpg",
-          "alt": "Ovation DCS turbine trend display during island mode testing",
-          "href": null
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Island mode operation and load rejection"
-        },
-        {
           "type": "paragraph",
-          "html": "A refinery loses its grid connection and the plant it depends on has seconds to decide whether the refinery keeps running or goes dark. Restart after an uncontrolled shutdown costs a day of production, a flare event and a mechanical inspection."
-        },
-        {
-          "type": "paragraph",
-          "html": "We have configured and commissioned the control algorithms that keep a refinery CHP plant supplying its refinery after separation from the grid:"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            { "html": "Detection of grid separation and transfer of the turbine governor from droop to isochronous control" },
-            { "html": "Fast load rejection to house load, with the machine held on its own auxiliaries" },
-            { "html": "Load shedding of non-critical consumers by priority, sequenced so that the frequency excursion stays inside the turbine's tolerance" },
-            { "html": "Frequency and voltage control in the islanded network" },
-            { "html": "Resynchronisation to the grid once it returns" }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "html": "The algorithms were tested on the running plant, not only in simulation. Turbine acceptance testing on the same units included disconnection of the generator from the grid, which is the same event under controlled conditions. Technical and economic performance indicators for the same plant are covered under <a href=\"/projects/power-plant-performance-calculation.html\">power plant performance calculation</a>."
+          "html": "Where a plant has to keep supplying its site after separation from the grid, we implement the governor transfer, load shedding and frequency control that make it possible — proven on a running refinery CHP plant. See <a href=\"/island-mode.html\">Island Mode Operation</a>."
         }
       ]
     },

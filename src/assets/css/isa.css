@@ -213,6 +213,8 @@ small,.caption{ font-size:0.875rem; line-height:1.5; color:var(--ink-500); }
 .hero .container, .page-hero .container{ position:relative; z-index:2; padding-block:var(--s5); }
 .hero h1,.hero p, .page-hero h1,.page-hero p{ color:var(--paper); text-shadow:none; }
 .hero p, .page-hero p{ max-width:56ch; }
+.hero-actions{ display:flex; flex-wrap:wrap; gap:var(--s2); margin-top:var(--s3); }
+.hero-actions .btn{ margin:0; }
 @media (max-width:767px){ .hero, .page-hero{ min-height:220px; } }
 
 /* --- Кнопки: два вида вместо пяти --- */

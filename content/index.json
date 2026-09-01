@@ -3,7 +3,38 @@
   "source": "legacy/index.html",
   "url": "/index.html",
   "home": {
-    "heroTagline": "Control systems engineering since 2007, based in Ploiești.",
+    "heroHeading": "Control systems written by process engineers",
+    "heroTagline": "We design, commission and maintain control systems for power plants and refineries. The difference between us and an automation contractor shows up in the fuel bill.",
+    "heroButtons": [
+      { "href": "/references.html", "label": "References" },
+      { "href": "/combined-cycle-power-plants.html", "label": "Combined Cycle Power Plants" }
+    ],
+    "differentiators": [
+      {
+        "title": "Island mode, proven on a running plant",
+        "text": "When a refinery loses the grid, its CHP plant has seconds to decide whether the refinery keeps running. We implemented that transition and proved it on a live plant in two trials, holding 13–14 MW in the island, agreed in advance with the transmission and distribution system operators. It is the most dangerous test in power plant commissioning and most contractors are never asked to run it.",
+        "href": "/island-mode.html",
+        "linkLabel": "Island mode operation"
+      },
+      {
+        "title": "Fuel accounting inside the control system",
+        "text": "A CHP plant makes two products from one fuel stream, and no measurement separates them. We implement the allocation, the boiler efficiency by direct and indirect method, and the turbine heat balance as live calculations in the DCS, archived, with the cost of every deviation from design attached. Most plants get this as a spreadsheet at month end, if at all.",
+        "href": "/plant-performance.html",
+        "linkLabel": "Plant performance and fuel accounting"
+      },
+      {
+        "title": "Combustion that follows the fuel",
+        "text": "On a CFB boiler firing petroleum coke, the fuel changes constantly. We calculate its calorific value automatically from the combustion result and distribute solid fuel across the feeders by heat value. That loop cannot be written without understanding what is happening in the furnace.",
+        "href": "/projects/advanced-controllers-cfb-boiler.html",
+        "linkLabel": "Advanced controllers for CFB boilers"
+      },
+      {
+        "title": "Eleven years on one plant, then back again",
+        "text": "Three boilers of 120 t/h, a 260 t/h CFB boiler, three 12 MW turbines and one of 30 MW, five steam headers, a refinery on the other end. Designed, commissioned and maintained continuously from 2007 to 2018, and under maintenance again since 2022. Process knowledge of a plant is not bought; it accumulates.",
+        "href": "/references.html",
+        "linkLabel": "References"
+      }
+    ],
     "services": [
       {
         "href": "/service/process-automation.html",

@@ -122,33 +122,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "html": "A combined heat and power plant makes two products from one fuel stream, and there is no physical measurement that separates them. The fuel has to be allocated between electricity and heat by a chosen method, and that choice determines the cost of steam against the cost of a kilowatt-hour — which is to say it determines tariffs, internal transfer prices and what the plant appears to be worth."
-        },
-        {
-          "type": "paragraph",
-          "html": "We implement the calculation as part of the control system, with the allocation method the plant is required to report under:"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            { "html": "Specific reference fuel consumption for electricity supplied" },
-            { "html": "Specific reference fuel consumption for heat supplied" },
-            { "html": "Boiler efficiency, gross and net, by direct and indirect method, for gas and for petroleum coke fired circulating fluidized bed boilers" },
-            { "html": "Steam turbine efficiency, heat rate and losses against the factory characteristic" },
-            { "html": "Auxiliary power consumption as a share of generation" },
-            { "html": "Fuel heat utilisation factor" },
-            { "html": "Thermal balances and electrical energy balances" },
-            { "html": "Balances for water, steam, gas and electricity, technical and commercial" }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "html": "Under the physical method used in Romanian and post-Soviet practice, heat supplied from a CHP plant is charged at the specific fuel consumption of an equivalent boiler house and the remainder of the fuel is charged to electricity. Exergy-based and market-based allocation give different answers from the same measurements. We implement whichever the plant reports under, and can run two in parallel where the plant answers to more than one regulator."
-        },
-        {
-          "type": "paragraph",
-          "html": "The output is not a report someone assembles at month end. It is a live figure on the operator's screen, archived, with the cost of each deviation from design attached to it."
+          "html": "The plant performance monitoring system implements the technical and economic performance indicators the plant reports under, including fuel allocation between heat and power, boiler efficiency by direct and indirect method, and turbine heat balance against the factory characteristic. See <a href=\"/plant-performance.html\">Plant Performance and Fuel Accounting</a>."
         }
       ]
     },

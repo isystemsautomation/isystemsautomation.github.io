@@ -32,17 +32,7 @@ ogUrl: "https://www.isystemsautomation.com/industries/power-generation.html"
 <li>Disconnection of the generator from the grid, with the unit held on house load</li>
 <li>Emergency stop and overspeed protection, including Braun turbine overspeed systems</li>
 </ul>
-<p>Results are recorded and used for the certification of the turbine.</p></div></section><section class="section section--tint"><div class="container prose"><h2 class="section-title">Island mode operation and load rejection</h2><figure><img src="/assets/img/projects/ovation-turbine-trend-redacted.jpg" alt="Ovation DCS turbine trend display during island mode testing" width="960" height="640" loading="lazy" decoding="async"><figcaption>Ovation DCS turbine trend display during island mode testing</figcaption></figure>
-<p>A refinery loses its grid connection and the plant it depends on has seconds to decide whether the refinery keeps running or goes dark. Restart after an uncontrolled shutdown costs a day of production, a flare event and a mechanical inspection.</p>
-<p>We have configured and commissioned the control algorithms that keep a refinery CHP plant supplying its refinery after separation from the grid:</p>
-<ul>
-<li>Detection of grid separation and transfer of the turbine governor from droop to isochronous control</li>
-<li>Fast load rejection to house load, with the machine held on its own auxiliaries</li>
-<li>Load shedding of non-critical consumers by priority, sequenced so that the frequency excursion stays inside the turbine's tolerance</li>
-<li>Frequency and voltage control in the islanded network</li>
-<li>Resynchronisation to the grid once it returns</li>
-</ul>
-<p>The algorithms were tested on the running plant, not only in simulation. Turbine acceptance testing on the same units included disconnection of the generator from the grid, which is the same event under controlled conditions. Technical and economic performance indicators for the same plant are covered under <a href="/projects/power-plant-performance-calculation.html">power plant performance calculation</a>.</p></div></section><section class="section"><div class="container prose"><h2 class="section-title">Grid code compliance and system operator interface</h2><p>A generating plant is only connected as long as it answers to the system operator on the operator's terms. We implement that interface.</p>
+<p>Results are recorded and used for the certification of the turbine.</p></div></section><section class="section section--tint"><div class="container prose"><h2 class="section-title">Island mode operation and load rejection</h2><p>Where a plant has to keep supplying its site after separation from the grid, we implement the governor transfer, load shedding and frequency control that make it possible — proven on a running refinery CHP plant. See <a href="/island-mode.html">Island Mode Operation</a>.</p></div></section><section class="section"><div class="container prose"><h2 class="section-title">Grid code compliance and system operator interface</h2><p>A generating plant is only connected as long as it answers to the system operator on the operator's terms. We implement that interface.</p>
 <ul>
 <li>Active and reactive power setpoint control from dispatch</li>
 <li>Reporting to the transmission system operator over IEC 60870-5-101</li>

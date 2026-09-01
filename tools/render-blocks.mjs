@@ -703,16 +703,36 @@ function renderIndexProjectCard(project) {
   return `<h3><a href="${escapeHtml(project.href)}">${escapeHtml(project.title)}</a></h3><div class="section-promo__layout section-promo__layout--card">${figure}<div class="section-promo__text"><p>${escapeHtml(summary)}</p><p><a href="${escapeHtml(project.href)}">Read more</a></p></div></div>`;
 }
 
+function renderDifferentiators(items) {
+  const blocks = items
+    .map(
+      ({ title, text, href, linkLabel }) =>
+        `<h3>${escapeHtml(title)}</h3><p>${escapeHtml(text)}</p><p><a href="${escapeHtml(href)}">${escapeHtml(linkLabel)}</a></p>`,
+    )
+    .join('\n');
+  return `${sectionTitleHeading('What we do that others do not')}<p>Six DCS platforms and SIL 3 certification are table stakes. These are not.</p>${blocks}`;
+}
+
 function renderIndexHome({ title, home, blocks }) {
-  const heroTitle = heroTitleFromPageTitle(title);
+  const heroHeading = home.heroHeading || heroTitleFromPageTitle(title);
   const heroImg = INDEX_CAROUSEL_HERO[0];
   const dims = imageDims(heroImg);
-  let html = `<section class="section section--flush hero"><img src="${escapeHtml(heroImg)}" alt="Combined-cycle plant control room with operator consoles and overview display" width="${dims.width}" height="${dims.height}" fetchpriority="high" decoding="async"><div class="container prose"><h1>${escapeHtml(heroTitle)}</h1><p>${escapeHtml(home.heroTagline)}</p></div></section>`;
-
-  html += `<section class="section section--tint"><div class="container prose">${sectionTitleHeading('What we do')}${renderLinkIndex(home.services)}</div></section>`;
-  html += `<section class="section"><div class="container prose">${sectionTitleHeading('Industries')}${renderLinkIndex(home.industries)}</div></section>`;
+  const heroButtons = (home.heroButtons ?? [])
+    .map(({ href, label }) => `<a href="${escapeHtml(href)}" class="btn btn--primary">${escapeHtml(label)}</a>`)
+    .join('');
+  const heroActions = heroButtons ? `<p class="hero-actions">${heroButtons}</p>` : '';
+  let html = `<section class="section section--flush hero"><img src="${escapeHtml(heroImg)}" alt="Combined-cycle plant control room with operator consoles and overview display" width="${dims.width}" height="${dims.height}" fetchpriority="high" decoding="async"><div class="container prose"><h1>${escapeHtml(heroHeading)}</h1><p>${escapeHtml(home.heroTagline)}</p>${heroActions}</div></section>`;
 
   let tint = true;
+  if (home.differentiators?.length) {
+    html += `<section class="section section--tint"><div class="container prose">${renderDifferentiators(home.differentiators)}</div></section>`;
+    tint = false;
+  }
+
+  html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose">${sectionTitleHeading('What we do')}${renderLinkIndex(home.services)}</div></section>`;
+  tint = !tint;
+  html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose">${sectionTitleHeading('Industries')}${renderLinkIndex(home.industries)}</div></section>`;
+  tint = !tint;
   const seenTitleRef = { value: true };
   for (const block of blocks) {
     if (block.type === 'section') {

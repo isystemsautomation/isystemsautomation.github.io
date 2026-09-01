@@ -1,0 +1,26 @@
+---
+layout: base.njk
+title: Island Mode Operation and Load Rejection for Industrial CHP Plants — ISYSTEMS AUTOMATION
+permalink: /island-mode.html
+pageUrl: /island-mode.html
+description: "Governor transfer to isochronous control, priority load shedding and frequency control that keep a refinery running when its CHP plant separates from the grid — implemented and proven on an operating plant at 13–14 MW in the island."
+canonical: "https://www.isystemsautomation.com/island-mode.html"
+ogTitle: Island Mode Operation and Load Rejection for Industrial CHP Plants — ISYSTEMS AUTOMATION
+ogDescription: "Governor transfer to isochronous control, priority load shedding and frequency control that keep a refinery running when its CHP plant separates from the grid — implemented and proven on an operating plant at 13–14 MW in the island."
+ogUrl: "https://www.isystemsautomation.com/island-mode.html"
+---
+<section class="section section--flush page-hero"><div class="container prose"><h1>Island Mode Operation</h1></div></section><section class="section section--tint"><div class="container prose"><div class="section-promo__layout section-promo__layout--lead"><figure class="figure--embed"><img src="/assets/img/projects/ovation-turbine-trend-redacted.jpg" alt="Ovation DCS turbine trend display during island mode testing" width="960" height="640" loading="lazy" decoding="async"><figcaption>Ovation DCS turbine trend display during island mode testing</figcaption></figure><div class="section-promo__text"><h2 class="section-title">Island mode operation and load rejection</h2><p>A refinery loses its grid connection. Its combined heat and power plant now has a few seconds to decide whether the refinery keeps running or goes dark. Getting it wrong means an uncontrolled shutdown: units tripped, product to the flare, a day of lost production and a mechanical inspection before restart.</p>
+<p>We have implemented this transition and proved it on an operating plant.</p></div></div></div></section><section class="section"><div class="container prose"><h2 class="section-title">What has to happen, and in what order</h2>
+<h3>Detect the separation</h3>
+<p>Not "notice the frequency moving" — establish that the connection to the grid is gone, fast enough that the next steps still have time to act.</p>
+<h3>Transfer the governor</h3>
+<p>The turbine governor runs in droop while synchronised to a grid that sets the frequency. In an island there is no grid to follow: the machine itself sets the frequency, and the governor has to move to isochronous control. That transfer happens once, under load, and cannot be rehearsed on the running plant.</p>
+<h3>Shed load by priority</h3>
+<p>Generation left in the island is smaller than the load that was being served. Non-critical consumers go, in a sequence worked out in advance, fast enough that the frequency excursion stays inside what the turbine will tolerate. Which consumer is non-critical is a process question, not an electrical one, and getting the list wrong shuts down the refinery just as effectively as losing the plant.</p>
+<h3>Hold frequency and voltage</h3>
+<p>In the island the plant is the grid. Frequency and voltage control that were someone else's problem are now the control system's problem.</p>
+<h3>Resynchronise</h3>
+<p>When the grid returns, back onto it without a second disturbance.</p></div></section><section class="section section--tint"><div class="container prose"><h2 class="section-title">Proven, not simulated</h2>
+<p>The algorithm was implemented in the DCS and tested on the running plant in two trials, before and after a plant overhaul, holding 13–14 MW in the island. Both trials were agreed in advance with the transmission system operator and the distribution system operator, because a deliberate separation affects the network on the other side of the breaker too.</p>
+<p>Turbine acceptance testing on the same units included disconnection of the generator from the grid — the same event, under controlled conditions, with the machine held on house load.</p></div></section><section class="section"><div class="container prose"><h2 class="section-title">Why it is rare</h2>
+<p>An automation contractor can write the logic. Running it on a plant that a refinery depends on requires someone the plant owner will let near the turbine, agreement from two network operators, and a load shedding list that someone has to be confident about. Most of that is not automation work.</p></div></section><section class="section section--tint"><div class="container prose"><h2 class="section-title">Related</h2><p>Primary and secondary frequency control, plant coordinated control and grid code compliance are covered under <a href="/industries/power-generation.html">Power Generation</a>. The plant's fuel and efficiency calculations are covered under <a href="/plant-performance.html">Plant Performance</a>.</p></div></section>

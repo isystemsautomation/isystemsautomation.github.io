@@ -39,8 +39,10 @@
   },
   {
     "label": "Expertise",
-    "url": "/combined-cycle-power-plants.html",
+    "url": "/island-mode.html",
     "children": [
+      { "label": "Island Mode Operation", "url": "/island-mode.html" },
+      { "label": "Plant Performance", "url": "/plant-performance.html" },
       { "label": "Combined Cycle Power Plants", "url": "/combined-cycle-power-plants.html" },
       { "label": "Acceptance Testing", "url": "/acceptance-testing.html" },
       { "label": "Compliance", "url": "/compliance.html" },
