@@ -61,12 +61,12 @@
     },
     {
       "type": "section",
-      "title": "Process optimization / Advanced process control",
+      "title": "Process optimisation / Advanced process control",
       "blocks": [
         {
           "type": "heading",
           "level": 3,
-          "text": "Process optimization / Advanced process control"
+          "text": "Process optimisation / Advanced process control"
         },
         {
           "type": "image",

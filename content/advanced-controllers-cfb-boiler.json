@@ -79,11 +79,11 @@
         },
         {
           "type": "paragraph",
-          "html": "The ISYSTEMS AUTOMATION boiler optimization solution is a sophisticated process control application designed for the optimized combustion of circulating fluidized bed boiler. This advanced application effectively adjusts the combustion process to stabilize variations in production, fuel quantity, fuel quality, and combustion conditions, ensuring peak performance 24/7"
+          "html": "The ISYSTEMS AUTOMATION boiler optimisation solution is a sophisticated process control application designed for the optimised combustion of circulating fluidized bed boiler. This advanced application effectively adjusts the combustion process to stabilize variations in production, fuel quantity, fuel quality, and combustion conditions, ensuring peak performance 24/7"
         },
         {
           "type": "paragraph",
-          "html": "The Combustion Controller operates as a sophisticated multi-parameter closed-loop controller, regulating multiple variables to improve combustion efficiency. In tandem, the Fuel Quality Compensator complements combustion optimization by effectively managing variations in fuel quality. This comprehensive solution eliminates fuel system disturbances caused by variations in fuel quality and quantity, thereby mitigating severe combustion instabilities."
+          "html": "The Combustion Controller operates as a sophisticated multi-parameter closed-loop controller, regulating multiple variables to improve combustion efficiency. In tandem, the Fuel Quality Compensator complements combustion optimisation by effectively managing variations in fuel quality. This comprehensive solution eliminates fuel system disturbances caused by variations in fuel quality and quantity, thereby mitigating severe combustion instabilities."
         },
         {
           "type": "heading",
@@ -119,7 +119,7 @@
               "html": "Automatic Regulation of Emissions SO2 and NOx: Controlling emissions by maintaining the set temperature in the furnace and dosing lime to manage pollutants."
             },
             {
-              "html": "Automatic Calculation of Calorific Value: Automatically calculating the calorific value of the petroleum coke fed into the furnace to optimize combustion."
+              "html": "Automatic Calculation of Calorific Value: Automatically calculating the calorific value of the petroleum coke fed into the furnace to optimise combustion."
             },
             {
               "html": "Adjustments to the Load Controller: Making necessary adjustments to the load regulator in response to changes in furnace temperature."
@@ -205,7 +205,7 @@
               "html": "Logging and retrieval of past performance data"
             },
             {
-              "html": "Analysis tools for performance optimization"
+              "html": "Analysis tools for performance optimisation"
             }
           ]
         }

@@ -25,7 +25,7 @@
         },
         {
           "type": "paragraph",
-          "html": "Three control rooms designed and built for one industrial power plant: a plant control room in 2011, a central control room in 2015, and operator console panels supplied in 2010. All three are in continuous operation."
+          "html": "Three control rooms for one industrial power plant: operator console panels supplied in 2010, a plant control room built in 2011, and a central control room built in 2015. All three are in continuous operation."
         },
         {
           "type": "image",
@@ -49,189 +49,57 @@
     },
     {
       "type": "section",
-      "title": "Control Center Design for Top Industry Leaders",
+      "title": "Design, manufacture and supply",
       "blocks": [
         {
           "type": "image",
           "src": "/images/2024/08/10/industrial_furniture_control_centers.jpg",
           "alt": "Ergonomic control center operator furniture",
-          "href": "https://www.joomshaper.com"
+          "href": null
         },
         {
           "type": "heading",
           "level": 3,
-          "text": "Control Center Design for Top Industry Leaders"
+          "text": "Design, manufacture and supply"
         },
         {
           "type": "paragraph",
           "html": "ISYSTEMS AUTOMATION designs, manufactures and supplies control room equipment and operator furniture. Clients include LUKOIL Energy and Gas, Dalkia Termo Prahova and Nuclearelectrica."
+        },
+        {
+          "type": "paragraph",
+          "html": "Delivery covers the control room as a working environment, not a furniture catalogue: layout and sightlines, acoustics, lighting and microclimate, power distribution and backup, auxiliary equipment, and the operator interface — console arrangement, screen placement and reach distances. The ergonomic basis is ISO 11064; the full design rationale is under <a href=\"/industries/control-centers.html\">Control Centers</a>."
         }
       ]
     },
     {
       "type": "section",
-      "title": "Acoustic Design",
-      "blocks": [
-        {
-          "type": "paragraph",
-          "html": "The primary objective of our control center designs is to guarantee comfort, safety, and unobstructed access for operational personnel to all workplace-related equipment. We meticulously consider various groups of factors and technical requirements to enhance personnel comfort and safety."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Acoustic Design"
-        },
-        {
-          "type": "paragraph",
-          "html": "Special attention is dedicated to the acoustics of the room. To mitigate acoustic noise, special grilles equipped with noise-absorbing material can be installed on the ceiling. Walls feature antistatic panels, while modular carpets cover the floors. The strategic placement of loudspeakers ensures that emergency and alarm situations are communicated effectively, regardless of the operator's position."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Layout Plan"
-        },
-        {
-          "type": "paragraph",
-          "html": "The layout and arrangement of furniture and equipment prioritize accessibility to operational equipment, communication facilities, and other necessary tools. Furniture arrangement facilitates free movement and open communication among personnel. The design ensures that operational staff maintain a direct line of sight to essential equipment, and hierarchies are respected with dispatchers having quick access and visual contact with subordinates. Exit routes are carefully planned to allow swift evacuation in case of emergencies."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Auxiliary Equipment"
-        },
-        {
-          "type": "paragraph",
-          "html": "Our projects incorporate essential auxiliary equipment such as alarms, fire alarms, lighting systems, access control, and air conditioning. Control panels for this equipment are positioned for easy access."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Lighting and Microclimate"
-        },
-        {
-          "type": "paragraph",
-          "html": "Workstations are strategically placed to benefit from daylight without causing glare or discomfort. The lighting system is designed to avoid interference with screen readability and to prevent glare and flicker. Adjustable lighting solutions cater to different times of the shift, with individual lamps provided if necessary. Internal temperature, humidity, and air circulation are closely monitored to maintain an optimal working environment."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Selection of Materials"
-        },
-        {
-          "type": "paragraph",
-          "html": "Furniture, equipment, and finishing materials are chosen based on the 24/7 operational nature of the room to ensure durability and comfort."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Repair and Maintenance"
-        },
-        {
-          "type": "paragraph",
-          "html": "Equipment is designed for easy access for maintenance and repair, with clear labeling to minimize human error."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Power Supply"
-        },
-        {
-          "type": "paragraph",
-          "html": "Critical equipment benefits from backup power supplies from independent sources, ensuring uninterruptible operations. Emergency lighting and power systems ensure that power failures do not impede control or exit routes."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Operator Interface"
-        },
-        {
-          "type": "paragraph",
-          "html": "The operator interface is designed to be visually comfortable, with calm colors for normal operations and bright colors for emergencies. Different color schemes and sound signals help operators quickly identify and respond to emergency situations."
-        },
-        {
-          "type": "paragraph",
-          "html": "ISYSTEMS AUTOMATION continues to set new standards in control center design, ensuring that our clients receive the most advanced, safe, and comfortable solutions for their operational needs."
-        }
-      ]
-    },
-    {
-      "type": "section",
-      "title": "Our Services",
+      "title": "What each delivery includes",
       "blocks": [
         {
           "type": "heading",
-          "level": 3,
-          "text": "Our Services"
+          "level": 2,
+          "text": "What each delivery includes"
         },
         {
           "type": "paragraph",
-          "html": "ISYSTEMS AUTOMATION carries out engineering and consulting, protection systems, and process control and electrical automation. We can follow the entire project cycle from design through commissioning."
+          "html": "<strong>Acoustics.</strong> Background noise and reverberation controlled so speech between operators and audible alarms both work in the same room."
         },
         {
-          "type": "image",
-          "src": "/images/2024/08/10/process_automation.jpg",
-          "alt": "Process automation control system",
-          "href": "/"
+          "type": "paragraph",
+          "html": "<strong>Layout.</strong> Sightlines to the overview display from every console position, circulation that does not cross behind a working operator, and maintenance access without entering the operating area."
         },
         {
-          "type": "heading",
-          "level": 3,
-          "text": "Process Automation"
+          "type": "paragraph",
+          "html": "<strong>Lighting and microclimate.</strong> Illuminance and glare control for screen work, temperature and air distribution for equipment and operators on a continuous shift."
         },
         {
-          "type": "image",
-          "src": "/images/projects/redundant-network-cabinet.jpg",
-          "alt": "Control cabinet with redundant industrial Ethernet switches",
-          "href": "/"
+          "type": "paragraph",
+          "html": "<strong>Power supply.</strong> Distribution, backup and changeover for consoles, displays and the control system."
         },
         {
-          "type": "heading",
-          "level": 4,
-          "text": "Process optimization / Advanced process control"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/yokogawa-centum-cabinet.jpg",
-          "alt": "Yokogawa Centum control cabinet with I/O modules and marshalling",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "MES (Manufacturing Execution System)"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/atex-zone2-barriers.jpg",
-          "alt": "ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Safety Systems and Burner Management Systems"
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/industrial_furniture_control_centers.jpg",
-          "alt": "Ergonomic control center operator furniture",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Industrial furniture / Control centers"
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/maintenance.jpg",
-          "alt": "Industrial automation maintenance and technical support",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Maintenance"
+          "type": "paragraph",
+          "html": "<strong>Operator interface.</strong> Consoles, screen arrangement and controls decided with the control system — so alarm philosophy and HMI layout are not reconciled on site after the furniture is fixed."
         }
       ]
     }

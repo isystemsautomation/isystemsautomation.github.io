@@ -194,7 +194,7 @@ async function main() {
           height: info.height,
           bytes: info.bytes,
         };
-        console.log(`Optimized ${rel} → ${info.width}x${info.height} (${info.bytes} B)`);
+        console.log(`Optimised ${rel} → ${info.width}x${info.height} (${info.bytes} B)`);
       }
     } catch (err) {
       console.error('Failed', rel, err.message);

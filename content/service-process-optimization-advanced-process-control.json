@@ -1,16 +1,16 @@
 {
-  "slug": "service-process-optimization-advanced-process-control",
+  "slug": "service-process-optimisation-advanced-process-control",
   "source": "legacy/service/process-optimization-advanced-process-control.html",
   "url": "/service/process-optimization-advanced-process-control.html",
   "blocks": [
     {
       "type": "section",
-      "title": "Process optimization / Advanced process control",
+      "title": "Process optimisation / Advanced process control",
       "blocks": [
         {
           "type": "heading",
           "level": 2,
-          "text": "Process optimization / Advanced process control"
+          "text": "Process optimisation / Advanced process control"
         }
       ]
     },

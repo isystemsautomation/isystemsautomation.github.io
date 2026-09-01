@@ -12,7 +12,7 @@
     "differentiators": [
       {
         "title": "Island mode, proven on a running plant",
-        "text": "When a refinery loses the grid, its CHP plant has seconds to decide whether the refinery keeps running. We implemented that transition and proved it on a live plant in two trials, holding 13–14 MW in the island, agreed in advance with the transmission and distribution system operators. It is the most dangerous test in power plant commissioning and most contractors are never asked to run it.",
+        "text": "When a refinery loses the grid, its CHP plant has seconds to decide whether the refinery keeps running. We implemented that transition and proved it on a live plant in two trials, holding 13–14 MW in the island, agreed in advance with the transmission and distribution system operators. It is one of the most demanding tests in power plant commissioning and most contractors are never asked to run it.",
         "href": "/island-mode/",
         "linkLabel": "Island mode operation"
       },
@@ -24,7 +24,7 @@
       },
       {
         "title": "Combustion that follows the fuel",
-        "text": "On a CFB boiler firing petroleum coke, the fuel changes constantly. We calculate its calorific value automatically from the combustion result and distribute solid fuel across the feeders by heat value. That loop cannot be written without understanding what is happening in the furnace.",
+        "text": "On a CFB boiler firing petroleum coke, the fuel changes constantly. We calculate its calorific value automatically from the combustion result and distribute solid fuel across the feeders by heat value. That control strategy cannot be written without understanding what is happening in the furnace.",
         "href": "/projects/advanced-controllers-cfb-boiler.html",
         "linkLabel": "Advanced controllers for CFB boilers"
       },
@@ -43,7 +43,7 @@
       },
       {
         "href": "/service/process-optimization-advanced-process-control.html",
-        "label": "Process optimization / Advanced process control",
+        "label": "Process optimisation / Advanced process control",
         "line": "DCS optimisers for load, fuel and emissions, delivered as a set."
       },
       {

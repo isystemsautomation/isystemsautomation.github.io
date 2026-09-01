@@ -2,13 +2,13 @@
   "service-process-automation": {
     "index": { "href": "/service.html", "label": "All services" },
     "links": [
-      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimization" },
+      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimisation" },
       { "href": "/service/manufacturing-execution-system.html", "label": "MES" },
       { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" },
       { "href": "/service/maintenance.html", "label": "Maintenance" }
     ]
   },
-  "service-process-optimization-advanced-process-control": {
+  "service-process-optimisation-advanced-process-control": {
     "index": { "href": "/service.html", "label": "All services" },
     "links": [
       { "href": "/service/process-automation.html", "label": "Process automation" },
@@ -21,7 +21,7 @@
     "index": { "href": "/service.html", "label": "All services" },
     "links": [
       { "href": "/service/process-automation.html", "label": "Process automation" },
-      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimization" },
+      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimisation" },
       { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" },
       { "href": "/service/maintenance.html", "label": "Maintenance" }
     ]
@@ -30,7 +30,7 @@
     "index": { "href": "/service.html", "label": "All services" },
     "links": [
       { "href": "/service/process-automation.html", "label": "Process automation" },
-      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimization" },
+      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimisation" },
       { "href": "/service/industrial-furniture-control-centers.html", "label": "Control centers" },
       { "href": "/service/maintenance.html", "label": "Maintenance" }
     ]
@@ -48,7 +48,7 @@
     "index": { "href": "/service.html", "label": "All services" },
     "links": [
       { "href": "/service/process-automation.html", "label": "Process automation" },
-      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimization" },
+      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimisation" },
       { "href": "/service/manufacturing-execution-system.html", "label": "MES" },
       { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" }
     ]

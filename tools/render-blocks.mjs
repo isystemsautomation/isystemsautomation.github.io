@@ -85,7 +85,7 @@ function loadServiceBlurbs() {
 function hrefFromServiceTitle(title) {
   const map = {
     'Process Automation': '/service/process-automation.html',
-    'Process optimization / Advanced process control':
+    'Process optimisation / Advanced process control':
       '/service/process-optimization-advanced-process-control.html',
     'MES (Manufacturing Execution System)': '/service/manufacturing-execution-system.html',
     'Safety Systems and Burner Management Systems':
@@ -710,7 +710,7 @@ function renderDifferentiators(items) {
         `<h3>${escapeHtml(title)}</h3><p>${escapeHtml(text)}</p><p><a href="${escapeHtml(href)}">${escapeHtml(linkLabel)}</a></p>`,
     )
     .join('\n');
-  return `${sectionTitleHeading('What we do that others do not')}<p>Six DCS platforms and SIL 3 certification are the baseline. These are not.</p>${blocks}`;
+  return `${sectionTitleHeading('What we do that others do not')}<p>Six DCS platforms and SIL 3 capability are the baseline. What sets us apart is the process engineering behind the control system.</p>${blocks}`;
 }
 
 function renderIndexHome({ title, home, blocks }) {

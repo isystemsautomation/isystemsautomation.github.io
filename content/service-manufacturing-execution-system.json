@@ -74,7 +74,7 @@
         },
         {
           "type": "paragraph",
-          "html": "<strong>Operator performance across shifts.</strong> Comparison by shift, day, week, month and year, which is a management tool and, handled badly, a way to lose the control room. We implement it as process analysis, not as surveillance."
+          "html": "<strong>Operator performance across shifts.</strong> Comparison by shift, day, week, month and year. Used correctly this is a management tool; used poorly it becomes surveillance rather than process improvement. We implement it as process analysis, not as surveillance."
         }
       ]
     },
@@ -94,5 +94,5 @@
       ]
     }
   ],
-  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 18 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
 }

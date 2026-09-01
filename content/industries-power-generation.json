@@ -66,19 +66,19 @@
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Steam Boilers with Gas Combustion Process:</strong> Gas-fired boiler burner management and load control."
+          "html": "- <strong>Gas-fired steam boilers:</strong> Gas-fired boiler burner management and load control."
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Steam Boilers with Liquid Fuel Burning Process:</strong> Liquid-fuel boiler control and fuel metering."
+          "html": "- <strong>Oil-fired steam boilers:</strong> Liquid-fuel boiler control and fuel metering."
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Steam Boilers with Mixed Burning Process:</strong> CFB boilers firing gas, solid fuel and semi-liquid fuel — including automatic coke calorific value from the combustion result."
+          "html": "- <strong>Multi-fuel steam boilers:</strong> CFB boilers firing gas, solid fuel and semi-liquid fuel — including automatic coke calorific value from the combustion result."
         },
         {
           "type": "paragraph",
-          "html": "- <strong>AAF Bags for Cleaning Ash:</strong> Ash handling on solid-fuel boilers."
+          "html": "- <strong>Baghouse filters for ash handling:</strong> Ash handling on solid-fuel boilers."
         },
         {
           "type": "paragraph",
@@ -86,7 +86,7 @@
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Eolian Powerplant:</strong> Wind farm SCADA and dispatch integration."
+          "html": "- <strong>Wind farms:</strong> Wind farm SCADA and dispatch integration."
         },
         {
           "type": "heading",

@@ -16,93 +16,45 @@
     },
     {
       "type": "section",
-      "title": "Burner Management System (BMS): Ensuring Safety and Efficiency in Combustion Processes",
+      "title": "Burner management systems",
       "blocks": [
         {
           "type": "image",
           "src": "/images/projects/atex-zone2-barriers.jpg",
           "alt": "ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet",
-          "href": "https://www.joomshaper.com"
+          "href": null
         },
         {
           "type": "heading",
           "level": 3,
-          "text": "Burner Management System (BMS): Ensuring Safety and Efficiency in Combustion Processes"
+          "text": "Burner management systems"
         },
         {
           "type": "paragraph",
-          "html": "As a step towards increased safety in industrial operations, we introduce the Burner Management System (BMS). Carefully designed to ensure safe start-up, operation and shutdown of process burners, the BMS acts as a guardian to protect combustion equipment."
+          "html": "A burner management system (BMS) supervises the safe start-up, operation and shutdown of fired equipment. It enforces the sequence: purge the furnace to a safe oxygen level, establish ignition permissives, light off through the burner, prove flame, and on loss of flame or unsafe condition trip fuel and air in a defined order."
+        },
+        {
+          "type": "paragraph",
+          "html": "The BMS acts when permissives fail, when flame is not proved within the allowed time, or when a trip condition is reached — not as a continuous process controller. On a refinery CHP boiler we implemented automatic start-up from a hot state as a DCS sequence under HIMA HIQuad burner management: purge, light-off through the BMS, ramp to minimum stable load against drum thermal stress limits, and hand-over to load control, to SR EN 12952."
         }
       ]
     },
     {
       "type": "section",
-      "title": "Safety Instrumented System (SIS): Protecting Plants from Potentially Dangerous States",
+      "title": "Safety instrumented systems",
       "blocks": [
         {
-          "type": "paragraph",
-          "html": "The Burner Management System is an integral safety mechanism that mitigates the risks associated with industrial combustion processes. Through a combination of advanced technology and robust design, BMS prevents explosions and other hazardous accidents, securing both personnel and equipment."
-        },
-        {
-          "type": "paragraph",
-          "html": "By integrating security protocols, BMS not only protects valuable equipment but also helps create a safer working environment."
-        },
-        {
-          "type": "paragraph",
-          "html": "Key features of the BMS include:"
-        },
-        {
-          "type": "paragraph",
-          "html": "- <strong>Automated Safety Controls</strong>: The system automatically manages the ignition and shutdown of burners, ensuring consistent and safe operations."
-        },
-        {
-          "type": "paragraph",
-          "html": "- <strong>Real-time Monitoring</strong>: Continuous surveillance of combustion parameters allows for immediate detection and correction of any anomalies."
-        },
-        {
-          "type": "paragraph",
-          "html": "- <strong>Fail-safe Mechanisms</strong>: In the event of a malfunction, the BMS activates emergency shutdown procedures to prevent accidents."
-        },
-        {
-          "type": "paragraph",
-          "html": "- <strong>User-friendly Interface</strong>: An intuitive control panel provides operators with easy access to system status and controls."
-        },
-        {
           "type": "heading",
-          "level": 3,
-          "text": "Safety Instrumented System (SIS): Protecting Plants from Potentially Dangerous States"
+          "level": 2,
+          "text": "Safety instrumented systems"
         },
         {
           "type": "paragraph",
-          "html": "As an important step towards strengthening industrial safety, we use the Industrial Safety Instrumented System (SIS) in our projects. This automatic protection system is designed to shut down the plant if it enters a potentially dangerous state, ensuring the utmost safety for personnel, equipment, and the environment."
+          "html": "A safety instrumented system (SIS) takes the plant to a safe state when a hazardous condition is detected — overpressure, high level in a vessel that must not overflow, gas in a classified area, or a condition that requires an emergency shutdown. Safety instrumented functions are separate from the DCS: dedicated sensors, a logic solver rated for the required SIL, and final elements that fail to the safe position."
         },
         {
           "type": "paragraph",
-          "html": "The Safety Instrumented System is a critical safety mechanism that addresses the inherent risks in industrial operations. By swiftly identifying, assessing, analyzing, and controlling risks, SIS mitigates the potential for hazardous incidents and enhances overall plant safety."
-        },
-        {
-          "type": "paragraph",
-          "html": "With the integration of SIS,  we are not only protecting our assets but also ensuring a safer workplace for employees."
-        },
-        {
-          "type": "paragraph",
-          "html": "Key features of the SIS include:"
-        },
-        {
-          "type": "paragraph",
-          "html": "- <strong>Comprehensive Hazard Identification</strong>: The system is equipped to identify a wide range of hazards, from fires and gas leaks to equipment failures."
-        },
-        {
-          "type": "paragraph",
-          "html": "- <strong>Risk Assessment and Analysis</strong>: Advanced algorithms assess and analyze the identified risks in real-time, ensuring prompt and accurate decision-making."
-        },
-        {
-          "type": "paragraph",
-          "html": "- <strong>Automated Risk Control</strong>: In the event of an abnormal condition, the SIS activates emergency shutdown procedures, preventing accidents and mitigating potential hazards."
-        },
-        {
-          "type": "paragraph",
-          "html": "- <strong>Robust Network of Sensors and Actuators</strong>: The system incorporates a network of sensors, actuators, and control mechanisms to detect and respond to abnormal conditions rapidly."
+          "html": "On a combined cycle power plant the safety instrumented system runs at SIL 3 on Foxboro Triconex and ABB AC800, with the SIL status integrated into the operator HMI rather than left on a separate panel."
         }
       ]
     },
@@ -112,12 +64,12 @@
       "blocks": [
         {
           "type": "heading",
-          "level": 3,
+          "level": 2,
           "text": "Functional safety to IEC 61511"
         },
         {
           "type": "paragraph",
-          "html": "Safety functions are specified, implemented and verified under the functional safety lifecycle of IEC 61511. ISYSTEMS AUTOMATION has taken part in the certification of SIL 2 and SIL 3 applications, covering:"
+          "html": "Safety instrumented functions are specified, implemented and verified under the functional safety lifecycle of IEC 61511. ISYSTEMS AUTOMATION has contributed to the certification of SIL 2 and SIL 3 applications, covering:"
         },
         {
           "type": "list",
@@ -142,88 +94,41 @@
         },
         {
           "type": "paragraph",
-          "html": "Safety logic solvers delivered on HIMA HIQuad, Foxboro Triconex and ABB AC800, with burner management on HIMA HIQuad."
+          "html": "Proof tests are scheduled at the interval the safety requirement specification demands — valve stroke tests, burner flame scanner checks, logic solver diagnostics — and recorded so the operating phase can show the safety function still meets its SIL claim."
         }
       ]
     },
     {
       "type": "section",
-      "title": "Our Services",
+      "title": "Logic solvers",
       "blocks": [
         {
           "type": "heading",
-          "level": 3,
-          "text": "Our Services"
+          "level": 2,
+          "text": "Logic solvers"
         },
         {
           "type": "paragraph",
-          "html": "ISYSTEMS AUTOMATION carries out engineering and consulting, protection systems, and process control and electrical automation. We can follow the entire project cycle from design through commissioning."
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/process_automation.jpg",
-          "alt": "Process automation control system",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Process Automation"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/redundant-network-cabinet.jpg",
-          "alt": "Control cabinet with redundant industrial Ethernet switches",
-          "href": "/"
-        },
+          "html": "Safety logic solvers delivered on HIMA HIQuad, Foxboro Triconex and ABB AC800. Burner management on the refinery CHP plant runs on HIMA HIQuad; the combined cycle project used Triconex and AC800 at SIL 3."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Reference plant work",
+      "blocks": [
         {
           "type": "heading",
-          "level": 4,
-          "text": "Process optimization / Advanced process control"
+          "level": 2,
+          "text": "Reference plant work"
         },
         {
-          "type": "image",
-          "src": "/images/projects/yokogawa-centum-cabinet.jpg",
-          "alt": "Yokogawa Centum control cabinet with I/O modules and marshalling",
-          "href": "/"
+          "type": "paragraph",
+          "html": "On a refinery CHP plant: automatic boiler start-up on boiler No. 3 — 100 kgf/cm² at 540 °C, nine burners, purge and light-off through the burner management system, ramp against drum thermal stress limits, hand-over to load control. Plant-wide protection logic across four turbines, four boilers and auxiliary equipment so a trip on one item takes the correct action on the rest."
         },
         {
-          "type": "heading",
-          "level": 4,
-          "text": "MES (Manufacturing Execution System)"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/atex-zone2-barriers.jpg",
-          "alt": "ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Safety Systems and Burner Management Systems"
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/industrial_furniture_control_centers.jpg",
-          "alt": "Ergonomic control center operator furniture",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Industrial furniture / Control centers"
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/maintenance.jpg",
-          "alt": "Industrial automation maintenance and technical support",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Maintenance"
+          "type": "paragraph",
+          "html": "Continuous maintenance since 2022 on the same plant's DCS, ESD, BMS and MES: Emerson Ovation, ABB Industrial IT 800xA, HIMA HIQuad and Honeywell PHD."
         }
       ]
     }
