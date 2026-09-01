@@ -69,6 +69,36 @@
     },
     {
       "type": "section",
+      "title": "Delivered as named optimisers",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Delivered as named optimisers"
+        },
+        {
+          "type": "paragraph",
+          "html": "On four boilers of one plant we implemented, as a set:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            { "html": "Performance monitoring system" },
+            { "html": "Combustion optimiser" },
+            { "html": "Steam temperature and pressure optimiser" },
+            { "html": "Fuel optimiser" },
+            { "html": "SOx and NOx emission optimiser" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "They run together against a real-time optimisation target rather than as independent loops, with plant coordinated control above them setting the load."
+        }
+      ]
+    },
+    {
+      "type": "section",
       "title": "Continuous performance work",
       "blocks": [
         {

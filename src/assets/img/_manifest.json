@@ -84,6 +84,16 @@
     "height": 640,
     "bytes": 55594
   },
+  "/assets/img/projects/central-control-room-consoles.jpg": {
+    "width": 1216,
+    "height": 811,
+    "bytes": 101053
+  },
+  "/assets/img/projects/central-control-room-in-use.jpg": {
+    "width": 1216,
+    "height": 809,
+    "bytes": 106756
+  },
   "/assets/img/projects/control-room-combined-cycle-hero.jpg": {
     "width": 2400,
     "height": 800,
@@ -98,6 +108,16 @@
     "width": 960,
     "height": 640,
     "bytes": 37801
+  },
+  "/assets/img/projects/control-room-power-plant-operators.jpg": {
+    "width": 1202,
+    "height": 799,
+    "bytes": 91893
+  },
+  "/assets/img/projects/control-room-power-plant-videowall.jpg": {
+    "width": 1202,
+    "height": 800,
+    "bytes": 103358
   },
   "/assets/img/projects/emissions-monitoring-display.jpg": {
     "width": 960,

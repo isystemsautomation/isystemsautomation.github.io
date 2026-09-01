@@ -179,6 +179,37 @@
     },
     {
       "type": "section",
+      "title": "Grid code compliance and system operator interface",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Grid code compliance and system operator interface"
+        },
+        {
+          "type": "paragraph",
+          "html": "A generating plant is only connected as long as it answers to the system operator on the operator's terms. We implement that interface."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            { "html": "Active and reactive power setpoint control from dispatch" },
+            { "html": "Reporting to the transmission system operator over IEC 60870-5-101" },
+            { "html": "Reporting to the market operator over IEC 60870-5-104" },
+            { "html": "Telecontrol over four redundant communication channels, so the loss of one path does not interrupt control or data transfer" },
+            { "html": "Primary and secondary frequency control, with the response measured at acceptance rather than assumed" },
+            { "html": "Resynchronisation after islanded operation" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "We have delivered this for conventional plant, for a photovoltaic park and for a wind farm dispatched as one balancing group — see <a href=\"/projects/virtual-power-plant.html\">virtual power plant</a>."
+        }
+      ]
+    },
+    {
+      "type": "section",
       "title": "Automatic boiler start-up",
       "blocks": [
         {
@@ -193,6 +224,21 @@
         {
           "type": "paragraph",
           "html": "The value is repeatability. The same ramp, the same stress on the drum, the same fuel consumed, whoever is on shift."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Plant-wide protection",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Plant-wide protection"
+        },
+        {
+          "type": "paragraph",
+          "html": "Protection logic implemented across a whole station rather than machine by machine: four turbines, four boilers and the auxiliary equipment, so that a trip on one item takes the correct action on the rest instead of cascading."
         }
       ]
     },

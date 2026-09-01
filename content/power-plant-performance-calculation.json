@@ -121,11 +121,6 @@
       "title": "Technical and economic performance indicators for CHP plants",
       "blocks": [
         {
-          "type": "heading",
-          "level": 2,
-          "text": "Technical and economic performance indicators for CHP plants"
-        },
-        {
           "type": "paragraph",
           "html": "A combined heat and power plant makes two products from one fuel stream, and there is no physical measurement that separates them. The fuel has to be allocated between electricity and heat by a chosen method, and that choice determines the cost of steam against the cost of a kilowatt-hour — which is to say it determines tariffs, internal transfer prices and what the plant appears to be worth."
         },

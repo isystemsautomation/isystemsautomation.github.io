@@ -16,6 +16,39 @@
     },
     {
       "type": "section",
+      "title": "Control rooms we have built",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Control rooms we have built"
+        },
+        {
+          "type": "paragraph",
+          "html": "Three control rooms designed and built for one industrial power plant: a plant control room in 2011, a central control room in 2015, and operator console panels supplied in 2010. All three are in continuous operation."
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/control-room-power-plant-operators.jpg",
+          "alt": "Power plant control room with operators at the consoles",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/control-room-power-plant-videowall.jpg",
+          "alt": "Power plant control room with overview video wall",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/central-control-room-consoles.jpg",
+          "alt": "Central control room with operator consoles and overview displays",
+          "href": null
+        }
+      ]
+    },
+    {
+      "type": "section",
       "title": "Control Center Design for Top Industry Leaders",
       "blocks": [
         {
@@ -31,7 +64,7 @@
         },
         {
           "type": "paragraph",
-          "html": "ISYSTEMS AUTOMATION has achieved a significant milestone in the design, manufacture, and supply of cutting-edge equipment for several command centers. Our esteemed clients include industry giants such as LUKOIL, Dalkia Termo Prahova, NuclearElectrica, along with numerous smaller companies."
+          "html": "ISYSTEMS AUTOMATION designs, manufactures and supplies control room equipment and operator furniture. Clients include LUKOIL Energy and Gas, Dalkia Termo Prahova and Nuclearelectrica."
         }
       ]
     },
@@ -41,7 +74,7 @@
       "blocks": [
         {
           "type": "paragraph",
-          "html": "The primary objective of our control center designs is to guarantee comfort, safety, and seamless access for operational personnel to all workplace-related equipment. We meticulously consider various groups of factors and technical requirements to enhance personnel comfort and safety."
+          "html": "The primary objective of our control center designs is to guarantee comfort, safety, and unobstructed access for operational personnel to all workplace-related equipment. We meticulously consider various groups of factors and technical requirements to enhance personnel comfort and safety."
         },
         {
           "type": "heading",
