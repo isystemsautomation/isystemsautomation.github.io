@@ -263,10 +263,25 @@ a.btn--quiet{ color:var(--brand-700); }
 .table--compact{ font-size:0.8125rem; }
 .table--compact th{ position:static; }
 
-/* --- Promo row (carousel leftovers on index) --- */
+/* --- Promo row: compact image embedded in text --- */
 .section-promo__layout{
-  display:grid; grid-template-columns:minmax(0,190px) 1fr;
-  gap:var(--s4); align-items:start;
+  display:flow-root;
+  margin-bottom:var(--s4);
+}
+.section-promo__layout figure.figure--embed,
+.prose .section-promo__layout figure{
+  float:left;
+  width:160px;
+  max-width:32%;
+  margin:0 var(--s4) var(--s3) 0;
+}
+.section-promo__layout figure.figure--embed img,
+.prose .section-promo__layout figure img{
+  width:160px !important;
+  max-width:100%;
+  height:auto;
+  aspect-ratio:4/3;
+  object-fit:cover;
 }
 .section-promo__text > :last-child{ margin-bottom:0; }
 .section-promo__text h3:first-child{ margin-top:0; }
@@ -276,7 +291,15 @@ a.btn--quiet{ color:var(--brand-700); }
 .card--inline .section-promo__layout--card{ padding:var(--s4); }
 .accordion .card--inline{ border:none; border-radius:0; }
 @media (max-width:767px){
-  .section-promo__layout{ grid-template-columns:minmax(0,140px) 1fr; }
+  .section-promo__layout figure.figure--embed,
+  .prose .section-promo__layout figure{
+    width:120px;
+    max-width:35%;
+  }
+  .section-promo__layout figure.figure--embed img,
+  .prose .section-promo__layout figure img{
+    width:120px !important;
+  }
 }
 
 .point-grid h3{ margin-top:0; }
@@ -299,10 +322,7 @@ a.btn--quiet{ color:var(--brand-700); }
 .accordion--promo details{ border:none; border-radius:0; margin:0; }
 .accordion--promo details + details{ border-top:1px solid var(--ink-300); }
 .accordion--promo summary{ padding:var(--s3) 0; }
-.accordion--promo .section-promo__layout{
-  grid-template-columns:minmax(0,190px) 1fr;
-  padding-bottom:var(--s3);
-}
+.accordion--promo .section-promo__layout{ padding-bottom:var(--s3); }
 .accordion--gallery .gallery{ margin-bottom:0; }
 .accordion--table .table-scroll{ margin:0; }
 .accordion--table summary{ font-variant-numeric:tabular-nums; }
@@ -333,16 +353,26 @@ a.btn--quiet{ color:var(--brand-700); }
 @media (max-width:767px){ .gallery{ grid-template-columns:1fr; } }
 figcaption{ margin-top:var(--s3); font-size:0.875rem; color:var(--ink-500); }
 
-/* Compact promo figures — must follow .prose figure (760px) and win on specificity */
+/* Promo embed overrides .prose figure (760px) — keep after generic figure rules */
+.prose .section-promo__layout figure.figure--embed,
 .prose .section-promo__layout figure{
-  max-width:190px; width:100%; margin:0; margin-inline:0; margin-bottom:0;
+  float:left;
+  width:160px;
+  max-width:32%;
+  margin:0 var(--s4) var(--s3) 0;
+  margin-inline:0;
 }
 .prose .section-promo__layout figure img{
-  width:100%; aspect-ratio:4/3; object-fit:cover;
+  width:160px !important;
+  max-width:100%;
+  height:auto;
+  aspect-ratio:4/3;
+  object-fit:cover;
 }
-.prose .accordion .section-promo__layout figure{ max-width:190px; }
+.prose .section-promo__layout figure figcaption:not(.visually-hidden){ display:none; }
 @media (max-width:767px){
-  .prose .section-promo__layout figure{ max-width:140px; }
+  .prose .section-promo__layout figure,
+  .prose .section-promo__layout figure img{ width:120px !important; max-width:35%; }
 }
 
 /* --- Подвал --- */

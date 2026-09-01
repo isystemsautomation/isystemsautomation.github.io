@@ -148,7 +148,9 @@ function isSchematic(block) {
   return /ovation-control-loop|virtual-power-plant|schematic|control-loop|diagram/i.test(src);
 }
 
-function renderImage(block, lazy = true) {
+const PROMO_IMG_WIDTH = 160;
+
+function renderImage(block, lazy = true, compact = false) {
   let href = block.href;
   if (href && JOOMSHAPER.test(href)) {
     href = null;
@@ -159,8 +161,16 @@ function renderImage(block, lazy = true) {
   const alt = escapeHtml(block.alt ?? '');
   const loading = lazy ? ' loading="lazy" decoding="async"' : ' fetchpriority="high" decoding="async"';
   const schematic = isSchematic(block);
-  const figureAttr = schematic ? ' class="figure--schematic"' : '';
-  const img = `<img src="${escapeHtml(src)}" alt="${alt}" width="${width}" height="${height}"${loading}>`;
+  const displayW = compact ? PROMO_IMG_WIDTH : width;
+  const displayH = compact
+    ? Math.max(1, Math.round(height * (PROMO_IMG_WIDTH / width)))
+    : height;
+  const figureAttr = schematic
+    ? ' class="figure--schematic"'
+    : compact
+      ? ' class="figure--embed"'
+      : '';
+  const img = `<img src="${escapeHtml(src)}" alt="${alt}" width="${displayW}" height="${displayH}"${loading}>`;
 
   if (schematic) {
     const fullHref = escapeHtml(mapImagePath(block.href) || src);
@@ -169,7 +179,12 @@ function renderImage(block, lazy = true) {
     return `<figure${figureAttr}><a href="${fullHref}">${img}</a>${caption}</figure>`;
   }
 
-  const caption = block.alt ? `<figcaption>${escapeHtml(block.alt)}</figcaption>` : '';
+  const caption =
+    block.alt && !compact
+      ? `<figcaption>${escapeHtml(block.alt)}</figcaption>`
+      : block.alt && compact
+        ? `<figcaption class="visually-hidden">${escapeHtml(block.alt)}</figcaption>`
+        : '';
 
   if (href) {
     return `<figure${figureAttr}><a href="${escapeHtml(mapImagePath(href))}">${img}</a>${caption}</figure>`;
@@ -358,7 +373,7 @@ function countImageHeadingPairs(blocks, start) {
 
 function renderInlinePromoCard(card, options = {}, lazy = true) {
   const enriched = enrichServiceCard(card);
-  const figure = renderImage(enriched.image, lazy);
+  const figure = renderImage(enriched.image, lazy, true);
   const title = enriched.heading
     ? headingTag(enriched.heading.level ?? 3, enriched.heading.text)
     : '';
@@ -447,7 +462,8 @@ function renderBlocksWithGallery(blocks, options = {}) {
       block.level === 3 &&
       i + 2 < blocks.length &&
       blocks[i + 1].type === 'image' &&
-      blocks[i + 2].type === 'heading'
+      blocks[i + 2].type === 'heading' &&
+      countImageHeadingPairs(blocks, i + 1) === 1
     ) {
       const titleHeading = block;
       const imageBlock = blocks[i + 1];
@@ -463,7 +479,7 @@ function renderBlocksWithGallery(blocks, options = {}) {
         j += 1;
       }
       if (body.length > 0) {
-        const figure = renderImage(imageBlock, options.lazyImages !== false);
+        const figure = renderImage(imageBlock, options.lazyImages !== false, true);
         const text = `${headingTag(subtitleHeading.level, subtitleHeading.text)}${body.map((b) => renderBlock(b, options)).join('\n')}`;
         parts.push(headingTag(titleHeading.level, titleHeading.text));
         parts.push(
@@ -494,7 +510,7 @@ function renderBlocksWithGallery(blocks, options = {}) {
       }
       const hasText = body.some((b) => ['paragraph', 'list', 'link'].includes(b.type));
       if (hasText) {
-        const figure = renderImage(block, options.lazyImages !== false);
+        const figure = renderImage(block, options.lazyImages !== false, true);
         const text = `${headingTag(heading.level, heading.text)}${body.map((b) => renderBlock(b, options)).join('\n')}`;
         parts.push(
           `<div class="section-promo__layout section-promo__layout--lead">${figure}<div class="section-promo__text">${text}</div></div>`,
@@ -547,14 +563,7 @@ function renderBlocksWithGallery(blocks, options = {}) {
         cards.push(card);
       }
       if (cards.length >= 2) {
-        const cols = cards.length === 4 ? 'grid--2' : 'grid--3';
-        if (cards.length >= 3) {
-          parts.push(renderAccordionCards(cards, options));
-        } else {
-          parts.push(
-            `<div class="grid ${cols}">\n${cards.map((c) => renderCard(c, options.lazyImages !== false)).join('\n')}\n</div>`,
-          );
-        }
+        parts.push(renderAccordionCards(cards, options));
         i = j;
         continue;
       }
@@ -689,7 +698,7 @@ function renderIndexCarousels(slides) {
         .map((b) => renderBlock(b, { lazyImages: true }))
         .filter(Boolean)
         .join('\n');
-      const figure = renderImage(carouselImageBlock(promoIndex + 1, title), true);
+      const figure = renderImage(carouselImageBlock(promoIndex + 1, title), true, true);
       const open = promoIndex === 0 ? ' open' : '';
       html += `<details${open}><summary>${escapeHtml(formatHeadingText(title))}</summary><div class="section-promo__layout">${figure}<div class="section-promo__text">${body}</div></div></details>`;
     });
