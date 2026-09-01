@@ -168,8 +168,12 @@ async function measureLayout() {
     return null;
   }
 
+  try {
   const server = await startStaticServer();
-  const browser = await puppeteer.default.launch({ headless: true });
+  const browser = await puppeteer.default.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
+  });
   const page = await browser.newPage();
   await page.setViewport({ width: 1440, height: 900 });
 
@@ -182,7 +186,7 @@ async function measureLayout() {
   for (const entry of inventory) {
     const fileUrl = `${server.base}${entry.url}`;
 
-    await page.goto(fileUrl, { waitUntil: 'networkidle0' });
+    await page.goto(fileUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
 
     const result = await page.evaluate(() => {
       const main = document.querySelector('main');
@@ -272,6 +276,10 @@ async function measureLayout() {
   server.stop();
 
   return { totalHiddenChars, maxContentImageWidth, maxImagePage, pageMetrics };
+  } catch (err) {
+    console.error('Layout measurement failed:', err.message);
+    return null;
+  }
 }
 
 const inventory = JSON.parse(fs.readFileSync(INVENTORY_PATH, 'utf8'));
