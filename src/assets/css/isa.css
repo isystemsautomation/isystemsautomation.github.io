@@ -265,12 +265,8 @@ a.btn--quiet{ color:var(--brand-700); }
 
 /* --- Promo row (carousel leftovers on index) --- */
 .section-promo__layout{
-  display:grid; grid-template-columns:minmax(0,190px) 1fr);
+  display:grid; grid-template-columns:minmax(0,190px) 1fr;
   gap:var(--s4); align-items:start;
-}
-.section-promo__layout figure{ max-width:190px; margin:0; }
-.section-promo__layout figure img{
-  width:100%; aspect-ratio:4/3; object-fit:cover;
 }
 .section-promo__text > :last-child{ margin-bottom:0; }
 .section-promo__text h3:first-child{ margin-top:0; }
@@ -280,8 +276,7 @@ a.btn--quiet{ color:var(--brand-700); }
 .card--inline .section-promo__layout--card{ padding:var(--s4); }
 .accordion .card--inline{ border:none; border-radius:0; }
 @media (max-width:767px){
-  .section-promo__layout{ grid-template-columns:1fr; }
-  .section-promo__layout figure{ max-width:190px; }
+  .section-promo__layout{ grid-template-columns:minmax(0,140px) 1fr; }
 }
 
 .point-grid h3{ margin-top:0; }
@@ -337,6 +332,18 @@ a.btn--quiet{ color:var(--brand-700); }
 @media (max-width:1023px){ .gallery{ grid-template-columns:repeat(2,1fr); } }
 @media (max-width:767px){ .gallery{ grid-template-columns:1fr; } }
 figcaption{ margin-top:var(--s3); font-size:0.875rem; color:var(--ink-500); }
+
+/* Compact promo figures — must follow .prose figure (760px) and win on specificity */
+.prose .section-promo__layout figure{
+  max-width:190px; width:100%; margin:0; margin-inline:0; margin-bottom:0;
+}
+.prose .section-promo__layout figure img{
+  width:100%; aspect-ratio:4/3; object-fit:cover;
+}
+.prose .accordion .section-promo__layout figure{ max-width:190px; }
+@media (max-width:767px){
+  .prose .section-promo__layout figure{ max-width:140px; }
+}
 
 /* --- Подвал --- */
 .site-footer{
