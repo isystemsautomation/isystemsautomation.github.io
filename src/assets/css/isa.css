@@ -378,7 +378,15 @@ figcaption{ margin-top:var(--s3); font-size:0.875rem; color:var(--ink-500); }
 .nav-panel details > ul{ padding-left:0; }
 
 /* --- Служебное --- */
-.visually-hidden{
+.notice-panel{
+  background:var(--ink-100);
+  border:1px solid var(--ink-300);
+  border-left:4px solid var(--brand-700);
+  padding:var(--s5);
+  font-size:1rem;
+}
+.notice-panel .section-title{ margin-top:0; }
+
   position:absolute; width:1px; height:1px; overflow:hidden;
   clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap;
 }

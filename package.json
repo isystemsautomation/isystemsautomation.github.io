@@ -2,7 +2,7 @@
   "name": "isystemsautomation-site",
   "private": true,
   "scripts": {
-    "build": "node tools/generate-pages.mjs && eleventy",
+    "build": "node tools/render-compliance.mjs && node tools/generate-pages.mjs && eleventy",
     "verify": "node tools/verify-content.mjs",
     "optimize-images": "node tools/optimize-images.mjs",
     "serve": "npm run build && eleventy --serve"
