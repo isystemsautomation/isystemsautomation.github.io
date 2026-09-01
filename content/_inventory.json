@@ -223,10 +223,10 @@
     "file": "legacy/homemaster.html",
     "url": "/homemaster.html",
     "title": "HomeMaster — ISYSTEMS AUTOMATION",
-    "description": "HOMEMASTER by ISYSTEMS AUTOMATION: modular smart lighting, sockets, climate and security modules for homes and buildings.",
+    "description": "HomeMaster by ISYSTEMS AUTOMATION: DIN-rail smart home modules with local logic, RS-485 Modbus, ESPHome and Home Assistant — eleven products designed and built in Ploiești.",
     "canonical": null,
     "ogTitle": "HomeMaster — ISYSTEMS AUTOMATION",
-    "ogDescription": null,
+    "ogDescription": "Modular smart home automation with local logic on every module. DIN-rail I/O, metering, OpenTherm and controllers — open hardware from ISYSTEMS AUTOMATION.",
     "ogUrl": "https://www.isystemsautomation.com/homemaster.html"
   }
 ]

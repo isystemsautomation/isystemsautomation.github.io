@@ -5,111 +5,194 @@
   "blocks": [
     {
       "type": "section",
-      "title": "HomeMaster",
+      "title": "Modular smart home automation with local logic",
       "blocks": [
         {
-          "type": "heading",
-          "level": 2,
-          "text": "HomeMaster"
+          "type": "image",
+          "src": "/images/homemaster/product-lineup.png",
+          "alt": "HomeMaster retail boxes for OpenTherm Gateway, Digital I/O, Analog I/O, Water Leak, MicroPLC and Energy Meter modules",
+          "href": null
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>HomeMaster</strong> is the in-house brand of ISYSTEMS AUTOMATION: DIN-rail modules and controllers for lighting, heating, energy metering, leak detection and boiler control — with logic on every module, RS-485 Modbus between devices, and integration through ESPHome and Home Assistant. No cloud dependency; the system keeps working when the network does not."
+        },
+        {
+          "type": "paragraph",
+          "html": "The product range, shop, system configurator and documentation live at <a href=\"https://www.home-master.eu\">home-master.eu</a>."
         }
       ]
     },
     {
       "type": "section",
-      "title": "Smart Home Automation: Introducing Our Brand – HOMEMASTER",
+      "title": "System architecture",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Deterministic communication"
+        },
+        {
+          "type": "paragraph",
+          "html": "RS-485 Modbus RTU between modules — stable on long cable runs and in electrically noisy panels."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Modular and scalable"
+        },
+        {
+          "type": "paragraph",
+          "html": "DIN-rail I/O, metering, dimming, leak detection and alarm modules expand around a MiniPLC or MicroPLC controller as the installation grows."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Local logic on every module"
+        },
+        {
+          "type": "paragraph",
+          "html": "Wall-switch scenes, shutter interlocks, valve shut-off, load balancing and boiler interfaces can run on the module itself. Critical functions continue if the controller or Wi-Fi link is down."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Fully local operation"
+        },
+        {
+          "type": "paragraph",
+          "html": "Automation runs on the devices in the panel. Internet is optional — for remote access and updates, not for day-to-day control."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Controllers",
       "blocks": [
         {
           "type": "image",
-          "src": "/images/lab/module-under-hipot-test.jpg",
-          "alt": "HomeMaster module on an ESD mat with hi-pot test leads connected",
+          "src": "/images/homemaster/miniplc-panel-installed.jpg",
+          "alt": "HomeMaster MiniPLC controller with display, Ethernet and antenna mounted in a distribution panel",
           "href": null
         },
         {
           "type": "heading",
           "level": 3,
-          "text": "Smart Home Automation: Introducing Our Brand – HOMEMASTER"
+          "text": "MiniPLC"
         },
         {
           "type": "paragraph",
-          "html": "At <strong>ISYSTEMS AUTOMATION</strong>, innovation is at the heart of everything we do. As part of our ongoing commitment to providing advanced technological solutions for residential and commercial spaces, we proudly present our in-house brand: <strong>HOMEMASTER</strong>.<br>Explore our full range of smart solutions at <a href=\"https://www.home-master.eu\">www.home-master.eu</a>."
+          "html": "DIN-rail controller with relays, I/O, temperature inputs, display and integrated supply. RS-485 Modbus expansion for a full cabinet from one unit."
+        },
+        {
+          "type": "image",
+          "src": "/images/homemaster/microplc-retail-box.jpg",
+          "alt": "HomeMaster MicroPLC ESP32 DIN-rail controller retail box",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "MicroPLC"
+        },
+        {
+          "type": "paragraph",
+          "html": "Compact ESP32 controller for smaller panels: one relay, digital input, RS-485 and Wi-Fi. Controls the Modbus module bus without the cost of a full PLC when the I/O lives on the modules."
         }
       ]
     },
     {
       "type": "section",
-      "title": "What is HOMEMASTER?",
+      "title": "DIN-rail modules",
       "blocks": [
         {
-          "type": "heading",
-          "level": 3,
-          "text": "What is HOMEMASTER?"
-        },
-        {
-          "type": "paragraph",
-          "html": "<strong>HOMEMASTER</strong> is the official smart living and appliance brand of <strong>ISYSTEMS AUTOMATION</strong>. Developed to meet the rising demand for intelligent and efficient living, HOMEMASTER delivers a comprehensive suite of products that merge convenience, energy efficiency, and modern design—all built under the same quality and reliability standards that define ISYSTEMS AUTOMATION."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Complete Smart Home Ecosystem"
-        },
-        {
-          "type": "paragraph",
-          "html": "Our HOMEMASTER product line is engineered to make homes smarter, safer, and more efficient. Key offerings include:"
-        },
-        {
           "type": "list",
           "ordered": false,
           "items": [
-            {
-              "html": "<p class=\"\"><strong>Smart Lighting Systems</strong><br>Intelligent LED controllers, dimmers, and automation modules that let you personalize lighting scenes and schedules to fit your lifestyle.</p>"
-            },
-            {
-              "html": "<p class=\"\"><strong>Smart Sockets and Switches</strong><br>Wi-Fi and Zigbee-enabled sockets and wall switches that provide control, scheduling, and real-time monitoring of electrical devices.</p>"
-            },
-            {
-              "html": "<p class=\"\"><strong>Climate Automation</strong><br>Programmable thermostats and HVAC controllers that adapt to your preferences while optimizing energy usage.</p>"
-            },
-            {
-              "html": "<p class=\"\"><strong>Security Integration</strong><br>Smart sensors, alarms, and connectivity features that enhance safety and peace of mind, fully integrated with our automation systems.</p>"
-            }
+            { "html": "<strong>DIO-430-R1</strong> — relay and digital input module; wall switches, scenes and shutter interlock handled locally." },
+            { "html": "<strong>AIO-422-R1</strong> — 0–10 V in and out, PT100/PT1000 RTD on one module." },
+            { "html": "<strong>ENM-223-R1</strong> — three-phase energy metering, power quality events and load balancing." },
+            { "html": "<strong>WLD-521-R1</strong> — five leak zones, valve shut-off and water metering." },
+            { "html": "<strong>OTGW-R1</strong> — OpenTherm boiler interface; ESPHome-native." },
+            { "html": "<strong>DIM-420-R1</strong> — AC dimmer for lighting circuits." },
+            { "html": "<strong>RGB-621-R1</strong> — RGBCCT LED control." },
+            { "html": "<strong>STR-3221-R1</strong> — stair and corridor LED sequencing." },
+            { "html": "<strong>ALM-173-R1</strong> — alarm and security inputs." }
           ]
         },
         {
-          "type": "heading",
-          "level": 3,
-          "text": "Why HOMEMASTER?"
-        },
+          "type": "image",
+          "src": "/images/homemaster/otgw-retail-box.jpg",
+          "alt": "HomeMaster OpenTherm Gateway OTGW-R1 retail packaging",
+          "href": null
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "In the panel",
+      "blocks": [
         {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "html": "<p class=\"\"><strong>Developed In-House</strong>: Fully owned and operated by ISYSTEMS AUTOMATION, with every module tested on our own bench before it ships.</p>"
-            },
-            {
-              "html": "<p class=\"\"><strong>Future-Proof Technology</strong>: Designed with scalability and compatibility in mind, from standalone setups to full-scale smart homes.</p>"
-            },
-            {
-              "html": "<p class=\"\"><strong>Stylish &amp; Functional</strong>: Every product balances advanced functionality with modern design, complementing contemporary interiors.</p>"
-            },
-            {
-              "html": "<p class=\"\"><strong>European Quality</strong>: Built to meet strict European standards for reliability, performance, and safety.</p>"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Visit Us Online"
+          "type": "image",
+          "src": "/images/homemaster/din-rail-modules-row.jpg",
+          "alt": "HomeMaster DIN-rail modules and MiniPLC controller mounted on a galvanized backplate",
+          "href": null
         },
         {
           "type": "paragraph",
-          "html": "To learn more about HOMEMASTER and explore our full catalog of products, visit our official brand site:<br><a href=\"https://www.home-master.eu\">www.home-master.eu</a>"
+          "html": "Modules share a 35 mm DIN rail, terminal blocks and RS-485 bus — the same layout whether the panel serves one apartment or a small building."
+        },
+        {
+          "type": "image",
+          "src": "/images/homemaster/control-panel-wired.jpg",
+          "alt": "Wired HomeMaster control panel with MiniPLC, I/O modules and circuit protection",
+          "href": null
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Designed and built in-house",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "/images/homemaster/miniplc-pcb-top.jpg",
+          "alt": "HomeMaster MiniPLC printed circuit board with ESP32, display header and field terminals",
+          "href": null
         },
         {
           "type": "paragraph",
-          "html": "Whether you're looking to start small with smart lighting or fully automate your home, <strong>ISYSTEMS AUTOMATION</strong> and <strong>HOMEMASTER</strong> deliver reliable, elegant, and powerful solutions—designed by us, made for you."
+          "html": "Every HomeMaster product is designed, assembled and tested at our premises in Ploiești. Firmware, schematics and ESPHome packages are published open source on GitHub."
+        },
+        {
+          "type": "image",
+          "src": "/images/homemaster/pcb-assembly-stages.jpg",
+          "alt": "HomeMaster printed circuit boards at bare-board and populated assembly stages",
+          "href": null
+        },
+        {
+          "type": "image",
+          "src": "/images/homemaster/bench-test-rig.jpg",
+          "alt": "HomeMaster modules on a bench test rig with automated test equipment",
+          "href": null
+        },
+        {
+          "type": "paragraph",
+          "html": "Eleven modules have been taken through EU conformity assessment for EMC, LVD, RED and RoHS, with Declarations of Conformity issued for each. The electrical-safety and EMC test capability built for that work is described under <a href=\"/compliance.html\">Compliance and Testing</a>."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Open source and documentation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "html": "Hardware, firmware and ESPHome YAML for every module are on GitHub. Modbus register maps, integration examples for Home Assistant and application notes are on <a href=\"https://www.home-master.eu\">home-master.eu</a>."
+        },
+        {
+          "type": "paragraph",
+          "html": "The online configurator lists the exact modules, enclosure size and DIN-rail layout for a described installation, with live shop prices — see <a href=\"https://www.home-master.eu\">Build your system</a> on the brand site."
         }
       ]
     }

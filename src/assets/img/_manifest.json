@@ -228,5 +228,55 @@
     "width": 380,
     "height": 67,
     "bytes": 9826
+  },
+  "/assets/img/homemaster/product-lineup.png": {
+    "width": 1024,
+    "height": 1024,
+    "bytes": 152319
+  },
+  "/assets/img/homemaster/miniplc-pcb-top.jpg": {
+    "width": 1280,
+    "height": 960,
+    "bytes": 254828
+  },
+  "/assets/img/homemaster/miniplc-panel-installed.jpg": {
+    "width": 1280,
+    "height": 960,
+    "bytes": 83900
+  },
+  "/assets/img/homemaster/otgw-retail-box.jpg": {
+    "width": 960,
+    "height": 1280,
+    "bytes": 203031
+  },
+  "/assets/img/homemaster/microplc-retail-box.jpg": {
+    "width": 960,
+    "height": 1280,
+    "bytes": 194222
+  },
+  "/assets/img/homemaster/din-rail-modules-row.jpg": {
+    "width": 1280,
+    "height": 960,
+    "bytes": 251530
+  },
+  "/assets/img/homemaster/module-pcb-din-rail.jpg": {
+    "width": 960,
+    "height": 1280,
+    "bytes": 209116
+  },
+  "/assets/img/homemaster/control-panel-wired.jpg": {
+    "width": 960,
+    "height": 1280,
+    "bytes": 369957
+  },
+  "/assets/img/homemaster/bench-test-rig.jpg": {
+    "width": 960,
+    "height": 1280,
+    "bytes": 287130
+  },
+  "/assets/img/homemaster/pcb-assembly-stages.jpg": {
+    "width": 1280,
+    "height": 960,
+    "bytes": 286136
   }
 }
