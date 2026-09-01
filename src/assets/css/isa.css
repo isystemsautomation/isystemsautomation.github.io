@@ -36,12 +36,12 @@
 
   --container:1200px;
   --gutter:24px;
-  --section-y:64px;
+  --section-y:40px;
   --header-h:72px;
   --measure:68ch;        /* лечит нынешние 137 знаков в строке */
 }
-@media (max-width:1023px){ :root{ --section-y:48px; } }
-@media (max-width:767px){  :root{ --gutter:16px; --section-y:40px; --header-h:56px; } }
+@media (max-width:1023px){ :root{ --section-y:40px; } }
+@media (max-width:767px){  :root{ --gutter:16px; --section-y:32px; --header-h:56px; } }
 
 /* --- База --- */
 *,*::before,*::after{ box-sizing:border-box; }
@@ -119,7 +119,7 @@ small,.caption{ font-size:0.875rem; line-height:1.5; color:var(--ink-500); }
 }
 
 /* --- Заголовок секции: один размер на весь сайт --- */
-.section-title{ margin:0 0 var(--s5); text-align:left; }
+.section-title{ margin:0 0 var(--s4); text-align:left; }
 .section-title::after{
   content:""; display:block; width:48px; height:3px;
   background:var(--brand-400); margin-top:var(--s3);
@@ -199,17 +199,17 @@ small,.caption{ font-size:0.875rem; line-height:1.5; color:var(--ink-500); }
 }
 
 /* --- Герой и заголовок страницы на фотографии --- */
-.hero{ position:relative; display:grid; align-items:center; min-height:420px; overflow:hidden; }
-.page-hero{ position:relative; display:grid; align-items:center; min-height:420px; overflow:hidden; }
+.hero{ position:relative; display:grid; align-items:center; min-height:280px; overflow:hidden; }
+.page-hero{ position:relative; display:grid; align-items:center; min-height:280px; overflow:hidden; }
 .hero > img, .page-hero > img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
 .hero::before, .page-hero::before{                                  /* скрим: overlay был rgba(0,0,0,0) */
   content:""; position:absolute; inset:0; z-index:1;
   background:linear-gradient(90deg, rgba(6,58,99,.82) 0%, rgba(6,58,99,.62) 55%, rgba(6,58,99,.35) 100%);
 }
-.hero .container, .page-hero .container{ position:relative; z-index:2; padding-block:var(--s8); }
+.hero .container, .page-hero .container{ position:relative; z-index:2; padding-block:var(--s5); }
 .hero h1,.hero p, .page-hero h1,.page-hero p{ color:var(--paper); text-shadow:none; }
 .hero p, .page-hero p{ max-width:56ch; }
-@media (max-width:767px){ .hero, .page-hero{ min-height:280px; } }
+@media (max-width:767px){ .hero, .page-hero{ min-height:220px; } }
 
 /* --- Кнопки: два вида вместо пяти --- */
 .btn{
@@ -235,6 +235,7 @@ a.btn--quiet{ color:var(--brand-700); }
   overflow:hidden;
 }
 .card > img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
+.accordion .card > img{ max-height:180px; aspect-ratio:auto; }
 .card__body{ padding:var(--s5); display:flex; flex-direction:column; gap:var(--s3); flex:1; }
 .card__body > :last-child{ margin-top:auto; }        /* кнопки выравниваются по низу */
 .card h3{ margin:0; font-size:1.375rem; }
@@ -258,6 +259,49 @@ a.btn--quiet{ color:var(--brand-700); }
   padding:var(--s3) var(--s4); vertical-align:top;
   border-bottom:1px solid var(--ink-300); color:var(--ink-700);
 }
+.table--compact th,
+.table--compact td{ padding:var(--s1) var(--s2); line-height:1.4; }
+.table--compact{ font-size:0.8125rem; }
+.table--compact th{ position:static; }
+
+/* --- Promo row (carousel leftovers on index) --- */
+.section-promo__layout{
+  display:grid; grid-template-columns:minmax(0,280px) 1fr);
+  gap:var(--s4); align-items:start;
+}
+.section-promo__layout figure{ max-width:none; margin:0; }
+.section-promo__text > :last-child{ margin-bottom:0; }
+@media (max-width:767px){
+  .section-promo__layout{ grid-template-columns:1fr; }
+}
+
+.point-grid h3{ margin-top:0; }
+.point-grid > div{ margin-bottom:var(--s4); }
+
+.prose > .grid{ margin-bottom:var(--s5); }
+
+.accordion details{
+  border:1px solid var(--ink-300); border-radius:3px; margin-bottom:var(--s3);
+  background:var(--paper);
+}
+.accordion summary{
+  cursor:pointer; padding:var(--s3) var(--s4); font-weight:600;
+  list-style:none; color:var(--ink-900);
+}
+.accordion summary::-webkit-details-marker{ display:none; }
+.accordion details[open] summary{ border-bottom:1px solid var(--ink-300); }
+.accordion .card{ border:none; border-radius:0; }
+.accordion .card__body{ padding-top:var(--s4); }
+.accordion--promo details{ border:none; border-radius:0; margin:0; }
+.accordion--promo details + details{ border-top:1px solid var(--ink-300); }
+.accordion--promo summary{ padding:var(--s3) 0; }
+.accordion--promo .section-promo__layout{
+  grid-template-columns:minmax(0,220px) 1fr;
+  padding-bottom:var(--s3);
+}
+.accordion--gallery .gallery{ margin-bottom:0; }
+.accordion--table .table-scroll{ margin:0; }
+.accordion--table summary{ font-variant-numeric:tabular-nums; }
 .table tbody tr:nth-child(even){ background:#F7F9FA; }
 .table th:nth-child(1),.table td:nth-child(1){ width:14%; }  /* «Годы»: было 363px под 83px */
 .table th:nth-child(2),.table td:nth-child(2){ width:44%; }
@@ -266,6 +310,8 @@ a.btn--quiet{ color:var(--brand-700); }
   .table{ font-size:0.875rem; }
   .table th{ position:static; }
   .table th,.table td{ padding:var(--s3); }
+  .table--compact{ font-size:0.75rem; }
+  .table--compact th,.table--compact td{ padding:2px 4px; line-height:1.35; }
 }
 
 /* --- Рисунки и схемы --- */
