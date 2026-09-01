@@ -13,7 +13,13 @@ const IMAGE_MANIFEST = fs.existsSync(MANIFEST_PATH)
 const JOOMSHAPER = /joomshaper\.com/i;
 const BUTTON_TEXTS = new Set(['View Details', 'Learn More']);
 
-const INDEX_CAROUSEL_IMAGES = [
+const INDEX_CAROUSEL_HERO = [
+  '/assets/img/projects/control-room-combined-cycle-hero.jpg',
+  '/assets/img/2024/08/09/carousel2-hero.jpg',
+  '/assets/img/2024/08/09/carousel3-hero.jpg',
+];
+
+const INDEX_CAROUSEL_FIGURES = [
   '/assets/img/projects/control-room-combined-cycle.jpg',
   '/assets/img/2024/08/09/carousel2.jpg',
   '/assets/img/2024/08/09/carousel3.jpg',
@@ -81,7 +87,7 @@ function imageDims(src) {
 function isSchematic(block) {
   if (block.schematic) return true;
   const src = block.src ?? '';
-  return /ovation-control-loop|schematic|control-loop|diagram/i.test(src);
+  return /ovation-control-loop|virtual-power-plant|schematic|control-loop|diagram/i.test(src);
 }
 
 function renderImage(block, lazy = true) {
@@ -176,8 +182,42 @@ function renderBlock(block, options = {}) {
   }
 }
 
+function renderBlocksWithGallery(blocks, options = {}) {
+  const parts = [];
+  let i = 0;
+
+  while (i < blocks.length) {
+    const block = blocks[i];
+    if (block.type === 'image') {
+      const run = [];
+      while (i < blocks.length && blocks[i].type === 'image') {
+        run.push(blocks[i]);
+        i += 1;
+      }
+      if (run.length >= 2) {
+        const inner = run
+          .map((img) => renderImage(img, options.lazyImages !== false))
+          .join('\n');
+        parts.push(`<div class="gallery">\n${inner}\n</div>`);
+      } else {
+        parts.push(renderImage(run[0], options.lazyImages !== false));
+      }
+      continue;
+    }
+    parts.push(
+      renderBlock(block, {
+        ...options,
+        sectionTitle: block.type === 'heading' && block.level === 2,
+      }),
+    );
+    i += 1;
+  }
+
+  return parts.filter(Boolean).join('\n');
+}
+
 function renderBlocks(blocks, options = {}) {
-  return blocks.map((block) => renderBlock(block, options)).filter(Boolean).join('\n');
+  return renderBlocksWithGallery(blocks, options);
 }
 
 function splitIndexCarousel(blocks) {
@@ -211,26 +251,53 @@ function splitIndexCarousel(blocks) {
 }
 
 function renderHeroSection(title, innerHtml, imageSrc = null, extraClass = 'hero') {
+  const dims = imageSrc ? imageDims(imageSrc) : null;
   const imgTag = imageSrc
-    ? `<img src="${escapeHtml(imageSrc)}" alt="" width="2400" height="800" fetchpriority="high" decoding="async">`
+    ? `<img src="${escapeHtml(imageSrc)}" alt="" width="${dims.width}" height="${dims.height}" fetchpriority="high" decoding="async">`
     : '';
   return `<section class="section section--flush ${extraClass}">${imgTag}<div class="container prose"><h1>${escapeHtml(title)}</h1>${innerHtml}</div></section>`;
 }
 
+function carouselHeroPath(index) {
+  return INDEX_CAROUSEL_HERO[index] ?? INDEX_CAROUSEL_HERO[0];
+}
+
+function carouselFigurePath(index) {
+  return INDEX_CAROUSEL_FIGURES[index] ?? INDEX_CAROUSEL_FIGURES[0];
+}
+
+function carouselImageBlock(index, alt) {
+  const assetPath = carouselFigurePath(index);
+  return {
+    type: 'image',
+    src: assetPath.replace('/assets/img/', '/images/'),
+    alt,
+    href: null,
+  };
+}
+
 function renderIndexCarousels(slides) {
-  return slides
-    .map((slideBlocks, index) => {
-      const heading = slideBlocks.find((b) => b.type === 'heading');
-      const title = heading?.text ?? '';
-      const body = slideBlocks
-        .filter((b) => b !== heading)
-        .map((b) => renderBlock(b, { lazyImages: index > 0 }))
-        .filter(Boolean)
-        .join('\n');
-      const image = INDEX_CAROUSEL_IMAGES[index] ?? INDEX_CAROUSEL_IMAGES[0];
-      return renderHeroSection(title, body, image, 'hero');
-    })
-    .join('\n');
+  let html = '';
+
+  slides.forEach((slideBlocks, index) => {
+    const heading = slideBlocks.find((b) => b.type === 'heading');
+    const title = heading?.text ?? '';
+    const bodyBlocks = slideBlocks.filter((b) => b !== heading);
+    const body = bodyBlocks
+      .map((b) => renderBlock(b, { lazyImages: index > 0 }))
+      .filter(Boolean)
+      .join('\n');
+
+    if (index === 0) {
+      html += renderHeroSection(title, body, carouselHeroPath(0), 'hero');
+      return;
+    }
+
+    const figure = renderImage(carouselImageBlock(index, title), true);
+    html += `<section class="section"><div class="container prose"><h2 class="section-title">${escapeHtml(formatHeadingText(title))}</h2>\n${figure}\n${body}</div></section>`;
+  });
+
+  return html;
 }
 
 function renderContactPage(blocks, pageTitle) {
@@ -299,8 +366,8 @@ function shouldSkipHeading(block, pageTitle, seenTitle) {
 
 function renderSection(section, tint, pageTitle, seenTitleRef) {
   const sectionTitle = section.title;
-  const inner = section.blocks
-    .filter((block) => {
+  const inner = renderBlocksWithGallery(
+    section.blocks.filter((block) => {
       if (shouldSkipHeading(block, pageTitle, seenTitleRef.value) && block.level <= 2) {
         if (block.text === heroTitleFromPageTitle(pageTitle) || block.text === sectionTitle) {
           seenTitleRef.value = true;
@@ -308,15 +375,12 @@ function renderSection(section, tint, pageTitle, seenTitleRef) {
         }
       }
       return true;
-    })
-    .map((block, idx) =>
-      renderBlock(block, {
-        sectionTitle: block.type === 'heading' && block.level === 2,
-        lazyImages: true,
-      }),
-    )
-    .filter(Boolean)
-    .join('\n');
+    }),
+    {
+      lazyImages: true,
+      sectionTitle: false,
+    },
+  );
 
   if (!inner.trim()) return '';
   const cls = tint ? 'section section--tint' : 'section';

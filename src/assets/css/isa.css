@@ -66,7 +66,9 @@ h2{ font-size:2.0625rem; }                      /* 33px */
 h3{ font-size:1.625rem;  line-height:1.30; }    /* 26px */
 h4{ font-size:1.3125rem; line-height:1.35; }    /* 21px */
 p{ margin:0 0 var(--s4); }
-strong,b{ font-weight:600; color:var(--ink-900); }
+strong,b{ font-weight:600; }
+.prose strong, .prose b{ color:var(--ink-900); }
+.hero strong, .hero b, .hero *{ color:inherit; }
 small,.caption{ font-size:0.875rem; line-height:1.5; color:var(--ink-500); }
 
 @media (max-width:767px){
@@ -81,11 +83,11 @@ small,.caption{ font-size:0.875rem; line-height:1.5; color:var(--ink-500); }
 .prose p, .prose li{ max-width:var(--measure); }
 
 /* --- Ссылки и фокус --- */
-.prose a, main p a, main li a, main td a{
+.prose a:not(.btn), main p a:not(.btn), main li a:not(.btn), main td a:not(.btn){
   color:var(--brand-700);
   text-decoration:underline; text-underline-offset:.15em; text-decoration-thickness:1px;
 }
-.prose a:hover, main p a:hover{ color:var(--brand-600); text-decoration-thickness:2px; }
+.prose a:not(.btn):hover, main p a:not(.btn):hover{ color:var(--brand-600); text-decoration-thickness:2px; }
 
 :where(a,button,summary,input,select,textarea,[tabindex]):focus-visible{
   outline:3px solid var(--brand-700); outline-offset:2px; border-radius:2px;
@@ -223,6 +225,8 @@ small,.caption{ font-size:0.875rem; line-height:1.5; color:var(--ink-500); }
 .btn--primary:hover{ background:var(--brand-600); border-color:var(--brand-600); }
 .btn--quiet{ background:transparent; color:var(--brand-700); border-color:var(--ink-300); }
 .btn--quiet:hover{ background:var(--ink-100); border-color:var(--brand-700); }
+a.btn--primary{ color:var(--paper); }
+a.btn--quiet{ color:var(--brand-700); }
 
 /* --- Карточки --- */
 .card{
@@ -265,13 +269,19 @@ small,.caption{ font-size:0.875rem; line-height:1.5; color:var(--ink-500); }
 }
 
 /* --- Рисунки и схемы --- */
-figure{ margin:0 0 var(--s5); }
-figcaption{ margin-top:var(--s3); font-size:0.875rem; color:var(--ink-500); }
-.figure--schematic img{                          /* схему НИКОГДА не кадрируем */
-  width:100%; height:auto; aspect-ratio:auto; object-fit:contain;
+.prose figure{ max-width:760px; margin-inline:auto; margin-bottom:var(--s5); }
+.prose figure img{ width:100%; aspect-ratio:3/2; object-fit:cover; }
+.figure--schematic{ max-width:100%; }
+.figure--schematic img{
+  aspect-ratio:auto; object-fit:contain;
   border:1px solid var(--ink-300); background:var(--paper);
 }
-.gallery img{ width:100%; aspect-ratio:3/2; object-fit:cover; }
+.gallery{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s5); margin-bottom:var(--s5); }
+.gallery figure{ max-width:none; margin:0; }
+.gallery figure img{ width:100%; aspect-ratio:3/2; object-fit:cover; }
+@media (max-width:1023px){ .gallery{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:767px){ .gallery{ grid-template-columns:1fr; } }
+figcaption{ margin-top:var(--s3); font-size:0.875rem; color:var(--ink-500); }
 
 /* --- Подвал --- */
 .site-footer{

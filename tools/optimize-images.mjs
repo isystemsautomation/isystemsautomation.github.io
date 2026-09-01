@@ -25,6 +25,12 @@ const CAMERA_ORIGINALS = [
   '20161006_114122.jpg',
 ];
 
+const HERO_SOURCES = [
+  { src: 'projects/control-room-combined-cycle-wide.jpg', dest: 'projects/control-room-combined-cycle-hero.jpg' },
+  { src: '2024/08/09/carousel2.jpg', dest: '2024/08/09/carousel2-hero.jpg' },
+  { src: '2024/08/09/carousel3.jpg', dest: '2024/08/09/carousel3-hero.jpg' },
+];
+
 const JUNK_PATHS = [
   'isa-layout.css',
   'a7gg82u8ci',
@@ -52,6 +58,10 @@ async function optimizeRaster(filePath) {
     return { width: out.width, height: out.height, bytes: buf.length };
   }
 
+  if (rel.includes('-hero.jpg')) {
+    return null;
+  }
+
   let quality = 68;
   if (rel.includes('-wide.jpg')) {
     pipeline = pipeline.resize(1600, 400, { fit: 'cover' });
@@ -76,6 +86,42 @@ async function optimizeRaster(filePath) {
   fs.writeFileSync(filePath, buf);
   const out = await sharp(buf).metadata();
   return { width: out.width, height: out.height, bytes: buf.length };
+}
+
+async function createHeroImages() {
+  for (const { src, dest } of HERO_SOURCES) {
+    const srcPath = path.join(IMG_ROOT, src);
+    const destPath = path.join(IMG_ROOT, dest);
+    if (!fs.existsSync(srcPath)) {
+      console.warn('Hero source missing:', src);
+      continue;
+    }
+    const buf = await sharp(srcPath)
+      .rotate()
+      .resize(2400, 800, { fit: 'cover' })
+      .jpeg({ quality: 72, mozjpeg: true })
+      .toBuffer();
+    fs.writeFileSync(destPath, buf);
+    const meta = await sharp(buf).metadata();
+    console.log(`Hero ${dest} → ${meta.width}x${meta.height}`);
+  }
+}
+
+async function writeManifestFromDisk() {
+  const manifest = {};
+  for (const filePath of walkImages(IMG_ROOT).filter((f) => !f.endsWith('_manifest.json'))) {
+    const rel = path.relative(IMG_ROOT, filePath).replace(/\\/g, '/');
+    const meta = await sharp(filePath).metadata();
+    if (!meta.width || !meta.height) continue;
+    manifest[`/assets/img/${rel}`] = {
+      width: meta.width,
+      height: meta.height,
+      bytes: fs.statSync(filePath).size,
+    };
+  }
+  fs.writeFileSync(MANIFEST_PATH, `${JSON.stringify(manifest, null, 2)}\n`);
+  console.log(`\nWrote manifest from disk: ${Object.keys(manifest).length} images`);
+  return manifest;
 }
 
 async function createOvationSchematic() {
@@ -128,6 +174,11 @@ function removePath(rel) {
 }
 
 async function main() {
+  if (process.argv.includes('--manifest-only')) {
+    await writeManifestFromDisk();
+    return;
+  }
+
   await createOvationSchematic();
 
   const manifest = {};
@@ -157,8 +208,8 @@ async function main() {
     removePath(rel);
   }
 
-  fs.writeFileSync(MANIFEST_PATH, `${JSON.stringify(manifest, null, 2)}\n`);
-  console.log(`\nWrote manifest: ${Object.keys(manifest).length} images`);
+  await createHeroImages();
+  await writeManifestFromDisk();
 }
 
 main().catch((err) => {

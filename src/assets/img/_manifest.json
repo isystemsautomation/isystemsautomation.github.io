@@ -1,68 +1,78 @@
 {
+  "/assets/img/2024/08/09/carousel2-hero.jpg": {
+    "width": 2400,
+    "height": 800,
+    "bytes": 51780
+  },
   "/assets/img/2024/08/09/carousel2.jpg": {
     "width": 1000,
     "height": 483,
-    "bytes": 21325
+    "bytes": 21317
+  },
+  "/assets/img/2024/08/09/carousel3-hero.jpg": {
+    "width": 2400,
+    "height": 800,
+    "bytes": 50480
   },
   "/assets/img/2024/08/09/carousel3.jpg": {
     "width": 1000,
     "height": 386,
-    "bytes": 16273
+    "bytes": 16265
   },
   "/assets/img/2024/08/10/advanced_boiler_load_controllers.jpg": {
     "width": 635,
     "height": 505,
-    "bytes": 46170
+    "bytes": 45909
   },
   "/assets/img/2024/08/10/cement_and_coal.jpg": {
     "width": 635,
     "height": 505,
-    "bytes": 46699
+    "bytes": 46705
   },
   "/assets/img/2024/08/10/industrial_furniture_control_centers.jpg": {
     "width": 635,
     "height": 505,
-    "bytes": 32902
+    "bytes": 32844
   },
   "/assets/img/2024/08/10/maintenance.jpg": {
     "width": 635,
     "height": 505,
-    "bytes": 31606
+    "bytes": 31587
   },
   "/assets/img/2024/08/10/process_automation.jpg": {
     "width": 635,
     "height": 505,
-    "bytes": 42044
+    "bytes": 41987
   },
   "/assets/img/2024/08/10/virtual-power-plant-vpp.jpg": {
     "width": 635,
     "height": 505,
-    "bytes": 38132
+    "bytes": 38097
   },
   "/assets/img/2024/08/11/combustion-efficiency.jpg": {
     "width": 1000,
     "height": 503,
-    "bytes": 75514
+    "bytes": 75032
   },
   "/assets/img/2024/08/11/steam-turbine-energy-balance-and-heat-loss-calculation.jpg": {
     "width": 1000,
     "height": 503,
-    "bytes": 68028
+    "bytes": 67481
   },
   "/assets/img/2024/08/11/turbine-energy-balance-and-heat-loss-calculation.jpg": {
     "width": 1000,
     "height": 503,
-    "bytes": 35815
+    "bytes": 35556
   },
   "/assets/img/2024/08/11/virtual-power-plant.jpg": {
     "width": 1000,
     "height": 503,
-    "bytes": 49072
+    "bytes": 48195
   },
   "/assets/img/2024/08/12/advanced-boiler-load-controllers.jpg": {
     "width": 1000,
     "height": 503,
-    "bytes": 70102
+    "bytes": 69709
   },
   "/assets/img/isystems-automation-logo.png": {
     "width": 283,
@@ -72,96 +82,101 @@
   "/assets/img/projects/atex-zone2-barriers.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 55867
+    "bytes": 55594
+  },
+  "/assets/img/projects/control-room-combined-cycle-hero.jpg": {
+    "width": 2400,
+    "height": 800,
+    "bytes": 61700
   },
   "/assets/img/projects/control-room-combined-cycle-wide.jpg": {
     "width": 1600,
     "height": 400,
-    "bytes": 39702
+    "bytes": 39666
   },
   "/assets/img/projects/control-room-combined-cycle.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 38011
+    "bytes": 37801
   },
   "/assets/img/projects/emissions-monitoring-display.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 29937
+    "bytes": 29827
   },
   "/assets/img/projects/generator-rotor-removal.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 53471
+    "bytes": 53231
   },
   "/assets/img/projects/marshalling-cable-marking.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 52171
+    "bytes": 51968
   },
   "/assets/img/projects/ovation-control-loop-full.jpg": {
     "width": 1000,
     "height": 503,
-    "bytes": 71425
+    "bytes": 70889
   },
   "/assets/img/projects/ovation-control-loop.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 61919
+    "bytes": 61753
   },
   "/assets/img/projects/ovation-turbine-trend-redacted.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 59545
+    "bytes": 58492
   },
   "/assets/img/projects/ovation-turbine-trend.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 60219
+    "bytes": 59203
   },
   "/assets/img/projects/redundant-network-cabinet.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 56088
+    "bytes": 55880
   },
   "/assets/img/projects/steam-turbine-casing.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 51115
+    "bytes": 50930
   },
   "/assets/img/projects/steam-turbine-generator-hall-wide.jpg": {
     "width": 1600,
     "height": 400,
-    "bytes": 53346
+    "bytes": 53319
   },
   "/assets/img/projects/steam-turbine-generator-hall.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 46567
+    "bytes": 46471
   },
   "/assets/img/projects/substation-220kv-scada-redacted.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 40761
+    "bytes": 40254
   },
   "/assets/img/projects/substation-220kv-scada.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 44333
+    "bytes": 43833
   },
   "/assets/img/projects/turbine-diaphragm.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 55181
+    "bytes": 55043
   },
   "/assets/img/projects/turbine-installation.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 38474
+    "bytes": 38411
   },
   "/assets/img/projects/yokogawa-centum-cabinet.jpg": {
     "width": 960,
     "height": 640,
-    "bytes": 53182
+    "bytes": 53077
   }
 }
