@@ -263,43 +263,33 @@ a.btn--quiet{ color:var(--brand-700); }
 .table--compact{ font-size:0.8125rem; }
 .table--compact th{ position:static; }
 
-/* --- Promo row: compact image embedded in text --- */
+/* --- Promo row: image + text grid (max 320px image) --- */
 .section-promo__layout{
-  display:flow-root;
-  margin-bottom:var(--s4);
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:var(--s5);
+  align-items:start;
+  margin-bottom:var(--s5);
 }
-.section-promo__layout figure.figure--embed,
-.prose .section-promo__layout figure{
-  float:left;
-  width:160px;
-  max-width:32%;
-  margin:0 var(--s4) var(--s3) 0;
+.section-promo__layout figure{
+  margin:0;
+  width:320px;
 }
-.section-promo__layout figure.figure--embed img,
-.prose .section-promo__layout figure img{
-  width:160px !important;
-  max-width:100%;
-  height:auto;
-  aspect-ratio:4/3;
+.section-promo__layout figure img{
+  width:100%;
+  aspect-ratio:3/2;
   object-fit:cover;
+  display:block;
 }
 .section-promo__text > :last-child{ margin-bottom:0; }
 .section-promo__text h3:first-child{ margin-top:0; }
 .card--inline{
   background:transparent; border:none; overflow:visible;
 }
-.card--inline .section-promo__layout--card{ padding:var(--s4); }
-.accordion .card--inline{ border:none; border-radius:0; }
+.card--inline .section-promo__layout--card{ padding:var(--s4) 0; }
 @media (max-width:767px){
-  .section-promo__layout figure.figure--embed,
-  .prose .section-promo__layout figure{
-    width:120px;
-    max-width:35%;
-  }
-  .section-promo__layout figure.figure--embed img,
-  .prose .section-promo__layout figure img{
-    width:120px !important;
-  }
+  .section-promo__layout{ grid-template-columns:1fr; }
+  .section-promo__layout figure{ width:100%; max-width:320px; }
 }
 
 .point-grid h3{ margin-top:0; }
@@ -307,25 +297,6 @@ a.btn--quiet{ color:var(--brand-700); }
 
 .prose > .grid{ margin-bottom:var(--s5); }
 
-.accordion details{
-  border:1px solid var(--ink-300); border-radius:3px; margin-bottom:var(--s3);
-  background:var(--paper);
-}
-.accordion summary{
-  cursor:pointer; padding:var(--s3) var(--s4); font-weight:600;
-  list-style:none; color:var(--ink-900);
-}
-.accordion summary::-webkit-details-marker{ display:none; }
-.accordion details[open] summary{ border-bottom:1px solid var(--ink-300); }
-.accordion .card{ border:none; border-radius:0; }
-.accordion .card__body{ padding-top:var(--s4); }
-.accordion--promo details{ border:none; border-radius:0; margin:0; }
-.accordion--promo details + details{ border-top:1px solid var(--ink-300); }
-.accordion--promo summary{ padding:var(--s3) 0; }
-.accordion--promo .section-promo__layout{ padding-bottom:var(--s3); }
-.accordion--gallery .gallery{ margin-bottom:0; }
-.accordion--table .table-scroll{ margin:0; }
-.accordion--table summary{ font-variant-numeric:tabular-nums; }
 .table tbody tr:nth-child(even){ background:#F7F9FA; }
 .table th:nth-child(1),.table td:nth-child(1){ width:14%; }  /* «Годы»: было 363px под 83px */
 .table th:nth-child(2),.table td:nth-child(2){ width:44%; }
@@ -339,40 +310,34 @@ a.btn--quiet{ color:var(--brand-700); }
 }
 
 /* --- Рисунки и схемы --- */
-.prose figure{ max-width:760px; margin-inline:auto; margin-bottom:var(--s5); }
-.prose figure img{ width:100%; aspect-ratio:3/2; object-fit:cover; }
-.figure--schematic{ max-width:100%; }
+.prose figure:not(.figure--schematic){
+  max-width:320px;
+  margin-inline:0;
+  margin-bottom:var(--s5);
+}
+.prose figure img{ width:100%; aspect-ratio:3/2; object-fit:cover; display:block; }
+.figure--schematic{ max-width:100%; margin-inline:auto; }
 .figure--schematic img{
   aspect-ratio:auto; object-fit:contain;
   border:1px solid var(--ink-300); background:var(--paper);
 }
-.gallery{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s5); margin-bottom:var(--s5); }
-.gallery figure{ max-width:none; margin:0; }
-.gallery figure img{ width:100%; aspect-ratio:3/2; object-fit:cover; }
-@media (max-width:1023px){ .gallery{ grid-template-columns:repeat(2,1fr); } }
-@media (max-width:767px){ .gallery{ grid-template-columns:1fr; } }
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,320px));
+  gap:var(--s5);
+  margin-bottom:var(--s5);
+}
+.gallery figure{ margin:0; max-width:320px; }
+.gallery img{ width:100%; aspect-ratio:3/2; object-fit:cover; display:block; }
+@media (max-width:1023px){ .gallery{ grid-template-columns:repeat(2,minmax(0,320px)); } }
+@media (max-width:767px){ .gallery{ grid-template-columns:minmax(0,320px); } }
 figcaption{ margin-top:var(--s3); font-size:0.875rem; color:var(--ink-500); }
 
-/* Promo embed overrides .prose figure (760px) — keep after generic figure rules */
-.prose .section-promo__layout figure.figure--embed,
+/* Promo embed: grid overrides generic prose figure cap */
 .prose .section-promo__layout figure{
-  float:left;
-  width:160px;
-  max-width:32%;
-  margin:0 var(--s4) var(--s3) 0;
+  max-width:none;
   margin-inline:0;
-}
-.prose .section-promo__layout figure img{
-  width:160px !important;
-  max-width:100%;
-  height:auto;
-  aspect-ratio:4/3;
-  object-fit:cover;
-}
-.prose .section-promo__layout figure figcaption:not(.visually-hidden){ display:none; }
-@media (max-width:767px){
-  .prose .section-promo__layout figure,
-  .prose .section-promo__layout figure img{ width:120px !important; max-width:35%; }
+  margin-bottom:0;
 }
 
 /* --- Подвал --- */

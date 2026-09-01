@@ -13,6 +13,12 @@ const IMAGE_MANIFEST = fs.existsSync(MANIFEST_PATH)
 const JOOMSHAPER = /joomshaper\.com/i;
 const BUTTON_TEXTS = new Set(['View Details', 'Learn More']);
 
+const TOP_LEVEL_SECTION_HEADINGS = new Set([
+  'Our Services',
+  'What We Do',
+  'Latest news and stories',
+]);
+
 const INDEX_CAROUSEL_HERO = [
   '/assets/img/projects/control-room-combined-cycle-hero.jpg',
   '/assets/img/2024/08/09/carousel2-hero.jpg',
@@ -114,10 +120,16 @@ function formatHeadingText(text) {
   return text.replace(/:([A-Za-z])/g, ': $1');
 }
 
+function sectionTitleHeading(text) {
+  return `<h2 class="section-title">${escapeHtml(formatHeadingText(text))}</h2>`;
+}
+
 function headingTag(level, text, sectionTitle = false) {
+  if (sectionTitle || TOP_LEVEL_SECTION_HEADINGS.has(text)) {
+    return sectionTitleHeading(text);
+  }
   const tag = `h${Math.min(Math.max(level, 2), 4)}`;
-  const cls = sectionTitle && level <= 2 ? ' class="section-title"' : '';
-  return `<${tag}${cls}>${escapeHtml(formatHeadingText(text))}</${tag}>`;
+  return `<${tag}>${escapeHtml(formatHeadingText(text))}</${tag}>`;
 }
 
 function renderParagraph(html) {
@@ -148,8 +160,6 @@ function isSchematic(block) {
   return /ovation-control-loop|virtual-power-plant|schematic|control-loop|diagram/i.test(src);
 }
 
-const PROMO_IMG_WIDTH = 160;
-
 function renderImage(block, lazy = true, compact = false) {
   let href = block.href;
   if (href && JOOMSHAPER.test(href)) {
@@ -161,16 +171,12 @@ function renderImage(block, lazy = true, compact = false) {
   const alt = escapeHtml(block.alt ?? '');
   const loading = lazy ? ' loading="lazy" decoding="async"' : ' fetchpriority="high" decoding="async"';
   const schematic = isSchematic(block);
-  const displayW = compact ? PROMO_IMG_WIDTH : width;
-  const displayH = compact
-    ? Math.max(1, Math.round(height * (PROMO_IMG_WIDTH / width)))
-    : height;
   const figureAttr = schematic
     ? ' class="figure--schematic"'
     : compact
       ? ' class="figure--embed"'
       : '';
-  const img = `<img src="${escapeHtml(src)}" alt="${alt}" width="${displayW}" height="${displayH}"${loading}>`;
+  const img = `<img src="${escapeHtml(src)}" alt="${alt}" width="${width}" height="${height}"${loading}>`;
 
   if (schematic) {
     const fullHref = escapeHtml(mapImagePath(block.href) || src);
@@ -179,12 +185,7 @@ function renderImage(block, lazy = true, compact = false) {
     return `<figure${figureAttr}><a href="${fullHref}">${img}</a>${caption}</figure>`;
   }
 
-  const caption =
-    block.alt && !compact
-      ? `<figcaption>${escapeHtml(block.alt)}</figcaption>`
-      : block.alt && compact
-        ? `<figcaption class="visually-hidden">${escapeHtml(block.alt)}</figcaption>`
-        : '';
+  const caption = block.alt ? `<figcaption>${escapeHtml(block.alt)}</figcaption>` : '';
 
   if (href) {
     return `<figure${figureAttr}><a href="${escapeHtml(mapImagePath(href))}">${img}</a>${caption}</figure>`;
@@ -201,6 +202,7 @@ function isSpbTabList(block) {
 }
 
 function renderList(block) {
+  if (isSpbTabList(block)) return '';
   const tag = block.ordered ? 'ol' : 'ul';
   const items = block.items
     .map((item) => {
@@ -208,8 +210,7 @@ function renderList(block) {
       return `<li>${html}</li>`;
     })
     .join('\n');
-  const hidden = isSpbTabList(block) ? ' class="visually-hidden"' : '';
-  return `<${tag}${hidden}>\n${items}\n</${tag}>`;
+  return `<${tag}>\n${items}\n</${tag}>`;
 }
 
 function normalizeRefTable($, table) {
@@ -234,72 +235,33 @@ function normalizeRefTable($, table) {
   }
 }
 
-function refTableDecade(yearText) {
-  const match = yearText.match(/(\d{4})/);
-  if (!match) return '2007–2009';
-  const year = Number.parseInt(match[1], 10);
-  if (year >= 2020) return '2020–present';
-  if (year >= 2010) return '2010–2019';
-  return '2007–2009';
-}
-
-function renderRefTableAccordion(html) {
-  const $ = cheerio.load(html, { decodeEntities: false });
-  const table = $('table').first();
-  if (!table.length) return html;
-
-  normalizeRefTable($, table);
-  const headerRow = table.find('thead').html() ?? '';
-  const groups = new Map();
-  table.find('tbody tr').each((_, row) => {
-    const year = $(row).find('td').first().text().trim();
-    const label = refTableDecade(year);
-    if (!groups.has(label)) groups.set(label, []);
-    groups.get(label).push($.html(row));
-  });
-
-  const order = ['2020–present', '2010–2019', '2007–2009'];
-  let first = true;
-  const details = order
-    .filter((label) => groups.has(label))
-    .map((label) => {
-      const open = first ? ' open' : '';
-      first = false;
-      const miniTable = `<table class="table table--compact"><thead>${headerRow}</thead><tbody>${groups.get(label).join('')}</tbody></table>`;
-      return `<details${open}><summary>${escapeHtml(label)}</summary><div class="table-scroll">${miniTable}</div></details>`;
-    })
-    .join('\n');
-
-  return `<div class="accordion accordion--table">\n${details}\n</div>`;
-}
-
 function renderTable(html) {
-  if (html.includes('isa-ref-table')) {
-    return renderRefTableAccordion(html);
-  }
-
   const $ = cheerio.load(html, { decodeEntities: false });
   const table = $('table').first();
   if (!table.length) return html;
 
-  table.removeAttr('class').addClass('table');
-  if (!table.find('thead').length) {
-    const firstRow = table.find('tr').first();
-    if (firstRow.length && firstRow.find('th').length) {
-      firstRow.wrap('<thead></thead>');
-    } else if (firstRow.length) {
-      const headers = firstRow
-        .find('td')
-        .map((_, td) => `<th>${$(td).html()}</th>`)
-        .get()
-        .join('');
-      firstRow.remove();
-      table.prepend(`<thead><tr>${headers}</tr></thead>`);
+  if (html.includes('isa-ref-table')) {
+    normalizeRefTable($, table);
+  } else {
+    table.removeAttr('class').addClass('table');
+    if (!table.find('thead').length) {
+      const firstRow = table.find('tr').first();
+      if (firstRow.length && firstRow.find('th').length) {
+        firstRow.wrap('<thead></thead>');
+      } else if (firstRow.length) {
+        const headers = firstRow
+          .find('td')
+          .map((_, td) => `<th>${$(td).html()}</th>`)
+          .get()
+          .join('');
+        firstRow.remove();
+        table.prepend(`<thead><tr>${headers}</tr></thead>`);
+      }
     }
-  }
-  if (!table.find('tbody').length) {
-    const bodyRows = table.find('tr').not('thead tr');
-    bodyRows.wrapAll('<tbody></tbody>');
+    if (!table.find('tbody').length) {
+      const bodyRows = table.find('tr').not('thead tr');
+      bodyRows.wrapAll('<tbody></tbody>');
+    }
   }
 
   return `<div class="table-scroll">${$.html(table)}</div>`;
@@ -381,42 +343,18 @@ function renderInlinePromoCard(card, options = {}, lazy = true) {
     .map((b) => renderBlock(b, { ...options, lazyImages: lazy }))
     .filter(Boolean)
     .join('\n');
-  const srAlt = enriched.image.alt
-    ? `<p class="visually-hidden">${escapeHtml(enriched.image.alt)}</p>`
-    : '';
 
-  return `<div class="section-promo__layout section-promo__layout--card">${figure}${srAlt}<div class="section-promo__text">${title}${body}</div></div>`;
+  return `<div class="section-promo__layout section-promo__layout--card">${figure}<div class="section-promo__text">${title}${body}</div></div>`;
 }
 
-function renderCard(card, lazy = true) {
-  return `<article class="card card--inline">${renderInlinePromoCard(card, {}, lazy)}</article>`;
-}
-
-function renderAccordionCards(cards, options = {}) {
-  return `<div class="accordion">\n${cards
-    .map((card, idx) => {
-      const open = idx === 0 ? ' open' : '';
+function renderExpandedCards(cards, options = {}) {
+  return cards
+    .map((card) => {
       const title = card.heading?.text ?? '';
       const bodyOnly = { ...card, heading: null };
-      return `<details${open}><summary>${escapeHtml(formatHeadingText(title))}</summary>${renderInlinePromoCard(bodyOnly, options, options.lazyImages !== false)}</details>`;
+      return `${sectionTitleHeading(title)}${renderInlinePromoCard(bodyOnly, options, options.lazyImages !== false)}`;
     })
-    .join('\n')}\n</div>`;
-}
-
-function renderGalleryAccordion(images, options = {}) {
-  const chunkSize = 3;
-  const chunks = [];
-  for (let c = 0; c < images.length; c += chunkSize) {
-    chunks.push(images.slice(c, c + chunkSize));
-  }
-  return `<div class="accordion accordion--gallery">\n${chunks
-    .map((chunk, idx) => {
-      const open = idx === 0 ? ' open' : '';
-      const label = `Photos ${idx * chunkSize + 1}–${idx * chunkSize + chunk.length}`;
-      const gallery = `<div class="gallery">\n${chunk.map((img) => renderImage(img, options.lazyImages !== false)).join('\n')}\n</div>`;
-      return `<details${open}><summary>${escapeHtml(label)}</summary>${gallery}</details>`;
-    })
-    .join('\n')}\n</div>`;
+    .join('\n');
 }
 
 function renderBlocksWithGallery(blocks, options = {}) {
@@ -450,8 +388,8 @@ function renderBlocksWithGallery(blocks, options = {}) {
         featured.push(card);
       }
       if (featured.length >= 2) {
-        parts.push(headingTag(block.level, block.text, true));
-        parts.push(renderAccordionCards(featured, options));
+        parts.push(sectionTitleHeading(block.text));
+        parts.push(renderExpandedCards(featured, options));
         i = j;
         continue;
       }
@@ -481,7 +419,7 @@ function renderBlocksWithGallery(blocks, options = {}) {
       if (body.length > 0) {
         const figure = renderImage(imageBlock, options.lazyImages !== false, true);
         const text = `${headingTag(subtitleHeading.level, subtitleHeading.text)}${body.map((b) => renderBlock(b, options)).join('\n')}`;
-        parts.push(headingTag(titleHeading.level, titleHeading.text));
+        parts.push(sectionTitleHeading(titleHeading.text));
         parts.push(
           `<div class="section-promo__layout section-promo__layout--lead">${figure}<div class="section-promo__text">${text}</div></div>`,
         );
@@ -525,13 +463,9 @@ function renderBlocksWithGallery(blocks, options = {}) {
       while (j < blocks.length && blocks[j].type === 'image') j += 1;
       const run = blocks.slice(i, j);
       if (run.length >= 2) {
-        if (run.length >= 6 && options.slug === 'references') {
-          parts.push(renderGalleryAccordion(run, options));
-        } else {
-          parts.push(
-            `<div class="gallery">\n${run.map((img) => renderImage(img, options.lazyImages !== false)).join('\n')}\n</div>`,
-          );
-        }
+        parts.push(
+          `<div class="gallery">\n${run.map((img) => renderImage(img, options.lazyImages !== false)).join('\n')}\n</div>`,
+        );
         i = j;
         continue;
       }
@@ -563,7 +497,7 @@ function renderBlocksWithGallery(blocks, options = {}) {
         cards.push(card);
       }
       if (cards.length >= 2) {
-        parts.push(renderAccordionCards(cards, options));
+        parts.push(renderExpandedCards(cards, options));
         i = j;
         continue;
       }
@@ -688,22 +622,17 @@ function renderIndexCarousels(slides) {
     html += renderHeroSection(title, body, carouselHeroPath(0), 'hero');
   }
 
-  if (slides.length > 1) {
-    html += '<section class="section section-promo"><div class="container prose"><div class="accordion accordion--promo">';
-    slides.slice(1).forEach((slideBlocks, promoIndex) => {
-      const heading = slideBlocks.find((b) => b.type === 'heading');
-      const title = heading?.text ?? '';
-      const bodyBlocks = slideBlocks.filter((b) => b !== heading);
-      const body = bodyBlocks
-        .map((b) => renderBlock(b, { lazyImages: true }))
-        .filter(Boolean)
-        .join('\n');
-      const figure = renderImage(carouselImageBlock(promoIndex + 1, title), true, true);
-      const open = promoIndex === 0 ? ' open' : '';
-      html += `<details${open}><summary>${escapeHtml(formatHeadingText(title))}</summary><div class="section-promo__layout">${figure}<div class="section-promo__text">${body}</div></div></details>`;
-    });
-    html += '</div></div></section>';
-  }
+  slides.slice(1).forEach((slideBlocks, promoIndex) => {
+    const heading = slideBlocks.find((b) => b.type === 'heading');
+    const title = heading?.text ?? '';
+    const bodyBlocks = slideBlocks.filter((b) => b !== heading);
+    const body = bodyBlocks
+      .map((b) => renderBlock(b, { lazyImages: true }))
+      .filter(Boolean)
+      .join('\n');
+    const figure = renderImage(carouselImageBlock(promoIndex + 1, title), true, true);
+    html += `<section class="section section-promo"><div class="container prose">${sectionTitleHeading(title)}<div class="section-promo__layout">${figure}<div class="section-promo__text">${body}</div></div></div></section>`;
+  });
 
   return html;
 }

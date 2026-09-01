@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "cheerio": "^1.2.0"
+    "cheerio": "^1.2.0",
+    "puppeteer": "^25.9.0"
   }
 }
