@@ -302,9 +302,37 @@ a.btn--quiet{ color:var(--brand-700); }
 .prose > .grid{ margin-bottom:var(--s5); }
 
 .table tbody tr:nth-child(even){ background:#F7F9FA; }
-.table th:nth-child(1),.table td:nth-child(1){ width:14%; }  /* «Годы»: было 363px под 83px */
+.table th:nth-child(1),.table td:nth-child(1){ width:14%; }
 .table th:nth-child(2),.table td:nth-child(2){ width:44%; }
 .table th:nth-child(3),.table td:nth-child(3){ width:42%; }
+.table--ref{ min-width:960px; }
+.table--ref th:nth-child(1),.table--ref td:nth-child(1){ width:11%; }
+.table--ref th:nth-child(2),.table--ref td:nth-child(2){ width:29%; }
+.table--ref th:nth-child(3),.table--ref td:nth-child(3){ width:22%; }
+.table--ref th:nth-child(4),.table--ref td:nth-child(4){ width:38%; }
+@media (max-width:767px){
+  .table-scroll--cards{ overflow-x:visible; }
+  .table--ref{ min-width:0; width:100%; }
+  .table--ref thead{ display:none; }
+  .table--ref tbody tr{
+    display:block; margin-bottom:var(--s4); padding:var(--s3) var(--s4);
+    border:1px solid var(--ink-300); border-radius:var(--radius);
+    background:#fff;
+  }
+  .table--ref tbody tr:nth-child(even){ background:#F7F9FA; }
+  .table--ref td{
+    display:block; width:100% !important; padding:var(--s2) 0;
+    border-bottom:none;
+  }
+  .table--ref td:not(:last-child){ margin-bottom:var(--s2); }
+  .table--ref td::before{
+    content:attr(data-label);
+    display:block; font-weight:600; color:var(--ink-900);
+    margin-bottom:var(--s1); font-size:0.75rem;
+    letter-spacing:0.03em; text-transform:uppercase;
+  }
+  .table--ref td:empty{ min-height:0; }
+}
 @media (max-width:767px){
   .table{ font-size:0.875rem; }
   .table th{ position:static; }

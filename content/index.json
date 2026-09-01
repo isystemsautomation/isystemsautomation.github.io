@@ -3,37 +3,37 @@
   "source": "legacy/index.html",
   "url": "/index.html",
   "home": {
-    "heroTagline": "ISYSTEMS AUTOMATION designs, builds and commissions industrial control systems for power generation, oil and gas, cement and coal.",
+    "heroTagline": "Control systems engineering since 2007, based in Ploiești.",
     "services": [
       {
         "href": "/service/process-automation.html",
         "label": "Process Automation",
-        "line": "Turnkey industrial automation from design to commissioning."
+        "line": "DCS and ESD from design through commissioning."
       },
       {
         "href": "/service/process-optimization-advanced-process-control.html",
         "label": "Process optimization / Advanced process control",
-        "line": "Advanced Process Control for higher capacity, lower energy use and fewer unscheduled shutdowns."
+        "line": "Named DCS optimisers for load, fuel and emissions."
       },
       {
         "href": "/service/manufacturing-execution-system.html",
         "label": "MES (Manufacturing Execution System)",
-        "line": "Real-time production visibility, equipment monitoring and maintenance planning."
+        "line": "Production data, efficiency and loss analysis over OPC."
       },
       {
         "href": "/service/safety-systems-burner-management-systems.html",
         "label": "Safety Systems and Burner Management Systems",
-        "line": "Burner Management and Safety Instrumented Systems to SIL 2 and SIL 3 under IEC 61511."
+        "line": "BMS and SIS to SIL 2 and SIL 3 under IEC 61511."
       },
       {
         "href": "/service/industrial-furniture-control-centers.html",
         "label": "Industrial furniture / Control centers",
-        "line": "Control center design covering acoustics, layout, lighting and operator interface for 24/7 operation."
+        "line": "ISO 11064 control room design and operator furniture."
       },
       {
         "href": "/service/maintenance.html",
         "label": "Maintenance",
-        "line": "Preventive and condition-based maintenance and remote support for major DCS platforms."
+        "line": "Lifecycle support for major DCS platforms."
       }
     ],
     "industries": [
@@ -64,76 +64,24 @@
         "title": "Advanced Controllers for CFB Boilers",
         "image": "/images/2024/08/10/advanced_boiler_load_controllers.jpg",
         "alt": "Advanced load controllers for CFB boiler",
-        "sentences": [
-          "The specific object in this project is the Energy Boiler, with a steam production capacity of 260 t/h at 100 bar.",
-          "The control system overseeing this boiler is the DCS Emerson Ovation system."
-        ]
+        "sentences": ["Project write-up: CFB boiler load control."]
       },
       {
         "href": "/projects/power-plant-performance-calculation.html",
         "title": "Power Plant Performance Calculation",
         "image": "/images/projects/steam-turbine-generator-hall.jpg",
         "alt": "Hydro turbine and generator set in the machine hall",
-        "sentences": [
-          "Before the implementation of advanced calculation systems and central long-term archives, power plant personnel were limited in their capacity to manage equipment effectively.",
-          "These systems did not provide the capability to monitor the overall efficiency of the plant or individual equipment units comprehensively."
-        ]
+        "sentences": ["Project write-up: CHP performance calculation."]
       },
       {
         "href": "/projects/virtual-power-plant.html",
         "title": "Virtual Power Plant",
         "image": "/images/2024/08/10/virtual-power-plant-vpp.jpg",
         "alt": "Virtual power plant combining renewable and conventional generation",
-        "sentences": [
-          "Integration of 4 photovoltaic power plants, 1 wind power plant, and 1 conventional gas/coal power plant with boilers and steam turbines into a single virtual power plant.",
-          "All control algorithms must be implemented in the gas/coal power plant control system, with overall output power balanced by the steam turbine."
-        ]
+        "sentences": ["Project write-up: virtual power plant dispatch."]
       }
     ]
   },
-  "blocks": [
-    {
-      "type": "section",
-      "title": "Why Choose Us",
-      "blocks": [
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Certified functional safety"
-        },
-        {
-          "type": "paragraph",
-          "html": "SIL 2 and SIL 3 applications certified to IEC 61511, on HIMA HIQuad, Foxboro Triconex and ABB AC800."
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Six DCS platforms"
-        },
-        {
-          "type": "paragraph",
-          "html": "Emerson Ovation, ABB Industrial IT 800xA, ABB Symphony, Siemens PCS7, Siemens TIA Portal and Yokogawa Centum VP, in production plants."
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Remote and autonomous operation"
-        },
-        {
-          "type": "paragraph",
-          "html": "Plants dispatched over IEC 60870-5-104 across four redundant communication channels."
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Measured handover"
-        },
-        {
-          "type": "paragraph",
-          "html": "Turbines accepted on measured criteria: primary and secondary frequency regulation, rate of load change, generator disconnection from the grid, emergency stops."
-        }
-      ]
-    }
-  ],
+  "blocks": [],
   "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
 }

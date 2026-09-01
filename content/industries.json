@@ -34,7 +34,7 @@
         },
         {
           "type": "paragraph",
-          "html": "Our journey in the field of industrial automation spans nearly two decades, during which we have amassed invaluable experience. This wealth of knowledge allows us to design, implement, integrate, and commission automation solutions that cater to a wide range of industrial requirements. Our team comprises dynamic and dedicated engineers who bring innovation and expertise to every project. By leveraging the support of leading suppliers, we ensure that our solutions are cutting-edge and reliable."
+          "html": "Our journey in the field of industrial automation spans nearly two decades, during which we have amassed invaluable experience. This wealth of knowledge allows us to design, implement, integrate, and commission automation solutions that cater to a wide range of industrial requirements. Our team comprises dynamic and dedicated engineers who bring innovation and expertise to every project. We work with Emerson, ABB, Siemens and Yokogawa platforms that are already running in production plants."
         },
         {
           "type": "heading",
@@ -43,7 +43,7 @@
         },
         {
           "type": "paragraph",
-          "html": "One of our key strengths lies in our proficiency with advanced technologies and our commitment to maintaining high standards. We utilize state-of-the-art tools and methodologies to deliver automation solutions that drive efficiency and productivity. Our company holds various certifications that attest to our adherence to industry standards and best practices. These certifications not only validate our capabilities but also instill confidence in our clients, assuring them that they are partnering with a reputable and competent provider."
+          "html": "One of our key strengths lies in our proficiency with advanced technologies and our commitment to maintaining high standards. We use the same DCS, ESD and historian platforms on every project, documented to the same standards, and held to the same test evidence. Our company holds various certifications that attest to our adherence to industry standards and best practices. These certifications not only validate our capabilities but also instill confidence in our clients, assuring them that they are partnering with a reputable and competent provider."
         },
         {
           "type": "heading",
@@ -62,8 +62,8 @@
       "blocks": [
         {
           "type": "image",
-          "src": "/images/2025/05/07/homemaster.png",
-          "alt": "HOMEMASTER smart home automation by ISYSTEMS AUTOMATION",
+          "src": "/images/lab/module-under-hipot-test.jpg",
+          "alt": "HomeMaster module on an ESD mat with hi-pot test leads connected",
           "href": null
         },
         {
@@ -125,7 +125,7 @@
         },
         {
           "type": "paragraph",
-          "html": "At the core of this industry lies the need for advanced technologies and solutions to optimize production and achieve maximum potential. We offer state-of-the-art solutions tailored to meet these needs. Innovative designs that facilitate seamless control and monitoring of operations, enhancing productivity and safety."
+          "html": "Refinery and gas plants need control systems that work in classified areas, keep the refinery supplied when the grid fails, and report emissions and efficiency to the people who act on the data. We design intrinsically safe I&amp;C, burner management and SIL-rated safety systems, and integrate process data into the plant DCS and historians."
         },
         {
           "type": "link",
@@ -166,7 +166,7 @@
     },
     {
       "type": "section",
-      "title": "Innovative Solutions Unveiled in Industrial Control Centers Design",
+      "title": "Industrial control center design",
       "blocks": [
         {
           "type": "image",
@@ -177,7 +177,7 @@
         {
           "type": "heading",
           "level": 3,
-          "text": "Innovative Solutions Unveiled in Industrial Control Centers Design"
+          "text": "Industrial control center design"
         },
         {
           "type": "paragraph",

@@ -20,8 +20,8 @@
       "blocks": [
         {
           "type": "image",
-          "src": "/images/2025/05/07/homemaster.png",
-          "alt": "HOMEMASTER smart home automation by ISYSTEMS AUTOMATION",
+          "src": "/images/lab/module-under-hipot-test.jpg",
+          "alt": "HomeMaster module on an ESD mat with hi-pot test leads connected",
           "href": null
         },
         {
@@ -85,7 +85,7 @@
           "ordered": false,
           "items": [
             {
-              "html": "<p class=\"\"><strong>Developed In-House</strong>: Fully owned and operated by ISYSTEMS AUTOMATION, ensuring top-tier quality and seamless integration across systems.</p>"
+              "html": "<p class=\"\"><strong>Developed In-House</strong>: Fully owned and operated by ISYSTEMS AUTOMATION, with every module tested on our own bench before it ships.</p>"
             },
             {
               "html": "<p class=\"\"><strong>Future-Proof Technology</strong>: Designed with scalability and compatibility in mind, from standalone setups to full-scale smart homes.</p>"

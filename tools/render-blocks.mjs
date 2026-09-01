@@ -248,25 +248,36 @@ function renderList(block) {
 }
 
 function normalizeRefTable($, table) {
-  table.removeAttr('class').addClass('table table--compact');
+  table.removeAttr('class').addClass('table table--compact table--ref');
   if (!table.find('thead').length) {
     const firstRow = table.find('tr').first();
     if (firstRow.length && firstRow.find('th').length) {
       firstRow.wrap('<thead></thead>');
     } else if (firstRow.length) {
-      const headers = firstRow
+      const headerCells = firstRow
         .find('td')
         .map((_, td) => `<th>${$(td).html()}</th>`)
         .get()
         .join('');
       firstRow.remove();
-      table.prepend(`<thead><tr>${headers}</tr></thead>`);
+      table.prepend(`<thead><tr>${headerCells}</tr></thead>`);
     }
   }
   if (!table.find('tbody').length) {
     const bodyRows = table.find('tr').not('thead tr');
     bodyRows.wrapAll('<tbody></tbody>');
   }
+  const headers = table
+    .find('thead th')
+    .map((_, th) => $(th).text().trim())
+    .get();
+  table.find('tbody tr').each((_, tr) => {
+    $(tr)
+      .find('td')
+      .each((i, td) => {
+        if (headers[i]) $(td).attr('data-label', headers[i]);
+      });
+  });
 }
 
 function renderTable(html) {
@@ -298,7 +309,8 @@ function renderTable(html) {
     }
   }
 
-  return `<div class="table-scroll">${$.html(table)}</div>`;
+  const scrollClass = html.includes('isa-ref-table') ? 'table-scroll table-scroll--cards' : 'table-scroll';
+  return `<div class="${scrollClass}">${$.html(table)}</div>`;
 }
 
 function renderBlock(block, options = {}) {
@@ -686,16 +698,16 @@ function renderLinkIndex(items) {
 function renderIndexProjectCard(project) {
   const imgPath = mapImagePath(project.image);
   const dims = imageDims(imgPath);
-  const sentences = project.sentences.map((s) => `<p>${escapeHtml(s)}</p>`).join('\n');
+  const summary = project.sentences[0] ?? '';
   const figure = `<figure class="figure--embed"><a href="${escapeHtml(project.href)}"><img src="${escapeHtml(imgPath)}" alt="${escapeHtml(project.alt)}" width="${dims.width}" height="${dims.height}" loading="lazy" decoding="async"></a><figcaption>${escapeHtml(project.alt)}</figcaption></figure>`;
-  return `<h3><a href="${escapeHtml(project.href)}">${escapeHtml(project.title)}</a></h3><div class="section-promo__layout section-promo__layout--card">${figure}<div class="section-promo__text">${sentences}</div></div>`;
+  return `<h3><a href="${escapeHtml(project.href)}">${escapeHtml(project.title)}</a></h3><div class="section-promo__layout section-promo__layout--card">${figure}<div class="section-promo__text"><p>${escapeHtml(summary)}</p><p><a href="${escapeHtml(project.href)}">Read more</a></p></div></div>`;
 }
 
 function renderIndexHome({ title, home, blocks }) {
   const heroTitle = heroTitleFromPageTitle(title);
   const heroImg = INDEX_CAROUSEL_HERO[0];
   const dims = imageDims(heroImg);
-  let html = `<section class="section section--flush hero"><img src="${escapeHtml(heroImg)}" alt="" width="${dims.width}" height="${dims.height}" fetchpriority="high" decoding="async"><div class="container prose"><h1>${escapeHtml(heroTitle)}</h1><p>${escapeHtml(home.heroTagline)}</p></div></section>`;
+  let html = `<section class="section section--flush hero"><img src="${escapeHtml(heroImg)}" alt="Combined-cycle plant control room with operator consoles and overview display" width="${dims.width}" height="${dims.height}" fetchpriority="high" decoding="async"><div class="container prose"><h1>${escapeHtml(heroTitle)}</h1><p>${escapeHtml(home.heroTagline)}</p></div></section>`;
 
   html += `<section class="section section--tint"><div class="container prose">${sectionTitleHeading('What we do')}${renderLinkIndex(home.services)}</div></section>`;
   html += `<section class="section"><div class="container prose">${sectionTitleHeading('Industries')}${renderLinkIndex(home.industries)}</div></section>`;
@@ -713,7 +725,7 @@ function renderIndexHome({ title, home, blocks }) {
   html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose">${sectionTitleHeading('Selected projects')}${projectCards}</div></section>`;
   tint = !tint;
 
-  html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose"><p>See the full project list under <a href="/references.html">References</a> and our in-house product conformity work under <a href="/compliance.html">Compliance and Testing</a>.</p></div></section>`;
+  html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose"><p>See the full project list under <a href="/references.html">References</a> and our in-house product conformity work under <a href="/compliance.html">Compliance and Testing</a>. SIL 2 and SIL 3 on HIMA HIQuad, Foxboro Triconex and ABB AC800; DCS on Emerson Ovation; remote dispatch over IEC 60870-5-104.</p></div></section>`;
 
   return html;
 }
@@ -730,7 +742,6 @@ function renderContactPage(blocks, pageTitle) {
 <p>Correspondence in English, Romanian and Russian.</p>
 <h2 class="section-title">Where we work</h2>
 <p>Engineering, commissioning and maintenance on site across Romania and on export projects. Bench testing and technical documentation are carried out at our own premises in Ploiești.</p>
-<p><a href="https://www.openstreetmap.org/search?query=Str.%20Diligentei%2020%2C%20Ploiesti%2C%20Romania">View address on OpenStreetMap</a></p>
 </div></section>`;
 
   return html;
@@ -778,6 +789,9 @@ function renderSection(section, tint, pageTitle, seenTitleRef, slug = '') {
   const sectionContext = shouldNormalizeHeadings(slug) ? { hasPrimaryHeading: false } : null;
   const inner = renderBlocksWithGallery(
     section.blocks.filter((block) => {
+      if (block.type === 'heading' && block.text === sectionTitle) {
+        return false;
+      }
       if (shouldSkipHeading(block, pageTitle, seenTitleRef.value) && block.level <= 2) {
         if (block.text === heroTitleFromPageTitle(pageTitle) || block.text === sectionTitle) {
           seenTitleRef.value = true;
