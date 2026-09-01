@@ -178,5 +178,35 @@
     "width": 960,
     "height": 640,
     "bytes": 53077
+  },
+  "/assets/img/lab/hipot-test-4244v-pass.jpg": {
+    "width": 1055,
+    "height": 670,
+    "bytes": 118915
+  },
+  "/assets/img/lab/module-under-hipot-test.jpg": {
+    "width": 940,
+    "height": 550,
+    "bytes": 76356
+  },
+  "/assets/img/lab/miniplc-under-hipot-test.jpg": {
+    "width": 790,
+    "height": 1090,
+    "bytes": 127045
+  },
+  "/assets/img/lab/clearance-measurement-pcb.jpg": {
+    "width": 448,
+    "height": 400,
+    "bytes": 45421
+  },
+  "/assets/img/lab/calibration-label-1.jpg": {
+    "width": 553,
+    "height": 78,
+    "bytes": 14082
+  },
+  "/assets/img/lab/calibration-label-2.jpg": {
+    "width": 380,
+    "height": 67,
+    "bytes": 9826
   }
 }

@@ -331,7 +331,7 @@ a.btn--quiet{ color:var(--brand-700); }
 .gallery img{ width:100%; aspect-ratio:3/2; object-fit:cover; display:block; }
 @media (max-width:1023px){ .gallery{ grid-template-columns:repeat(2,minmax(0,320px)); } }
 @media (max-width:767px){ .gallery{ grid-template-columns:minmax(0,320px); } }
-figcaption{ margin-top:var(--s3); font-size:0.875rem; color:var(--ink-500); }
+figcaption{ margin-top:var(--s3); font-size:0.9rem; color:var(--ink-500); }
 
 /* Promo embed: grid overrides generic prose figure cap */
 .prose .section-promo__layout figure{
@@ -378,6 +378,33 @@ figcaption{ margin-top:var(--s3); font-size:0.875rem; color:var(--ink-500); }
 .nav-panel details > ul{ padding-left:0; }
 
 /* --- Служебное --- */
+.section-promo__layout--inline{
+  margin-top:var(--s4);
+  margin-bottom:var(--s4);
+}
+.section-promo__layout--inline .section-promo__text > :first-child{ margin-top:0; }
+
+.figure-pair{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,320px));
+  gap:var(--s5);
+  margin:var(--s5) 0;
+}
+.figure-pair figure.figure--support{
+  margin:0;
+  max-width:320px;
+}
+.figure-pair img{ width:100%; height:auto; display:block; }
+.figure-caption{
+  grid-column:1 / -1;
+  margin:0;
+  font-size:0.9rem;
+  color:var(--ink-500);
+}
+@media (max-width:767px){
+  .figure-pair{ grid-template-columns:minmax(0,320px); }
+}
+
 .notice-panel{
   background:var(--ink-100);
   border:1px solid var(--ink-300);
@@ -387,6 +414,7 @@ figcaption{ margin-top:var(--s3); font-size:0.875rem; color:var(--ink-500); }
 }
 .notice-panel .section-title{ margin-top:0; }
 
+.visually-hidden{
   position:absolute; width:1px; height:1px; overflow:hidden;
   clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap;
 }

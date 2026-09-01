@@ -9,15 +9,33 @@ const OUT_PATH = path.join(ROOT, 'src/compliance.njk');
 const MANIFEST_PATH = path.join(ROOT, 'src/assets/img/_manifest.json');
 const IMAGE_MANIFEST = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
 
-const SECTION_IMAGES = {
-  'We went through this ourselves': {
-    src: '/assets/img/projects/marshalling-cable-marking.jpg',
-    alt: 'Marshalling cabinet with individually tagged control cables',
+const LAB = {
+  intro: {
+    src: '/assets/img/lab/module-under-hipot-test.jpg',
+    alt: 'HomeMaster module on an ESD mat with hi-pot test leads connected',
   },
-  'Electrical safety testing to EN 62368-1': {
-    src: '/assets/img/projects/atex-zone2-barriers.jpg',
-    alt: 'ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet',
+  electricStrength: {
+    src: '/assets/img/lab/hipot-test-4244v-pass.jpg',
+    alt: 'GW Instek GPT-9804 showing a 4.244 kV dielectric strength test passing at 60 seconds',
+    caption:
+      'Electric strength test at reinforced-insulation level, 4.244 kV DC, 60 s',
   },
+  clearance: {
+    src: '/assets/img/lab/clearance-measurement-pcb.jpg',
+    alt: 'PCB layout with a 13.843 mm clearance dimension between isolated regions',
+  },
+  calibration: [
+    {
+      src: '/assets/img/lab/calibration-label-1.jpg',
+      alt: 'Calibration label on a measuring instrument',
+    },
+    {
+      src: '/assets/img/lab/calibration-label-2.jpg',
+      alt: 'Calibration label on a measuring instrument',
+    },
+  ],
+  calibrationCaption:
+    'Instruments are calibrated externally and carry current calibration labels',
 };
 
 function escapeHtml(text) {
@@ -32,9 +50,16 @@ function imageDims(src) {
   return IMAGE_MANIFEST[src] ?? { width: 960, height: 640 };
 }
 
-function renderFigure({ src, alt }) {
+function renderFigure({ src, alt, caption = null, compact = true }) {
   const { width, height } = imageDims(src);
-  return `<figure class="figure--embed"><img src="${src}" alt="${escapeHtml(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async"><figcaption>${escapeHtml(alt)}</figcaption></figure>`;
+  const figureClass = compact ? ' class="figure--embed"' : '';
+  const cap = caption ?? alt;
+  return `<figure${figureClass}><img src="${src}" alt="${escapeHtml(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async"><figcaption>${escapeHtml(cap)}</figcaption></figure>`;
+}
+
+function renderInlineParagraphFigure(paragraphHtml, figureSpec) {
+  const figure = renderFigure(figureSpec);
+  return `<div class="section-promo__layout section-promo__layout--inline">${figure}<div class="section-promo__text">${paragraphHtml}</div></div>`;
 }
 
 function parseTable(lines, startIndex) {
@@ -64,56 +89,68 @@ function rowsToTable(rows) {
   return `<div class="table-scroll"><table class="table table--compact">${thead}${tbody}</table></div>`;
 }
 
-function flushParagraph(buffer, out) {
-  if (!buffer.length) return;
-  const text = buffer.join(' ').replace(/\s+/g, ' ').trim();
-  if (!text) return;
-  const runIn = text.match(/^\*\*(.+?)\*\*\s*(.*)$/s);
-  if (runIn) {
-    out.push(`<p><strong>${escapeHtml(runIn[1])}</strong> ${escapeHtml(runIn[2])}</p>`);
-  } else {
-    out.push(`<p>${escapeHtml(text)}</p>`);
-  }
-  buffer.length = 0;
-}
-
-function parseBody(lines) {
+function parseBody(lines, options = {}) {
   const out = [];
   const para = [];
+  const inlineFigures = options.inlineFigures ?? [];
   let i = 0;
+
+  const flush = () => {
+    if (!para.length) return;
+    const text = para.join(' ').replace(/\s+/g, ' ').trim();
+    para.length = 0;
+    if (!text) return;
+    const html = paragraphHtmlFromText(text);
+    const match = inlineFigures.find((item) => text.startsWith(item.prefix));
+    if (match) {
+      out.push(renderInlineParagraphFigure(html, match.spec));
+    } else {
+      out.push(html);
+    }
+  };
 
   while (i < lines.length) {
     const line = lines[i];
     const trimmed = line.trim();
 
     if (!trimmed) {
-      flushParagraph(para, out);
+      flush();
       i += 1;
       continue;
     }
 
     if (trimmed.startsWith('### ')) {
-      flushParagraph(para, out);
+      flush();
       out.push(`<h3>${escapeHtml(trimmed.slice(4))}</h3>`);
       i += 1;
       continue;
     }
 
     if (trimmed.startsWith('|')) {
-      flushParagraph(para, out);
+      flush();
       const table = parseTable(lines, i);
       out.push(table.html);
+      if (options.afterTable) {
+        out.push(options.afterTable);
+        options.afterTable = null;
+      }
       i = table.nextIndex;
       continue;
     }
 
     if (trimmed.startsWith('- ')) {
-      flushParagraph(para, out);
+      flush();
       const items = [];
       while (i < lines.length && lines[i].trim().startsWith('- ')) {
         let item = lines[i].trim().slice(2);
         i += 1;
-        while (i < lines.length && lines[i].trim() && !lines[i].trim().startsWith('- ') && !lines[i].trim().startsWith('|') && !lines[i].trim().startsWith('###')) {
+        while (
+          i < lines.length &&
+          lines[i].trim() &&
+          !lines[i].trim().startsWith('- ') &&
+          !lines[i].trim().startsWith('|') &&
+          !lines[i].trim().startsWith('###')
+        ) {
           item += ` ${lines[i].trim()}`;
           i += 1;
         }
@@ -127,8 +164,16 @@ function parseBody(lines) {
     i += 1;
   }
 
-  flushParagraph(para, out);
+  flush();
   return out.join('\n');
+}
+
+function paragraphHtmlFromText(text) {
+  const runIn = text.match(/^\*\*(.+?)\*\*\s*(.*)$/s);
+  if (runIn) {
+    return `<p><strong>${escapeHtml(runIn[1])}</strong> ${escapeHtml(runIn[2])}</p>`;
+  }
+  return `<p>${escapeHtml(text)}</p>`;
 }
 
 function loadSections(markdown) {
@@ -145,8 +190,18 @@ function loadSections(markdown) {
       if (!titleLine) throw new Error(`Section without h2: ${chunk.slice(0, 40)}`);
       const title = titleLine.slice(3).trim();
       const rest = lines.filter((l) => l !== titleLine);
-      return { title, html: parseBody(rest) };
+      return { title, lines: rest };
     });
+}
+
+function renderCalibrationPair() {
+  const figures = LAB.calibration
+    .map((item) => {
+      const { width, height } = imageDims(item.src);
+      return `<figure class="figure--support"><img src="${item.src}" alt="${escapeHtml(item.alt)}" width="${width}" height="${height}" loading="lazy" decoding="async"></figure>`;
+    })
+    .join('\n');
+  return `<div class="figure-pair">\n${figures}\n<p class="figure-caption">${escapeHtml(LAB.calibrationCaption)}</p>\n</div>`;
 }
 
 function renderSection(section, tint) {
@@ -154,16 +209,33 @@ function renderSection(section, tint) {
   const h2 = `<h2 class="section-title">${escapeHtml(section.title)}</h2>`;
 
   if (section.title === 'What this is not') {
-    return `<section class="${cls}"><div class="container prose"><div class="notice-panel">${h2}${section.html}</div></div></section>`;
+    const html = parseBody(section.lines);
+    return `<section class="${cls}"><div class="container prose"><div class="notice-panel">${h2}${html}</div></div></section>`;
   }
 
-  const image = SECTION_IMAGES[section.title];
-  if (image) {
-    const figure = renderFigure(image);
-    return `<section class="${cls}"><div class="container prose"><div class="section-promo__layout section-promo__layout--lead">${figure}<div class="section-promo__text">${h2}${section.html}</div></div></div></section>`;
+  if (section.title === 'We went through this ourselves') {
+    const figure = renderFigure(LAB.intro);
+    const html = parseBody(section.lines);
+    return `<section class="${cls}"><div class="container prose"><div class="section-promo__layout section-promo__layout--lead">${figure}<div class="section-promo__text">${h2}${html}</div></div></div></section>`;
   }
 
-  return `<section class="${cls}"><div class="container prose">${h2}${section.html}</div></section>`;
+  if (section.title === 'Electrical safety testing to EN 62368-1') {
+    const html = parseBody(section.lines, {
+      inlineFigures: [
+        { prefix: '**Electric strength, clause 5.4.9.**', spec: LAB.electricStrength },
+        { prefix: '**Creepage and clearance, clause 5.4.2.**', spec: LAB.clearance },
+      ],
+    });
+    return `<section class="${cls}"><div class="container prose">${h2}${html}</div></section>`;
+  }
+
+  if (section.title === 'Equipment') {
+    const html = parseBody(section.lines, { afterTable: renderCalibrationPair() });
+    return `<section class="${cls}"><div class="container prose">${h2}${html}</div></section>`;
+  }
+
+  const html = parseBody(section.lines);
+  return `<section class="${cls}"><div class="container prose">${h2}${html}</div></section>`;
 }
 
 function buildPage(sections) {
