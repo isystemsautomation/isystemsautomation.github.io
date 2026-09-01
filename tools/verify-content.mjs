@@ -403,6 +403,115 @@ if (layout) {
   if (layout.maxContentImageWidth > 320.5) failed = true;
 }
 
+function visibleText(html) {
+  const $ = cheerio.load(html, { decodeEntities: false });
+  $('script, style, noscript, head').remove();
+  return $('main').text() || $('body').text();
+}
+
+function checkDanglingHeadings(html, url) {
+  const $ = cheerio.load(html, { decodeEntities: false });
+  const dangling = [];
+  $('main .prose').each((_, prose) => {
+    $(prose)
+      .find('h2')
+      .each((__, el) => {
+        const $el = $(el);
+        if ($el.closest('.page-hero').length) return;
+        const after = $el.nextAll().not('script,style');
+        const hasContent = after.filter((___, node) => {
+          const $n = $(node);
+          if ($n.is('h1,h2,h3,h4,h5,h6')) return false;
+          return $n.text().trim().length > 0 || $n.is('img,table,ul,ol,figure,dl,p');
+        }).length;
+        if (!hasContent && !$el.closest('.section-promo__layout,.point-grid,.grid').length) {
+          dangling.push($el.text().trim());
+        }
+      });
+  });
+  if (dangling.length) {
+    console.error(`${url} dangling heading(s):`, dangling.join('; '));
+    return false;
+  }
+  return true;
+}
+
+function americanSpellingInVisibleText(text) {
+  const stripped = text.replace(/\/service\/process-optimization-advanced-process-control\.html/gi, '');
+  return (
+    /\boptimization\b/i.test(stripped) ||
+    /\boptimize\b/i.test(stripped) ||
+    /\boptimized\b/i.test(stripped) ||
+    /\boptimizer\b/i.test(stripped)
+  );
+}
+
+for (const entry of inventory) {
+  const sitePath = path.join(SITE_DIR, entry.url.replace(/^\//, ''));
+  if (!fs.existsSync(sitePath)) continue;
+  const html = fs.readFileSync(sitePath, 'utf8');
+  if (!checkDanglingHeadings(html, entry.url)) failed = true;
+
+  if (americanSpellingInVisibleText(visibleText(html))) {
+    console.error(entry.url, 'American spelling (optimization/optimize) in visible text');
+    failed = true;
+  }
+}
+
+const maintenancePath = path.join(SITE_DIR, 'service/maintenance.html');
+if (fs.existsSync(maintenancePath)) {
+  const mHtml = fs.readFileSync(maintenancePath, 'utf8');
+  if (!mHtml.includes('Maintenance approach')) {
+    console.error('service/maintenance.html missing h2 Maintenance approach');
+    failed = true;
+  }
+  for (const h3 of [
+    'Preventive maintenance',
+    'Condition-based maintenance',
+    'Corrective and emergency support',
+    'Remote support',
+    'Performance monitoring',
+  ]) {
+    if (!mHtml.includes(h3)) {
+      console.error('service/maintenance.html missing h3:', h3);
+      failed = true;
+    }
+  }
+  if (!mHtml.includes('Performance calculation and reporting')) {
+    console.error('service/maintenance.html missing h2 Performance calculation and reporting');
+    failed = true;
+  }
+  if (/predictive maintenance/i.test(mHtml)) {
+    console.error('service/maintenance.html must not mention predictive maintenance');
+    failed = true;
+  }
+}
+
+const refsPath = path.join(SITE_DIR, 'references.html');
+if (fs.existsSync(refsPath)) {
+  const refsHtml = fs.readFileSync(refsPath, 'utf8');
+  const rowCount = (refsHtml.match(/<tbody>[\s\S]*?<\/tbody>/)?.[0].match(/<tr>/g) ?? []).length;
+  const colCount = (refsHtml.match(/<thead>[\s\S]*?<\/thead>/)?.[0].match(/<th>/g) ?? []).length;
+  if (rowCount !== 32 || colCount !== 4) {
+    console.error(`references.html table must be 4 columns × 32 rows (got ${colCount}×${rowCount})`);
+    failed = true;
+  }
+}
+
+if (fs.existsSync(SITE_DIR)) {
+  const allHtml = inventory
+    .map((entry) => {
+      const sitePath = path.join(SITE_DIR, entry.url.replace(/^\//, ''));
+      return fs.existsSync(sitePath) ? fs.readFileSync(sitePath, 'utf8') : '';
+    })
+    .join('\n');
+  const reachMatches = allHtml.match(/reach the control(?! without leaving their operating position)/gi) ?? [];
+  if (reachMatches.length) {
+    console.error('Incomplete phrase "reach the control" found:', reachMatches.length);
+    failed = true;
+  }
+}
+
 if (failed) {
   process.exitCode = 1;
   console.error('\nverify-content: FAILED');

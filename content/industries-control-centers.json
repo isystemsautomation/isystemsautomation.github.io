@@ -54,7 +54,7 @@
         },
         {
           "type": "paragraph",
-          "html": "The standard exists because control rooms fail in predictable ways: an operator who cannot see the overview display from the position where the alarm arrives, a room where two operators cannot hold a conversation over the ventilation, a console that forces a reach the operator will stop making by the third month. These are design faults, not operator faults, and they are avoidable at the drawing stage."
+          "html": "The standard exists because control rooms fail in predictable ways: an operator who cannot see the overview display from the position where the alarm arrives, a room where two operators cannot hold a conversation over the ventilation, a console that forces a reach the control without leaving their operating position that the operator will stop making by the third month. These are design faults, not operator faults, and they are avoidable at the drawing stage."
         },
         {
           "type": "paragraph",

@@ -1,5 +1,5 @@
 {
-  "slug": "service-process-optimisation-advanced-process-control",
+  "slug": "service-process-optimization-advanced-process-control",
   "source": "legacy/service/process-optimization-advanced-process-control.html",
   "url": "/service/process-optimization-advanced-process-control.html",
   "blocks": [
@@ -114,13 +114,8 @@
     },
     {
       "type": "section",
-      "title": "Related references",
+      "title": "Advanced Boiler Load Controllers",
       "blocks": [
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Related references"
-        },
         {
           "type": "image",
           "src": "/images/2024/08/10/advanced_boiler_load_controllers.jpg",
@@ -129,11 +124,15 @@
         },
         {
           "type": "heading",
-          "level": 3,
+          "level": 2,
           "text": "Advanced Boiler Load Controllers"
+        },
+        {
+          "type": "paragraph",
+          "html": "Advanced load controllers for a 260 t/h CFB boiler on Emerson Ovation — combustion, fuel allocation and emissions held against the permit limit. See the <a href=\"/projects/advanced-controllers-cfb-boiler.html\">CFB boiler advanced controllers project</a>."
         }
       ]
     }
   ],
-  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 18 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
 }

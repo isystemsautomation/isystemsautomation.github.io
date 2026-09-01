@@ -23,7 +23,7 @@
     "file": "legacy/advanced-controllers-cfb-boiler.html",
     "url": "/projects/advanced-controllers-cfb-boiler.html",
     "title": "Advanced Controllers for CFB Boilers — ISYSTEMS AUTOMATION",
-    "description": "Advanced load controllers for a 260 t/h circulating fluidized bed boiler on DCS Emerson Ovation: combustion optimization, emissions control and fuel quality compensation.",
+    "description": "Advanced load controllers for a 260 t/h circulating fluidized bed boiler on DCS Emerson Ovation: combustion optimisation, emissions control and fuel quality compensation.",
     "canonical": null,
     "ogTitle": "Advanced Controllers for CFB Boilers — ISYSTEMS AUTOMATION",
     "ogDescription": null,
@@ -162,10 +162,10 @@
   {
     "file": "legacy/service/process-optimization-advanced-process-control.html",
     "url": "/service/process-optimization-advanced-process-control.html",
-    "title": "Process Optimization and Advanced Process Control — ISYSTEMS AUTOMATION",
+    "title": "Process Optimisation and Advanced Process Control — ISYSTEMS AUTOMATION",
     "description": "Advanced process control delivered as DCS optimisers for load, fuel and emissions: coordinated load control, frequency response, solid fuel allocation, emissions, boiler start-up and island mode.",
     "canonical": null,
-    "ogTitle": "Process Optimization and Advanced Process Control — ISYSTEMS AUTOMATION",
+    "ogTitle": "Process Optimisation and Advanced Process Control — ISYSTEMS AUTOMATION",
     "ogDescription": null,
     "ogUrl": "https://www.isystemsautomation.com/service/process-optimization-advanced-process-control.html"
   },

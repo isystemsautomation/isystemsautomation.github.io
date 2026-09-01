@@ -85,7 +85,7 @@ function loadServiceBlurbs() {
 function hrefFromServiceTitle(title) {
   const map = {
     'Process Automation': '/service/process-automation.html',
-    'Process optimization / Advanced process control':
+    'Process optimisation / Advanced process control':
       '/service/process-optimization-advanced-process-control.html',
     'MES (Manufacturing Execution System)': '/service/manufacturing-execution-system.html',
     'Safety Systems and Burner Management Systems':
@@ -153,7 +153,8 @@ function headingTag(level, text, sectionTitle = false, options = {}) {
     if (level <= 2) {
       return sectionTitleHeading(text);
     }
-    const isPrimary = sectionContext && !sectionContext.hasPrimaryHeading;
+    const isPrimary =
+      sectionContext && !sectionContext.hasPrimaryHeading && !options.sectionHasTitle;
     if (level === 3 && isPrimary) {
       sectionContext.hasPrimaryHeading = true;
       return sectionTitleHeading(text);
@@ -842,6 +843,7 @@ function renderSection(section, tint, pageTitle, seenTitleRef, slug = '') {
     {
       lazyImages: true,
       sectionTitle: false,
+      sectionHasTitle: Boolean(sectionTitle),
       slug,
       sectionContext,
     },
@@ -853,9 +855,7 @@ function renderSection(section, tint, pageTitle, seenTitleRef, slug = '') {
   if (
     shouldNormalizeHeadings(slug) &&
     sectionTitle &&
-    sectionTitle !== heroTitleFromPageTitle(pageTitle) &&
-    sectionContext &&
-    !sectionContext.hasPrimaryHeading
+    sectionTitle !== heroTitleFromPageTitle(pageTitle)
   ) {
     prefix = sectionTitleHeading(sectionTitle);
   }

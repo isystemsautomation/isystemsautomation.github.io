@@ -16,8 +16,13 @@
     },
     {
       "type": "section",
-      "title": "Preventive maintenance for control systems",
+      "title": "Maintenance approach",
       "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Maintenance approach"
+        },
         {
           "type": "image",
           "src": "/images/2024/08/10/maintenance.jpg",
@@ -27,11 +32,77 @@
         {
           "type": "heading",
           "level": 3,
-          "text": "Preventive maintenance for control systems"
+          "text": "Preventive maintenance"
         },
         {
           "type": "paragraph",
-          "html": "Ensuring continuous operation of a production line depends on the control system staying available. One of the most significant threats is a failure inside the control system. Maintenance is essential for mitigating that risk, whether scheduled, preventive or corrective. A planned maintenance strategy reduces production slowdowns and complete stoppages from DCS, ESD or historian faults."
+          "html": "Ensuring continuous operation of a production line depends on the control system staying available. One of the most significant threats is a failure inside the control system. A planned maintenance strategy reduces production slowdowns and complete stoppages from DCS, ESD or historian faults."
+        },
+        {
+          "type": "paragraph",
+          "html": "Preventive maintenance is scheduled and interval-based: maintenance scheduling and implementation against a plan agreed with site personnel."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Condition-based maintenance"
+        },
+        {
+          "type": "paragraph",
+          "html": "Maintenance work is targeted and condition-based: improve the efficiency, reliability and service life of your automation systems by acting on measured condition rather than on a calendar alone."
+        },
+        {
+          "type": "paragraph",
+          "html": "Effective maintenance starts with an audit of systems and devices. Using accurate and up-to-date condition data, we identify the actions required, when and where they apply, and eliminate unnecessary tasks."
+        },
+        {
+          "type": "paragraph",
+          "html": "System and device assessment supports that audit. On the refinery CHP plant we have maintained DCS, ESD, BMS and MES continuously since 2022, and for eleven years before that from 2007 to 2018."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Corrective and emergency support"
+        },
+        {
+          "type": "paragraph",
+          "html": "Maintenance is essential for mitigating control system risk, including corrective work after a failure."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            { "html": "Service calls" },
+            { "html": "On-demand support" },
+            { "html": "Emergency visit" }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Remote support"
+        },
+        {
+          "type": "paragraph",
+          "html": "On-site and remote support for control systems already running in production."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Performance monitoring"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            { "html": "Improve process performance while reducing costs" },
+            { "html": "Minimise safety and environmental risks" },
+            { "html": "Extend the service life of installed systems" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "Control loop performance is monitored continuously, loops are retuned, and alternative control strategies are implemented where the existing one limits the unit."
         }
       ]
     },
@@ -40,96 +111,31 @@
       "title": "Platforms in maintenance",
       "blocks": [
         {
-          "type": "paragraph",
-          "html": "On-site and remote support for control systems already running in production."
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "html": "Improve process performance while reducing costs"
-            },
-            {
-              "html": "Minimise safety and environmental risks"
-            },
-            {
-              "html": "Extend the service life of installed systems"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "html": "Maintenance work is targeted and condition-based: improve the efficiency, reliability and service life of your automation systems by acting on measured condition rather than on a calendar alone."
-        },
-        {
           "type": "heading",
-          "level": 3,
+          "level": 2,
           "text": "Platforms in maintenance"
         },
         {
           "type": "list",
           "ordered": false,
           "items": [
-            {
-              "html": "ABB Industrial IT 800xA"
-            },
-            {
-              "html": "Emerson Ovation"
-            },
-            {
-              "html": "HIMA HIQuad"
-            },
-            {
-              "html": "Siemens PCS7"
-            },
-            {
-              "html": "Siemens TIA Portal"
-            },
-            {
-              "html": "Yokogawa Centum VP"
-            }
+            { "html": "ABB Industrial IT 800xA" },
+            { "html": "Emerson Ovation" },
+            { "html": "HIMA HIQuad" },
+            { "html": "Siemens PCS7" },
+            { "html": "Siemens TIA Portal" },
+            { "html": "Yokogawa Centum VP" }
           ]
-        },
-        {
-          "type": "paragraph",
-          "html": "Effective maintenance starts with an audit of systems and devices. Using accurate and up-to-date condition data, we identify the actions required, when and where they apply, and eliminate unnecessary tasks. That audit also supports predictive maintenance — reducing the risk of unexpected failures. On the refinery CHP plant we have maintained DCS, ESD, BMS and MES continuously since 2022, and for eleven years before that from 2007 to 2018."
-        },
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Performance calculation and reporting",
+      "blocks": [
         {
           "type": "heading",
-          "level": 3,
-          "text": "Maintenance and technical support services"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "html": "Preventive maintenance"
-            },
-            {
-              "html": "Service calls"
-            },
-            {
-              "html": "On-demand support"
-            },
-            {
-              "html": "Remote support"
-            },
-            {
-              "html": "Emergency visit"
-            },
-            {
-              "html": "System and device assessment"
-            },
-            {
-              "html": "Maintenance scheduling and implementation"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 3,
+          "level": 2,
           "text": "Performance calculation and reporting"
         },
         {
@@ -153,10 +159,6 @@
               "html": "Process data collection from control systems and commercial metering units, with long-term archiving"
             }
           ]
-        },
-        {
-          "type": "paragraph",
-          "html": "Control loop performance is monitored continuously, loops are retuned, and alternative control strategies are implemented where the existing one limits the unit."
         }
       ]
     }
