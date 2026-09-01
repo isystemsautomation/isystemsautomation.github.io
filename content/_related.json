@@ -8,7 +8,7 @@
       { "href": "/service/maintenance.html", "label": "Maintenance" }
     ]
   },
-  "service-process-optimisation-advanced-process-control": {
+  "service-process-optimization-advanced-process-control": {
     "index": { "href": "/service.html", "label": "All services" },
     "links": [
       { "href": "/service/process-automation.html", "label": "Process automation" },
