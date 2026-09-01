@@ -337,6 +337,18 @@ for (const entry of inventory) {
     missing = missing.filter((w) => !COOKIES_MISSING_OK.has(w));
   }
 
+  if (entry.url === '/references.html') {
+    if (!html.includes('table--ref')) {
+      console.error(entry.url, 'project list must render as table (table--ref missing)');
+      failed = true;
+    }
+    const projectListSection = html.split('Project list').slice(1).join('Project list');
+    if (projectListSection && /<ul>\s*\n<li>\s*\d{4}/.test(projectListSection.split('Featured projects')[0] ?? projectListSection)) {
+      console.error(entry.url, 'project list must not be a bullet list');
+      failed = true;
+    }
+  }
+
   if (missing.length) {
     console.error(
       entry.url,

@@ -1,76 +1,86 @@
 {
   "slug": "industries-cement-and-coal",
+  "heroTitle": "Bulk material handling",
   "source": "legacy/industries/cement-and-coal.html",
   "url": "/industries/cement-and-coal.html",
   "blocks": [
     {
       "type": "section",
-      "title": "Cement and Coal",
+      "title": null,
       "blocks": [
         {
-          "type": "heading",
-          "level": 2,
-          "text": "Cement and Coal"
+          "type": "paragraph",
+          "html": "A conveyor train, a bin, a crusher and a belt weigher behave the same way whether they are feeding a boiler, an asphalt plant or a concrete batching plant. The material changes; the control problem does not."
+        },
+        {
+          "type": "paragraph",
+          "html": "We have worked on all of them."
         }
       ]
     },
     {
       "type": "section",
-      "title": "Automation for cement and coal processes",
+      "title": "Conveying",
       "blocks": [
         {
           "type": "heading",
           "level": 2,
-          "text": "Automation for cement and coal processes"
+          "text": "Conveying"
         },
         {
           "type": "paragraph",
-          "html": "Cement production runs in batches; coal handling runs continuously at capacity. The two make opposite demands on a control system, and both punish imprecision in the same way — through the fuel bill."
-        },
-        {
-          "type": "paragraph",
-          "html": "In cement, the ratios of aggregates, cement, water and additives determine whether the concrete meets its specification. In coal, humidity, dosing and granulation determine whether the fuel burns completely. Incomplete combustion shows up as reduced calorific yield and higher consumption for the same output."
+          "html": "Sequenced start and stop against the direction of material flow, so a belt never runs into a stopped one. Interlocks, run-back protection, belt drift and pull-cord monitoring, blockage and choke detection."
         }
       ]
     },
     {
       "type": "section",
-      "title": "What we have built",
+      "title": "Bins, silos and feeders",
       "blocks": [
         {
           "type": "heading",
           "level": 2,
-          "text": "What we have built"
+          "text": "Bins, silos and feeders"
         },
         {
           "type": "paragraph",
-          "html": "Dosing and ratio control for batch processes, with correction for material moisture."
-        },
-        {
-          "type": "paragraph",
-          "html": "Solid fuel handling and allocation across feeders by calorific value, for a 260 t/h circulating fluidized bed boiler firing petroleum coke, coal, gas and fuel oil, with automatic calculation of the coke calorific value from the combustion result."
-        },
-        {
-          "type": "paragraph",
-          "html": "Combustion air control, primary and secondary, and an oxygen cascade controller referenced to the boiler operating mode and the fuel in use."
-        },
-        {
-          "type": "paragraph",
-          "html": "SO2 and NOx control through furnace temperature and lime dosing."
-        },
-        {
-          "type": "paragraph",
-          "html": "Emissions and particulate handling: a fifth electrostatic precipitator, and a baghouse filter — design, P&amp;ID, cabling, panels and specifications."
-        },
-        {
-          "type": "paragraph",
-          "html": "Boiler hall HVAC and smoke extraction for the CFB boiler, engineered with the plant designer, the equipment supplier and the boiler manufacturer."
+          "html": "Level measurement and the problems it does not solve — bridging, rat-holing, aeration. Loss-in-weight and belt-weigher feeders, totalising, and reconciliation between what was weighed in and what was weighed out."
         }
       ]
     },
     {
       "type": "section",
-      "title": "Fuel accounting",
+      "title": "Crushing, screening and milling",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Crushing, screening and milling"
+        },
+        {
+          "type": "paragraph",
+          "html": "Load control on crushers and mills against motor current, protection against choking and against running empty, and product size feedback where instrumentation allows it."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Weigh batching and recipe control",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Weigh batching and recipe control"
+        },
+        {
+          "type": "paragraph",
+          "html": "Dosing of aggregates, cement, water and additives to a recipe, with correction for material moisture. Batch records, and the accuracy the recipe depends on being an instrument specification rather than a hope."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Solid fuel handling on energy boilers",
       "blocks": [
         {
           "type": "image",
@@ -80,15 +90,38 @@
         },
         {
           "type": "heading",
-          "level": 3,
-          "text": "Fuel accounting"
+          "level": 2,
+          "text": "Solid fuel handling on energy boilers"
         },
         {
           "type": "paragraph",
-          "html": "Where fuel quality varies — and with petroleum coke it varies constantly — the boiler efficiency calculation has to follow it. We implement the efficiency calculation by direct and indirect method inside the control system, so that a change in fuel shows up as a number rather than as a surprise at month end. See the <a href=\"/projects/advanced-controllers-cfb-boiler.html\">CFB boiler advanced controllers project</a> for a reference implementation."
+          "html": "Fuel allocation across feeders by calorific value on a 260 t/h circulating fluidized bed boiler firing petroleum coke, coal, gas and fuel oil, with the coke calorific value calculated automatically from the combustion result. Combustion air and oxygen cascade control, SO2 and NOx control through furnace temperature and lime dosing."
+        },
+        {
+          "type": "paragraph",
+          "html": "See the <a href=\"/projects/advanced-controllers-cfb-boiler.html\">CFB boiler advanced controllers project</a> and <a href=\"/plant-performance.html\">Plant Performance</a> for reference implementations."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Dust",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Dust"
+        },
+        {
+          "type": "paragraph",
+          "html": "Coal and coke dust are explosible atmospheres — ATEX zones 20, 21 and 22 — and crushing and milling generate them by design. Dust extraction and suppression, electrostatic precipitators and baghouse filters, and equipment selection and circuit design for classified dust areas."
+        },
+        {
+          "type": "paragraph",
+          "html": "Intrinsically safe circuit design for classified areas is covered under <a href=\"/industries/oil-and-gas.html\">Oil and Gas</a>."
         }
       ]
     }
   ],
-  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 18 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
+  "footerLegal": "ISYSTEMS AUTOMATION S.R.L. Str. Diligenței 20 100575 Ploiești, Prahova Romania Reg. no. J29/919/2007 VAT RO21537032 office@isystemsautomation.com +40 747 757 798 Quality management certified to ISO 9001 since 2009 Privacy Policy Cookie Policy © 2007–2026 ISYSTEMS AUTOMATION S.R.L. All rights reserved."
 }

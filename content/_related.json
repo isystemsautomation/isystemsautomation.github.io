@@ -57,7 +57,7 @@
     "index": { "href": "/industries.html", "label": "All industries" },
     "links": [
       { "href": "/industries/oil-and-gas.html", "label": "Oil and gas" },
-      { "href": "/industries/cement-and-coal.html", "label": "Cement and coal" },
+      { "href": "/industries/cement-and-coal.html", "label": "Bulk material handling" },
       { "href": "/industries/control-centers.html", "label": "Control centers" }
     ]
   },
@@ -65,7 +65,7 @@
     "index": { "href": "/industries.html", "label": "All industries" },
     "links": [
       { "href": "/industries/power-generation.html", "label": "Power generation" },
-      { "href": "/industries/cement-and-coal.html", "label": "Cement and coal" },
+      { "href": "/industries/cement-and-coal.html", "label": "Bulk material handling" },
       { "href": "/industries/control-centers.html", "label": "Control centers" }
     ]
   },
@@ -82,7 +82,7 @@
     "links": [
       { "href": "/industries/power-generation.html", "label": "Power generation" },
       { "href": "/industries/oil-and-gas.html", "label": "Oil and gas" },
-      { "href": "/industries/cement-and-coal.html", "label": "Cement and coal" },
+      { "href": "/industries/cement-and-coal.html", "label": "Bulk material handling" },
       { "href": "/service/industrial-furniture-control-centers.html", "label": "Control center furniture (service)" }
     ]
   }

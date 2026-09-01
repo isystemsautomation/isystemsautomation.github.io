@@ -127,26 +127,22 @@
     },
     {
       "type": "section",
-      "title": "Embracing Automation in the Cement and Coal Industries",
+      "title": "Bulk material handling",
       "blocks": [
         {
           "type": "image",
           "src": "/images/2024/08/10/cement_and_coal.jpg",
-          "alt": "Cement and coal plant automation",
+          "alt": "Bulk material handling and weigh batching plant",
           "href": null
         },
         {
           "type": "heading",
           "level": 3,
-          "text": "Embracing Automation in the Cement and Coal Industries"
+          "text": "Bulk material handling"
         },
         {
           "type": "paragraph",
-          "html": "Cement production processes are typically discontinuous and operate in batches, while coal industry processes are continuous and run at maximum production capacity."
-        },
-        {
-          "type": "paragraph",
-          "html": "Batch ratios and continuous fuel dosing both need closed-loop control — humidity correction on aggregates, granulation and dosing on coal — because imprecision shows up as incomplete combustion and a higher fuel bill."
+          "html": "Conveyors, bins, crushers, belt weighers and recipe dosing — the same control problems whether the material feeds a boiler, an asphalt plant or a concrete batching plant."
         },
         {
           "type": "link",

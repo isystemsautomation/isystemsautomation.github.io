@@ -108,6 +108,7 @@ for (const entry of inventory) {
     blocks: contentData.blocks,
     title: entry.title,
     home: contentData.home ?? null,
+    heroTitle: contentData.heroTitle ?? null,
   });
 
   const outPath = slugToSrcPath(slug);

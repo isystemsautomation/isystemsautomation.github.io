@@ -85,7 +85,7 @@ function loadServiceBlurbs() {
 function hrefFromServiceTitle(title) {
   const map = {
     'Process Automation': '/service/process-automation.html',
-    'Process optimisation / Advanced process control':
+    'Process optimization / Advanced process control':
       '/service/process-optimization-advanced-process-control.html',
     'MES (Manufacturing Execution System)': '/service/manufacturing-execution-system.html',
     'Safety Systems and Burner Management Systems':
@@ -235,7 +235,21 @@ function isSpbTabList(block) {
   );
 }
 
-function renderList(block) {
+const REF_PROJECT_LIST_ITEM = /^\s*(?:<a\b[^>]*>)?\s*\d{4}/;
+
+function isReferencesProjectList(block, slug) {
+  if (slug !== 'references' || block.type !== 'list' || block.ordered) return false;
+  if (block.items.length < 5) return false;
+  const yearItems = block.items.filter((item) => REF_PROJECT_LIST_ITEM.test(item.html));
+  return yearItems.length >= Math.min(5, block.items.length);
+}
+
+function renderList(block, options = {}) {
+  if (isReferencesProjectList(block, options.slug)) {
+    throw new Error(
+      'references: project list must be a table (type "table" with class isa-ref-table), not a bullet list',
+    );
+  }
   if (isSpbTabList(block)) return '';
   const tag = block.ordered ? 'ol' : 'ul';
   const items = block.items
@@ -324,7 +338,7 @@ function renderBlock(block, options = {}) {
     case 'image':
       return renderImage(block, options.lazyImages !== false);
     case 'list':
-      return renderList(block);
+      return renderList(block, options);
     case 'table':
       return renderTable(block.html);
     case 'raw_html':
@@ -848,7 +862,7 @@ function renderSection(section, tint, pageTitle, seenTitleRef, slug = '') {
   return `<section class="${cls}"><div class="container prose">${prefix}${inner}</div></section>`;
 }
 
-export function renderPageContent({ slug, blocks, title, home = null }) {
+export function renderPageContent({ slug, blocks, title, home = null, heroTitle = null }) {
   if (slug === 'contact') {
     return renderContactPage(blocks, title);
   }
@@ -882,7 +896,7 @@ export function renderPageContent({ slug, blocks, title, home = null }) {
     return html;
   }
 
-  const hero = heroTitleFromPageTitle(title);
+  const hero = heroTitle || heroTitleFromPageTitle(title);
   let html = renderHeroSection(hero, '', null, 'page-hero');
   let tint = false;
   const seenTitleRef = { value: false };
