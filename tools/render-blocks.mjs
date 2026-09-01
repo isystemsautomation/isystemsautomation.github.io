@@ -779,7 +779,6 @@ function renderContactPage(blocks, pageTitle) {
 <h2 class="section-title">Get in touch</h2>
 <p>E-mail: <a href="mailto:office@isystemsautomation.com">office@isystemsautomation.com</a><br>Phone: <a href="tel:+40747757798">+40 747 757 798</a></p>
 <p>Enquiries are normally answered within one business day.</p>
-<p>Correspondence in English, Romanian and Russian.</p>
 <h2 class="section-title">Where we work</h2>
 <p>Engineering, commissioning and maintenance on site across Romania and on export projects. Bench testing and technical documentation are carried out at our own premises in Ploiești.</p>
 </div></section>`;
