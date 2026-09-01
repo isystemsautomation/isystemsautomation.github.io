@@ -16,104 +16,69 @@
     },
     {
       "type": "section",
-      "title": "Introducing: Advanced Process Optimization Solutions",
+      "title": "What we actually control",
       "blocks": [
         {
           "type": "image",
           "src": "/images/projects/redundant-network-cabinet.jpg",
           "alt": "Control cabinet with redundant industrial Ethernet switches",
-          "href": "https://www.joomshaper.com"
+          "href": null
         },
         {
           "type": "heading",
           "level": 3,
-          "text": "Introducing: Advanced Process Optimization Solutions"
+          "text": "What we actually control"
         },
         {
           "type": "paragraph",
-          "html": "With ISYSTEMS Advanced Process Controls (APC), you&nbsp;can enhance profitability through increased production capacity, minimized quality variations, and decreased operational costs."
+          "html": "Advanced process control is a specific set of loops, not a philosophy. On power plant and refinery utilities we have implemented and commissioned:"
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Coordinated plant load control.</strong> Boiler and turbine controlled as one unit against a load target rather than separately against local setpoints."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Primary and secondary frequency control.</strong> Response to grid frequency deviation, and to dispatch, with the response measured at acceptance rather than assumed."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Solid fuel allocation by calorific value.</strong> Distribution of fuel across feeders according to heat value, with automatic calculation of the calorific value of petroleum coke from the combustion result."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Steam temperature control.</strong> Cascade regulators working against a superheater model, rather than a single loop chasing an outlet measurement."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Combustion air and oxygen.</strong> Primary and secondary air control, with an oxygen cascade controller referenced to boiler mode and fuel."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Emissions.</strong> SO2 and NOx regulation through furnace temperature and lime dosing, held against the permit limit rather than against a comfortable margin."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Automatic boiler start-up from a hot state.</strong> As a DCS sequence, with the same ramp and the same drum stress every time."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Island mode and load rejection.</strong> Governor transfer, load shedding by priority, and frequency control in the islanded network."
         }
       ]
     },
     {
       "type": "section",
-      "title": "Services include:",
+      "title": "Continuous performance work",
       "blocks": [
         {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "html": "Decrease in Production Cost: Boost your profit margins by reducing production expenses.&nbsp;Use less energy and raw materials to deliver target production yield"
-            },
-            {
-              "html": "Reduction of Production Time: Enhance productivity by minimizing production cycles."
-            },
-            {
-              "html": "Minimization of Human Error: Increase the safety of operational personnel and production equipment."
-            },
-            {
-              "html": "Reduction of Required Personnel: Streamline operations by decreasing the staff needed for production and maintenance."
-            },
-            {
-              "html": "Minimized Installation Downtime: Cut down the start and stop time of installations, ensuring seamless operations."
-            },
-            {
-              "html": "Mitigation of Unscheduled Shutdowns: Reduce the risk of unexpected and uncontrolled shutdowns."
-            },
-            {
-              "html": "Enhanced Product Quality: Deliver superior finished products with minimal resource consumption.&nbsp;Reduce process variations for better stability and predictability.<p></p><p></p>"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "html": "Whether you are establishing a new facility or optimizing an existing operation, ISYSTEMS AUTOMATION process optimization solutions are designed to fine-tune processes for optimal results. Our systematic approach eliminates guesswork by identifying the full potential of your processes. Working collaboratively with you, we set targets and implement tailored process optimization solutions to drive efficiency and maximize performance"
-        },
-        {
-          "type": "paragraph",
-          "html": "Advanced Process Controls (APC) represent cutting-edge control applications that harness our deep process knowledge and technological prowess. By enhancing end product quality and minimizing emissions, ISYSTEMS AUTOMATION's APC solutions empower you to maintain precision and efficiency in your operations."
-        },
-        {
-          "type": "paragraph",
-          "html": "Maximizing process performance is a continuous endeavor, and ISYSTEMS AUTOMATION's automation services are designed to support this goal. Following an initial optimization project, our process performance services offer ongoing monitoring and optimization of your manufacturing processes. Our team of service experts provides remote monitoring to ensure that your operations consistently achieve optimal manufacturing performance."
-        },
-        {
-          "type": "paragraph",
-          "html": "By enhancing process stability and boosting performance, we assist in reducing raw material consumption and achieving greater overall sustainability."
-        },
-        {
-          "type": "paragraph",
-          "html": "Our process optimization services offer early detection of potential process disruptions along with recommendations for corrective measures. We specialize in fine-tuning control loops to enhance efficiency and improve the quality of end products. Through regular monitoring and performance control, we provide valuable insights and suggestions for long-term process enhancement opportunities."
-        },
-        {
           "type": "heading",
-          "level": 3,
-          "text": "Services include:"
+          "level": 2,
+          "text": "Continuous performance work"
         },
         {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "html": "Performance Study"
-            },
-            {
-              "html": "Process Optimization"
-            },
-            {
-              "html": "Analysis and Diagnosis Services"
-            },
-            {
-              "html": "Performance Enhancement"
-            },
-            {
-              "html": "Control Performance"
-            },
-            {
-              "html": "On-Site Expert"
-            }
-          ]
+          "type": "paragraph",
+          "html": "After commissioning, control loop performance is monitored, loops are retuned, and alternative control strategies are implemented where the existing one limits the unit. Deviations that indicate a developing problem are reported with the corrective measure, not only the alarm."
         }
       ]
     },
@@ -136,91 +101,6 @@
           "type": "heading",
           "level": 3,
           "text": "Advanced Boiler Load Controllers"
-        }
-      ]
-    },
-    {
-      "type": "section",
-      "title": "Our Services",
-      "blocks": [
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Our Services"
-        },
-        {
-          "type": "paragraph",
-          "html": "ISYSTEMS AUTOMATION is a leading name in Engineering &amp; Consulting, Protection Systems, and Process Control &amp; Electrical Automation. As of today, we can now follow the entire cycle for any project."
-        },
-        {
-          "type": "paragraph",
-          "html": "This expansion reflects our ongoing commitment to professionalism, responsibility, innovation, and flexibility. Our team of experts is dedicated to providing clients with the confidence to make informed decisions, ensuring the highest levels of efficiency, energy savings, and environmental stewardship."
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/process_automation.jpg",
-          "alt": "Process automation control system",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Process Automation"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/redundant-network-cabinet.jpg",
-          "alt": "Control cabinet with redundant industrial Ethernet switches",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Process optimization / Advanced process control"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/yokogawa-centum-cabinet.jpg",
-          "alt": "Yokogawa Centum control cabinet with I/O modules and marshalling",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "MES (Manufacturing Execution System)"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/atex-zone2-barriers.jpg",
-          "alt": "ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Safety Systems and Burner Management Systems"
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/industrial_furniture_control_centers.jpg",
-          "alt": "Ergonomic control center operator furniture",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Industrial furniture / Control centers"
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/maintenance.jpg",
-          "alt": "Industrial automation maintenance and technical support",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Maintenance"
         }
       ]
     }

@@ -16,170 +16,92 @@
     },
     {
       "type": "section",
-      "title": "Control Center Design for Top Industry Leaders",
+      "title": "Control room design",
       "blocks": [
         {
           "type": "image",
           "src": "/images/projects/control-room-combined-cycle.jpg",
           "alt": "Combined-cycle plant control room with operator consoles and overview display",
-          "href": "https://www.joomshaper.com"
+          "href": null
         },
         {
           "type": "heading",
           "level": 3,
-          "text": "Control Center Design for Top Industry Leaders"
+          "text": "Control room design"
         },
         {
           "type": "paragraph",
-          "html": "ISYSTEMS AUTOMATION has achieved a significant milestone in the design, manufacture, and supply of cutting-edge equipment for several command centers. Our esteemed clients include industry giants such as LUKOIL Energy and Gas, Dalkia Termo Prahova, NuclearElectrica, along with numerous smaller companies."
+          "html": "ISYSTEMS AUTOMATION designs, manufactures and supplies control room equipment and operator furniture. Clients include LUKOIL Energy and Gas, Dalkia Termo Prahova and Nuclearelectrica."
+        },
+        {
+          "type": "paragraph",
+          "html": "A control room is a workplace that runs continuously for twenty years. What matters is not the furniture catalogue but whether an operator on the eleventh hour of a night shift can still read the screen, hear the alarm and reach the control."
         }
       ]
     },
     {
       "type": "section",
-      "title": "The new control centers are designed with the latest technological advancements, ensuring that they meet the highest standards of safety and reliability. The furniture, meticulously crafted, complements these designs by providing ergonomic solutions that cater to the unique needs of control room operators.",
+      "title": "Designed to ISO 11064",
       "blocks": [
         {
           "type": "heading",
-          "level": 3,
-          "text": "The new control centers are designed with the latest technological advancements, ensuring that they meet the highest standards of safety and reliability. The furniture, meticulously crafted, complements these designs by providing ergonomic solutions that cater to the unique needs of control room operators."
+          "level": 2,
+          "text": "Designed to ISO 11064"
         },
         {
           "type": "paragraph",
-          "html": "<strong>\"Our designs are not only about enhancing the operational efficiency but also about improving the overall well-being of the operators who spend long hours in these environments.\"</strong>"
+          "html": "Control room design is a standard, not a matter of taste. ISO 11064, <em>Ergonomic design of control centres</em>, covers the arrangement of the control suite, the layout of the workstation, displays and controls, and the working environment. We design to it."
         },
         {
           "type": "paragraph",
-          "html": "<strong>Key features of the new offering include:</strong>"
+          "html": "The standard exists because control rooms fail in predictable ways: an operator who cannot see the overview display from the position where the alarm arrives, a room where two operators cannot hold a conversation over the ventilation, a console that forces a reach the operator will stop making by the third month. These are design faults, not operator faults, and they are avoidable at the drawing stage."
         },
         {
           "type": "paragraph",
-          "html": "<strong>- Ergonomic Furniture: Designed to reduce fatigue and improve productivity, the furniture includes adjustable desks, comfortable seating, and smart storage solutions.</strong>"
+          "html": "What the design covers:"
         },
         {
           "type": "paragraph",
-          "html": "<strong>- Advanced Control Centers: Equipped with cutting-edge technology, these centers ensure seamless monitoring and management of industrial operations.</strong>"
+          "html": "<strong>Acoustics.</strong> Reverberation and background noise controlled so that speech between operators and an audible alarm both work in the same room."
         },
         {
           "type": "paragraph",
-          "html": "<strong>- Customizable Solutions: Both the control centers and the furniture can be tailored to meet specific industry requirements, offering unparalleled flexibility.</strong>"
+          "html": "<strong>Layout.</strong> Sightlines to the overview display from every console position, circulation that does not cross behind a working operator, and access for maintenance without entering the operating area."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Lighting and microclimate.</strong> Illuminance and glare control for screen work, temperature and air distribution for a room full of continuously running equipment and continuously present people."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Power supply.</strong> Distribution, backup and changeover for consoles, displays and the control system, so that a supply fault does not blind the operator."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Auxiliary equipment.</strong> Overview displays, video walls, communications and the cable routes that serve them."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Materials and maintenance.</strong> Surfaces and construction chosen for a twenty-year service life, and for repair without rebuilding the room."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Operator interface.</strong> The console itself, the arrangement of screens and controls on it, and the relationship between what the operator sees and what the process is doing."
         }
       ]
     },
     {
       "type": "section",
-      "title": "What We Do",
+      "title": "Together with the control system",
       "blocks": [
         {
           "type": "heading",
-          "level": 3,
-          "text": "What We Do"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "html": "<a aria-controls=\"sppb-tab-3f41db95-3579-41e4-84a4-6894b4da700f0\" aria-selected=\"true\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-3f41db95-3579-41e4-84a4-6894b4da700f0\" id=\"sppb-content-3f41db95-3579-41e4-84a4-6894b4da700f0\" role=\"tab\"> Power Generation </a>"
-            },
-            {
-              "html": "<a aria-controls=\"sppb-tab-3f41db95-3579-41e4-84a4-6894b4da700f1\" aria-selected=\"false\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-3f41db95-3579-41e4-84a4-6894b4da700f1\" id=\"sppb-content-3f41db95-3579-41e4-84a4-6894b4da700f1\" role=\"tab\"> Oil and Gas </a>"
-            },
-            {
-              "html": "<a aria-controls=\"sppb-tab-3f41db95-3579-41e4-84a4-6894b4da700f2\" aria-selected=\"false\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-3f41db95-3579-41e4-84a4-6894b4da700f2\" id=\"sppb-content-3f41db95-3579-41e4-84a4-6894b4da700f2\" role=\"tab\"> Cement and Coal </a>"
-            },
-            {
-              "html": "<a aria-controls=\"sppb-tab-3f41db95-3579-41e4-84a4-6894b4da700f3\" aria-selected=\"false\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-3f41db95-3579-41e4-84a4-6894b4da700f3\" id=\"sppb-content-3f41db95-3579-41e4-84a4-6894b4da700f3\" role=\"tab\"> Control Centers </a>"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/steam-turbine-generator-hall.jpg",
-          "alt": "Hydro turbine and generator set in the machine hall",
-          "href": null
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Power Engineering: Fundamental Electrical Engineering Excellence"
+          "level": 2,
+          "text": "Together with the control system"
         },
         {
           "type": "paragraph",
-          "html": "Since our establishment, our company has been at the forefront of automating the production processes of electricity and heat. Our specialists possess in-depth knowledge and extensive experience in these critical areas, ensuring top-notch expertise and innovation in power engineering."
-        },
-        {
-          "type": "link",
-          "href": "/industries/power-generation.html",
-          "text": "Learn More"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/atex-zone2-barriers.jpg",
-          "alt": "ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet",
-          "href": null
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Understanding the Dynamics of the Oil and Gas Industry"
-        },
-        {
-          "type": "paragraph",
-          "html": "At the core of this industry lies the need for advanced technologies and solutions to optimize production and achieve maximum potential. We offer state-of-the-art solutions tailored to meet these needs. Innovative designs that facilitate seamless control and monitoring of operations, enhancing productivity and safety."
-        },
-        {
-          "type": "link",
-          "href": "/industries/oil-and-gas.html",
-          "text": "Learn More"
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/cement_and_coal.jpg",
-          "alt": "Cement and coal plant automation",
-          "href": null
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Embracing Automation in the Cement and Coal Industries"
-        },
-        {
-          "type": "paragraph",
-          "html": "Cement production processes are typically discontinuous and operate in batches, while coal industry processes are continuous and run at maximum production capacity."
-        },
-        {
-          "type": "paragraph",
-          "html": "The implementation of automation solutions addresses these critical needs by ensuring that processes are meticulously controlled and monitored."
-        },
-        {
-          "type": "link",
-          "href": "/industries/cement-and-coal.html",
-          "text": "Learn More"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/control-room-combined-cycle.jpg",
-          "alt": "Combined-cycle plant control room with operator consoles and overview display",
-          "href": null
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Innovative Solutions Unveiled in Industrial Control Centers Design"
-        },
-        {
-          "type": "paragraph",
-          "html": "Control centers are designed with the latest technological advancements, ensuring that they meet the highest standards of safety and reliability. The furniture, meticulously crafted, complements these designs by providing ergonomic solutions that cater to the unique needs of control room operators."
-        },
-        {
-          "type": "paragraph",
-          "html": "Our designs are not only about enhancing the operational efficiency but also about improving the overall well-being of the operators who spend long hours in these environments."
-        },
-        {
-          "type": "link",
-          "href": "/industries/control-centers.html",
-          "text": "Learn More"
+          "html": "We design control rooms for plants whose control systems we also work on. The console arrangement, the overview display content and the alarm philosophy are decided together, not handed over separately to be reconciled on site. Operator furniture and detailed specifications are covered under <a href=\"/service/industrial-furniture-control-centers.html\">Industrial furniture / Control centers</a>."
         }
       ]
     }

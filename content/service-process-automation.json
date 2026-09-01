@@ -16,267 +16,87 @@
     },
     {
       "type": "section",
-      "title": "Industrial Automation Services: Comprehensive Solutions for Growth and Efficiency",
+      "title": "Engineering",
       "blocks": [
         {
           "type": "image",
           "src": "/images/2024/08/10/process_automation.jpg",
           "alt": "Process automation control system",
-          "href": "https://www.joomshaper.com"
+          "href": null
         },
         {
           "type": "heading",
           "level": 3,
-          "text": "Industrial Automation Services: Comprehensive Solutions for Growth and Efficiency"
+          "text": "Engineering"
         },
         {
           "type": "paragraph",
-          "html": "In the ever-evolving landscape of industrial automation, business income, whether satisfactory or not, demands continuous evaluation and strategic growth. Our company is at the forefront of driving such growth, offering a complete suite of services aimed at optimizing and enhancing existing products for new markets."
+          "html": "<strong>Control system architecture.</strong> Conceptual architecture for DCS, and for ESD and burner management systems, including the redundancy and segregation decisions that are expensive to change later."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>I/O database and control logic.</strong> Signal database, control logic, control narratives, HMI design and alarm schemes, developed as documents the plant can maintain rather than as configuration only the integrator can read."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Design verification.</strong> Verification of I&amp;C design documentation against local and international standards, whether we produced it or someone else did."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Documentation.</strong> P&amp;ID, cable schedules, panel design, hook-up drawings, and as-built documentation updated to site reality during commissioning rather than reconstructed afterwards."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Procurement.</strong> Specification and procurement of control and instrumentation equipment."
         }
       ]
     },
     {
       "type": "section",
-      "title": "Comprehensive Services in Industrial Automation",
+      "title": "Testing and commissioning",
       "blocks": [
         {
           "type": "heading",
           "level": 2,
-          "text": "Comprehensive Services in Industrial Automation"
+          "text": "Testing and commissioning"
         },
+        {
+          "type": "paragraph",
+          "html": "Test procedures written against the specification, factory acceptance testing witnessed at the vendor, site loop and functional testing, loop tuning, and operator training on the control schemes as built."
+        },
+        {
+          "type": "paragraph",
+          "html": "We also carry out acceptance testing and design verification for buyers of systems we did not supply — see <a href=\"/acceptance-testing.html\">Factory and Site Acceptance Testing</a>."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Personal Training Programs",
+      "blocks": [
         {
           "type": "heading",
-          "level": 3,
-          "text": "From Conception to Commissioning"
-        },
-        {
-          "type": "paragraph",
-          "html": "We provide end-to-end services in the industrial automation sector, from the initial design phase through installation and commissioning, right down to personal training. Quality is our hallmark, and we extend maintenance services for the entire lifespan of the equipment."
-        },
-        {
-          "type": "paragraph",
-          "html": "### Diverse Project Implementation"
-        },
-        {
-          "type": "paragraph",
-          "html": "Our expertise spans across optimization, rehabilitation, and the implementation of fully automated new projects across various industrial fields."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Consulting Services"
-        },
-        {
-          "type": "paragraph",
-          "html": "We offer detailed informative documents and specialized technical consultancy to assist users of our proposed equipment. Our technical consulting services cover:"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "html": "Creation of new projects"
-            },
-            {
-              "html": "Upgrading existing installations"
-            },
-            {
-              "html": "Increasing productivity"
-            },
-            {
-              "html": "Reducing maintenance and operating costs"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Customized Design Solutions"
-        },
-        {
-          "type": "paragraph",
-          "html": "Understanding that each business has unique needs, we customize applications to align perfectly with the desired business model. Our team oversees the entire process and project implementation, ensuring precision and quality. We provide all necessary documentation upon project completion."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Turnkey Project Execution"
-        },
-        {
-          "type": "paragraph",
-          "html": "With nearly two decades of experience in industrial fields, we specialize in executing turnkey projects with a focus on:"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "html": "Technical coordination by an experienced team"
-            },
-            {
-              "html": "Use of highest quality materials"
-            },
-            {
-              "html": "Compliance with beneficiary requirements"
-            },
-            {
-              "html": "Adherence to reference norms and specific project needs"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "As Built Documentation"
-        },
-        {
-          "type": "paragraph",
-          "html": "Throughout project development and commissioning, we update the database to reflect on-site realities, accommodating changes such as additional requirements or unforeseen situations."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Detailed Commissioning Process"
-        },
-        {
-          "type": "paragraph",
-          "html": "Our commissioning process includes:"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "html": "Site preparation"
-            },
-            {
-              "html": "Execution of cable trays"
-            },
-            {
-              "html": "Installation of equipment"
-            },
-            {
-              "html": "Electrical connections"
-            },
-            {
-              "html": "Implementation of tuning and control algorithms"
-            },
-            {
-              "html": "Tests and commissioning"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Control system integrity and cyber security"
-        },
-        {
-          "type": "paragraph",
-          "html": "Control system assets are kept at vendor-supported release level and protected against internal and external threats as part of the maintenance scope. This covers lifecycle updates, patch and release management, and a backup regime that allows a control system to be restored quickly and the plant to keep running after a failure."
-        },
-        {
-          "type": "heading",
-          "level": 3,
+          "level": 2,
           "text": "Personal Training Programs"
         },
         {
           "type": "paragraph",
           "html": "We offer comprehensive training programs to ensure optimal functioning of your business. Trained employees will be adept at managing the computer control system, with in-depth knowledge of the assembled products and new projects implemented. Our training aims to equip employees with a thorough understanding of technological products, maintenance plans, and operational characteristics."
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Ongoing Maintenance Support"
-        },
-        {
-          "type": "paragraph",
-          "html": "Our commitment extends beyond project delivery. We offer preventive planned maintenance services to prevent repairs and control costs associated with equipment failures. Our specialized technical personnel establish maintenance schedules, coordinate, and verify the conformity of maintenance works, ensuring continuous operation and preventing unforeseen expenses."
         }
       ]
     },
     {
       "type": "section",
-      "title": "Our Services",
+      "title": "Ongoing Maintenance Support",
       "blocks": [
         {
           "type": "heading",
-          "level": 3,
-          "text": "Our Services"
+          "level": 2,
+          "text": "Ongoing Maintenance Support"
         },
         {
           "type": "paragraph",
-          "html": "ISYSTEMS AUTOMATION is a leading name in Engineering &amp; Consulting, Protection Systems, and Process Control &amp; Electrical Automation. As of today, we can now follow the entire cycle for any project."
-        },
-        {
-          "type": "paragraph",
-          "html": "This expansion reflects our ongoing commitment to professionalism, responsibility, innovation, and flexibility. Our team of experts is dedicated to providing clients with the confidence to make informed decisions, ensuring the highest levels of efficiency, energy savings, and environmental stewardship."
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/process_automation.jpg",
-          "alt": "Process automation control system",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Process Automation"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/redundant-network-cabinet.jpg",
-          "alt": "Control cabinet with redundant industrial Ethernet switches",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Process optimization / Advanced process control"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/yokogawa-centum-cabinet.jpg",
-          "alt": "Yokogawa Centum control cabinet with I/O modules and marshalling",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "MES (Manufacturing Execution System)"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/atex-zone2-barriers.jpg",
-          "alt": "ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Safety Systems and Burner Management Systems"
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/industrial_furniture_control_centers.jpg",
-          "alt": "Ergonomic control center operator furniture",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Industrial furniture / Control centers"
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/maintenance.jpg",
-          "alt": "Industrial automation maintenance and technical support",
-          "href": "/"
-        },
-        {
-          "type": "heading",
-          "level": 4,
-          "text": "Maintenance"
+          "html": "Our commitment extends beyond project delivery. We offer preventive planned maintenance services to prevent repairs and control costs associated with equipment failures. Our specialized technical personnel establish maintenance schedules, coordinate, and verify the conformity of maintenance works, ensuring continuous operation and preventing unforeseen expenses."
         }
       ]
     }

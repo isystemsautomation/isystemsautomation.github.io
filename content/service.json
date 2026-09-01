@@ -20,11 +20,11 @@
       "blocks": [
         {
           "type": "paragraph",
-          "html": "ISYSTEMS AUTOMATION is a leading name in Engineering &amp; Consulting, Protection Systems, and Process Control &amp; Electrical Automation. As of today, we can now follow the entire cycle for any project."
+          "html": "ISYSTEMS AUTOMATION covers the full project cycle: engineering, procurement, installation supervision, commissioning, acceptance testing and maintenance for industrial control systems."
         },
         {
           "type": "paragraph",
-          "html": "This expansion reflects our ongoing commitment to professionalism, responsibility, innovation, and flexibility. Our team of experts is dedicated to providing clients with the confidence to make informed decisions, ensuring the highest levels of efficiency, energy savings, and environmental stewardship."
+          "html": "Work spans DCS and ESD on Emerson Ovation, ABB 800xA, Siemens PCS7, Yokogawa Centum, HIMA and Triconex, plus MES, safety systems and control room design."
         }
       ]
     },
@@ -95,15 +95,15 @@
         {
           "type": "heading",
           "level": 3,
-          "text": "Revolutionizing Production:Process Optimization Solutions"
+          "text": "Advanced process control on power and refinery utilities"
         },
         {
           "type": "paragraph",
-          "html": "In the ever-evolving landscape of technological advancements, our company proudly introduces its state-of-the-art solutions for optimizing technological processes. By meticulously analyzing installations and eliminating inefficiencies, we offer turnkey solutions that promise to enhance production efficiency across various industries."
+          "html": "Coordinated plant load control, frequency response, solid fuel allocation, emissions limits, boiler start-up sequences and island mode — specific loops we have implemented and commissioned."
         },
         {
           "type": "link",
-          "href": "/service/maintenance.html",
+          "href": "/service/process-optimization-advanced-process-control.html",
           "text": "LEARN MORE"
         }
       ]
@@ -188,11 +188,11 @@
         {
           "type": "heading",
           "level": 3,
-          "text": "Control Center Design for Top Industry Leaders"
+          "text": "Control room design to ISO 11064"
         },
         {
           "type": "paragraph",
-          "html": "ISYSTEMS AUTOMATION has achieved a significant milestone in the design, manufacture, and supply of cutting-edge equipment for several command centers. Our esteemed clients include industry giants such as LUKOIL, Dalkia Termo Prahova, NuclearElectrica, along with numerous smaller companies."
+          "html": "ISYSTEMS AUTOMATION designs, manufactures and supplies control room equipment for LUKOIL Energy and Gas, Dalkia Termo Prahova, Nuclearelectrica and others — acoustics, layout, lighting and operator interface decided with the control system."
         },
         {
           "type": "link",
@@ -219,15 +219,77 @@
         {
           "type": "heading",
           "level": 3,
-          "text": "Importance of Regular and Preventive Maintenance for CONTROL SYSTEMS"
+          "text": "Preventive maintenance for control systems"
         },
         {
           "type": "paragraph",
-          "html": "Ensuring the seamless operation of your production line is critical, and one of the most significant threats to this is issues within your CONTROL SYSTEM. Maintenance is essential for mitigating these risks, whether it be regular, preventive, or unscheduled. A well-planned and scheduled maintenance strategy can save your company from production slowdowns or even complete stoppages due to CONTROL SYSTEM failures."
+          "html": "Control system failures stop production. Planned maintenance, remote support and PID tuning for ABB 800xA, Emerson Ovation, HIMA, Siemens and Yokogawa systems reduce the risk of unscheduled outages."
         },
         {
           "type": "link",
           "href": "/service/maintenance.html",
+          "text": "LEARN MORE"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Factory and Site Acceptance Testing",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Factory and Site Acceptance Testing"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/yokogawa-centum-cabinet.jpg",
+          "alt": "Yokogawa Centum control cabinet with I/O modules and marshalling",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Factory and Site Acceptance Testing"
+        },
+        {
+          "type": "paragraph",
+          "html": "Test procedures, FAT witnessing at the vendor, site loop and functional testing, and independent verification of I&amp;C design documentation."
+        },
+        {
+          "type": "link",
+          "href": "/acceptance-testing.html",
+          "text": "LEARN MORE"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Control System Cyber Security",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Control System Cyber Security"
+        },
+        {
+          "type": "image",
+          "src": "/images/projects/redundant-network-cabinet.jpg",
+          "alt": "Control cabinet with redundant industrial Ethernet switches",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Control System Cyber Security"
+        },
+        {
+          "type": "paragraph",
+          "html": "Lifecycle and patch management, backup and recovery, network separation and secure remote access for DCS, ESD and historian systems."
+        },
+        {
+          "type": "link",
+          "href": "/cybersecurity.html",
           "text": "LEARN MORE"
         }
       ]

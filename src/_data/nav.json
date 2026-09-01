@@ -38,16 +38,21 @@
     ]
   },
   {
-    "label": "Compliance",
-    "url": "/compliance.html"
-  },
-  {
-    "label": "HomeMaster",
-    "url": "/homemaster.html"
+    "label": "Expertise",
+    "url": "/acceptance-testing.html",
+    "children": [
+      { "label": "Acceptance Testing", "url": "/acceptance-testing.html" },
+      { "label": "Compliance", "url": "/compliance.html" },
+      { "label": "Cyber Security", "url": "/cybersecurity.html" }
+    ]
   },
   {
     "label": "References",
     "url": "/references.html"
+  },
+  {
+    "label": "HomeMaster",
+    "url": "/homemaster.html"
   },
   {
     "label": "Projects",

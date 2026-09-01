@@ -58,7 +58,7 @@
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Hydro Turbine:</strong> Cutting-edge technology for sustainable hydroelectric power."
+          "html": "- <strong>Hydro Turbine:</strong> Turbine and governor control for hydroelectric generation."
         },
         {
           "type": "paragraph",
@@ -134,6 +134,65 @@
         {
           "type": "paragraph",
           "html": "Results are recorded and used for the certification of the turbine."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Island mode operation and load rejection",
+      "blocks": [
+        {
+          "type": "image",
+          "src": "/images/projects/ovation-turbine-trend-redacted.jpg",
+          "alt": "Ovation DCS turbine trend display during island mode testing",
+          "href": null
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Island mode operation and load rejection"
+        },
+        {
+          "type": "paragraph",
+          "html": "A refinery loses its grid connection and the plant it depends on has seconds to decide whether the refinery keeps running or goes dark. Restart after an uncontrolled shutdown costs a day of production, a flare event and a mechanical inspection."
+        },
+        {
+          "type": "paragraph",
+          "html": "We have configured and commissioned the control algorithms that keep a refinery CHP plant supplying its refinery after separation from the grid:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            { "html": "Detection of grid separation and transfer of the turbine governor from droop to isochronous control" },
+            { "html": "Fast load rejection to house load, with the machine held on its own auxiliaries" },
+            { "html": "Load shedding of non-critical consumers by priority, sequenced so that the frequency excursion stays inside the turbine's tolerance" },
+            { "html": "Frequency and voltage control in the islanded network" },
+            { "html": "Resynchronisation to the grid once it returns" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "The algorithms were tested on the running plant, not only in simulation. Turbine acceptance testing on the same units included disconnection of the generator from the grid, which is the same event under controlled conditions. Technical and economic performance indicators for the same plant are covered under <a href=\"/projects/power-plant-performance-calculation.html\">power plant performance calculation</a>."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Automatic boiler start-up",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Automatic boiler start-up"
+        },
+        {
+          "type": "paragraph",
+          "html": "Starting a boiler by hand ties up an operator for hours and produces a different result every time, because the sequence depends on who is running it. We implement automatic start-up from a hot state as a sequence in the DCS: purge, burner light-off through the burner management system, ramp to minimum stable load against the drum thermal stress limits, and hand-over to load control."
+        },
+        {
+          "type": "paragraph",
+          "html": "The value is repeatability. The same ramp, the same stress on the drum, the same fuel consumed, whoever is on shift."
         }
       ]
     },

@@ -16,102 +16,23 @@
     },
     {
       "type": "section",
-      "title": "Oil and Gas Industry",
+      "title": "Automation for refineries and gas facilities",
       "blocks": [
         {
-          "type": "image",
-          "src": "/images/projects/atex-zone2-barriers.jpg",
-          "alt": "ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet",
-          "href": "https://www.joomshaper.com"
-        },
-        {
           "type": "heading",
-          "level": 3,
-          "text": "Oil and Gas Industry"
+          "level": 2,
+          "text": "Automation for refineries and gas facilities"
         },
         {
           "type": "paragraph",
-          "html": "One of the largest sectors in the world is represented by the Oil and Gas industry. Oil is the most important resource in the global economic environment, fueling economies and providing energy for a multitude of applications."
+          "html": "We have worked on refinery and gas infrastructure since 2007, from the combined heat and power plant that supplies a refinery to the gas distribution station that feeds it."
         }
       ]
     },
     {
       "type": "section",
-      "title": null,
+      "title": "Hazardous area instrumentation",
       "blocks": [
-        {
-          "type": "paragraph",
-          "html": "At the core of this industry lies the need for advanced technologies and solutions to optimize production and achieve maximum potential. We offer state-of-the-art solutions tailored to meet these needs, including:"
-        },
-        {
-          "type": "paragraph",
-          "html": "- <strong>Burner Management System</strong>: Ensures safe and efficient operation of burners, reducing risks and enhancing reliability."
-        },
-        {
-          "type": "paragraph",
-          "html": "- <strong>Safety System Technology</strong>: Advanced safety systems designed to protect both personnel and equipment, minimizing downtime and increasing operational efficiency."
-        },
-        {
-          "type": "paragraph",
-          "html": "- <strong>MES Parameter Display Systems</strong>: Provides real-time monitoring and control of manufacturing execution systems, ensuring optimal performance and decision-making."
-        },
-        {
-          "type": "paragraph",
-          "html": "- <strong>Control Room Architecture</strong>: Innovative designs that facilitate seamless control and monitoring of operations, enhancing productivity and safety."
-        },
-        {
-          "type": "paragraph",
-          "html": "Our solutions are crafted to address the unique challenges of the Oil and Gas industry, enabling companies to optimize their operations and achieve their business goals. As the industry continues to evolve, our commitment to innovation and excellence ensures that we remain at the forefront, providing the tools and technologies needed to drive success."
-        }
-      ]
-    },
-    {
-      "type": "section",
-      "title": "What We Do",
-      "blocks": [
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "What We Do"
-        },
-        {
-          "type": "list",
-          "ordered": false,
-          "items": [
-            {
-              "html": "<a aria-controls=\"sppb-tab-0d546562-c782-4dc7-a0e0-da499b38046e0\" aria-selected=\"true\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-0d546562-c782-4dc7-a0e0-da499b38046e0\" id=\"sppb-content-0d546562-c782-4dc7-a0e0-da499b38046e0\" role=\"tab\"> Power Generation </a>"
-            },
-            {
-              "html": "<a aria-controls=\"sppb-tab-0d546562-c782-4dc7-a0e0-da499b38046e1\" aria-selected=\"false\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-0d546562-c782-4dc7-a0e0-da499b38046e1\" id=\"sppb-content-0d546562-c782-4dc7-a0e0-da499b38046e1\" role=\"tab\"> Oil and Gas </a>"
-            },
-            {
-              "html": "<a aria-controls=\"sppb-tab-0d546562-c782-4dc7-a0e0-da499b38046e2\" aria-selected=\"false\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-0d546562-c782-4dc7-a0e0-da499b38046e2\" id=\"sppb-content-0d546562-c782-4dc7-a0e0-da499b38046e2\" role=\"tab\"> Cement and Coal </a>"
-            },
-            {
-              "html": "<a aria-controls=\"sppb-tab-0d546562-c782-4dc7-a0e0-da499b38046e3\" aria-selected=\"false\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-0d546562-c782-4dc7-a0e0-da499b38046e3\" id=\"sppb-content-0d546562-c782-4dc7-a0e0-da499b38046e3\" role=\"tab\"> Control Centers </a>"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/steam-turbine-generator-hall.jpg",
-          "alt": "Hydro turbine and generator set in the machine hall",
-          "href": null
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Power Engineering: Fundamental Electrical Engineering Excellence"
-        },
-        {
-          "type": "paragraph",
-          "html": "Since our establishment, our company has been at the forefront of automating the production processes of electricity and heat. Our specialists possess in-depth knowledge and extensive experience in these critical areas, ensuring top-notch expertise and innovation in power engineering."
-        },
-        {
-          "type": "link",
-          "href": "/industries/power-generation.html",
-          "text": "Learn More"
-        },
         {
           "type": "image",
           "src": "/images/projects/atex-zone2-barriers.jpg",
@@ -121,64 +42,86 @@
         {
           "type": "heading",
           "level": 3,
-          "text": "Understanding the Dynamics of the Oil and Gas Industry"
+          "text": "Hazardous area instrumentation"
         },
         {
           "type": "paragraph",
-          "html": "At the core of this industry lies the need for advanced technologies and solutions to optimize production and achieve maximum potential. We offer state-of-the-art solutions tailored to meet these needs. Innovative designs that facilitate seamless control and monitoring of operations, enhancing productivity and safety."
-        },
-        {
-          "type": "link",
-          "href": "/industries/oil-and-gas.html",
-          "text": "Learn More"
-        },
-        {
-          "type": "image",
-          "src": "/images/2024/08/10/cement_and_coal.jpg",
-          "alt": "Cement and coal plant automation",
-          "href": null
-        },
+          "html": "Refinery process areas are classified, and the control system has to cross that boundary without carrying energy into it. We design intrinsically safe circuits and specify the equipment that terminates them: isolating barriers and interface modules rated for Zone 2, cable and gland selection, segregation of intrinsically safe and non-intrinsically safe wiring inside the cabinet, and the loop calculations that prove the circuit stays within the ignition limits."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Burner management and safety instrumented systems",
+      "blocks": [
         {
           "type": "heading",
-          "level": 3,
-          "text": "Embracing Automation in the Cement and Coal Industries"
+          "level": 2,
+          "text": "Burner management and safety instrumented systems"
         },
         {
           "type": "paragraph",
-          "html": "Cement production processes are typically discontinuous and operate in batches, while coal industry processes are continuous and run at maximum production capacity."
-        },
-        {
-          "type": "paragraph",
-          "html": "The implementation of automation solutions addresses these critical needs by ensuring that processes are meticulously controlled and monitored."
-        },
-        {
-          "type": "link",
-          "href": "/industries/cement-and-coal.html",
-          "text": "Learn More"
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/control-room-combined-cycle.jpg",
-          "alt": "Combined-cycle plant control room with operator consoles and overview display",
-          "href": null
-        },
+          "html": "Burner management for fired equipment, and safety instrumented functions specified, implemented and verified under the functional safety lifecycle of IEC 61511. We have taken part in the certification of SIL 2 and SIL 3 applications, on HIMA HIQuad, Foxboro Triconex and ABB AC800 logic solvers."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Combined heat and power for refineries",
+      "blocks": [
         {
           "type": "heading",
-          "level": 3,
-          "text": "Innovative Solutions Unveiled in Industrial Control Centers Design"
+          "level": 2,
+          "text": "Combined heat and power for refineries"
         },
         {
           "type": "paragraph",
-          "html": "Control centers are designed with the latest technological advancements, ensuring that they meet the highest standards of safety and reliability. The furniture, meticulously crafted, complements these designs by providing ergonomic solutions that cater to the unique needs of control room operators."
+          "html": "A refinery CHP plant is a refinery utility before it is a power plant. Our work on one has covered gas-fired boilers, a 260 t/h circulating fluidized bed boiler firing petroleum coke, steam turbines, coordinated plant load control, and island mode operation that keeps the refinery running when the grid connection is lost."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Emissions and particulate control",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Emissions and particulate control"
         },
         {
           "type": "paragraph",
-          "html": "Our designs are not only about enhancing the operational efficiency but also about improving the overall well-being of the operators who spend long hours in these environments."
+          "html": "Electrostatic precipitators and baghouse filters: design, P&amp;ID, cabling, panel design, specifications and the control that runs them, integrated into the plant control system rather than left as an island."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Data to the people who need it",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Data to the people who need it"
         },
         {
-          "type": "link",
-          "href": "/industries/control-centers.html",
-          "text": "Learn More"
+          "type": "paragraph",
+          "html": "Process data collected from control systems and from commercial metering, archived, and delivered to the departments that act on it — unit efficiency to the process engineer, emissions to the environmental engineer, cost and consumption to the finance department."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Platforms",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Platforms"
+        },
+        {
+          "type": "paragraph",
+          "html": "Emerson Ovation · ABB Industrial IT 800xA · ABB Symphony · Siemens PCS7 · Yokogawa Centum VP · HIMA HIQuad · Foxboro Triconex · Honeywell PHD · OSIsoft PI System"
         }
       ]
     }
