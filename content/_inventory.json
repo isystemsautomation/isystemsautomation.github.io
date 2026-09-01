@@ -142,10 +142,10 @@
   {
     "file": "legacy/service/manufacturing-execution-system.html",
     "url": "/service/manufacturing-execution-system.html",
-    "title": "MES (Manufacturing Execution System) — ISYSTEMS AUTOMATION",
-    "description": "MES: real-time production visibility, equipment condition, cost and profit, forecasting, loss analysis, energy accounting and department reporting over OPC and Modbus.",
+    "title": "MES and Production Data Systems — ISYSTEMS AUTOMATION",
+    "description": "Production data systems: acquisition from control systems and metering, historisation, efficiency and balance calculations, and reporting over OPC and Modbus.",
     "canonical": null,
-    "ogTitle": "MES (Manufacturing Execution System) — ISYSTEMS AUTOMATION",
+    "ogTitle": "MES and Production Data Systems — ISYSTEMS AUTOMATION",
     "ogDescription": null,
     "ogUrl": "https://www.isystemsautomation.com/service/manufacturing-execution-system.html"
   },

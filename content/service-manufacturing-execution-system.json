@@ -2,15 +2,16 @@
   "slug": "service-manufacturing-execution-system",
   "source": "legacy/service/manufacturing-execution-system.html",
   "url": "/service/manufacturing-execution-system.html",
+  "heroTitle": "MES and production data systems",
   "blocks": [
     {
       "type": "section",
-      "title": "MES (Manufacturing Execution System)",
+      "title": "MES and production data systems",
       "blocks": [
         {
           "type": "heading",
           "level": 2,
-          "text": "MES (Manufacturing Execution System)"
+          "text": "MES and production data systems"
         }
       ]
     },
@@ -28,6 +29,10 @@
           "type": "heading",
           "level": 3,
           "text": "Manufacturing execution systems"
+        },
+        {
+          "type": "paragraph",
+          "html": "The scope here is production data: acquisition from the control systems and metering, historisation, efficiency and balance calculations, and reporting. Where a full ISA-95 manufacturing execution system is required, this is the data layer it sits on."
         },
         {
           "type": "paragraph",

@@ -92,12 +92,12 @@
     },
     {
       "type": "section",
-      "title": "MES (Manufacturing Execution System)",
+      "title": "MES and production data systems",
       "blocks": [
         {
           "type": "heading",
           "level": 3,
-          "text": "MES (Manufacturing Execution System)"
+          "text": "MES and production data systems"
         },
         {
           "type": "image",
