@@ -3,6 +3,10 @@ module.exports = function (eleventyConfig) {
     "static/CNAME": "CNAME",
     "static/robots.txt": "robots.txt",
     "static/.nojekyll": ".nojekyll",
+    "static/favicon.ico": "favicon.ico",
+    "static/apple-touch-icon.png": "apple-touch-icon.png",
+    "static/site.webmanifest": "site.webmanifest",
+    "static/icons": "icons",
     "src/examen/": "examen/",
   });
   eleventyConfig.addPassthroughCopy("src/assets");

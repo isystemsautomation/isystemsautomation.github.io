@@ -260,6 +260,20 @@ canonical: "https://www.isystemsautomation.com/compliance.html"
 ogTitle: Compliance Testing and CE Marking — ISYSTEMS AUTOMATION
 ogDescription: "In-house electrical safety testing to EN 62368-1, EMC screening, technical files and Cyber Resilience Act procedure, built to take eleven of our own products through EU conformity assessment."
 ogUrl: "https://www.isystemsautomation.com/compliance.html"
+ogImage: "https://www.isystemsautomation.com/assets/img/og/compliance.jpg"
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Compliance testing and CE marking for industrial products",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISYSTEMS AUTOMATION S.R.L.",
+      "url": "https://www.isystemsautomation.com"
+    },
+    "areaServed": "Europe",
+    "description": "In-house electrical safety testing to EN 62368-1, EMC screening, technical files and Cyber Resilience Act procedure, built to take eleven of our own products through EU conformity assessment."
+  }
 ---
 `;
 

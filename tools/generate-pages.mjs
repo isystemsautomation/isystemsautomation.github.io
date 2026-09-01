@@ -4,6 +4,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { legacyPathToSlug } from './legacy-pages.mjs';
 import { renderPageContent } from './render-blocks.mjs';
+import { canonicalUrl, ogImageForSlug } from './seo.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -57,20 +58,28 @@ function yamlString(value) {
   return str;
 }
 
-function buildFrontMatter(meta, contentData) {
+function buildFrontMatter(meta, contentData, slug) {
+  const permalink = pagePermalink(slug, meta.url);
+  const pagePath = pageUrl(slug, meta.url);
+  const canonical = meta.canonical || canonicalUrl(slug, permalink);
+  const ogDescription = meta.ogDescription || meta.description;
+  const ogUrl = meta.ogUrl || canonical;
+  const ogImage = ogImageForSlug(slug);
+
   const lines = [
     '---',
     'layout: base.njk',
     `title: ${yamlString(meta.title)}`,
-    `permalink: ${yamlString(meta.url)}`,
-    `pageUrl: ${yamlString(meta.url)}`,
+    `permalink: ${yamlString(permalink)}`,
+    `pageUrl: ${yamlString(pagePath)}`,
   ];
 
   if (meta.description) lines.push(`description: ${yamlString(meta.description)}`);
-  if (meta.canonical) lines.push(`canonical: ${yamlString(meta.canonical)}`);
+  lines.push(`canonical: ${yamlString(canonical)}`);
   if (meta.ogTitle) lines.push(`ogTitle: ${yamlString(meta.ogTitle)}`);
-  if (meta.ogDescription) lines.push(`ogDescription: ${yamlString(meta.ogDescription)}`);
-  if (meta.ogUrl) lines.push(`ogUrl: ${yamlString(meta.ogUrl)}`);
+  if (ogDescription) lines.push(`ogDescription: ${yamlString(ogDescription)}`);
+  lines.push(`ogUrl: ${yamlString(ogUrl)}`);
+  lines.push(`ogImage: ${yamlString(ogImage)}`);
 
   if (contentData.jsonLd) {
     lines.push('jsonLd: |');

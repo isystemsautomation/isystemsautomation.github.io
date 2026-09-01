@@ -4,12 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}</title>
+  {% set siteOrigin = "https://www.isystemsautomation.com" %}
+  {% set pageCanonical = canonical or (siteOrigin + (pageUrl or url)) %}
+  {% set shareTitle = ogTitle or title %}
+  {% set shareDescription = ogDescription or description %}
+  {% set shareUrl = ogUrl or pageCanonical %}
+  {% set shareImage = ogImage or (siteOrigin + "/assets/img/og-default.jpg") %}
   {% if description %}<meta name="description" content="{{ description }}">{% endif %}
-  {% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
-  {% if ogTitle %}<meta property="og:title" content="{{ ogTitle }}">{% endif %}
-  {% if ogDescription %}<meta property="og:description" content="{{ ogDescription }}">{% endif %}
-  {% if ogUrl %}<meta property="og:url" content="{{ ogUrl }}">{% endif %}
+  <link rel="canonical" href="{{ pageCanonical }}">
+  <link rel="alternate" hreflang="x-default" href="{{ pageCanonical }}">
+  <meta property="og:title" content="{{ shareTitle }}">
+  {% if shareDescription %}<meta property="og:description" content="{{ shareDescription }}">{% endif %}
+  <meta property="og:url" content="{{ shareUrl }}">
+  <meta property="og:image" content="{{ shareImage }}">
+  <meta property="og:image:width" content="{{ ogImageWidth or 1200 }}">
+  <meta property="og:image:height" content="{{ ogImageHeight or 630 }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ISYSTEMS AUTOMATION">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ shareTitle }}">
+  {% if shareDescription %}<meta name="twitter:description" content="{{ shareDescription }}">{% endif %}
+  <meta name="twitter:image" content="{{ shareImage }}">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/assets/img/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="/assets/css/isa.css?v=20260901d">
   {% if jsonLd %}<script type="application/ld+json">{{ jsonLd | safe }}</script>{% endif %}
 </head>
