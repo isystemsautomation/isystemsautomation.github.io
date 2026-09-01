@@ -9,7 +9,7 @@
     "children": [
       { "label": "Power Generation", "url": "/industries/power-generation.html" },
       { "label": "Oil and Gas", "url": "/industries/oil-and-gas.html" },
-      { "label": "Bulk material handling", "url": "/industries/cement-and-coal.html" },
+      { "label": "Bulk material handling", "url": "/industries/bulk-material-handling.html" },
       { "label": "Control Centers", "url": "/industries/control-centers.html" }
     ]
   },

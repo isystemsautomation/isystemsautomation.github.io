@@ -1,8 +1,8 @@
 {
-  "slug": "industries-cement-and-coal",
+  "slug": "industries-bulk-material-handling",
   "heroTitle": "Bulk material handling",
-  "source": "legacy/industries/cement-and-coal.html",
-  "url": "/industries/cement-and-coal.html",
+  "source": "legacy/industries/bulk-material-handling.html",
+  "url": "/industries/bulk-material-handling.html",
   "blocks": [
     {
       "type": "section",

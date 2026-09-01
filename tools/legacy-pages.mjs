@@ -18,7 +18,7 @@ export const LEGACY_PAGES = [
   'service/process-automation.html',
   'service/process-optimization-advanced-process-control.html',
   'service/safety-systems-burner-management-systems.html',
-  'industries/cement-and-coal.html',
+  'industries/bulk-material-handling.html',
   'industries/control-centers.html',
   'industries/oil-and-gas.html',
   'industries/power-generation.html',
