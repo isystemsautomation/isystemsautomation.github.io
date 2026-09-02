@@ -20,12 +20,14 @@
     "260",
     "3",
     "30",
+    "6",
     "60870-5-104.",
     "61511.",
     "747",
     "757",
     "798",
     "80",
+    "800xa,",
     "9001",
     "a",
     "abb",
@@ -62,6 +64,7 @@
     "back",
     "balance",
     "balancing",
+    "bar",
     "bar,",
     "baseline.",
     "batching",
@@ -86,6 +89,7 @@
     "calorific",
     "cannot",
     "centers",
+    "centum",
     "certified",
     "cfb",
     "changes",
@@ -161,6 +165,7 @@
     "five",
     "follows",
     "for",
+    "founded",
     "four",
     "foxboro",
     "from",
@@ -185,7 +190,6 @@
     "hima",
     "hiquad,",
     "holding",
-    "home",
     "homemaster",
     "hrsg,",
     "hydro",
@@ -210,6 +214,7 @@
     "j29/919/2007",
     "keeps",
     "knowledge",
+    "largest",
     "lifecycle",
     "list",
     "live",
@@ -259,9 +264,11 @@
     "other",
     "others",
     "our",
+    "ovation,",
     "ovation;",
     "over",
     "own",
+    "pcs7,",
     "performance",
     "petroleum",
     "photovoltaic",
@@ -272,6 +279,7 @@
     "platforms.",
     "ploiești,",
     "policy",
+    "portal,",
     "power",
     "prahova",
     "privacy",
@@ -310,6 +318,7 @@
     "selected",
     "separates",
     "service",
+    "services",
     "set",
     "set.",
     "sets",
@@ -328,6 +337,7 @@
     "stream,",
     "supply",
     "support",
+    "symphony,",
     "system",
     "system,",
     "system.",
@@ -343,6 +353,7 @@
     "this",
     "three",
     "through",
+    "tia",
     "to",
     "transition",
     "transmission",
@@ -361,6 +372,7 @@
     "values,",
     "vat",
     "virtual",
+    "vp",
     "we",
     "weigh",
     "what",
@@ -371,7 +383,8 @@
     "without",
     "written",
     "years",
-    "©"
+    "©",
+    "·"
   ],
   "/404.html": [
     "(manufacturing",
@@ -460,6 +473,7 @@
     "safety",
     "security",
     "service",
+    "services",
     "since",
     "skip",
     "str.",
@@ -470,7 +484,8 @@
     "to",
     "vat",
     "you",
-    "©"
+    "©",
+    "·"
   ],
   "/projects/advanced-controllers-cfb-boiler.html": [
     "(start-up",
@@ -791,6 +806,7 @@
     "secondary",
     "security",
     "service",
+    "services",
     "set",
     "settings",
     "settings,",
@@ -855,7 +871,8 @@
     "when",
     "with",
     "within",
-    "©"
+    "©",
+    "·"
   ],
   "/company.html": [
     "+40",
@@ -1034,6 +1051,7 @@
     "safety",
     "security",
     "service",
+    "services",
     "set",
     "siemens",
     "since",
@@ -1169,6 +1187,7 @@
     "phone:",
     "plant",
     "plants",
+    "ploiești",
     "ploiești,",
     "ploiești.",
     "policy",
@@ -1194,6 +1213,7 @@
     "sc.",
     "security",
     "service",
+    "services",
     "since",
     "site",
     "skip",
@@ -1349,6 +1369,7 @@
     "self-hosted",
     "service",
     "service.",
+    "services",
     "set",
     "sets",
     "since",
@@ -1376,7 +1397,8 @@
     "what",
     "you",
     "your",
-    "©"
+    "©",
+    "·"
   ],
   "/industries.html": [
     "+40",
@@ -1609,6 +1631,7 @@
     "screen",
     "security",
     "service",
+    "services",
     "set",
     "shift",
     "shop,",
@@ -1651,7 +1674,8 @@
     "works",
     "yokogawa",
     "zone",
-    "©"
+    "©",
+    "·"
   ],
   "/projects/power-plant-performance-calculation.html": [
     "(boiler,",
@@ -2038,6 +2062,7 @@
     "security",
     "see",
     "service",
+    "services",
     "set",
     "short",
     "significant",
@@ -2121,7 +2146,8 @@
     "work",
     "work,",
     "work.",
-    "©"
+    "©",
+    "·"
   ],
   "/privacy.html": [
     "(github,",
@@ -2341,6 +2367,7 @@
     "served",
     "server",
     "service",
+    "services",
     "share",
     "since",
     "site",
@@ -2378,7 +2405,8 @@
     "write",
     "you",
     "your",
-    "©"
+    "©",
+    "·"
   ],
   "/references.html": [
     "(virtual",
@@ -2947,6 +2975,7 @@
     "security",
     "sequences,",
     "service",
+    "services",
     "set,",
     "setpoint",
     "seven",
@@ -3346,7 +3375,8 @@
     "work",
     "yokogawa",
     "zone",
-    "©"
+    "©",
+    "·"
   ],
   "/projects/virtual-power-plant.html": [
     "(pv)",
@@ -3564,6 +3594,7 @@
     "schedule.",
     "security",
     "service",
+    "services",
     "should",
     "significant",
     "since",
@@ -3616,7 +3647,8 @@
     "wind",
     "with",
     "within",
-    "©"
+    "©",
+    "·"
   ],
   "/service/industrial-furniture-control-centers.html": [
     "(industries)",
@@ -5462,6 +5494,7 @@
     "selection",
     "sequenced",
     "service",
+    "services",
     "silos",
     "since",
     "size",
@@ -5739,6 +5772,7 @@
     "separately",
     "serve",
     "service",
+    "services",
     "shift",
     "sightlines",
     "since",
@@ -6021,6 +6055,7 @@
     "segregation",
     "selection,",
     "service",
+    "services",
     "siemens",
     "sil",
     "since",
@@ -6381,6 +6416,7 @@
     "separation",
     "sequence",
     "service",
+    "services",
     "set",
     "setpoint",
     "sets",
@@ -6782,6 +6818,7 @@
     "sequencing.",
     "serves",
     "service",
+    "services",
     "share",
     "shop",
     "shop,",
@@ -6839,6 +6876,7 @@
     "yaml",
     "your",
     "zones,",
-    "©"
+    "©",
+    "·"
   ]
 }

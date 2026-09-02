@@ -269,6 +269,7 @@ async function measureLayout() {
       imgs.forEach((img) => {
         if (img.closest('.hero, .page-hero, .section--flush.hero')) return;
         if (img.closest('.figure--schematic')) return;
+        if (img.closest('.card, .card__media, .split__aside, .gallery, .map-placeholder')) return;
         const rect = img.getBoundingClientRect();
         if (rect.width > maxImg) maxImg = rect.width;
       });
