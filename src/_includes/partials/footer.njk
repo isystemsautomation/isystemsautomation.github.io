@@ -1,35 +1,20 @@
 {% from "partials/footer-columns.njk" import footerColumns %}
 <footer class="site-footer">
   <div class="container">
-    <div class="site-footer__logo">
-      <a href="/index.html">
-        <img src="/assets/img/isystems-automation-logo.png" alt="ISYSTEMS AUTOMATION" width="180" height="80">
+    <div class="site-footer__brand">
+      <a href="/index.html" class="site-footer__logo-link">
+        <img src="/assets/img/isystems-automation-logo-white.svg" alt="ISYSTEMS AUTOMATION" width="283" height="194" class="site-footer__logo">
       </a>
     </div>
 
-    {{ footerColumns(footer, pageUrl or url) }}
+    {{ footerColumns(footer, pageUrl or url, site) }}
 
-    <div class="site-footer__legal legal">
-      <div>
-        <strong>{{ site.name }}</strong><br>
-        {{ site.address.street }}<br>
-        {{ site.address.postalCode }} {{ site.address.city }}, {{ site.address.county }}<br>
-        {{ site.address.country }}
-      </div>
-      <div>
-        Reg. no. {{ site.reg }}<br>
-        VAT {{ site.vat }}<br>
-        <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
-        <a href="tel:{{ site.phoneTel }}">{{ site.phone }}</a>
-      </div>
-      <div>
-        Quality management certified to<br>
-        <strong>ISO 9001</strong> since 2009<br>
-        <a href="/privacy.html">Privacy Policy</a><br>
+    <div class="site-footer__bar">
+      <div class="site-footer__copy">{{ site.copyright }}</div>
+      <div class="site-footer__legal-links">
+        <a href="/privacy.html">Privacy Policy</a>
         <a href="/cookies.html">Cookie Policy</a>
       </div>
     </div>
-
-    <div class="site-footer__copy legal">{{ site.copyright }}</div>
   </div>
 </footer>

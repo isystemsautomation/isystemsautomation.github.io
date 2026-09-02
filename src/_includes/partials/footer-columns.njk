@@ -1,14 +1,14 @@
-{% macro footerColumns(columns, currentUrl) %}
-<div class="site-footer__links grid grid--4">
+{% macro footerColumns(columns, currentUrl, site) %}
+<div class="site-footer__columns">
   {% for col in columns %}
-    <div>
+    <div class="site-footer__col">
       {% if col.url %}
-        <h3><a href="{{ col.url }}"{% if col.url == currentUrl %} aria-current="page"{% endif %}>{{ col.label }}</a></h3>
+        <h3 class="site-footer__heading"><a href="{{ col.url }}"{% if col.url == currentUrl %} aria-current="page"{% endif %}>{{ col.label }}</a></h3>
       {% else %}
-        <h3>{{ col.label }}</h3>
+        <h3 class="site-footer__heading">{{ col.label }}</h3>
       {% endif %}
       {% if col.children | length %}
-        <ul>
+        <ul class="site-footer__links">
           {% for child in col.children %}
             <li><a href="{{ child.url }}"{% if child.url == currentUrl %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
           {% endfor %}
@@ -16,5 +16,25 @@
       {% endif %}
     </div>
   {% endfor %}
+  <div class="site-footer__col site-footer__col--contact">
+    <h3 class="site-footer__heading">Contact</h3>
+    <address class="site-footer__address">
+      {{ site.address.street }}<br>
+      {{ site.address.postalCode }} {{ site.address.city }}, {{ site.address.county }}<br>
+      {{ site.address.country }}<br>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+      <a href="tel:{{ site.phoneTel }}">{{ site.phone }}</a>
+    </address>
+  </div>
 </div>
+  <div class="site-footer__meta legal">
+    <div>
+      <strong>{{ site.name }}</strong><br>
+      {{ site.address.street }}<br>
+      {{ site.address.postalCode }} {{ site.address.city }}, {{ site.address.county }}<br>
+      {{ site.address.country }}<br>
+      Reg. no. {{ site.reg }} · VAT {{ site.vat }}
+    </div>
+    <div>{{ site.iso9001 }}</div>
+  </div>
 {% endmacro %}
