@@ -58,6 +58,15 @@ function yamlString(value) {
   return str;
 }
 
+const RELATED_PATH = path.join(ROOT, 'content', '_related.json');
+const RELATED_BY_SLUG = fs.existsSync(RELATED_PATH)
+  ? JSON.parse(fs.readFileSync(RELATED_PATH, 'utf8'))
+  : {};
+
+function loadRelatedLinks(slug) {
+  return RELATED_BY_SLUG[slug] ?? [];
+}
+
 function buildFrontMatter(meta, contentData, slug) {
   const permalink = pagePermalink(slug, meta.url);
   const pagePath = pageUrl(slug, meta.url);
@@ -65,6 +74,7 @@ function buildFrontMatter(meta, contentData, slug) {
   const ogDescription = meta.ogDescription || meta.description;
   const ogUrl = meta.ogUrl || canonical;
   const ogImage = ogImageForSlug(slug);
+  const relatedLinks = loadRelatedLinks(slug);
 
   const lines = [
     '---',
@@ -80,6 +90,14 @@ function buildFrontMatter(meta, contentData, slug) {
   if (ogDescription) lines.push(`ogDescription: ${yamlString(ogDescription)}`);
   lines.push(`ogUrl: ${yamlString(ogUrl)}`);
   lines.push(`ogImage: ${yamlString(ogImage)}`);
+
+  if (relatedLinks.length) {
+    lines.push('related:');
+    for (const item of relatedLinks) {
+      lines.push(`  - url: ${yamlString(item.url)}`);
+      lines.push(`    label: ${yamlString(item.label)}`);
+    }
+  }
 
   if (contentData.jsonLd) {
     lines.push('jsonLd: |');

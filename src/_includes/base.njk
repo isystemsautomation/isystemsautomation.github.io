@@ -3,10 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }}</title>
+  {% set titleSep = site.titleSeparator or " | " %}
+  {% set titleExempt = pageUrl == "/404.html" or pageUrl == "/privacy.html" or pageUrl == "/cookies.html" or noindex %}
+  {% if titleExempt %}
+    {% set pageTitle = title %}
+    {% set shareTitle = ogTitle or title %}
+  {% else %}
+    {% set pageTitle = title | replace(" — ", titleSep) | replace("— ", titleSep) %}
+    {% set shareTitle = (ogTitle or title) | replace(" — ", titleSep) | replace("— ", titleSep) %}
+  {% endif %}
+  <title>{{ pageTitle }}</title>
   {% set siteOrigin = "https://www.isystemsautomation.com" %}
   {% set pageCanonical = canonical or (siteOrigin + (pageUrl or url)) %}
-  {% set shareTitle = ogTitle or title %}
   {% set shareDescription = ogDescription or description %}
   {% set shareUrl = ogUrl or pageCanonical %}
   {% set shareImage = ogImage or (siteOrigin + "/assets/img/og-default.jpg") %}
@@ -38,6 +46,9 @@
   {% include "partials/header.njk" %}
   <main id="main">
     {{ content | safe }}
+    {% if related and (related | length) > 0 %}
+      {% include "partials/related.njk" %}
+    {% endif %}
   </main>
   {% include "partials/footer.njk" %}
   <script>
@@ -49,19 +60,6 @@
       }
       onScroll();
       window.addEventListener('scroll', onScroll, { passive: true });
-
-      var closeTimer;
-      header.querySelectorAll('.nav__item--has-children').forEach(function (item) {
-        item.addEventListener('mouseenter', function () {
-          clearTimeout(closeTimer);
-          item.classList.add('is-open');
-        });
-        item.addEventListener('mouseleave', function () {
-          closeTimer = setTimeout(function () {
-            item.classList.remove('is-open');
-          }, 200);
-        });
-      });
     })();
   </script>
 </body>

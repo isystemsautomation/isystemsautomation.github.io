@@ -252,13 +252,13 @@ function buildPage(sections) {
 
 const frontMatter = `---
 layout: base.njk
-title: Compliance Testing and CE Marking — ISYSTEMS AUTOMATION
+title: Compliance, CE Marking & EU Conformity | ISYSTEMS AUTOMATION
 permalink: /compliance.html
 pageUrl: /compliance.html
-description: "In-house electrical safety testing to EN 62368-1, EMC screening, technical files and Cyber Resilience Act procedure, built to take eleven of our own products through EU conformity assessment."
+description: "EN 62368-1 safety testing, EMC screening, technical files and Cyber Resilience Act procedure for HomeMaster products through EU conformity assessment."
 canonical: "https://www.isystemsautomation.com/compliance.html"
-ogTitle: Compliance Testing and CE Marking — ISYSTEMS AUTOMATION
-ogDescription: "In-house electrical safety testing to EN 62368-1, EMC screening, technical files and Cyber Resilience Act procedure, built to take eleven of our own products through EU conformity assessment."
+ogTitle: Compliance, CE Marking & EU Conformity | ISYSTEMS AUTOMATION
+ogDescription: "EN 62368-1 safety testing, EMC screening, technical files and Cyber Resilience Act procedure for HomeMaster products through EU conformity assessment."
 ogUrl: "https://www.isystemsautomation.com/compliance.html"
 ogImage: "https://www.isystemsautomation.com/assets/img/og/compliance.jpg"
 jsonLd: |
@@ -272,7 +272,7 @@ jsonLd: |
       "url": "https://www.isystemsautomation.com"
     },
     "areaServed": "Europe",
-    "description": "In-house electrical safety testing to EN 62368-1, EMC screening, technical files and Cyber Resilience Act procedure, built to take eleven of our own products through EU conformity assessment."
+    "description": "EN 62368-1 safety testing, EMC screening, technical files and Cyber Resilience Act procedure for HomeMaster products through EU conformity assessment."
   }
 ---
 `;

@@ -1,89 +1,50 @@
 {
-  "service-process-automation": {
-    "index": { "href": "/service.html", "label": "All services" },
-    "links": [
-      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimisation" },
-      { "href": "/service/manufacturing-execution-system.html", "label": "MES" },
-      { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" },
-      { "href": "/service/maintenance.html", "label": "Maintenance" }
-    ]
-  },
-  "service-process-optimization-advanced-process-control": {
-    "index": { "href": "/service.html", "label": "All services" },
-    "links": [
-      { "href": "/service/process-automation.html", "label": "Process automation" },
-      { "href": "/service/manufacturing-execution-system.html", "label": "MES" },
-      { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" },
-      { "href": "/service/maintenance.html", "label": "Maintenance" }
-    ]
-  },
-  "service-manufacturing-execution-system": {
-    "index": { "href": "/service.html", "label": "All services" },
-    "links": [
-      { "href": "/service/process-automation.html", "label": "Process automation" },
-      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimisation" },
-      { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" },
-      { "href": "/service/maintenance.html", "label": "Maintenance" }
-    ]
-  },
-  "service-safety-systems-burner-management-systems": {
-    "index": { "href": "/service.html", "label": "All services" },
-    "links": [
-      { "href": "/service/process-automation.html", "label": "Process automation" },
-      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimisation" },
-      { "href": "/service/industrial-furniture-control-centers.html", "label": "Control centers" },
-      { "href": "/service/maintenance.html", "label": "Maintenance" }
-    ]
-  },
-  "service-industrial-furniture-control-centers": {
-    "index": { "href": "/service.html", "label": "All services" },
-    "links": [
-      { "href": "/service/process-automation.html", "label": "Process automation" },
-      { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" },
-      { "href": "/service/maintenance.html", "label": "Maintenance" },
-      { "href": "/industries/control-centers.html", "label": "Control centers (industries)" }
-    ]
-  },
-  "service-maintenance": {
-    "index": { "href": "/service.html", "label": "All services" },
-    "links": [
-      { "href": "/service/process-automation.html", "label": "Process automation" },
-      { "href": "/service/process-optimization-advanced-process-control.html", "label": "Process optimisation" },
-      { "href": "/service/manufacturing-execution-system.html", "label": "MES" },
-      { "href": "/service/safety-systems-burner-management-systems.html", "label": "Safety systems" }
-    ]
-  },
-  "industries-power-generation": {
-    "index": { "href": "/industries.html", "label": "All industries" },
-    "links": [
-      { "href": "/industries/oil-and-gas.html", "label": "Oil and gas" },
-      { "href": "/industries/bulk-material-handling.html", "label": "Bulk material handling" },
-      { "href": "/industries/control-centers.html", "label": "Control centers" }
-    ]
-  },
-  "industries-oil-and-gas": {
-    "index": { "href": "/industries.html", "label": "All industries" },
-    "links": [
-      { "href": "/industries/power-generation.html", "label": "Power generation" },
-      { "href": "/industries/bulk-material-handling.html", "label": "Bulk material handling" },
-      { "href": "/industries/control-centers.html", "label": "Control centers" }
-    ]
-  },
-  "industries-bulk-material-handling": {
-    "index": { "href": "/industries.html", "label": "All industries" },
-    "links": [
-      { "href": "/industries/power-generation.html", "label": "Power generation" },
-      { "href": "/industries/oil-and-gas.html", "label": "Oil and gas" },
-      { "href": "/industries/control-centers.html", "label": "Control centers" }
-    ]
-  },
-  "industries-control-centers": {
-    "index": { "href": "/industries.html", "label": "All industries" },
-    "links": [
-      { "href": "/industries/power-generation.html", "label": "Power generation" },
-      { "href": "/industries/oil-and-gas.html", "label": "Oil and gas" },
-      { "href": "/industries/bulk-material-handling.html", "label": "Bulk material handling" },
-      { "href": "/service/industrial-furniture-control-centers.html", "label": "Control center furniture (service)" }
-    ]
-  }
+  "industries-power-generation": [
+    { "url": "/island-mode/", "label": "Island Mode Operation" },
+    { "url": "/plant-performance.html", "label": "Plant Performance and Fuel Accounting" },
+    { "url": "/combined-cycle-power-plants.html", "label": "Combined Cycle Power Plants" },
+    { "url": "/acceptance-testing.html", "label": "Factory and Site Acceptance Testing" }
+  ],
+  "industries-oil-and-gas": [
+    { "url": "/service/safety-systems-burner-management-systems.html", "label": "Safety Systems, BMS and SIL 2 / SIL 3 to IEC 61511" },
+    { "url": "/island-mode/", "label": "Island Mode Operation" },
+    { "url": "/cybersecurity.html", "label": "Control System Cyber Security" },
+    { "url": "/plant-performance.html", "label": "Plant Performance and Fuel Accounting" }
+  ],
+  "industries-bulk-material-handling": [
+    { "url": "/service/process-automation.html", "label": "Process Automation" },
+    { "url": "/service/manufacturing-execution-system.html", "label": "MES and Production Data Systems" },
+    { "url": "/service/maintenance.html", "label": "Maintenance and Technical Support" }
+  ],
+  "industries-control-centers": [
+    { "url": "/service/industrial-furniture-control-centers.html", "label": "Industrial Furniture and Control Centers" },
+    { "url": "/service/process-automation.html", "label": "Process Automation" },
+    { "url": "/cybersecurity.html", "label": "Control System Cyber Security" }
+  ],
+  "service-process-automation": [
+    { "url": "/acceptance-testing.html", "label": "Factory and Site Acceptance Testing" },
+    { "url": "/service/maintenance.html", "label": "Maintenance and Technical Support" },
+    { "url": "/service/process-optimization-advanced-process-control.html", "label": "Process Optimisation and Advanced Process Control" }
+  ],
+  "service-process-optimization-advanced-process-control": [
+    { "url": "/plant-performance.html", "label": "Plant Performance and Fuel Accounting" },
+    { "url": "/projects/advanced-controllers-cfb-boiler.html", "label": "Advanced Controllers for CFB Boilers" },
+    { "url": "/industries/power-generation.html", "label": "Power Generation" }
+  ],
+  "service-manufacturing-execution-system": [
+    { "url": "/plant-performance.html", "label": "Plant Performance and Fuel Accounting" },
+    { "url": "/projects/power-plant-performance-calculation.html", "label": "Power Plant Performance Calculation" },
+    { "url": "/service/process-automation.html", "label": "Process Automation" }
+  ],
+  "service-safety-systems-burner-management-systems": [
+    { "url": "/acceptance-testing.html", "label": "Factory and Site Acceptance Testing" },
+    { "url": "/compliance.html", "label": "Compliance and Testing" },
+    { "url": "/industries/oil-and-gas.html", "label": "Oil and Gas" },
+    { "url": "/industries/power-generation.html", "label": "Power Generation" }
+  ],
+  "service-maintenance": [
+    { "url": "/cybersecurity.html", "label": "Control System Cyber Security" },
+    { "url": "/service/process-automation.html", "label": "Process Automation" },
+    { "url": "/industries/power-generation.html", "label": "Power Generation" }
+  ]
 }

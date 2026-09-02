@@ -32,6 +32,27 @@ const COOKIES_MISSING_OK = new Set([
   'but',
 ]);
 
+const SEO_TITLE_MAX = 62;
+const SEO_DESC_MAX = 155;
+const SEO_SKIP_URLS = new Set(['/404.html', '/privacy.html', '/cookies.html']);
+
+const RELATED_BLOCK_URLS = [
+  '/industries/power-generation.html',
+  '/industries/oil-and-gas.html',
+  '/industries/bulk-material-handling.html',
+  '/industries/control-centers.html',
+  '/service/process-automation.html',
+  '/service/process-optimization-advanced-process-control.html',
+  '/service/manufacturing-execution-system.html',
+  '/service/safety-systems-burner-management-systems.html',
+  '/service/maintenance.html',
+  '/island-mode/',
+  '/plant-performance.html',
+  '/combined-cycle-power-plants.html',
+  '/acceptance-testing.html',
+  '/cybersecurity.html',
+];
+
 const norm = (s) =>
   s
     .replace(/\u00a0/g, ' ')
@@ -127,6 +148,95 @@ function checkSilVisibility(html) {
   }
 
   return failures;
+}
+
+function isSeoSkipped(html, url) {
+  if (SEO_SKIP_URLS.has(url)) return true;
+  const $ = cheerio.load(html, { decodeEntities: false });
+  if ($('meta[name="robots"]').filter((_, el) => ($(el).attr('content') ?? '').includes('noindex')).length) {
+    return true;
+  }
+  const title = $('title').first().text().trim();
+  if (/^Redirecting/i.test(title)) return true;
+  return false;
+}
+
+function checkSeoMeta(html, url) {
+  if (isSeoSkipped(html, url)) return true;
+
+  const $ = cheerio.load(html, { decodeEntities: false });
+  const title = $('title').first().text().trim();
+  const desc = $('meta[name="description"]').attr('content') ?? '';
+  const ogTitle = $('meta[property="og:title"]').attr('content') ?? '';
+  const ogDesc = $('meta[property="og:description"]').attr('content') ?? '';
+  let ok = true;
+
+  if (title.length > SEO_TITLE_MAX) {
+    console.error(`${url} title too long (${title.length} > ${SEO_TITLE_MAX}): ${title}`);
+    ok = false;
+  }
+  if (desc.length > SEO_DESC_MAX) {
+    console.error(`${url} description too long (${desc.length} > ${SEO_DESC_MAX}): ${desc}`);
+    ok = false;
+  }
+  if (ogTitle && ogTitle !== title) {
+    console.error(`${url} og:title mismatch: "${ogTitle}" vs "${title}"`);
+    ok = false;
+  }
+  if (desc && ogDesc && ogDesc !== desc) {
+    console.error(`${url} og:description mismatch`);
+    ok = false;
+  }
+  if (ok && title) {
+    console.log(`OK SEO ${url}`);
+  }
+  return ok;
+}
+
+function checkRelatedBlock(html, url) {
+  if (!RELATED_BLOCK_URLS.includes(url)) return true;
+  const $ = cheerio.load(html, { decodeEntities: false });
+  const nav = $('nav.related[aria-label="Related"]');
+  if (!nav.length) {
+    console.error(`${url} missing nav.related block`);
+    return false;
+  }
+  const links = nav.find('a[href]').length;
+  if (links < 3 || links > 4) {
+    console.error(`${url} related block must have 3–4 links (got ${links})`);
+    return false;
+  }
+  if ($('.related-strip').length) {
+    console.error(`${url} still has legacy related-strip in body`);
+    return false;
+  }
+  console.log(`OK related ${url}`);
+  return true;
+}
+
+function normalizeSiteUrl(relPath) {
+  if (relPath === 'index.html') return '/index.html';
+  if (relPath.endsWith('/index.html')) {
+    return `/${relPath.slice(0, -'index.html'.length)}`;
+  }
+  return `/${relPath}`;
+}
+
+function collectSiteHtmlPaths() {
+  const paths = [];
+  function walk(dir, prefix = '') {
+    for (const name of fs.readdirSync(dir)) {
+      const full = path.join(dir, name);
+      const rel = prefix ? `${prefix}/${name}` : name;
+      if (fs.statSync(full).isDirectory()) {
+        walk(full, rel);
+      } else if (name.endsWith('.html')) {
+        paths.push({ url: normalizeSiteUrl(rel), path: full });
+      }
+    }
+  }
+  walk(SITE_DIR);
+  return paths;
 }
 
 function referenceWords(entry) {
@@ -510,6 +620,13 @@ if (fs.existsSync(SITE_DIR)) {
   if (reachMatches.length) {
     console.error('Incomplete phrase "reach the control" found:', reachMatches.length);
     failed = true;
+  }
+
+  console.log('\n--- SEO meta ---');
+  for (const { url, path: sitePath } of collectSiteHtmlPaths()) {
+    const html = fs.readFileSync(sitePath, 'utf8');
+    if (!checkSeoMeta(html, url)) failed = true;
+    if (!checkRelatedBlock(html, url)) failed = true;
   }
 }
 

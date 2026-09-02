@@ -1,0 +1,16 @@
+{% from "macros/icon.njk" import tabler %}
+<nav class="related section section--tint" aria-label="Related">
+  <div class="container">
+    <h2 class="section-title">Related</h2>
+    <ul class="card-grid card-grid--related">
+      {% for item in related %}
+        <li>
+          <a class="card card--inline" href="{{ item.url }}">
+            <span class="card__chevron" aria-hidden="true">{{ tabler('chevron-right', 16) }}</span>
+            <span class="card__title">{{ item.label }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

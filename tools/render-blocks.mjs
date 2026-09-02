@@ -24,11 +24,6 @@ const SUBPAGE_BOILERPLATE = {
   'industries-': 'What We Do',
 };
 
-const RELATED_PATH = path.join(ROOT, 'content', '_related.json');
-const RELATED_LINKS = fs.existsSync(RELATED_PATH)
-  ? JSON.parse(fs.readFileSync(RELATED_PATH, 'utf8'))
-  : {};
-
 const INDEX_CAROUSEL_HERO = [
   '/assets/img/projects/control-room-combined-cycle-hero.jpg',
   '/assets/img/2024/08/09/carousel2-hero.jpg',
@@ -116,8 +111,8 @@ export function stripInlineStyles(html) {
 
 export function heroTitleFromPageTitle(title) {
   return title
-    .replace(/^ISYSTEMS AUTOMATION\s*[—–-]\s*/i, '')
-    .replace(/\s*[—–-]\s*ISYSTEMS AUTOMATION\s*$/i, '')
+    .replace(/^ISYSTEMS AUTOMATION\s*[—–|-]\s*/i, '')
+    .replace(/\s*[—–|-]\s*ISYSTEMS AUTOMATION\s*$/i, '')
     .trim();
 }
 
@@ -808,21 +803,6 @@ function filterSubpageBlocks(slug, blocks) {
   );
 }
 
-function renderRelatedStrip(slug, tint) {
-  const related = RELATED_LINKS[slug];
-  if (!related) return '';
-
-  const parts = [
-    ...related.links.map(
-      (link) => `<a href="${link.href}">${escapeHtml(link.label)}</a>`,
-    ),
-    `<a href="${related.index.href}">${escapeHtml(related.index.label)}</a>`,
-  ];
-
-  const cls = tint ? 'section section--tint related-strip' : 'section related-strip';
-  return `<section class="${cls}"><div class="container"><h3 class="related-strip__title">Related</h3><p class="related-strip__links">${parts.join('<span class="related-strip__sep" aria-hidden="true"> · </span>')}</p></div></section>`;
-}
-
 function renderSection(section, tint, pageTitle, seenTitleRef, slug = '') {
   const sectionTitle = section.title;
   const sectionContext = shouldNormalizeHeadings(slug) ? { hasPrimaryHeading: false } : null;
@@ -913,10 +893,6 @@ export function renderPageContent({ slug, blocks, title, home = null, heroTitle 
       html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose">${renderBlock(block)}</div></section>`;
       tint = !tint;
     }
-  }
-
-  if (slug.startsWith('service-') || slug.startsWith('industries-')) {
-    html += renderRelatedStrip(slug, tint);
   }
 
   return html;
