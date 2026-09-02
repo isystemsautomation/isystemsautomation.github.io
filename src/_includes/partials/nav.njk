@@ -1,7 +1,7 @@
 {% macro navList(items, currentUrl, mobile=false) %}
 <ul class="nav__list{% if mobile %} nav__list--mobile{% endif %}">
   {% for item in items %}
-    {% set isCurrent = (item.url == currentUrl) or (item.children and item.children | selectattr('url', 'equalto', currentUrl) | list | length > 0) %}
+    {% set isCurrent = item | navCurrent(currentUrl) %}
     {% if item.children %}
       {% if mobile %}
         <li class="nav__item nav__item--has-children">
@@ -9,7 +9,7 @@
             <summary>{{ item.label }}</summary>
             <ul>
               {% for child in item.children %}
-                <li><a href="{{ child.url }}"{% if child.url == currentUrl %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
+                <li><a href="{{ child.url }}"{% if child.url | navUrlMatch(currentUrl) %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
               {% endfor %}
             </ul>
           </details>
@@ -20,7 +20,7 @@
           <div class="nav__dropdown" role="menu">
             <ul class="nav__dropdown-grid">
               {% for child in item.children %}
-                <li><a href="{{ child.url }}" role="menuitem"{% if child.url == currentUrl %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
+                <li><a href="{{ child.url }}" role="menuitem"{% if child.url | navUrlMatch(currentUrl) %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
               {% endfor %}
             </ul>
           </div>

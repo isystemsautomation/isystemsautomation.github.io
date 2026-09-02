@@ -221,17 +221,19 @@ small, .caption {
 }
 
 /* --- Links --- */
-.prose p a:not(.btn), .prose li a:not(.btn), main p a:not(.btn), main li a:not(.btn), main td a:not(.btn) {
+.prose p a:not(.btn), .prose li:not(.card-grid > li) a:not(.btn), main td a:not(.btn) {
   color: var(--c-blue-600);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
 }
 
-.prose p a:not(.btn):hover, .prose li a:not(.btn):hover, main p a:not(.btn):hover {
+.prose p a:not(.btn):hover, .prose li:not(.card-grid > li) a:not(.btn):hover, main td a:not(.btn):hover {
   color: var(--c-blue-500);
   text-decoration-thickness: 1px;
 }
+
+main .card, main .card:hover, .card *, .card:hover * { text-decoration: none; }
 
 .prose h3 > a, .card__title, .nav a, .site-footer a, figcaption a {
   text-decoration: none;
@@ -305,6 +307,42 @@ small, .caption {
 .split__aside { min-width: 0; }
 
 .split__aside figure { margin: 0; }
+
+.split__photos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-gap);
+  position: sticky;
+  top: 96px;
+}
+
+.split__photos figure img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--c-line);
+  background: var(--c-surface);
+  display: block;
+}
+
+.split__photos figcaption {
+  margin-top: var(--s2);
+  font-size: var(--fs-caption);
+  color: var(--c-ink-500);
+}
+
+@media (max-width: 767px) {
+  .split__photos {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .split__photos figure {
+    flex: 1 1 calc(50% - var(--space-gap) / 2);
+    min-width: 140px;
+  }
+}
 
 .split__aside figure img {
   width: 100%;
@@ -418,43 +456,55 @@ small, .caption {
 .nav__item, .nav li { position: relative; }
 
 .nav__dropdown {
-  display: none;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 320px;
-  background: var(--c-white);
-  border: 1px solid var(--c-line);
-  box-shadow: var(--shadow-card);
-  padding: var(--s3);
+  min-width: 360px;
+  padding-top: 8px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   z-index: 10;
+  transition: opacity .15s var(--ease), visibility 0s .2s;
 }
 
 .nav__dropdown-grid, .nav ul ul {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
   gap: 0;
   list-style: none;
   margin: 0;
-  padding: 0;
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  box-shadow: var(--shadow-card);
+  padding: var(--s2);
 }
 
 .nav__item--has-children:hover > .nav__dropdown,
+.nav__item--has-children.is-open > .nav__dropdown,
 .nav__item--has-children:focus-within > .nav__dropdown,
 .nav li:hover > ul, .nav li:focus-within > ul {
-  display: block;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .15s var(--ease), visibility 0s 0s;
 }
 
 .nav__dropdown a, .nav ul ul a {
   display: flex;
   align-items: center;
-  min-height: 44px;
+  min-height: 0;
   height: auto;
-  padding: var(--s3);
+  padding: 10px 12px;
   font-size: var(--fs-small);
   font-weight: 400;
+  line-height: 1.35;
   color: var(--c-ink-700);
   box-shadow: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .nav__dropdown a:hover, .nav ul ul a:hover {
@@ -556,7 +606,7 @@ small, .caption {
   background: linear-gradient(90deg, var(--c-navy-900) 0%, var(--c-navy-700) 100%);
 }
 
-.hero > img, .page-hero > img {
+.hero > img, .page-hero > img, .page-hero > img.hero-texture {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -592,6 +642,12 @@ small, .caption {
   z-index: 2;
   padding-block: var(--s8);
   max-width: var(--container);
+  width: 100%;
+}
+
+.hero__content {
+  max-width: 640px;
+  margin: 0;
 }
 
 .hero .prose, .page-hero .prose { max-width: 640px; }
@@ -692,7 +748,7 @@ small, .caption {
 }
 
 .stat-band__cell {
-  padding: var(--s6) var(--s5);
+  padding: 32px 20px;
   text-align: center;
 }
 
@@ -701,16 +757,20 @@ small, .caption {
 }
 
 .stat-band__value {
-  font-size: var(--fs-stat);
+  font-size: clamp(28px, 2.4vw, 40px);
   font-weight: 600;
   line-height: 1.1;
   color: var(--c-ink-900);
+  white-space: nowrap;
 }
 
 .stat-band__label {
   margin-top: var(--s2);
   font-size: var(--fs-small);
   color: var(--c-ink-500);
+  text-wrap: balance;
+  max-width: 26ch;
+  margin-inline: auto;
 }
 
 @media (max-width: 1023px) {
@@ -824,19 +884,30 @@ a.btn--quiet { color: var(--c-blue-600); }
   max-width: none;
 }
 
+.card-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 @media (max-width: 1023px) {
-  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .card-grid, .card-grid--4 { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 767px) {
-  .card-grid { grid-template-columns: 1fr; }
+  .card-grid, .card-grid--4 { grid-template-columns: 1fr; }
 }
 
-.card-grid > li { margin: 0; padding: 0; }
+.card-grid > li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.card-grid > li > .card { flex: 1; }
 
 .card {
   display: flex;
   flex-direction: column;
+  position: relative;
   height: 100%;
   background: var(--c-white);
   border: 1px solid var(--c-line);
@@ -846,6 +917,24 @@ a.btn--quiet { color: var(--c-blue-600); }
   text-decoration: none;
   color: inherit;
   transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
+}
+
+.card__chevron {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--c-blue-600);
+  line-height: 0;
+  transition: transform .2s var(--ease);
+}
+
+.card:hover .card__chevron { transform: translateX(4px); }
+
+.card__icon-img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
 .section--tint .card {
@@ -927,6 +1016,24 @@ a.btn--quiet { color: var(--c-blue-600); }
   object-fit: cover;
   border: none;
   border-bottom: 1px solid var(--c-line);
+}
+
+.card__media--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-line);
+  color: var(--c-blue-600);
+}
+
+.card--media .card__chevron {
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+  background: rgba(255, 255, 255, .92);
+  padding: 4px;
 }
 
 .card__caption {

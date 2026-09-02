@@ -38,6 +38,52 @@ const HOME_STATS = [
   ],
 ];
 
+const PAGE_HERO_IMAGES = {
+  'industries.html': '/assets/img/projects/control-room-power-plant-operators.jpg',
+  'service.html': '/assets/img/projects/marshalling-cable-marking.jpg',
+  'references.html': '/assets/img/projects/control-room-combined-cycle-wide.jpg',
+  'company.html': '/assets/img/projects/central-control-room-in-use.jpg',
+  'homemaster/index.html': '/assets/img/homemaster/control-panel-wired-hero.jpg',
+};
+
+const INDUSTRY_MEDIA = {
+  '/industries/power-generation.html': {
+    src: '/assets/img/projects/steam-turbine-casing.jpg',
+    alt: 'Steam turbine casing with control valve actuator',
+    width: 960,
+    height: 640,
+  },
+  '/industries/oil-and-gas.html': {
+    src: '/assets/img/projects/atex-zone2-barriers.jpg',
+    alt: 'ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet',
+    width: 960,
+    height: 640,
+  },
+  '/industries/control-centers.html': {
+    src: '/assets/img/projects/central-control-room-consoles.jpg',
+    alt: 'Central control room with operator consoles and overview displays',
+    width: 1216,
+    height: 811,
+  },
+};
+
+const HOME_SPLIT_PHOTOS = [
+  {
+    src: '/assets/img/projects/substation-220kv-scada-redacted.jpg',
+    alt: '',
+    width: 960,
+    height: 640,
+    caption: '',
+  },
+  {
+    src: '/assets/img/projects/ovation-turbine-trend-redacted.jpg',
+    alt: 'Ovation DCS turbine trend display during island mode testing',
+    width: 960,
+    height: 640,
+    caption: 'Ovation DCS turbine trend display during island mode testing',
+  },
+];
+
 const BREADCRUMB_LABELS = {
   industries: 'Industries',
   service: 'Services',
@@ -80,10 +126,42 @@ function chevronSvg() {
   return iconSvg('chevron-right', 16);
 }
 
+function cardChevronCorner() {
+  return `<span class="card__chevron" aria-hidden="true">${chevronSvg()}</span>`;
+}
+
+function iconHtmlForHref(href) {
+  const icon = ICONS[href];
+  if (!icon) return '';
+  if (icon.startsWith('/')) {
+    return `<span class="card__icon"><img class="card__icon-img" src="${icon}" alt="" width="22" height="22" decoding="async"></span>`;
+  }
+  return `<span class="card__icon">${iconSvg(icon)}</span>`;
+}
+
+function industryMediaHtml(href) {
+  const data = INDUSTRY_MEDIA[href];
+  if (data) {
+    return `<figure class="card__media"><img src="${data.src}" alt="${data.alt}" width="${data.width}" height="${data.height}" loading="lazy" decoding="async"></figure>`;
+  }
+  if (href === '/industries/bulk-material-handling.html') {
+    return `<div class="card__media card__media--placeholder" aria-hidden="true">${iconSvg('truck-loading', 48)}</div>`;
+  }
+  return '';
+}
+
+function isIndustriesGrid($ul) {
+  const title = $ul.closest('section').find('> .container h2.section-title, .container.prose h2.section-title').first().text();
+  return title.trim() === 'Industries';
+}
+
 function enhanceLinkIndex($, ul) {
   const $ul = $(ul);
   if ($ul.hasClass('card-grid')) return;
+  const industries = isIndustriesGrid($ul);
   $ul.addClass('card-grid');
+  if (industries) $ul.addClass('card-grid--4');
+
   $ul.find('> li').each((_, li) => {
     const $li = $(li);
     const $a = $li.find('> a').first();
@@ -92,11 +170,16 @@ function enhanceLinkIndex($, ul) {
     const href = $a.attr('href') || '';
     const title = $a.text().trim();
     const text = $line.text().trim();
-    const iconName = ICONS[href];
-    const iconHtml = iconName
-      ? `<span class="card__icon">${iconSvg(iconName)}</span>`
-      : '';
-    const card = `<a class="card" href="${href}">${iconHtml}<span class="card__title">${title}</span><span class="card__text">${text}</span><span class="card__link" aria-hidden="true">${chevronSvg()}</span></a>`;
+
+    if (industries) {
+      const media = industryMediaHtml(href);
+      const card = `<a class="card card--media" href="${href}">${cardChevronCorner()}${media}<div class="card__body"><span class="card__title">${title}</span><span class="card__text">${text}</span></div></a>`;
+      $li.empty().append(card);
+      return;
+    }
+
+    const iconBlock = iconHtmlForHref(href);
+    const card = `<a class="card" href="${href}">${cardChevronCorner()}${iconBlock}<span class="card__title">${title}</span><span class="card__text">${text}</span></a>`;
     $li.empty().append(card);
   });
 }
@@ -111,10 +194,6 @@ function statBandHtml() {
 
 function breadcrumbsFromPath(outputPath) {
   const normalized = outputPath.replace(/\\/g, '/');
-  if (normalized.endsWith('/index.html') && !normalized.includes('/index.html/')) {
-    const base = normalized.replace(/index\.html$/, '');
-    if (!base.endsWith('_site/') && base.split('/').pop() === '') return '';
-  }
   if (normalized.endsWith('_site/index.html')) return '';
 
   let rel = normalized.replace(/^.*_site\//, '').replace(/\/index\.html$/, '/').replace(/\.html$/, '');
@@ -126,7 +205,6 @@ function breadcrumbsFromPath(outputPath) {
 
   for (let i = 0; i < parts.length; i += 1) {
     const part = parts[i];
-    hrefAcc += i === parts.length - 1 && !part.includes('.') ? `${part}/` : `${part}${part.endsWith('.html') ? '' : '.html'}`;
     if (!part.endsWith('.html') && i === parts.length - 1) {
       hrefAcc = `/${parts.join('/')}/`;
     } else if (part.endsWith('.html') || i === parts.length - 1) {
@@ -187,7 +265,7 @@ function enhanceProjectCards($, section) {
       : '';
 
     cards.push(
-      `<a class="card card--media" href="${href}"><figure class="card__media"><img src="${src}" alt="${alt}" loading="lazy" decoding="async">${captionHtml}</figure><div class="card__body"><span class="card__title">${title}</span><span class="card__text">${text}</span><span class="card__link">Read more ${chevronSvg()}</span></div></a>`,
+      `<a class="card card--media" href="${href}">${cardChevronCorner()}<figure class="card__media"><img src="${src}" alt="${alt}" loading="lazy" decoding="async">${captionHtml}</figure><div class="card__body"><span class="card__title">${title}</span><span class="card__text">${text}</span><span class="card__link">Read more ${chevronSvg()}</span></div></a>`,
     );
     $el.remove();
     $layout.remove();
@@ -213,6 +291,14 @@ function enhanceDl($) {
       $dl.addClass('fact-list');
     }
   });
+}
+
+function homeSplitPhotosAside() {
+  const figures = HOME_SPLIT_PHOTOS.map((p) => {
+    const cap = p.caption ? `<figcaption>${p.caption}</figcaption>` : '';
+    return `<figure><img src="${p.src}" alt="${p.alt}" width="${p.width}" height="${p.height}" loading="lazy" decoding="async">${cap}</figure>`;
+  }).join('');
+  return `<aside class="split__aside"><div class="split__photos">${figures}</div></aside>`;
 }
 
 function factPanelHtml() {
@@ -248,7 +334,7 @@ function enhanceSplitSections($, outputPath) {
   if (rel === 'index.html') {
     $('section.section h2.section-title').each((_, h2) => {
       if (!$(h2).text().includes('What we do that others do not')) return;
-      wrapSplit($(h2).closest('.container.prose'), factPanelHtml());
+      wrapSplit($(h2).closest('.container.prose'), homeSplitPhotosAside());
     });
     return;
   }
@@ -270,16 +356,45 @@ function enhanceSplitSections($, outputPath) {
   }
 }
 
-function enhancePageHeroImage($) {
+function enhanceHero($, outputPath) {
+  const rel = (outputPath || '').replace(/\\/g, '/').replace(/^.*_site\//, '');
+  $('.hero').each((_, hero) => {
+    const $hero = $(hero);
+    const $img = $hero.children('img').first();
+    if (rel === 'index.html' && $img.length) {
+      $img.attr({
+        src: '/assets/img/projects/control-room-power-plant-videowall-hero.jpg',
+        alt: 'Power plant control room with overview video wall',
+        width: '2400',
+        height: '1000',
+      });
+    }
+    const $container = $hero.children('.container').first();
+    if (!$container.length) return;
+    if ($container.find('.hero__content').length) return;
+    const inner = $container.html();
+    $container.removeClass('prose').html(`<div class="hero__content prose">${inner}</div>`);
+  });
+}
+
+function enhancePageHeroImage($, outputPath) {
+  const rel = (outputPath || '').replace(/\\/g, '/').replace(/^.*_site\//, '');
+  if (rel === 'contact.html') return;
+
   $('.page-hero').each((_, hero) => {
     const $hero = $(hero);
-    if ($hero.children('img').length) return;
-    const $img = $hero.nextAll('section.section').find('figure img').first();
-    if (!$img.length) return;
-    const src = $img.attr('src') || '';
+    if ($hero.children('img.hero-texture').length || $hero.children('img').length) return;
+
+    const mapped = PAGE_HERO_IMAGES[rel];
+    let src = mapped;
+    if (!src) {
+      const $img = $hero.nextAll('section.section').find('figure img').first();
+      if ($img.length) src = $img.attr('src');
+    }
     if (!src) return;
+
     $hero.prepend(
-      `<img src="${src}" alt="" aria-hidden="true" width="2400" height="800" decoding="async">`,
+      `<img class="hero-texture" src="${src}" alt="" aria-hidden="true" width="2400" height="800" decoding="async">`,
     );
   });
 }
@@ -309,17 +424,20 @@ module.exports = function enhanceHtml(content, outputPath) {
   if (outputPath.includes('examen/')) return content;
 
   const $ = cheerio.load(content, { decodeEntities: false });
+  const relPath = outputPath.replace(/\\/g, '/');
+
+  enhanceHero($, relPath);
 
   $('ul.link-index').each((_, ul) => enhanceLinkIndex($, ul));
 
-  if (outputPath.replace(/\\/g, '/').endsWith('_site/index.html')) {
+  if (relPath.endsWith('_site/index.html')) {
     const $hero = $('.hero').first();
     if ($hero.length && !$hero.next('.stat-band').length) {
       $hero.after(statBandHtml());
     }
   }
 
-  const crumbs = breadcrumbsFromPath(outputPath.replace(/\\/g, '/'));
+  const crumbs = breadcrumbsFromPath(relPath);
   $('.page-hero').each((_, hero) => {
     const $hero = $(hero);
     if (crumbs && !$hero.find('.breadcrumbs').length) {
@@ -331,9 +449,9 @@ module.exports = function enhanceHtml(content, outputPath) {
 
   enhanceButtons($);
   enhanceDl($);
-  enhanceSplitSections($, outputPath.replace(/\\/g, '/'));
-  enhancePageHeroImage($);
-  enhanceContact($, outputPath.replace(/\\/g, '/'));
+  enhanceSplitSections($, relPath);
+  enhancePageHeroImage($, relPath);
+  enhanceContact($, relPath);
 
   return $.html();
 };

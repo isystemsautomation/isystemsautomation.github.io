@@ -30,7 +30,7 @@
   <link rel="icon" href="/assets/img/favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/isa.css?v=20260902a">
+  <link rel="stylesheet" href="/assets/css/isa.css?v={{ cssVersion }}">
   {% if jsonLd %}<script type="application/ld+json">{{ jsonLd | safe }}</script>{% endif %}
 </head>
 <body>
@@ -49,6 +49,19 @@
       }
       onScroll();
       window.addEventListener('scroll', onScroll, { passive: true });
+
+      var closeTimer;
+      header.querySelectorAll('.nav__item--has-children').forEach(function (item) {
+        item.addEventListener('mouseenter', function () {
+          clearTimeout(closeTimer);
+          item.classList.add('is-open');
+        });
+        item.addEventListener('mouseleave', function () {
+          closeTimer = setTimeout(function () {
+            item.classList.remove('is-open');
+          }, 200);
+        });
+      });
     })();
   </script>
 </body>
