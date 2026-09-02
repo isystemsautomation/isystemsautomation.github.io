@@ -306,14 +306,29 @@ main .card, main .card:hover, .card *, .card:hover * { text-decoration: none; }
 
 .split__aside { min-width: 0; }
 
+.split__aside-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-gap);
+  position: sticky;
+  top: 96px;
+}
+
+.split__aside .panel--aside {
+  padding: var(--s5);
+  margin: 0;
+}
+
+.split__aside .panel--aside .fact-list > div {
+  padding-block: var(--s3);
+}
+
 .split__aside figure { margin: 0; }
 
 .split__photos {
   display: flex;
   flex-direction: column;
   gap: var(--space-gap);
-  position: sticky;
-  top: 96px;
 }
 
 .split__photos figure img {
@@ -332,8 +347,9 @@ main .card, main .card:hover, .card *, .card:hover * { text-decoration: none; }
 }
 
 @media (max-width: 767px) {
+  .split__aside-stack { position: static; }
+
   .split__photos {
-    position: static;
     flex-direction: row;
     flex-wrap: wrap;
   }

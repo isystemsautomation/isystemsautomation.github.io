@@ -65,6 +65,12 @@ const INDUSTRY_MEDIA = {
     width: 1216,
     height: 811,
   },
+  '/industries/bulk-material-handling.html': {
+    src: '/assets/img/2024/08/10/cement_and_coal.jpg',
+    alt: 'Bulk material handling and weigh batching plant',
+    width: 635,
+    height: 505,
+  },
 };
 
 const HOME_SPLIT_PHOTOS = [
@@ -141,13 +147,8 @@ function iconHtmlForHref(href) {
 
 function industryMediaHtml(href) {
   const data = INDUSTRY_MEDIA[href];
-  if (data) {
-    return `<figure class="card__media"><img src="${data.src}" alt="${data.alt}" width="${data.width}" height="${data.height}" loading="lazy" decoding="async"></figure>`;
-  }
-  if (href === '/industries/bulk-material-handling.html') {
-    return `<div class="card__media card__media--placeholder" aria-hidden="true">${iconSvg('truck-loading', 48)}</div>`;
-  }
-  return '';
+  if (!data) return '';
+  return `<figure class="card__media"><img src="${data.src}" alt="${data.alt}" width="${data.width}" height="${data.height}" loading="lazy" decoding="async"></figure>`;
 }
 
 function isIndustriesGrid($ul) {
@@ -294,11 +295,15 @@ function enhanceDl($) {
 }
 
 function homeSplitPhotosAside() {
+  const rows = HOME_STATS.map(
+    ([dt, dd]) => `<div><dt>${dt}</dt><dd>${dd}</dd></div>`,
+  ).join('');
+  const panel = `<div class="panel panel--aside"><dl class="fact-list">${rows}</dl></div>`;
   const figures = HOME_SPLIT_PHOTOS.map((p) => {
     const cap = p.caption ? `<figcaption>${p.caption}</figcaption>` : '';
     return `<figure><img src="${p.src}" alt="${p.alt}" width="${p.width}" height="${p.height}" loading="lazy" decoding="async">${cap}</figure>`;
   }).join('');
-  return `<aside class="split__aside"><div class="split__photos">${figures}</div></aside>`;
+  return `<aside class="split__aside"><div class="split__aside-stack">${panel}<div class="split__photos">${figures}</div></div></aside>`;
 }
 
 function factPanelHtml() {
