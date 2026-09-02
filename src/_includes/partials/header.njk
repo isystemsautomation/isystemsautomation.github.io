@@ -1,23 +1,28 @@
 {% from "partials/nav.njk" import navList %}
-<header class="site-header">
-  <div class="container">
+{% from "macros/icon.njk" import tabler %}
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
     <a class="logo" href="/index.html">
-      <img src="/assets/img/isystems-automation-logo.png" alt="ISYSTEMS AUTOMATION" width="180" height="40">
+      <img src="/assets/img/isystems-automation-logo.svg" alt="ISYSTEMS AUTOMATION" width="283" height="194" class="logo__img">
     </a>
 
-    <nav class="nav" aria-label="Main">
+    <nav class="nav nav--desktop" aria-label="Main">
       {{ navList(nav, pageUrl or url, false) }}
     </nav>
 
-    <details class="nav-toggle">
-      <summary aria-label="Menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
-        </svg>
-      </summary>
-      <nav class="nav-panel" aria-label="Main">
-        {{ navList(nav, pageUrl or url, true) }}
-      </nav>
-    </details>
+    <div class="site-header__actions">
+      <a class="btn btn--outline btn--header" href="/contact.html">Contact</a>
+      <details class="nav-toggle">
+        <summary aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+        </summary>
+        <nav class="nav-panel" aria-label="Main">
+          {{ navList(nav, pageUrl or url, true) }}
+          <a class="btn btn--outline btn--header nav-panel__contact" href="/contact.html">Contact</a>
+        </nav>
+      </details>
+    </div>
   </div>
 </header>

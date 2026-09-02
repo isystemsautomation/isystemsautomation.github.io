@@ -1,14 +1,13 @@
 {% macro navList(items, currentUrl, mobile=false) %}
-<ul>
+<ul class="nav__list{% if mobile %} nav__list--mobile{% endif %}">
   {% for item in items %}
-    {% set isCurrent = (item.url == currentUrl) %}
+    {% set isCurrent = (item.url == currentUrl) or (item.children and item.children | selectattr('url', 'equalto', currentUrl) | list | length > 0) %}
     {% if item.children %}
       {% if mobile %}
-        <li>
+        <li class="nav__item nav__item--has-children">
           <details>
             <summary>{{ item.label }}</summary>
             <ul>
-              <li><a href="{{ item.url }}"{% if isCurrent %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
               {% for child in item.children %}
                 <li><a href="{{ child.url }}"{% if child.url == currentUrl %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
               {% endfor %}
@@ -16,17 +15,21 @@
           </details>
         </li>
       {% else %}
-        <li>
-          <a href="{{ item.url }}"{% if isCurrent %} aria-current="page"{% endif %}>{{ item.label }}</a>
-          <ul>
-            {% for child in item.children %}
-              <li><a href="{{ child.url }}"{% if child.url == currentUrl %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
-            {% endfor %}
-          </ul>
+        <li class="nav__item nav__item--has-children">
+          <a href="{{ item.url }}" class="nav__link"{% if isCurrent %} aria-current="page"{% endif %} aria-haspopup="true">{{ item.label }}</a>
+          <div class="nav__dropdown" role="menu">
+            <ul class="nav__dropdown-grid">
+              {% for child in item.children %}
+                <li><a href="{{ child.url }}" role="menuitem"{% if child.url == currentUrl %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
         </li>
       {% endif %}
     {% else %}
-      <li><a href="{{ item.url }}"{% if isCurrent %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+      <li class="nav__item">
+        <a href="{{ item.url }}" class="nav__link"{% if isCurrent %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      </li>
     {% endif %}
   {% endfor %}
 </ul>

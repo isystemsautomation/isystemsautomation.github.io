@@ -1,9 +1,5 @@
 [
   {
-    "label": "Home",
-    "url": "/index.html"
-  },
-  {
     "label": "Industries",
     "url": "/industries.html",
     "children": [
@@ -14,7 +10,7 @@
     ]
   },
   {
-    "label": "Service",
+    "label": "Services",
     "url": "/service.html",
     "children": [
       { "label": "Process Automation", "url": "/service/process-automation.html" },
@@ -51,22 +47,18 @@
   },
   {
     "label": "References",
-    "url": "/references.html"
+    "url": "/references.html",
+    "children": [
+      { "label": "References", "url": "/references.html" },
+      { "label": "Projects", "url": "/projects/index.html" }
+    ]
   },
   {
     "label": "HomeMaster",
     "url": "/homemaster/"
   },
   {
-    "label": "Projects",
-    "url": "/projects/index.html"
-  },
-  {
     "label": "Company",
     "url": "/company.html"
-  },
-  {
-    "label": "Contact",
-    "url": "/contact.html"
   }
 ]
