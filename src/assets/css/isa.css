@@ -559,7 +559,7 @@ main .card, main .card:hover, .card *, .card:hover * { text-decoration: none; }
     overflow-y: auto;
     background: var(--c-navy-900);
     box-shadow: -8px 0 32px rgba(0, 0, 0, .35);
-    padding: var(--s5);
+    padding: 8px var(--s5) var(--s5);
   }
 
   .nav-panel .nav__list, .nav-panel ul {
@@ -579,22 +579,46 @@ main .card, main .card:hover, .card *, .card:hover * { text-decoration: none; }
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, .14);
     box-shadow: none;
+    padding-left: 24px;
+    padding-right: 16px;
   }
 
-  .nav-panel ul ul a { font-weight: 400; padding-left: var(--s4); }
+  .nav-panel ul ul a { font-weight: 400; padding-left: 24px; }
 
   .nav-panel summary, .nav-panel details > summary {
     min-height: 48px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: var(--s3);
     cursor: pointer;
     color: var(--c-white);
     font-weight: 500;
     border-bottom: 1px solid rgba(255, 255, 255, .14);
     list-style: none;
+    padding-left: 24px;
+    padding-right: 16px;
   }
 
+  .nav-panel summary .nav__chevron {
+    flex-shrink: 0;
+    transition: transform .2s var(--ease);
+  }
+
+  .nav-panel details[open] > summary .nav__chevron { transform: rotate(180deg); }
+
   .nav-panel details > summary::-webkit-details-marker { display: none; }
+
+  .nav-panel .btn--outline {
+    color: #fff;
+    border-color: rgba(255, 255, 255, .6);
+  }
+
+  .nav-panel .btn--outline:hover {
+    background: #fff;
+    color: var(--c-navy-900);
+    border-color: #fff;
+  }
 
   .nav-panel__contact { margin-top: var(--s5); width: 100%; }
 }
@@ -898,6 +922,22 @@ a.btn--quiet { color: var(--c-blue-600); }
   margin: 0;
   padding: 0;
   max-width: none;
+  align-items: stretch;
+}
+
+.card-grid--projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-gap);
+  margin-top: var(--s5);
+}
+
+@media (max-width: 1023px) {
+  .card-grid--projects { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .card-grid--projects { grid-template-columns: 1fr; }
 }
 
 .card-grid--4 {
@@ -916,9 +956,19 @@ a.btn--quiet { color: var(--c-blue-600); }
   margin: 0;
   padding: 0;
   display: flex;
+  min-width: 0;
 }
 
-.card-grid > li > .card { flex: 1; }
+.card-grid > li > .card {
+  flex: 1 1 auto;
+  height: auto;
+  min-height: 0;
+}
+
+.card-grid--projects > .card {
+  height: 100%;
+  min-height: 0;
+}
 
 .card {
   display: flex;
@@ -929,11 +979,15 @@ a.btn--quiet { color: var(--c-blue-600); }
   border: 1px solid var(--c-line);
   border-radius: var(--radius);
   padding: var(--s6);
-  min-height: 220px;
+  min-height: 0;
   text-decoration: none;
   color: inherit;
   transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
 }
+
+.card, .card * { font-weight: 400; }
+
+.card__title, .card h3 { font-weight: 600; }
 
 .card__chevron {
   position: absolute;
@@ -948,8 +1002,8 @@ a.btn--quiet { color: var(--c-blue-600); }
 
 .card__icon-img {
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
 }
 
@@ -968,14 +1022,14 @@ a.btn--quiet { color: var(--c-blue-600); }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   background: var(--c-blue-050);
   color: var(--c-blue-600);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
-.card__icon .icon { width: 22px; height: 22px; }
+.card__icon .icon { width: 32px; height: 32px; }
 
 .card__title {
   font-size: var(--fs-h3);
@@ -1024,7 +1078,12 @@ a.btn--quiet { color: var(--c-blue-600); }
 
 .card--media .card__body { padding: var(--s5); }
 
-.card--media .card__media { margin: 0; }
+.card--media .card__media,
+.card--media figure {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+}
 
 .card--media .card__media img {
   width: 100%;
@@ -1053,10 +1112,9 @@ a.btn--quiet { color: var(--c-blue-600); }
 }
 
 .card__caption {
-  padding: var(--s2) var(--s5);
-  font-size: var(--fs-caption);
+  font-size: 13px;
   color: var(--c-ink-500);
-  border-top: 1px solid var(--c-line);
+  margin: 0;
 }
 
 .card:not(.card--media):not(.card--inline) > img {
@@ -1413,7 +1471,7 @@ figcaption {
 
 .link-index li:last-child { margin-bottom: 0; }
 
-.link-index a {
+.link-index:not(.card-grid) a {
   font-weight: 600;
   color: var(--c-blue-600);
   text-decoration: none;

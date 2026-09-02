@@ -1,4 +1,5 @@
 {% macro navList(items, currentUrl, mobile=false) %}
+{% from "macros/icon.njk" import tabler %}
 <ul class="nav__list{% if mobile %} nav__list--mobile{% endif %}">
   {% for item in items %}
     {% set isCurrent = item | navCurrent(currentUrl) %}
@@ -6,7 +7,7 @@
       {% if mobile %}
         <li class="nav__item nav__item--has-children">
           <details>
-            <summary>{{ item.label }}</summary>
+            <summary>{{ item.label }}{{ tabler('chevron-down', 20, 'nav__chevron') }}</summary>
             <ul>
               {% for child in item.children %}
                 <li><a href="{{ child.url }}"{% if child.url | navUrlMatch(currentUrl) %} aria-current="page"{% endif %}>{{ child.label }}</a></li>

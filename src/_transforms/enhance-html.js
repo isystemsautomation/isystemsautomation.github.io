@@ -26,7 +26,29 @@ const TABLER = {
   'layout-dashboard':
     '<path d="M4 4h6v8h-6z"/><path d="M14 4h6v4h-6z"/><path d="M14 12h6v8h-6z"/><path d="M4 16h6v4h-6z"/>',
   'chevron-right': '<path d="M9 6l6 6l-6 6"/>',
+  'chevron-down': '<path d="M6 9l6 6l6 -6"/>',
 };
+
+const SERVICE_ICON_DIR = path.join(__dirname, '../assets/img/icons');
+const serviceIconCache = {};
+
+function serviceIconInner(name) {
+  if (Object.prototype.hasOwnProperty.call(serviceIconCache, name)) {
+    return serviceIconCache[name];
+  }
+  const filePath = path.join(SERVICE_ICON_DIR, `${name}.svg`);
+  if (!fs.existsSync(filePath)) {
+    serviceIconCache[name] = null;
+    return null;
+  }
+  const svg = fs.readFileSync(filePath, 'utf8');
+  const inner = svg
+    .replace(/^[\s\S]*?<svg[^>]*>/i, '')
+    .replace(/<\/svg>\s*$/i, '')
+    .trim();
+  serviceIconCache[name] = inner;
+  return inner;
+}
 
 const HOME_STATS = [
   ['Since 2007', 'Company founded in Ploiești, Romania'],
@@ -122,10 +144,15 @@ const BREADCRUMB_LABELS = {
   'acceptance-testing': 'Acceptance Testing',
 };
 
-function iconSvg(name, size = 22) {
-  const paths = TABLER[name];
+function iconSvg(name, size = 32) {
+  let paths = TABLER[name];
+  let strokeWidth = '1.5';
+  if (!paths) {
+    paths = serviceIconInner(name);
+    strokeWidth = '1.75';
+  }
   if (!paths) return '';
-  return `<svg class="icon" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+  return `<svg class="icon" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
 }
 
 function chevronSvg() {
@@ -262,11 +289,11 @@ function enhanceProjectCards($, section) {
     const caption = $layout.find('figcaption').text().trim();
     const text = $layout.find('.section-promo__text p').first().text().trim();
     const captionHtml = caption
-      ? `<figcaption class="card__caption">${caption}</figcaption>`
+      ? `<span class="card__caption">${caption}</span>`
       : '';
 
     cards.push(
-      `<a class="card card--media" href="${href}">${cardChevronCorner()}<figure class="card__media"><img src="${src}" alt="${alt}" loading="lazy" decoding="async">${captionHtml}</figure><div class="card__body"><span class="card__title">${title}</span><span class="card__text">${text}</span><span class="card__link">Read more ${chevronSvg()}</span></div></a>`,
+      `<a class="card card--media" href="${href}">${cardChevronCorner()}<figure class="card__media"><img src="${src}" alt="${alt}" loading="lazy" decoding="async"></figure><div class="card__body"><span class="card__title">${title}</span>${captionHtml}<span class="card__text">${text}</span><span class="card__link">Read more ${chevronSvg()}</span></div></a>`,
     );
     $el.remove();
     $layout.remove();
@@ -404,6 +431,26 @@ function enhancePageHeroImage($, outputPath) {
   });
 }
 
+function enhanceHomeMasterTeaser($, outputPath) {
+  const rel = (outputPath || '').replace(/\\/g, '/').replace(/^.*_site\//, '');
+  if (rel !== 'index.html') return;
+
+  $('section.section--tint').each((_, section) => {
+    const $section = $(section);
+    const $p = $section.find('> .container.prose > p').first();
+    if (!$p.length || !$p.text().includes('See the full project list')) return;
+    if ($section.find('.split').length) return;
+
+    const $container = $section.find('> .container.prose').first();
+    const inner = $container.html();
+    const aside =
+      '<aside class="split__aside"><figure><img src="/assets/img/homemaster/din-rail-modules-plate.jpg" alt="HomeMaster DIN-rail modules on a mounting plate" width="1600" height="1200" loading="lazy" decoding="async"></figure></aside>';
+    $container
+      .removeClass('prose')
+      .html(`<div class="split"><div class="split__main prose">${inner}</div>${aside}</div>`);
+  });
+}
+
 function enhanceContact($, outputPath) {
   if (!outputPath || !outputPath.endsWith('contact.html')) return;
   const $container = $('.page-hero')
@@ -455,6 +502,7 @@ module.exports = function enhanceHtml(content, outputPath) {
   enhanceButtons($);
   enhanceDl($);
   enhanceSplitSections($, relPath);
+  enhanceHomeMasterTeaser($, relPath);
   enhancePageHeroImage($, relPath);
   enhanceContact($, relPath);
 
