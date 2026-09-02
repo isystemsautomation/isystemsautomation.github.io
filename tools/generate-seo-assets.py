@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import subprocess
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -104,7 +105,29 @@ def make_icons() -> None:
     square_icon(180).save(STATIC / "apple-touch-icon.png", "PNG", optimize=True)
     square_icon(192).save(ICONS / "icon-192.png", "PNG", optimize=True)
     square_icon(512).save(ICONS / "icon-512.png", "PNG", optimize=True)
-    (IMG / "favicon.ico").copy(STATIC / "favicon.ico")
+
+    pad = 0.12
+    ico_sizes = [16, 32, 48]
+    tmp_icons = []
+    for size in ico_sizes:
+        tmp = STATIC / f".favicon-{size}.png"
+        side = int(size * (1 - pad * 2))
+        ratio = min(side / logo.width, side / logo.height)
+        lw, lh = round(logo.width * ratio), round(logo.height * ratio)
+        resized = logo.resize((lw, lh), Image.Resampling.LANCZOS)
+        canvas = Image.new("RGBA", (size, size), BRAND_900 + (255,))
+        canvas.paste(resized, ((size - lw) // 2, (size - lh) // 2), resized)
+        canvas.convert("RGB").save(tmp, "PNG", optimize=True)
+        tmp_icons.append(tmp)
+
+    favicon_path = STATIC / "favicon.ico"
+    subprocess.run(
+        ["magick", *[str(p) for p in tmp_icons], str(favicon_path)],
+        check=True,
+    )
+    for tmp in tmp_icons:
+        tmp.unlink(missing_ok=True)
+    favicon_path.copy(IMG / "favicon.ico")
     print("icons + favicon.ico at site root")
 
 
