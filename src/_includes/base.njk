@@ -30,7 +30,7 @@
   <link rel="icon" href="/assets/img/favicon.ico" type="image/vnd.microsoft.icon">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="/assets/css/isa.css?v=20260901d">
+  <link rel="stylesheet" href="/assets/css/isa.css?v=20260902a">
   {% if jsonLd %}<script type="application/ld+json">{{ jsonLd | safe }}</script>{% endif %}
 </head>
 <body>
@@ -40,5 +40,16 @@
     {{ content | safe }}
   </main>
   {% include "partials/footer.njk" %}
+  <script>
+    (function () {
+      var header = document.getElementById('site-header');
+      if (!header) return;
+      function onScroll() {
+        header.classList.toggle('is-scrolled', window.scrollY > 8);
+      }
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+  </script>
 </body>
 </html>

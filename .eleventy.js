@@ -1,4 +1,7 @@
 module.exports = function (eleventyConfig) {
+  const enhanceHtml = require('./src/_transforms/enhance-html.js');
+
+  eleventyConfig.addTransform('enhance-html', enhanceHtml);
   eleventyConfig.addPassthroughCopy({
     "static/CNAME": "CNAME",
     "static/robots.txt": "robots.txt",
