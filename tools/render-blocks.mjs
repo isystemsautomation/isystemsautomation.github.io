@@ -80,12 +80,12 @@ function loadServiceBlurbs() {
 function hrefFromServiceTitle(title) {
   const map = {
     'Process Automation': '/service/process-automation.html',
-    'Process optimisation / Advanced process control':
+    'Process optimisation and advanced control':
       '/service/process-optimization-advanced-process-control.html',
     'MES (Manufacturing Execution System)': '/service/manufacturing-execution-system.html',
     'Safety Systems and Burner Management Systems':
       '/service/safety-systems-burner-management-systems.html',
-    'Industrial furniture / Control centers':
+    'Control room design and delivery':
       '/service/industrial-furniture-control-centers.html',
     Maintenance: '/service/maintenance.html',
   };

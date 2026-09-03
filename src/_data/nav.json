@@ -15,7 +15,7 @@
     "children": [
       { "label": "Process Automation", "url": "/service/process-automation.html" },
       {
-        "label": "Process optimisation / Advanced process control",
+        "label": "Process optimisation and advanced control",
         "url": "/service/process-optimization-advanced-process-control.html"
       },
       {
@@ -27,7 +27,7 @@
         "url": "/service/safety-systems-burner-management-systems.html"
       },
       {
-        "label": "Industrial furniture / Control centers",
+        "label": "Control room design and delivery",
         "url": "/service/industrial-furniture-control-centers.html"
       },
       { "label": "Maintenance", "url": "/service/maintenance.html" }

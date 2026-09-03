@@ -474,6 +474,9 @@ function enhanceContact($, outputPath) {
 module.exports = function enhanceHtml(content, outputPath) {
   if (!outputPath || !outputPath.endsWith('.html')) return content;
   if (outputPath.includes('examen/')) return content;
+  if (content.includes('http-equiv="refresh"') && content.includes('name="robots" content="noindex"')) {
+    return content;
+  }
 
   const $ = cheerio.load(content, { decodeEntities: false });
   const relPath = outputPath.replace(/\\/g, '/');
