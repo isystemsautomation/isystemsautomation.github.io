@@ -69,7 +69,7 @@
         },
         {
           "type": "paragraph",
-          "html": "Safety instrumented functions are specified, implemented and verified under the functional safety lifecycle of IEC 61511. ISYSTEMS AUTOMATION has contributed to the certification of SIL 2 and SIL 3 applications, covering:"
+          "html": "Safety instrumented functions are specified, implemented and verified under the functional safety lifecycle of IEC 61511, including factory and site acceptance testing as we describe under <a href=\"/acceptance-testing.html\">acceptance testing</a>. ISYSTEMS AUTOMATION has contributed to the certification of SIL 2 and SIL 3 applications, covering:"
         },
         {
           "type": "list",

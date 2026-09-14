@@ -22,11 +22,11 @@
   {
     "file": "legacy/advanced-controllers-cfb-boiler.html",
     "url": "/projects/advanced-controllers-cfb-boiler.html",
-    "title": "Advanced Controllers for CFB Boilers | ISYSTEMS AUTOMATION",
-    "description": "Advanced load controllers for a 260 t/h CFB boiler on DCS Emerson Ovation: combustion optimisation, emissions control and fuel quality compensation.",
+    "title": "Industrial Boiler Control: 260 t/h CFB on Ovation",
+    "description": "Advanced load and combustion controllers for a 260 t/h CFB boiler on Emerson Ovation DCS: boiler control design, emissions control, fuel quality compensation.",
     "canonical": null,
-    "ogTitle": "Advanced Controllers for CFB Boilers | ISYSTEMS AUTOMATION",
-    "ogDescription": "Advanced load controllers for a 260 t/h CFB boiler on DCS Emerson Ovation: combustion optimisation, emissions control and fuel quality compensation.",
+    "ogTitle": "Industrial Boiler Control: 260 t/h CFB on Ovation",
+    "ogDescription": "Advanced load and combustion controllers for a 260 t/h CFB boiler on Emerson Ovation DCS: boiler control design, emissions control, fuel quality compensation.",
     "ogUrl": "https://www.isystemsautomation.com/projects/advanced-controllers-cfb-boiler.html"
   },
   {
@@ -132,11 +132,11 @@
   {
     "file": "legacy/service/maintenance.html",
     "url": "/service/maintenance.html",
-    "title": "DCS Maintenance & Technical Support | ISYSTEMS AUTOMATION",
-    "description": "Preventive and condition-based maintenance, remote support and PID tuning for ABB 800xA, Emerson Ovation, HIMA, SIEMENS and Yokogawa systems.",
+    "title": "Automation System Maintenance for DCS & SIS | ISYSTEMS",
+    "description": "Maintenance of automation systems in power plants and refineries: preventive and condition-based service, remote support, PID tuning on 800xA, Ovation, HIMA.",
     "canonical": null,
-    "ogTitle": "DCS Maintenance & Technical Support | ISYSTEMS AUTOMATION",
-    "ogDescription": null,
+    "ogTitle": "Automation System Maintenance for DCS & SIS | ISYSTEMS",
+    "ogDescription": "Maintenance of automation systems in power plants and refineries: preventive and condition-based service, remote support, PID tuning on 800xA, Ovation, HIMA.",
     "ogUrl": "https://www.isystemsautomation.com/service/maintenance.html"
   },
   {
@@ -152,31 +152,31 @@
   {
     "file": "legacy/service/process-automation.html",
     "url": "/service/process-automation.html",
-    "title": "Industrial Process Automation Services | ISYSTEMS AUTOMATION",
+    "title": "Process Automation Systems: DCS & ESD Engineering",
     "description": "Process automation from DCS and ESD engineering, I/O databases and design verification through FAT, commissioning, operator training and maintenance.",
     "canonical": null,
-    "ogTitle": "Industrial Process Automation Services | ISYSTEMS AUTOMATION",
+    "ogTitle": "Process Automation Systems: DCS & ESD Engineering",
     "ogDescription": "Process automation from DCS and ESD engineering, I/O databases and design verification through FAT, commissioning, operator training and maintenance.",
     "ogUrl": "https://www.isystemsautomation.com/service/process-automation.html"
   },
   {
     "file": "legacy/service/process-optimization-advanced-process-control.html",
     "url": "/service/process-optimization-advanced-process-control.html",
-    "title": "Advanced Process Control & Optimisation | ISYSTEMS AUTOMATION",
-    "description": "Advanced process control as DCS optimisers for boilers and power plants: load, fuel, combustion, steam temperature, emissions and frequency control.",
+    "title": "Advanced Process Control Systems on DCS | ISYSTEMS",
+    "description": "Advanced process control systems built as DCS optimisers for boilers and power plants: load, fuel, combustion, steam temperature, emissions, frequency control.",
     "canonical": null,
-    "ogTitle": "Advanced Process Control & Optimisation | ISYSTEMS AUTOMATION",
-    "ogDescription": "Advanced process control as DCS optimisers for boilers and power plants: load, fuel, combustion, steam temperature, emissions and frequency control.",
+    "ogTitle": "Advanced Process Control Systems on DCS | ISYSTEMS",
+    "ogDescription": "Advanced process control systems built as DCS optimisers for boilers and power plants: load, fuel, combustion, steam temperature, emissions, frequency control.",
     "ogUrl": "https://www.isystemsautomation.com/service/process-optimization-advanced-process-control.html"
   },
   {
     "file": "legacy/service/safety-systems-burner-management-systems.html",
     "url": "/service/safety-systems-burner-management-systems.html",
-    "title": "Safety Systems, BMS & SIL 2/3 | ISYSTEMS AUTOMATION",
-    "description": "BMS and safety instrumented systems to SIL 2/3 under IEC 61511: SRS, cause-and-effect, FAT, commissioning and proof testing on HIMA, Triconex and AC800.",
+    "title": "Burner Management Systems to IEC 61511 | ISYSTEMS",
+    "description": "Burner management and safety instrumented systems to SIL 2/3 under IEC 61511: SRS, cause-and-effect, FAT, commissioning, proof testing on HIMA, Triconex, AC800.",
     "canonical": null,
-    "ogTitle": "Safety Systems, BMS & SIL 2/3 | ISYSTEMS AUTOMATION",
-    "ogDescription": "BMS and safety instrumented systems to SIL 2/3 under IEC 61511: SRS, cause-and-effect, FAT, commissioning and proof testing on HIMA, Triconex and AC800.",
+    "ogTitle": "Burner Management Systems to IEC 61511 | ISYSTEMS",
+    "ogDescription": "Burner management and safety instrumented systems to SIL 2/3 under IEC 61511: SRS, cause-and-effect, FAT, commissioning, proof testing on HIMA, Triconex, AC800.",
     "ogUrl": "https://www.isystemsautomation.com/service/safety-systems-burner-management-systems.html"
   },
   {
@@ -202,21 +202,21 @@
   {
     "file": "legacy/industries/oil-and-gas.html",
     "url": "/industries/oil-and-gas.html",
-    "title": "Refinery & Gas Plant Automation | ISYSTEMS AUTOMATION",
-    "description": "Refinery and gas plant automation: intrinsically safe instrumentation, BMS and SIS to SIL 2/3, refinery CHP, emissions control and DCS integration.",
+    "title": "Oil and Gas Automation: Refinery & Gas Plant DCS | ISYSTEMS",
+    "description": "Oil and gas automation for refineries and gas plants: intrinsically safe instrumentation, BMS and SIS to SIL 2/3, refinery CHP, emissions control and DCS.",
     "canonical": null,
-    "ogTitle": "Refinery & Gas Plant Automation | ISYSTEMS AUTOMATION",
-    "ogDescription": "Refinery and gas plant automation: intrinsically safe instrumentation, BMS and SIS to SIL 2/3, refinery CHP, emissions control and DCS integration.",
+    "ogTitle": "Oil and Gas Automation: Refinery & Gas Plant DCS | ISYSTEMS",
+    "ogDescription": "Oil and gas automation for refineries and gas plants: intrinsically safe instrumentation, BMS and SIS to SIL 2/3, refinery CHP, emissions control and DCS.",
     "ogUrl": "https://www.isystemsautomation.com/industries/oil-and-gas.html"
   },
   {
     "file": "legacy/industries/power-generation.html",
     "url": "/industries/power-generation.html",
-    "title": "Power Plant Automation & Control Systems | ISYSTEMS AUTOMATION",
-    "description": "Power plant automation for steam, gas and hydro turbines, boilers and HRSG: DCS engineering, commissioning, grid code control and acceptance testing.",
+    "title": "Power Plant Automation Integrator, Europe | ISYSTEMS",
+    "description": "Control system integrator for coal, gas and CHP power plants in Europe: DCS engineering, commissioning, island mode, grid code control, acceptance testing.",
     "canonical": null,
-    "ogTitle": "Power Plant Automation & Control Systems | ISYSTEMS AUTOMATION",
-    "ogDescription": "Power plant automation for steam, gas and hydro turbines, boilers and HRSG: DCS engineering, commissioning, grid code control and acceptance testing.",
+    "ogTitle": "Power Plant Automation Integrator, Europe | ISYSTEMS",
+    "ogDescription": "Control system integrator for coal, gas and CHP power plants in Europe: DCS engineering, commissioning, island mode, grid code control, acceptance testing.",
     "ogUrl": "https://www.isystemsautomation.com/industries/power-generation.html"
   },
   {

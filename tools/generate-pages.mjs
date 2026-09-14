@@ -18,6 +18,8 @@ const PROJECT_SLUGS = new Set([
   'virtual-power-plant',
 ]);
 
+const SITEMAP_EXCLUDE_SLUGS = new Set(['404', 'privacy', 'cookies']);
+
 function slugToSrcPath(slug) {
   if (slug === 'homemaster') {
     return path.join(SRC_DIR, 'homemaster', 'index.njk');
@@ -83,6 +85,10 @@ function buildFrontMatter(meta, contentData, slug) {
     `permalink: ${yamlString(permalink)}`,
     `pageUrl: ${yamlString(pagePath)}`,
   ];
+
+  if (SITEMAP_EXCLUDE_SLUGS.has(slug)) {
+    lines.push('eleventyExcludeFromCollections: true');
+  }
 
   if (meta.description) lines.push(`description: ${yamlString(meta.description)}`);
   lines.push(`canonical: ${yamlString(canonical)}`);

@@ -112,7 +112,7 @@ export function stripInlineStyles(html) {
 export function heroTitleFromPageTitle(title) {
   return title
     .replace(/^ISYSTEMS AUTOMATION\s*[—–|-]\s*/i, '')
-    .replace(/\s*[—–|-]\s*ISYSTEMS AUTOMATION\s*$/i, '')
+    .replace(/\s*[—–|-]\s*ISYSTEMS(?: AUTOMATION)?\s*$/i, '')
     .trim();
 }
 
@@ -758,7 +758,7 @@ function renderIndexHome({ title, home, blocks }) {
   html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose">${sectionTitleHeading('Selected projects')}${projectCards}</div></section>`;
   tint = !tint;
 
-  html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose"><p>See the full project list under <a href="/references.html">References</a>. SIL 2 and SIL 3 on HIMA HIQuad, Foxboro Triconex and ABB AC800; DCS on Emerson Ovation; remote dispatch over IEC 60870-5-104. We also manufacture our own DIN-rail automation modules, taken through the applicable EU conformity assessment procedures — see <a href="/homemaster/">HomeMaster</a> and <a href="/compliance.html">Compliance and Testing</a>.</p></div></section>`;
+  html += `<section class="section${tint ? ' section--tint' : ''}"><div class="container prose"><p>See our <a href="/references.html">project references</a>, including a refinery CHP plant where we proved <a href="/island-mode/">island mode</a> operation and implemented live <a href="/plant-performance.html">plant performance and fuel accounting</a>. SIL 2 and SIL 3 on HIMA HIQuad, Foxboro Triconex and ABB AC800; DCS on Emerson Ovation; remote dispatch over IEC 60870-5-104. We also manufacture our own DIN-rail automation modules, taken through the applicable EU conformity assessment procedures — see <a href="/homemaster/">HomeMaster</a> and <a href="/compliance.html">Compliance and Testing</a>.</p></div></section>`;
 
   return html;
 }

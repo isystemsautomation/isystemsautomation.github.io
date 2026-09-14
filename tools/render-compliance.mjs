@@ -168,12 +168,26 @@ function parseBody(lines, options = {}) {
   return out.join('\n');
 }
 
+function inlineMarkdown(text) {
+  const linkPattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let html = '';
+  let last = 0;
+  let match;
+  while ((match = linkPattern.exec(text)) !== null) {
+    html += escapeHtml(text.slice(last, match.index));
+    html += `<a href="${escapeHtml(match[2])}">${escapeHtml(match[1])}</a>`;
+    last = match.index + match[0].length;
+  }
+  html += escapeHtml(text.slice(last));
+  return html;
+}
+
 function paragraphHtmlFromText(text) {
   const runIn = text.match(/^\*\*(.+?)\*\*\s*(.*)$/s);
   if (runIn) {
-    return `<p><strong>${escapeHtml(runIn[1])}</strong> ${escapeHtml(runIn[2])}</p>`;
+    return `<p><strong>${escapeHtml(runIn[1])}</strong> ${inlineMarkdown(runIn[2])}</p>`;
   }
-  return `<p>${escapeHtml(text)}</p>`;
+  return `<p>${inlineMarkdown(text)}</p>`;
 }
 
 function loadSections(markdown) {

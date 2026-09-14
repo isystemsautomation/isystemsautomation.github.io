@@ -151,6 +151,10 @@ The procedure we operate for our own line covers:
 - The distinction that saves work: a vulnerability reported by a researcher
   and not being exploited is not notifiable under Article 14
 
+For DCS and safety systems on operating plants we maintain a separate
+[industrial control system cyber security](/cybersecurity.html) practice
+that complements this manufacturer procedure.
+
 ---
 
 ## What this is not
