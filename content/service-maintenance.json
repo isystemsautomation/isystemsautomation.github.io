@@ -2,6 +2,7 @@
   "slug": "service-maintenance",
   "source": "legacy/service/maintenance.html",
   "url": "/service/maintenance.html",
+  "heroTitle": "Automation System Maintenance for DCS & SIS",
   "blocks": [
     {
       "type": "section",
