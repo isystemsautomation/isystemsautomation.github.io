@@ -28,7 +28,7 @@
   ],
   "service-process-optimization-advanced-process-control": [
     { "url": "/plant-performance.html", "label": "Plant Performance and Fuel Accounting" },
-    { "url": "/projects/advanced-controllers-cfb-boiler.html", "label": "Advanced Controllers for CFB Boilers" },
+    { "url": "/projects/advanced-controllers-cfb-boiler.html", "label": "Industrial Boiler Control: 260 t/h CFB on Ovation" },
     { "url": "/industries/power-generation.html", "label": "Power Generation" }
   ],
   "service-manufacturing-execution-system": [

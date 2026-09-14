@@ -58,3 +58,58 @@ jobs:
           path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  livecheck:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify live deployment markers
+        env:
+          SITE_URL: https://www.isystemsautomation.com
+        run: |
+          set -euo pipefail
+          # path|expected substring — deployment guard only; edit when retitling guarded pages
+          CHECKS=(
+            "/industries/oil-and-gas.html|Oil and Gas Automation"
+            "/industries/power-generation.html|Power Plant Automation Integrator"
+            "/projects/advanced-controllers-cfb-boiler.html|Industrial Boiler Control"
+            "/service/maintenance.html|Automation System Maintenance"
+            "/service/process-optimization-advanced-process-control.html|Advanced Process Control Systems on DCS"
+            "/service/safety-systems-burner-management-systems.html|Burner Management Systems to IEC 61511"
+            "/references.html|<table"
+            "/|Control systems written by process engineers"
+          )
+          MAX_ATTEMPTS=6
+          RETRY_SLEEP=15
+          missing=()
+
+          check_all() {
+            missing=()
+            for entry in "${CHECKS[@]}"; do
+              path="${entry%%|*}"
+              needle="${entry#*|}"
+              url="${SITE_URL}${path}"
+              body="$(curl -fsSL -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' "$url")"
+              if ! grep -qF "$needle" <<< "$body"; then
+                missing+=("$url → missing: $needle")
+              fi
+            done
+            ((${#missing[@]} == 0))
+          }
+
+          for attempt in $(seq 1 "$MAX_ATTEMPTS"); do
+            echo "Live check attempt ${attempt}/${MAX_ATTEMPTS}"
+            if check_all; then
+              echo "All live deployment markers present."
+              exit 0
+            fi
+            if (( attempt < MAX_ATTEMPTS )); then
+              sleep "$RETRY_SLEEP"
+            fi
+          done
+
+          echo "::error::Live site missing expected markers after ${MAX_ATTEMPTS} attempts:"
+          for line in "${missing[@]}"; do
+            echo "::error::$line"
+          done
+          exit 1

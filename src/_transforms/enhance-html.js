@@ -135,7 +135,7 @@ const BREADCRUMB_LABELS = {
   'safety-systems-burner-management-systems': 'Safety Systems and BMS',
   'industrial-furniture-control-centers': 'Industrial furniture',
   maintenance: 'Maintenance',
-  'advanced-controllers-cfb-boiler': 'Advanced Controllers for CFB Boilers',
+  'advanced-controllers-cfb-boiler': 'Industrial Boiler Control: 260 t/h CFB on Ovation',
   'power-plant-performance-calculation': 'Power Plant Performance Calculation',
   'virtual-power-plant': 'Virtual Power Plant',
   'island-mode': 'Island Mode Operation',
