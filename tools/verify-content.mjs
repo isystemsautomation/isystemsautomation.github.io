@@ -33,7 +33,7 @@ const COOKIES_MISSING_OK = new Set([
 ]);
 
 const SEO_TITLE_MAX = 62;
-const SEO_DESC_MAX = 155;
+const SEO_DESC_MAX = 160;
 const SEO_SKIP_URLS = new Set(['/404.html', '/privacy.html', '/cookies.html']);
 
 const RELATED_BLOCK_URLS = [
