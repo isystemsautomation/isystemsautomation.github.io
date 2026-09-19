@@ -17,13 +17,7 @@
     },
     {
       "type": "section",
-      "title": "Industrial automation",
       "blocks": [
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Industrial automation"
-        },
         {
           "type": "paragraph",
           "html": "Since 2007 we have designed, integrated and commissioned automation on power plants, refineries, cement works and control rooms."

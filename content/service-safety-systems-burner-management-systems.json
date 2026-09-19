@@ -17,18 +17,12 @@
     },
     {
       "type": "section",
-      "title": "Burner management systems",
       "blocks": [
         {
           "type": "image",
           "src": "/images/projects/atex-zone2-barriers.jpg",
           "alt": "ATEX Zone 2 intrinsically safe isolating barriers in a control cabinet",
           "href": null
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Burner management systems"
         },
         {
           "type": "paragraph",

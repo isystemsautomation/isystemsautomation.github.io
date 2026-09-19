@@ -16,18 +16,12 @@
     },
     {
       "type": "section",
-      "title": "Control room design",
       "blocks": [
         {
           "type": "image",
           "src": "/images/projects/control-room-power-plant-videowall.jpg",
           "alt": "Power plant control room with overview video wall",
           "href": null
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Control room design"
         },
         {
           "type": "paragraph",

@@ -547,6 +547,70 @@ function checkDanglingHeadings(html, url) {
   return true;
 }
 
+function normalizeHeadingForCompare(text) {
+  return text
+    .replace(/\u00a0/g, ' ')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function h1H2Restates(h1, h2) {
+  const a = normalizeHeadingForCompare(h1);
+  const b = normalizeHeadingForCompare(h2);
+  if (!a || !b) return false;
+  if (a === b) return true;
+  return a.includes(b) || b.includes(a);
+}
+
+function checkH1H2Duplication(html, url) {
+  const $ = cheerio.load(html, { decodeEntities: false });
+  const h1 = $('main h1').first().text().trim();
+  const h2 = $('main h2').not('nav.related h2').first().text().trim();
+  if (!h1 || !h2) {
+    return { ok: true, h1, h2 };
+  }
+  if (h1H2Restates(h1, h2)) {
+    return { ok: false, h1, h2 };
+  }
+  return { ok: true, h1, h2 };
+}
+
+function checkHeadingLevels(html, url) {
+  const $ = cheerio.load(html, { decodeEntities: false });
+  const h1Count = $('main h1').length;
+  if (h1Count === 0) {
+    return { ok: true, skipped: 'redirect or stub (no h1 in main)' };
+  }
+  if (h1Count !== 1) {
+    return { ok: false, reason: `expected 1 h1, got ${h1Count}` };
+  }
+
+  const headings = $('main')
+    .find('h1,h2,h3,h4,h5,h6')
+    .not('nav.related h1, nav.related h2, nav.related h3, nav.related h4, nav.related h5, nav.related h6')
+    .toArray()
+    .map((el) => parseInt(el.tagName.slice(1), 10));
+
+  if (headings.length === 0) {
+    return { ok: false, reason: 'no headings in main' };
+  }
+  if (headings[0] !== 1) {
+    return { ok: false, reason: `first heading is h${headings[0]}, not h1` };
+  }
+
+  for (let i = 1; i < headings.length; i += 1) {
+    if (headings[i] > headings[i - 1] + 1) {
+      return {
+        ok: false,
+        reason: `skipped level h${headings[i - 1]} → h${headings[i]}`,
+      };
+    }
+  }
+  return { ok: true };
+}
+
 function americanSpellingInVisibleText(text) {
   const stripped = text.replace(/\/service\/process-optimization-advanced-process-control\.html/gi, '');
   return (
@@ -622,8 +686,35 @@ if (fs.existsSync(SITE_DIR)) {
     failed = true;
   }
 
+  const allPages = collectSiteHtmlPaths();
+  console.log(`\n--- h1 / first-h2 duplication (${allPages.length} pages) ---`);
+  for (const { url, path: sitePath } of allPages) {
+    const html = fs.readFileSync(sitePath, 'utf8');
+    const dup = checkH1H2Duplication(html, url);
+    if (!dup.ok) {
+      console.error(`${url} FAIL h1/h2 restatement: h1="${dup.h1}" h2="${dup.h2}"`);
+      failed = true;
+    } else {
+      console.log(`OK h1/h2 ${url}`);
+    }
+  }
+
+  console.log(`\n--- Heading structure (${allPages.length} pages) ---`);
+  for (const { url, path: sitePath } of allPages) {
+    const html = fs.readFileSync(sitePath, 'utf8');
+    const levels = checkHeadingLevels(html, url);
+    if (!levels.ok) {
+      console.error(`${url} FAIL ${levels.reason}`);
+      failed = true;
+    } else if (levels.skipped) {
+      console.log(`SKIP headings ${url} (${levels.skipped})`);
+    } else {
+      console.log(`OK headings ${url}`);
+    }
+  }
+
   console.log('\n--- SEO meta ---');
-  for (const { url, path: sitePath } of collectSiteHtmlPaths()) {
+  for (const { url, path: sitePath } of allPages) {
     const html = fs.readFileSync(sitePath, 'utf8');
     if (!checkSeoMeta(html, url)) failed = true;
     if (!checkRelatedBlock(html, url)) failed = true;

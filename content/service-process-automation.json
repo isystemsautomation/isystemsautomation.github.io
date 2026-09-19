@@ -16,18 +16,12 @@
     },
     {
       "type": "section",
-      "title": "Engineering",
       "blocks": [
         {
           "type": "image",
           "src": "/images/2024/08/10/process_automation.jpg",
           "alt": "Process automation control system",
           "href": null
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Engineering"
         },
         {
           "type": "paragraph",
