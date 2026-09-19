@@ -72,21 +72,31 @@ jobs:
           CHECKS=(
             "/industries/oil-and-gas.html|Oil and Gas Automation"
             "/industries/power-generation.html|Power Plant Automation Integrator"
+            "/industries/power-generation.html|href=\"/industries.html\""
             "/projects/advanced-controllers-cfb-boiler.html|Industrial Boiler Control"
             "/service/maintenance.html|Automation System Maintenance"
             "/service/process-optimization-advanced-process-control.html|Advanced Process Control Systems on DCS"
             "/service/safety-systems-burner-management-systems.html|Burner Management Systems to IEC 61511"
             "/references.html|<table"
             "/automatic-boiler-start.html|Automatic boiler start-up and hot standby"
+            "/acceptance-testing.html|hero-texture\" src=\"/assets/img/projects/yokogawa-centum-cabinet.jpg\" alt=\"Yokogawa Centum control cabinet"
             "/hydro-turbine-control.html|Hydro turbine control and protection"
+            "/company.html|hero-texture\" src=\"/assets/img/projects/control-room-power-plant-operators.jpg\""
             "/|Control systems written by process engineers"
+          )
+          FORBIDDEN=(
+            "/company.html|central-control-room-in-use.jpg"
+            "/industries/power-generation.html|href=\"/industries/\""
+            "/service/process-automation.html|href=\"/service/\""
           )
           MAX_ATTEMPTS=6
           RETRY_SLEEP=15
           missing=()
+          forbidden=()
 
           check_all() {
             missing=()
+            forbidden=()
             for entry in "${CHECKS[@]}"; do
               path="${entry%%|*}"
               needle="${entry#*|}"
@@ -96,7 +106,16 @@ jobs:
                 missing+=("$url → missing: $needle")
               fi
             done
-            ((${#missing[@]} == 0))
+            for entry in "${FORBIDDEN[@]}"; do
+              path="${entry%%|*}"
+              needle="${entry#*|}"
+              url="${SITE_URL}${path}"
+              body="$(curl -fsSL -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' "$url")"
+              if grep -qF "$needle" <<< "$body"; then
+                forbidden+=("$url → must not contain: $needle")
+              fi
+            done
+            ((${#missing[@]} == 0 && ${#forbidden[@]} == 0))
           }
 
           for attempt in $(seq 1 "$MAX_ATTEMPTS"); do
@@ -112,6 +131,9 @@ jobs:
 
           echo "::error::Live site missing expected markers after ${MAX_ATTEMPTS} attempts:"
           for line in "${missing[@]}"; do
+            echo "::error::$line"
+          done
+          for line in "${forbidden[@]}"; do
             echo "::error::$line"
           done
           exit 1

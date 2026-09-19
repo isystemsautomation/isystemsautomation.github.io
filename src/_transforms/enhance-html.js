@@ -113,10 +113,10 @@ const INDUSTRY_MEDIA = {
 const HOME_SPLIT_PHOTOS = [
   {
     src: '/assets/img/projects/substation-220kv-scada-redacted.jpg',
-    alt: '',
+    alt: '220 kV substation SCADA single-line diagram with plant identifiers redacted',
     width: 960,
     height: 640,
-    caption: '',
+    caption: '220 kV substation SCADA single-line diagram with plant identifiers redacted',
   },
   {
     src: '/assets/img/projects/ovation-turbine-trend-redacted.jpg',
