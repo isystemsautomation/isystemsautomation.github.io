@@ -5,13 +5,8 @@
   "blocks": [
     {
       "type": "section",
-      "title": "Virtual power plant",
+      "title": "Virtual Power Plant",
       "blocks": [
-        {
-          "type": "heading",
-          "level": 2,
-          "text": "Virtual power plant"
-        },
         {
           "type": "paragraph",
           "html": "Six generating sites and a refinery, dispatched as one."
