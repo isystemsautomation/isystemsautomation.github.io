@@ -577,6 +577,75 @@ function checkH1H2Duplication(html, url) {
   return { ok: true, h1, h2 };
 }
 
+function buildSiteResourceUrls() {
+  const urls = new Set(['/', '/index.html']);
+  function walk(dir, prefix = '') {
+    for (const name of fs.readdirSync(dir)) {
+      const full = path.join(dir, name);
+      const rel = prefix ? `${prefix}/${name}` : name;
+      if (fs.statSync(full).isDirectory()) {
+        walk(full, rel);
+      } else {
+        const url = `/${rel.replace(/\\/g, '/')}`;
+        urls.add(url);
+        if (url.endsWith('/index.html')) {
+          urls.add(url.slice(0, -'index.html'.length));
+        }
+      }
+    }
+  }
+  walk(SITE_DIR);
+  return urls;
+}
+
+function internalHrefResolvable(href, resources) {
+  if (!href || !href.startsWith('/') || href.startsWith('//')) return true;
+  const pathOnly = href.split('#')[0].split('?')[0];
+  if (!pathOnly || pathOnly === '/') return true;
+  if (resources.has(pathOnly)) return true;
+  if (pathOnly.endsWith('/index.html')) {
+    const dir = pathOnly.slice(0, -'index.html'.length);
+    if (resources.has(dir)) return true;
+  }
+  if (!pathOnly.endsWith('/') && !pathOnly.endsWith('.html')) {
+    if (resources.has(`${pathOnly}.html`)) return true;
+    if (resources.has(`${pathOnly}/`)) return true;
+    if (resources.has(`${pathOnly}/index.html`)) return true;
+  }
+  if (pathOnly.endsWith('/')) {
+    if (resources.has(`${pathOnly}index.html`)) return true;
+  }
+  return false;
+}
+
+function checkInternalLinks(html, pageUrl, resources) {
+  const $ = cheerio.load(html, { decodeEntities: false });
+  const broken = [];
+  $('a[href]').each((_, el) => {
+    const href = $(el).attr('href');
+    if (!internalHrefResolvable(href, resources)) {
+      broken.push(href);
+    }
+  });
+  return broken;
+}
+
+function checkImageAlts(html, url) {
+  const $ = cheerio.load(html, { decodeEntities: false });
+  const missing = [];
+  $('img').each((_, el) => {
+    const alt = $(el).attr('alt');
+    if (alt === undefined || alt === '') {
+      missing.push($(el).attr('src') || '(no src)');
+    }
+  });
+  return missing;
+}
+
+function checkWithheldImageReferences(html, url) {
+  return html.includes('central-control-room-in-use.jpg');
+}
+
 function checkHeadingLevels(html, url) {
   const $ = cheerio.load(html, { decodeEntities: false });
   const h1Count = $('main h1').length;
@@ -711,6 +780,49 @@ if (fs.existsSync(SITE_DIR)) {
     } else {
       console.log(`OK headings ${url}`);
     }
+  }
+
+  const resolvableUrls = buildSiteResourceUrls();
+  let imgTotal = 0;
+  let imgMissing = 0;
+  console.log(`\n--- Image alt text (${allPages.length} pages) ---`);
+  for (const { url, path: sitePath } of allPages) {
+    const html = fs.readFileSync(sitePath, 'utf8');
+    const missing = checkImageAlts(html, url);
+    const pageImgCount = (html.match(/<img\b/gi) ?? []).length;
+    imgTotal += pageImgCount;
+    imgMissing += missing.length;
+    if (missing.length) {
+      console.error(`${url} FAIL missing alt on ${missing.length} img: ${missing.join(', ')}`);
+      failed = true;
+    }
+  }
+  console.log(`Image alt summary: ${imgTotal - imgMissing}/${imgTotal} with non-empty alt`);
+
+  console.log(`\n--- Internal links (${allPages.length} pages) ---`);
+  for (const { url, path: sitePath } of allPages) {
+    const html = fs.readFileSync(sitePath, 'utf8');
+    const broken = checkInternalLinks(html, url, resolvableUrls);
+    if (broken.length) {
+      console.error(`${url} FAIL broken internal link(s): ${broken.join(', ')}`);
+      failed = true;
+    } else {
+      console.log(`OK links ${url}`);
+    }
+  }
+
+  console.log('\n--- Withheld photograph ---');
+  let withheldRefs = 0;
+  for (const { url, path: sitePath } of allPages) {
+    const html = fs.readFileSync(sitePath, 'utf8');
+    if (checkWithheldImageReferences(html, url)) {
+      console.error(`${url} FAIL references central-control-room-in-use.jpg`);
+      withheldRefs += 1;
+      failed = true;
+    }
+  }
+  if (!withheldRefs) {
+    console.log('OK central-control-room-in-use.jpg referenced by no page');
   }
 
   console.log('\n--- SEO meta ---');

@@ -61,11 +61,26 @@ const HOME_STATS = [
 ];
 
 const PAGE_HERO_IMAGES = {
-  'industries.html': '/assets/img/projects/control-room-power-plant-operators.jpg',
-  'service.html': '/assets/img/projects/marshalling-cable-marking.jpg',
-  'references.html': '/assets/img/projects/control-room-combined-cycle-wide.jpg',
-  'company.html': '/assets/img/projects/central-control-room-in-use.jpg',
-  'homemaster/index.html': '/assets/img/homemaster/control-panel-wired-hero.jpg',
+  'industries.html': {
+    src: '/assets/img/projects/control-room-power-plant-operators.jpg',
+    alt: 'Power plant control room with operators at the consoles',
+  },
+  'service.html': {
+    src: '/assets/img/projects/marshalling-cable-marking.jpg',
+    alt: 'Marshalling cabinet, every control cable individually tagged',
+  },
+  'references.html': {
+    src: '/assets/img/projects/control-room-combined-cycle-wide.jpg',
+    alt: 'Combined-cycle plant control room',
+  },
+  'company.html': {
+    src: '/assets/img/projects/control-room-power-plant-operators.jpg',
+    alt: 'Power plant control room with operators at the consoles',
+  },
+  'homemaster/index.html': {
+    src: '/assets/img/homemaster/control-panel-wired-hero.jpg',
+    alt: 'Wired HomeMaster control panel with MiniPLC, I/O modules and circuit protection',
+  },
 };
 
 const INDUSTRY_MEDIA = {
@@ -220,32 +235,42 @@ function statBandHtml() {
   return `<div class="stat-band"><div class="container"><div class="stat-band__grid">${cells}</div></div></div>`;
 }
 
+const BREADCRUMB_DIR_INDEX_HREF = {
+  homemaster: '/homemaster/',
+  'island-mode': '/island-mode/',
+  projects: '/projects/',
+  examen: '/examen/',
+};
+
+function breadcrumbHrefForParts(parts, index) {
+  const slug = parts[index];
+  const dirHref = BREADCRUMB_DIR_INDEX_HREF[slug];
+  if (dirHref && (index < parts.length - 1 || parts.length === 1)) {
+    return dirHref;
+  }
+  if (parts.length === 1) {
+    return `/${slug}.html`;
+  }
+  return `/${parts.slice(0, index + 1).join('/')}.html`;
+}
+
 function breadcrumbsFromPath(outputPath) {
   const normalized = outputPath.replace(/\\/g, '/');
   if (normalized.endsWith('_site/index.html')) return '';
 
-  let rel = normalized.replace(/^.*_site\//, '').replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+  let rel = normalized
+    .replace(/^.*_site\//, '')
+    .replace(/\/index\.html$/, '')
+    .replace(/\.html$/, '');
   if (!rel || rel === 'index') return '';
 
   const parts = rel.split('/').filter(Boolean);
   const crumbs = [{ href: '/index.html', label: 'Home' }];
-  let hrefAcc = '';
 
   for (let i = 0; i < parts.length; i += 1) {
-    const part = parts[i];
-    if (!part.endsWith('.html') && i === parts.length - 1) {
-      hrefAcc = `/${parts.join('/')}/`;
-    } else if (part.endsWith('.html') || i === parts.length - 1) {
-      hrefAcc = `/${parts.slice(0, i + 1).join('/')}`.replace(/\/index$/, '/');
-      if (!hrefAcc.endsWith('.html') && !hrefAcc.endsWith('/')) {
-        hrefAcc += '.html';
-      }
-    } else {
-      hrefAcc = `/${parts.slice(0, i + 1).join('/')}/`;
-    }
-    const slug = part.replace(/\.html$/, '');
+    const slug = parts[i];
     crumbs.push({
-      href: hrefAcc.startsWith('/') ? hrefAcc : `/${hrefAcc}`,
+      href: breadcrumbHrefForParts(parts, i),
       label:
         BREADCRUMB_LABELS[slug] ||
         slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
@@ -409,6 +434,25 @@ function enhanceHero($, outputPath) {
   });
 }
 
+function escapeAttr(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;');
+}
+
+function heroAltFromPage($, src) {
+  if (!src) return '';
+  let alt = '';
+  $('main img').each((_, el) => {
+    if (alt) return;
+    if ($(el).attr('src') === src && $(el).attr('alt')) {
+      alt = $(el).attr('alt');
+    }
+  });
+  return alt;
+}
+
 function enhancePageHeroImage($, outputPath) {
   const rel = (outputPath || '').replace(/\\/g, '/').replace(/^.*_site\//, '');
   if (rel === 'contact.html') return;
@@ -418,15 +462,23 @@ function enhancePageHeroImage($, outputPath) {
     if ($hero.children('img.hero-texture').length || $hero.children('img').length) return;
 
     const mapped = PAGE_HERO_IMAGES[rel];
-    let src = mapped;
-    if (!src) {
-      const $img = $hero.nextAll('section.section').find('figure img').first();
-      if ($img.length) src = $img.attr('src');
+    let src = mapped?.src ?? mapped ?? '';
+    let alt = mapped?.alt ?? '';
+
+    const $img = $hero.nextAll('section.section').find('figure img, .figure--embed img').first();
+    if (!src && $img.length) {
+      src = $img.attr('src') || '';
+    }
+    if (!alt && $img.length) {
+      alt = $img.attr('alt') || $img.closest('figure').find('figcaption').text().trim();
+    }
+    if (!alt) {
+      alt = heroAltFromPage($, src);
     }
     if (!src) return;
 
     $hero.prepend(
-      `<img class="hero-texture" src="${src}" alt="" aria-hidden="true" width="2400" height="800" decoding="async">`,
+      `<img class="hero-texture" src="${escapeAttr(src)}" alt="${escapeAttr(alt)}" width="2400" height="800" decoding="async">`,
     );
   });
 }
