@@ -100,7 +100,7 @@ jobs:
             for entry in "${CHECKS[@]}"; do
               path="${entry%%|*}"
               needle="${entry#*|}"
-              url="${SITE_URL}${path}"
+              url="${SITE_URL}${path}?deploy-check=${GITHUB_RUN_ID}-${RANDOM}"
               body="$(curl -fsSL -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' "$url")"
               if ! grep -qF "$needle" <<< "$body"; then
                 missing+=("$url → missing: $needle")
@@ -109,7 +109,7 @@ jobs:
             for entry in "${FORBIDDEN[@]}"; do
               path="${entry%%|*}"
               needle="${entry#*|}"
-              url="${SITE_URL}${path}"
+              url="${SITE_URL}${path}?deploy-check=${GITHUB_RUN_ID}-${RANDOM}"
               body="$(curl -fsSL -H 'Cache-Control: no-cache' -H 'Pragma: no-cache' "$url")"
               if grep -qF "$needle" <<< "$body"; then
                 forbidden+=("$url → must not contain: $needle")
