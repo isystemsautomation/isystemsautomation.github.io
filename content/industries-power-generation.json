@@ -226,6 +226,33 @@
     },
     {
       "type": "section",
+      "title": "Power supply reliability for industrial sites",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Power supply reliability for industrial sites"
+        },
+        {
+          "type": "paragraph",
+          "html": "An industrial site connected to a weak grid loses production to events that are nobody's fault on site. The work of reducing that is part automation and part primary plant."
+        },
+        {
+          "type": "paragraph",
+          "html": "On a refinery CHP plant we have been part of a programme that took electrical supply incidents from twelve a year to two over six years, and incidents caused by operator action from four a year to none. Our part was the control system: islanding detection and transfer, automatic load setpoint computation for each possible island, emergency automation for the steam headers, and automatic start of the standby boiler."
+        },
+        {
+          "type": "paragraph",
+          "html": "The rest — differential protection with single-phase auto-reclosing on the 110 kV lines, breaker replacement, optical ground wire, fast automatic transfer switching on the 6 kV switchgear — is primary plant, and we have worked alongside it rather than on it."
+        },
+        {
+          "type": "paragraph",
+          "html": "See <a href=\"/island-mode/\">Island Mode Operation</a> and <a href=\"/automatic-boiler-start.html\">Automatic Boiler Start-up</a>."
+        }
+      ]
+    },
+    {
+      "type": "section",
       "title": "What We Do",
       "blocks": [
         {

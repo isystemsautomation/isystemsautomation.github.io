@@ -113,7 +113,7 @@
     "file": "legacy/virtual-power-plant.html",
     "url": "/projects/virtual-power-plant.html",
     "title": "Virtual Power Plant | ISYSTEMS AUTOMATION",
-    "description": "Integration of four photovoltaic plants, a wind farm and a conventional gas/coal plant into a single virtual power plant balanced by the steam turbine.",
+    "description": "Six generating sites and a refinery dispatched as one balancing group from the CHP DCS, with the steam turbine regulating against remote PV and micro-hydro.",
     "canonical": null,
     "ogTitle": "Virtual Power Plant | ISYSTEMS AUTOMATION",
     "ogDescription": null,
