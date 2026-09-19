@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: Hydro Turbine Control and Protection | ISYSTEMS
+permalink: /hydro-turbine-control.html
+pageUrl: /hydro-turbine-control.html
+description: "Pelton nozzle and deflector control, governor and oil pressure unit management, protection voting, failure-mode testing, unattended operation over telecontrol."
+canonical: "https://www.isystemsautomation.com/hydro-turbine-control.html"
+ogTitle: Hydro Turbine Control and Protection | ISYSTEMS
+ogDescription: "Pelton nozzle and deflector control, governor and oil pressure unit management, protection voting, failure-mode testing, unattended operation over telecontrol."
+ogUrl: "https://www.isystemsautomation.com/hydro-turbine-control.html"
+ogImage: "https://www.isystemsautomation.com/assets/img/og-default.jpg"
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Hydro turbine control and protection",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISYSTEMS AUTOMATION S.R.L.",
+      "url": "https://www.isystemsautomation.com"
+    },
+    "areaServed": "Europe",
+    "description": "Pelton unit control with nozzle and deflector staging, governor and oil pressure unit management, protection voting design, failure-mode testing and unattended operation over redundant telecontrol."
+  }
+---
+<section class="section section--flush page-hero"><div class="container prose"><h1>Hydro Turbine Control and Protection</h1></div></section><section class="section section--tint"><div class="container prose"><div class="section-promo__layout section-promo__layout--lead"><figure class="figure--embed"><img src="/assets/img/projects/generator-rotor-removal.jpg" alt="Hydro turbine wicket gate assembly" width="960" height="640" loading="lazy" decoding="async"><figcaption>Hydro turbine wicket gate assembly</figcaption></figure><div class="section-promo__text"><h2 class="section-title">Hydro turbine control and protection</h2><p>A hydro unit is a control problem with a water column attached. The governor can only move as fast as the penstock will tolerate, and every decision about speed of response is really a decision about pressure surge.</p>
+<p>We have worked on hydro units with Siemens S7-300, S7-1500 and S7-1200 under TIA Portal, and with Yokogawa Centum VP, on Pelton machines with nozzle and deflector control.</p></div></div></div></section><section class="section"><div class="container prose"><h2 class="section-title">Unit control</h2><p>Nozzle control with staged cut-in — the second nozzle brought in at a defined opening of the first — hydraulic cylinder positioning through the governor block and actuator, oil pressure unit management, and the pre-turbine and bypass valve sequence that equalises pressure before the machine is opened.</p>
+<p>Start-up is not instantaneous and should not pretend to be: the regulating oil system is warmed by heating the drain tank hours in advance and then cycling the hydraulic cylinder through full travel with holds at each end, because a governor working on cold oil is a governor with a different response than the one that was commissioned.</p></div></section><section class="section section--tint"><div class="container prose"><h2 class="section-title">Protection design and voting</h2><p>Protection is a set of decisions about what a single failed sensor should be allowed to do. On the unit above:</p>
+<div class="table-scroll table-scroll--cards"><table class="table table--compact table--ref"><thead><tr><th>Protection</th><th>Setting</th><th>Voting</th></tr></thead><tbody><tr><td data-label="Protection">Overspeed</td><td data-label="Setting">600 rpm</td><td data-label="Voting">2 sensors, 1 out of 2</td></tr><tr><td data-label="Protection">Bearing oil bath temperature</td><td data-label="Setting">65 °C</td><td data-label="Voting">2 sensors, 1 out of 2</td></tr><tr><td data-label="Protection">Generator stator copper temperature</td><td data-label="Setting">95 °C</td><td data-label="Voting">3 sensors, 1 out of 3</td></tr><tr><td data-label="Protection">Generator stator iron temperature</td><td data-label="Setting">95 °C</td><td data-label="Voting">3 sensors, 1 out of 3</td></tr><tr><td data-label="Protection">Oil pressure unit accumulator pressure, low</td><td data-label="Setting">16.3 kgf/cm²</td><td data-label="Voting">single</td></tr><tr><td data-label="Protection">Oil pressure unit accumulator pressure, high</td><td data-label="Setting">29 kgf/cm²</td><td data-label="Voting">single</td></tr><tr><td data-label="Protection">Drain tank oil level, low</td><td data-label="Setting">150 mm below normal</td><td data-label="Voting">single</td></tr><tr><td data-label="Protection">Drain tank oil level, high</td><td data-label="Setting">115 mm above normal</td><td data-label="Voting">single</td></tr><tr><td data-label="Protection">Nozzle cylinder spool position mismatch</td><td data-label="Setting">—</td><td data-label="Voting">comparison</td></tr><tr><td data-label="Protection">Speed sensor mismatch</td><td data-label="Setting">—</td><td data-label="Voting">comparison</td></tr></tbody></table></div>
+<p>Plus generator electrical protection, outgoing 6.3 kV line protection, generator breaker failure, and excitation system failure.</p>
+<p>Two-out-of-three on stator temperature and one-out-of-two on overspeed are not arbitrary. They are a judgement about which way to fail: a spurious trip on a generator winding is cheap, a missed overspeed is not.</p></div></section><section class="section"><div class="container prose"><h2 class="section-title">Failure modes we test for</h2><p>A protection scheme is only as good as the failures it has actually been exercised against. On a unit shutdown condition we test, one at a time:</p>
+<ul>
+<li>failure of the governor block, including loss of its action on the actuator</li>
+<li>failure of the actuator itself</li>
+<li>sharp loss of oil pressure in the oil pressure unit</li>
+<li>loss of the 0.4 kV auxiliary supply downstream of its automatic transfer</li>
+<li>failure of the DC supply unit</li>
+<li>failure of the unit controller or of its I/O subsystem</li>
+</ul>
+<p>Each is applied deliberately, with personnel stationed at the governor stop coil and at the pre-turbine valve to close them by hand if the auxiliary supply goes with it.</p></div></section><section class="section section--tint"><div class="container prose"><h2 class="section-title">Telecontrol and remote operation</h2><p>Unattended hydro plants are operated over telecontrol links, and the link is part of the plant. We test it as such: channels disconnected one at a time, then two at a time in different orders, then three, checking each time that the unit stays stable and that remote monitoring survives. Transfer between primary and backup channels has to be bumpless, and the only way to know it is is to break the primary while the machine is running.</p>
+<p>The harder question is what the plant does when it loses the link to the head node entirely and runs blind until a process setpoint stops it. That behaviour should be a designed decision, not a discovered one.</p></div></section><section class="section"><div class="container prose"><h2 class="section-title">Related</h2><p>Island mode and load rejection are covered under <a href="/island-mode/">Island Mode Operation</a>. Test programmes and acceptance are under <a href="/acceptance-testing.html">Factory and Site Acceptance Testing</a>. Telecontrol redundancy and loss-of-link behaviour are under <a href="/cybersecurity.html">Control System Cyber Security</a>.</p></div></section>

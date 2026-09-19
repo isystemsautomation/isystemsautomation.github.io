@@ -77,6 +77,8 @@ jobs:
             "/service/process-optimization-advanced-process-control.html|Advanced Process Control Systems on DCS"
             "/service/safety-systems-burner-management-systems.html|Burner Management Systems to IEC 61511"
             "/references.html|<table"
+            "/automatic-boiler-start.html|Automatic boiler start-up and hot standby"
+            "/hydro-turbine-control.html|Hydro turbine control and protection"
             "/|Control systems written by process engineers"
           )
           MAX_ATTEMPTS=6

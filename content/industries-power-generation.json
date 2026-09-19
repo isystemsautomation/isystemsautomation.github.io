@@ -59,7 +59,7 @@
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Hydro turbine control:</strong> Turbine and governor control for hydroelectric generation."
+          "html": "- <strong>Hydro turbines:</strong> Pelton units with nozzle and deflector control, governor and oil pressure unit management, protection design and unattended operation over telecontrol links — see <a href=\"/hydro-turbine-control.html\">Hydro Turbine Control</a>."
         },
         {
           "type": "paragraph",
@@ -247,7 +247,7 @@
         },
         {
           "type": "paragraph",
-          "html": "See <a href=\"/island-mode/\">Island Mode Operation</a> and <a href=\"/automatic-boiler-start.html\">Automatic Boiler Start-up</a>."
+          "html": "See <a href=\"/island-mode/\">Island Mode Operation</a>, <a href=\"/automatic-boiler-start.html\">Automatic Boiler Start-up</a> and <a href=\"/hydro-turbine-control.html\">Hydro Turbine Control</a>."
         }
       ]
     },
