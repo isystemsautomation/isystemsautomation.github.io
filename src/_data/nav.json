@@ -3,17 +3,32 @@
     "label": "Industries",
     "url": "/industries.html",
     "children": [
-      { "label": "Power Generation", "url": "/industries/power-generation.html" },
-      { "label": "Oil and Gas", "url": "/industries/oil-and-gas.html" },
-      { "label": "Bulk material handling", "url": "/industries/bulk-material-handling.html" },
-      { "label": "Control Centers", "url": "/industries/control-centers.html" }
+      {
+        "label": "Power Generation",
+        "url": "/industries/power-generation.html"
+      },
+      {
+        "label": "Oil and Gas",
+        "url": "/industries/oil-and-gas.html"
+      },
+      {
+        "label": "Bulk material handling",
+        "url": "/industries/bulk-material-handling.html"
+      },
+      {
+        "label": "Control Centers",
+        "url": "/industries/control-centers.html"
+      }
     ]
   },
   {
     "label": "Services",
     "url": "/service.html",
     "children": [
-      { "label": "Process Automation", "url": "/service/process-automation.html" },
+      {
+        "label": "Process Automation",
+        "url": "/service/process-automation.html"
+      },
       {
         "label": "Process optimisation and advanced control",
         "url": "/service/process-optimization-advanced-process-control.html"
@@ -30,29 +45,70 @@
         "label": "Control room design and delivery",
         "url": "/service/industrial-furniture-control-centers.html"
       },
-      { "label": "Maintenance", "url": "/service/maintenance.html" }
+      {
+        "label": "Maintenance",
+        "url": "/service/maintenance.html"
+      }
     ]
   },
   {
     "label": "Expertise",
     "url": "/island-mode/",
     "children": [
-      { "label": "Island Mode Operation", "url": "/island-mode/" },
-      { "label": "Automatic Boiler Start-up", "url": "/automatic-boiler-start.html" },
-      { "label": "Hydro Turbine Control", "url": "/hydro-turbine-control.html" },
-      { "label": "Plant Performance", "url": "/plant-performance.html" },
-      { "label": "Combined Cycle Power Plants", "url": "/combined-cycle-power-plants.html" },
-      { "label": "Acceptance Testing", "url": "/acceptance-testing.html" },
-      { "label": "Compliance", "url": "/compliance.html" },
-      { "label": "Cyber Security", "url": "/cybersecurity.html" }
+      {
+        "label": "Island Mode Operation",
+        "url": "/island-mode/"
+      },
+      {
+        "label": "Automatic Boiler Start-up",
+        "url": "/automatic-boiler-start.html"
+      },
+      {
+        "label": "Hydro Turbine Control",
+        "url": "/hydro-turbine-control.html"
+      },
+      {
+        "label": "Hydro Vibration Monitoring",
+        "url": "/hydro-vibration-monitoring.html"
+      },
+      {
+        "label": "Remote Hydro Operations",
+        "url": "/hydro-remote-operations.html"
+      },
+      {
+        "label": "Plant Performance",
+        "url": "/plant-performance.html"
+      },
+      {
+        "label": "Combined Cycle Power Plants",
+        "url": "/combined-cycle-power-plants.html"
+      },
+      {
+        "label": "Acceptance Testing",
+        "url": "/acceptance-testing.html"
+      },
+      {
+        "label": "Compliance",
+        "url": "/compliance.html"
+      },
+      {
+        "label": "Cyber Security",
+        "url": "/cybersecurity.html"
+      }
     ]
   },
   {
     "label": "References",
     "url": "/references.html",
     "children": [
-      { "label": "References", "url": "/references.html" },
-      { "label": "Projects", "url": "/projects/index.html" }
+      {
+        "label": "References",
+        "url": "/references.html"
+      },
+      {
+        "label": "Projects",
+        "url": "/projects/index.html"
+      }
     ]
   },
   {

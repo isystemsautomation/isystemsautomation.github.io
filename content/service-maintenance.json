@@ -73,9 +73,15 @@
           "type": "list",
           "ordered": false,
           "items": [
-            { "html": "Service calls" },
-            { "html": "On-demand support" },
-            { "html": "Emergency visit" }
+            {
+              "html": "Service calls"
+            },
+            {
+              "html": "On-demand support"
+            },
+            {
+              "html": "Emergency visit"
+            }
           ]
         },
         {
@@ -96,9 +102,15 @@
           "type": "list",
           "ordered": false,
           "items": [
-            { "html": "Improve process performance while reducing costs" },
-            { "html": "Minimise safety and environmental risks" },
-            { "html": "Extend the service life of installed systems" }
+            {
+              "html": "Improve process performance while reducing costs"
+            },
+            {
+              "html": "Minimise safety and environmental risks"
+            },
+            {
+              "html": "Extend the service life of installed systems"
+            }
           ]
         },
         {
@@ -120,12 +132,24 @@
           "type": "list",
           "ordered": false,
           "items": [
-            { "html": "ABB Industrial IT 800xA" },
-            { "html": "Emerson Ovation" },
-            { "html": "HIMA HIQuad" },
-            { "html": "Siemens PCS7" },
-            { "html": "Siemens TIA Portal" },
-            { "html": "Yokogawa Centum VP" }
+            {
+              "html": "ABB Industrial IT 800xA"
+            },
+            {
+              "html": "Emerson Ovation"
+            },
+            {
+              "html": "HIMA HIQuad"
+            },
+            {
+              "html": "Siemens PCS7"
+            },
+            {
+              "html": "Siemens TIA Portal"
+            },
+            {
+              "html": "Yokogawa Centum VP"
+            }
           ]
         }
       ]
@@ -160,6 +184,66 @@
               "html": "Process data collection from control systems and commercial metering units, with long-term archiving"
             }
           ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Maintenance on a generating plant is a test programme",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Maintenance on a generating plant is a test programme"
+        },
+        {
+          "type": "paragraph",
+          "html": "An inspection round tells you that a system looks healthy. On a generating plant that is not enough, because the functions that matter are the ones that have not run since the last time anybody made them run."
+        },
+        {
+          "type": "paragraph",
+          "html": "On the hydro plant we maintain, each quarterly visit puts two engineers on site for a week, and the programme includes proving, on the running or shutdown machine as appropriate:"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "html": "the emergency shutdown chain, including the shield release command"
+            },
+            {
+              "html": "the shutdown sequences, step by step"
+            },
+            {
+              "html": "overspeed protection"
+            },
+            {
+              "html": "compliance with the governing guarantees, by load rejection"
+            },
+            {
+              "html": "the power controller while synchronised to the grid"
+            },
+            {
+              "html": "the frequency and power controller, by load rejection"
+            },
+            {
+              "html": "the frequency and power controller with the plant transferred to an isolated district"
+            },
+            {
+              "html": "the vibration and shaft runout channels against the protection logic, not merely read"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "Alongside that, the things that are only discovered by measuring them: battery capacity in the uninterruptible supplies, proved by running them down for at least 30 minutes rather than reading a status lamp; the stored-energy cabinets that close the guide vanes when everything else is gone; failover of the redundant control network and the redundant supply, proved by breaking each; time synchronisation across the system against the GPS reference; and a restore from backup that is actually performed."
+        },
+        {
+          "type": "paragraph",
+          "html": "Where a failure stops the machine or breaks the exchange of data with the system operator, we are on site within 24 hours of the notification."
+        },
+        {
+          "type": "paragraph",
+          "html": "Island mode and the testing behind it are covered under <a href=\"/island-mode/\">Island Mode Operation</a>. The vibration side is under <a href=\"/hydro-vibration-monitoring.html\">Hydro Vibration and Shaft Monitoring</a>."
         }
       ]
     }
