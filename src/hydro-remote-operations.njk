@@ -1,0 +1,63 @@
+---
+layout: base.njk
+title: Remote Operation of Unattended Hydro Plants | ISYSTEMS
+permalink: /hydro-remote-operations.html
+pageUrl: /hydro-remote-operations.html
+description: "Unattended hydro plants on redundant telecontrol, dam instrumentation, and a concept for running a cascade and a solar plant from a single control room."
+canonical: "https://www.isystemsautomation.com/hydro-remote-operations.html"
+ogTitle: Remote Operation of Unattended Hydro Plants | ISYSTEMS
+ogDescription: "Unattended hydro plants on redundant telecontrol, dam instrumentation, and a concept for running a cascade and a solar plant from a single control room."
+ogUrl: "https://www.isystemsautomation.com/hydro-remote-operations.html"
+ogImage: "https://www.isystemsautomation.com/assets/img/og-default.jpg"
+related:
+  - url: /hydro-turbine-control.html
+    label: Hydro Turbine Control and Protection
+  - url: /virtual-power-plant.html
+    label: Virtual Power Plant
+  - url: /cybersecurity.html
+    label: Control System Cyber Security
+jsonLd: |
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Remote operation of unattended hydro plants",
+    "provider": {
+      "@type": "Organization",
+      "name": "ISYSTEMS AUTOMATION S.R.L.",
+      "url": "https://www.isystemsautomation.com"
+    },
+    "areaServed": "Europe",
+    "description": "Unattended hydro plant operation over redundant encrypted telecontrol on IEC 60870-5-104, command filtering at the plant end, dam and intake instrumentation, autonomous drone inspection, and remote control centre concept design."
+  }
+---
+<section class="section section--flush page-hero"><div class="container prose"><h1>Remote Operation of Unattended Hydro Plants</h1></div></section><section class="section section--tint"><div class="container prose"><p>Small hydro plants are expensive to staff and cheap to run. The economics push towards nobody on site, and the engineering has to catch up with that: every decision an absent operator would have made has to be either an algorithm, a designed failure response, or an accepted risk that somebody has written down.</p>
+<p>We have built one such plant and operated it remotely, and we have taken the next step — a whole generating group from one room — to concept and specification.</p></div></section><section class="section"><div class="container prose"><h2 class="section-title">What an unattended plant has to decide for itself</h2>
+<ul>
+<li>What it does when the link to the control room is lost entirely, and for how long it is allowed to keep running without one.</li>
+<li>What it does when the controller restarts and finds the machine in a state it did not leave it in.</li>
+<li>How it starts from cold when nobody is there to warm the oil system by hand.</li>
+<li>Which remote commands are permitted at all, and what happens to the rest.</li>
+<li>How the headwater is managed when inflow changes and no one is watching the basin.</li>
+</ul>
+<p>These are questions answered in design, not discovered in service. The cold-start algorithm and the control modes behind the last one are described under <a href="/hydro-turbine-control.html">Hydro Turbine Control and Protection</a>.</p></div></section><section class="section section--tint"><div class="container prose"><h2 class="section-title">Telecontrol is part of the plant</h2><p>The unit is operated from a control room at another plant in the group. There is no operator in the machine hall. That single decision drives most of the architecture.</p>
+<p>The link is four redundant encrypted channels — two terrestrial internet providers, a satellite link and GSM — carrying IEC 60870-5-104, with a communication controller at each end handling load distribution and failover. Start and stop, load setpoint, the daily load schedule and the choice of control algorithm are permitted from the remote station. <strong>Every other command is refused and filtered in the communication controller.</strong> A remote operator cannot reach into the unit and move something that was not on the list, which is a cheaper and more durable protection than any amount of network segmentation, because it survives a compromise of everything above it.</p>
+<p>Links of this kind fail in ways that are not obvious. On this plant the GSM channel dropped periodically while the modem still reported a healthy signal from the base station, and stayed down for 30 to 120 minutes until it was power-cycled. That is not a fault redundancy testing finds; it is one a trend over ten days finds. We raised it with the network operator rather than papering over it with an automatic modem reset.</p>
+<p>We test the telecontrol subsystem as a plant item: channels disconnected one at a time, then two at a time in different orders, then three, checking each time that the unit stays stable and that remote monitoring survives. Transfer between primary and backup channels has to be bumpless, and the only way to know it is is to break the primary while the machine is running.</p>
+<p>The harder question is what the plant does when it loses the link to the head node entirely and runs blind until a process setpoint stops it. That behaviour should be a designed decision, not a discovered one.</p></div></section><section class="section"><div class="container prose"><h2 class="section-title">Watching the civil works, not just the machine</h2><p>On a hydro plant the dam, the intake and the penstock fail more slowly than the unit does, and more expensively. The instrumentation that watches them belongs in the same system:</p>
+<ul>
+<li>Piezometer boreholes in the dam, read continuously rather than walked monthly with a dip meter.</li>
+<li>Radar level in the settling basin, brought back to the unit cabinet over fibre, driving a control loop that holds headwater level by moving the unit's load. The machine follows the water, rather than the water being managed around the machine.</li>
+<li>Headwater and tailwater level, from which net head is computed continuously — the measurement the governor needs to stay tuned across a seasonal head range.</li>
+<li>Differential pressure across the trash racks. A rising differential is debris, and it costs head directly; without the measurement it shows up only as an unexplained loss of output.</li>
+<li>Frazil ice at the intake on cold-climate plants, which no other instrument will warn you about.</li>
+<li>Water level at the intake, with automatic control of the bypass and spill valves.</li>
+<li>An autonomous drone with its own charging station and weather station, flying a fixed route on a schedule with no operator present and uploading to the archive server automatically.</li>
+<li>Process video, with motion detection raising an alert at the remote control room.</li>
+</ul>
+<p>All of it feeds a plant performance and condition subsystem that computes running hours, assesses equipment condition and produces maintenance recommendations, with an interface into the owner's maintenance management system.</p></div></section><section class="section section--tint"><div class="container prose"><h2 class="section-title">One control room for a whole group</h2><p>We were asked to work out what it would take to operate four hydro plants and a photovoltaic station from a single control room, and produced the concept and the specification for it. <strong>The study was taken to concept and specification and was not built.</strong></p>
+<p>What it covered:</p>
+<p><strong>At the control room.</strong> Archive and calculation servers, operator and engineering stations, communication equipment, the MES layer and its interface to the owner's maintenance management system, video walls and surveillance.</p>
+<p><strong>At each plant, graded by what was already there.</strong> Two of the sites needed new unit and electrical control, local control panels, instrumentation, cable routes, changes to existing valve and drive assemblies, changes to the 6 kV switchgear cells, modification of the electro-hydraulic turbine control, and vibration and overspeed protection. The other two already had modern unit control and needed only communication equipment, digital and hard-wired links for start, stop and setpoints, and extensions to the auxiliary and drainage drive assemblies.</p>
+<p><strong>At the photovoltaic station.</strong> Changes to the existing system to export data and accept setpoints, communications equipment, and configuration at the dispatching end — with a frank note in the study that the installed SCADA was old enough that an upgrade or replacement would probably be needed to retain local control and local archiving.</p>
+<p><strong>What was deliberately excluded.</strong> Civil works, control room furnishing and display walls, new electrical equipment and new drive assemblies. A concept study that quietly includes everything is not a concept study; it is a wish.</p>
+<p>The same architecture — several sites dispatched as one — is what we built and ran for seven years on a CHP plant, a photovoltaic station and a wind farm, described under <a href="/virtual-power-plant.html">Virtual Power Plant</a>. The security side of operating a plant over somebody else's network is under <a href="/cybersecurity.html">Control System Cyber Security</a>.</p></div></section>
