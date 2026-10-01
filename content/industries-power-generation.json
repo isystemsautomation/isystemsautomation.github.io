@@ -59,7 +59,7 @@
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Hydro turbines:</strong> Pelton units with nozzle and deflector control, governor and oil pressure unit management, protection design and unattended operation over telecontrol links — see <a href=\"/hydro-turbine-control.html\">Hydro Turbine Control</a>."
+          "html": "- <strong>Hydro turbines:</strong> Pelton units with nozzle and deflector control, governor and oil pressure unit management, protection design and unattended operation over telecontrol links — see <a href=\"/hydro-turbine-control.html\">Hydro Turbine Control</a>. We also work on Kaplan and vertical reactive machines, with governing systems from classical oil-hydraulic through electro-hydraulic to all-electric wicket gate drives, <a href=\"/hydro-vibration-monitoring.html\">low-speed vibration and rotor-stator air gap monitoring</a>, and <a href=\"/hydro-remote-operations.html\">remote operation of unattended plants</a>."
         },
         {
           "type": "paragraph",
@@ -166,12 +166,24 @@
           "type": "list",
           "ordered": false,
           "items": [
-            { "html": "Active and reactive power setpoint control from dispatch" },
-            { "html": "Reporting to the transmission system operator over IEC 60870-5-101" },
-            { "html": "Reporting to the market operator over IEC 60870-5-104" },
-            { "html": "Telecontrol over four redundant communication channels, so the loss of one path does not interrupt control or data transfer" },
-            { "html": "Primary and secondary frequency control, with the response measured at acceptance rather than assumed" },
-            { "html": "Resynchronisation after islanded operation" }
+            {
+              "html": "Active and reactive power setpoint control from dispatch"
+            },
+            {
+              "html": "Reporting to the transmission system operator over IEC 60870-5-101"
+            },
+            {
+              "html": "Reporting to the market operator over IEC 60870-5-104"
+            },
+            {
+              "html": "Telecontrol over four redundant communication channels, so the loss of one path does not interrupt control or data transfer"
+            },
+            {
+              "html": "Primary and secondary frequency control, with the response measured at acceptance rather than assumed"
+            },
+            {
+              "html": "Resynchronisation after islanded operation"
+            }
           ]
         },
         {
