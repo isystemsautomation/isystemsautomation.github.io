@@ -38,6 +38,44 @@
     },
     {
       "type": "section",
+      "title": "Integrator, owner's engineer, or the people who keep it running",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Integrator, owner's engineer, or the people who keep it running"
+        },
+        {
+          "type": "paragraph",
+          "html": "Generating plants buy automation in three different relationships, and we work in all three. Which one applies changes what a client should expect from us, so it is worth naming them."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "<strong>System integrator.</strong> We carry the control system from specification through design, cabinet build, factory test, installation supervision, commissioning and acceptance testing, and hand over a plant that has been proved rather than merely energised — the turnkey case, set out under <a href=\"/service/process-automation.html\">process automation</a>."
+            },
+            {
+              "html": "<strong>Owner's engineer.</strong> Somebody else supplies the control system and we work for the owner: design review, algorithm and database verification against the specification, witnessing of factory and site testing, commissioning oversight and operator training. We have done this on a combined cycle block from design review through to handover."
+            },
+            {
+              "html": "<strong>Maintenance contractor.</strong> The system is already installed and the job is that it does not stop — planned and condition-based maintenance, loop performance, retuning and emergency response, as on the refinery CHP plant we have supported continuously since 2022 and for eleven years before that."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>Where we work and on what.</strong> We are based in Ploiești, Romania, and work across Europe. The plant covered is conventional and hydro alike: coal and petroleum coke fired circulating fluidized bed boiler islands, gas-fired water-tube boilers, combined cycle blocks with heat recovery steam generators, extraction and back-pressure steam turbines, hydropower units from small Pelton sets to vertical Francis machines, district heating networks, and photovoltaic and wind plant dispatched as one balancing group."
+        },
+        {
+          "type": "paragraph",
+          "html": "<strong>What we are not.</strong> We do not manufacture turbines, boilers or switchgear, and we do not sell a control platform of our own. Where a plant already runs Ovation, 800xA, PCS7, Centum or TIA Portal, our interest is in making that system do what the process needs rather than in replacing it with something we have a margin on."
+        }
+      ]
+    },
+    {
+      "type": "section",
       "title": "Equipment we automate",
       "blocks": [
         {
@@ -59,7 +97,7 @@
         },
         {
           "type": "paragraph",
-          "html": "- <strong>Hydro turbines:</strong> Pelton units with nozzle and deflector control, governor and oil pressure unit management, protection design and unattended operation over telecontrol links — see <a href=\"/hydro-turbine-control.html\">Hydro Turbine Control</a>. We also work on vertical reactive machines with an all-electric wicket gate drive, including <a href=\"/hydro-vibration-monitoring.html\">low-speed vibration and rotor-stator air gap monitoring</a> and <a href=\"/hydro-remote-operations.html\">remote operation of unattended plants</a>."
+          "html": "- <strong>Hydro turbines:</strong> Hydropower units — Pelton machines with nozzle and deflector control, governor and oil pressure unit management, protection design and unattended operation over telecontrol links — see <a href=\"/hydro-turbine-control.html\">Hydro Turbine Control</a>. We also work on vertical reactive Francis machines at hydroelectric plants, with an all-electric wicket gate drive, including <a href=\"/hydro-vibration-monitoring.html\">low-speed vibration and rotor-stator air gap monitoring</a> and <a href=\"/hydro-remote-operations.html\">remote operation of unattended plants</a>."
         },
         {
           "type": "paragraph",
@@ -277,38 +315,18 @@
           "ordered": false,
           "items": [
             {
-              "html": "<a aria-controls=\"sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c170\" aria-selected=\"true\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c170\" id=\"sppb-content-9538d84d-f33f-4ab0-b622-0c104c025c170\" role=\"tab\"> Power Generation </a>"
+              "html": "<strong>Power Generation</strong> — this page"
             },
             {
-              "html": "<a aria-controls=\"sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c171\" aria-selected=\"false\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c171\" id=\"sppb-content-9538d84d-f33f-4ab0-b622-0c104c025c171\" role=\"tab\"> Oil and Gas </a>"
+              "html": "<a href=\"/industries/oil-and-gas.html\">Oil and Gas</a>"
             },
             {
-              "html": "<a aria-controls=\"sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c172\" aria-selected=\"false\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c172\" id=\"sppb-content-9538d84d-f33f-4ab0-b622-0c104c025c172\" role=\"tab\"> Cement and Coal </a>"
+              "html": "<a href=\"/industries/bulk-material-handling.html\">Cement and Coal</a>"
             },
             {
-              "html": "<a aria-controls=\"sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c173\" aria-selected=\"false\" class=\"\" data-toggle=\"sppb-tab\" href=\"#sppb-tab-9538d84d-f33f-4ab0-b622-0c104c025c173\" id=\"sppb-content-9538d84d-f33f-4ab0-b622-0c104c025c173\" role=\"tab\"> Control Centers </a>"
+              "html": "<a href=\"/industries/control-centers.html\">Control Centers</a>"
             }
           ]
-        },
-        {
-          "type": "image",
-          "src": "/images/projects/steam-turbine-generator-hall.jpg",
-          "alt": "Hydro turbine and generator set in the machine hall",
-          "href": null
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "text": "Power generation"
-        },
-        {
-          "type": "paragraph",
-          "html": "We automate electricity and heat production — steam and gas turbines, boilers, HRSG, hydro, district heating and renewable dispatch — from control system design through commissioning and acceptance testing."
-        },
-        {
-          "type": "link",
-          "href": "/industries/power-generation.html",
-          "text": "Learn More"
         },
         {
           "type": "image",
