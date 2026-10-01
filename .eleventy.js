@@ -1,4 +1,10 @@
 module.exports = function (eleventyConfig) {
+  // The 24 .njk templates under src/ that tools/render-compliance.mjs and
+  // tools/generate-pages.mjs write from content/*.json are gitignored build
+  // output. Eleventy reads .gitignore by default, which would make it skip
+  // exactly those pages, so ignores come from .eleventyignore instead.
+  eleventyConfig.setUseGitIgnore(false);
+
   const enhanceHtml = require('./src/_transforms/enhance-html.js');
   const fs = require('fs');
   const path = require('path');
