@@ -36,6 +36,88 @@
     },
     {
       "type": "section",
+      "title": "What a burner management system does",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What a burner management system does"
+        },
+        {
+          "type": "paragraph",
+          "html": "A burner management system is a safety instrumented system dedicated to fired equipment — a boiler, a fired heater, a furnace, an incinerator. Its job is narrow and absolute: fuel may only enter the firebox when there is a proven source of ignition and a proven path for the products of combustion, and fuel is removed the moment either stops being true. Everything to do with running the plant efficiently belongs somewhere else."
+        },
+        {
+          "type": "paragraph",
+          "html": "The sequence it enforces is much the same whichever standard applies — NFPA 85 in North America, EN 746-2 and the EN 12952 series in Europe:"
+        },
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            {
+              "html": "<strong>Purge.</strong> Air flow is proved and held long enough to sweep the furnace and the gas passes several times over, conventionally five volume changes, so that nothing combustible can be standing in the box when an ignition source appears. An interrupted purge restarts from the beginning rather than resuming."
+            },
+            {
+              "html": "<strong>Permissives.</strong> Every condition that must be true before fuel is admitted: fuel pressure inside its band, safety shut-off valves proved closed, dampers at their light-off position, drum level in range, no standing trip anywhere in the scheme."
+            },
+            {
+              "html": "<strong>Ignition.</strong> The igniter or pilot is energised and its flame proved inside a short, fixed trial-for-ignition window. If the window expires with no flame, fuel is cut and the system returns to purge instead of retrying."
+            },
+            {
+              "html": "<strong>Main flame.</strong> The main safety shut-off valve opens only against a proved pilot, and the main flame has its own trial window and its own scanner."
+            },
+            {
+              "html": "<strong>Running supervision.</strong> Flame is watched continuously, and loss of flame produces a fuel trip within the flame failure response time — a few seconds at most, because that time is what bounds how much unburned fuel can reach the furnace."
+            },
+            {
+              "html": "<strong>Trip.</strong> On any trip condition the fuel valves close and vent in a defined order, and the system falls back to a state from which only a complete purge can restart it."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "The two things that separate a burner management system that works from one that merely exists do not show on a drawing: that the purge cannot be bypassed, and that a trip latches until somebody deliberately resets it. A system that can be talked out of a purge by a hurried operator on a cold morning is not a protection system."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Burner management and combustion control are not the same system",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Burner management and combustion control are not the same system"
+        },
+        {
+          "type": "paragraph",
+          "html": "They share a furnace and sometimes share instruments, and they are routinely spoken of in one breath. They are different in kind and should be built differently."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "<strong>Combustion control is modulating and economic.</strong> Fuel and air demand, air-to-fuel ratio, oxygen trim, draught, and cross-limiting so that air leads on a rise and lags on a fall. It is tuned, it is re-tuned over the life of the plant, and it lives in the DCS."
+            },
+            {
+              "html": "<strong>Burner management is discrete and protective.</strong> It has no setpoint. It permits, or it trips. It is written down in a safety requirement specification, implemented in a logic solver rated for the integrity level claimed, verified against that specification, and proof-tested at an interval that falls out of the calculation."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "Merging them is attractive — one controller, one database, one engineering tool — and it is how a plant ends up unable to state what its safety integrity actually is. Where the two must talk, they talk in one direction: burner management tells combustion control to go to minimum or to stop, never the reverse."
+        },
+        {
+          "type": "paragraph",
+          "html": "We build both and keep them apart. The modulating side — combustion control, oxygen trim, coordinated load — is described under <a href=\"/service/process-optimization-advanced-process-control.html\">process optimisation and advanced control</a>, and the start-up sequence that sits on top of a burner management system under <a href=\"/automatic-boiler-start.html\">automatic boiler start-up</a>."
+        }
+      ]
+    },
+    {
+      "type": "section",
       "title": "Safety instrumented systems",
       "blocks": [
         {
@@ -90,6 +172,61 @@
         {
           "type": "paragraph",
           "html": "Proof tests are scheduled at the interval the safety requirement specification demands — valve stroke tests, burner flame scanner checks, logic solver diagnostics — and recorded so the operating phase can show the safety function still meets its SIL claim."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "What a safety integrity level actually constrains"
+        },
+        {
+          "type": "paragraph",
+          "html": "A SIL is not a label on a box. It is a limit on the average probability of failure on demand of the whole safety function, sensor through logic solver to final element. In low demand mode IEC 61511 places SIL 2 between 10⁻³ and 10⁻², and SIL 3 between 10⁻⁴ and 10⁻³. The logic solver is usually the easy part of that budget; the field instruments and the final elements are where the number is won or lost. A certified logic solver driving an uncertified valve is a common and expensive illusion."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "The proof test interval is an output, not a preference"
+        },
+        {
+          "type": "paragraph",
+          "html": "The interval falls out of the calculation for the chosen architecture. Stretching it to suit an outage schedule changes the SIL claim, and that has to be recalculated and written down rather than quietly assumed. Where a final element cannot be stroked in service, partial stroke testing recovers part of the coverage between full tests — and the credit taken for it belongs in the calculation too, not in a conversation."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Fuel trains and multi-fuel firing",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Fuel trains and multi-fuel firing"
+        },
+        {
+          "type": "paragraph",
+          "html": "Most of the physical safety of a fired plant sits in the valve train, and most of the arguments at design review are about it."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            {
+              "html": "<strong>Double block and bleed.</strong> Two safety shut-off valves in series with a vent between them, so that one leaking valve cannot pass fuel into a dark furnace. Each valve carries its own proof of closure."
+            },
+            {
+              "html": "<strong>Valve proving.</strong> The tightness of the train is tested before light-off by watching pressure decay in the volume between the two blocks — a test that costs seconds and catches the failure that matters most."
+            },
+            {
+              "html": "<strong>One train per fuel.</strong> A dual-fuel burner has a gas train and an oil train, each with its own permissives, its own trial window and its own scanner discrimination. Changeover while firing is a sequence in its own right, and the commonest place for a multi-fuel system to be under-specified."
+            },
+            {
+              "html": "<strong>Solid fuel behaves differently.</strong> On a circulating fluidized bed firing petroleum coke there is no single burner front to watch. The protective logic is built around bed temperature, bed inventory and fluidising air, with the start-up burners under conventional burner management underneath it."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "html": "The fired plant we work on is gas-fired water-tube boilers on a refinery CHP plant and petroleum coke fired circulating fluidized bed boilers. The efficiency calculations that run alongside them, by direct and indirect method, are described under <a href=\"/plant-performance.html\">plant performance calculation</a>."
         }
       ]
     },
@@ -105,6 +242,14 @@
         {
           "type": "paragraph",
           "html": "Safety logic solvers delivered on HIMA HIQuad, Foxboro Triconex and ABB AC800. Burner management on the refinery CHP plant runs on HIMA HIQuad; the combined cycle project used Triconex and AC800 at SIL 3."
+        },
+        {
+          "type": "paragraph",
+          "html": "Choosing between them is less about the vendor than about three things: the redundancy architecture and what it does on an internal fault; how the safety system exchanges data with the host DCS without that path becoming a route into the safety logic; and how long the platform will be supported, because a safety system is specified for the life of the plant and not for the life of a product catalogue."
+        },
+        {
+          "type": "paragraph",
+          "html": "On an existing plant there is a fourth consideration that usually settles it: what is already there. A refinery with HIMA HIQuad in service, spares on the shelf and engineers trained on it is rarely well served by a different platform on one unit, however good that platform is on its own merits."
         }
       ]
     },
@@ -124,6 +269,57 @@
         {
           "type": "paragraph",
           "html": "Continuous maintenance since 2022 on the same plant's DCS, ESD, BMS and MES: Emerson Ovation, ABB Industrial IT 800xA, HIMA HIQuad and Honeywell PHD."
+        },
+        {
+          "type": "paragraph",
+          "html": "The refinery and gas plant side of this work is described under <a href=\"/industries/oil-and-gas.html\">oil and gas automation</a>."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "Questions we are asked",
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Questions we are asked"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "What is the difference between a burner management system and an ESD?"
+        },
+        {
+          "type": "paragraph",
+          "html": "Scope. A burner management system protects fired equipment and concerns itself with fuel, ignition and flame. An emergency shutdown system protects the plant as a whole and acts on hazards that may have nothing to do with firing — gas detection, overpressure, loss of containment. On most plants the burner management system is one part of a wider safety instrumented system, often in the same logic solver family and always under the same lifecycle."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Does a burner management system have to be SIL rated?"
+        },
+        {
+          "type": "paragraph",
+          "html": "The integrity level comes from the hazard, not from the equipment. A hazard and risk assessment establishes how much risk reduction the safety function has to deliver, and that is what sets the SIL. Most boiler burner management functions land at SIL 2 and some at SIL 3. A SIL asserted without the assessment behind it is a claim, not a rating."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "How often does a burner management system have to be proof tested?"
+        },
+        {
+          "type": "paragraph",
+          "html": "At the interval the safety requirement specification states, which comes from the calculation for that function. Annual is common on boiler functions; it is not a rule. What matters is that the interval, the procedure and the result are recorded, so the SIL claim can still be demonstrated years after commissioning."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Can a burner management system be retrofitted to an existing boiler?"
+        },
+        {
+          "type": "paragraph",
+          "html": "Yes, and on an operating plant that is most of the work in this field. The constraints are the length of the outage, how much of the existing field instrumentation can be credited against the new safety requirement specification, and whether the valve train already has the proof of closure and venting the new logic will demand. The honest version of that answer is written before the outage rather than discovered during it."
         }
       ]
     }
